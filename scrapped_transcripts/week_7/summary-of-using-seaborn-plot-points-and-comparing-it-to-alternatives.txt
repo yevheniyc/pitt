@@ -1,0 +1,137 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/Jzl78/summary-of-using-seaborn-plot-points-and-comparing-it-to-alternatives
+
+English
+Let's look at the resulting figure.
+Do you see these two red horizontal lines?
+That's what we displayed with this ax.h lines method.
+But what's really important is
+look where the horizontal lines are located.
+Now, I just rounded these.
+They are not actually the exact values.
+I just typed these in manually but as you can see,
+the lower bound is at the
+lower bound of the vertical error bar,
+and the upper bound is at
+the upper bound of the vertical error bar.
+It is at the bounds just when year is 1952.
+If we would have instead have focused on 2007,
+the lower and upper bounds on
+that 95% confidence interval
+should be something near 65 and 70.
+Well, let's print
+out our summarized data frame and then look at 2007,
+the lower bound is basically 65,
+the upper bound is 69,
+pretty close to 70.
+Why did I want to review this?
+In summary the point plot
+performs the following actions for us.
+It calculates the conditional mean.
+The mean is another word for the average for
+the y-axis variable given each x-axis category.
+It also calculates the standard error on
+the mean for each x-axis category or
+the standard error on the mean for
+the y-axis variable given each x-axis category.
+It then calculates the lower
+bound on the desired confidence interval.
+It calculates the upper bound
+on the desired confidence interval,
+plots the conditional mean as a point, which is a dot,
+and it plots the confidence interval as an error bar
+between the lower and upper bounds.
+In other words, the point plot saves
+a lot of time when visually exploring data.
+You do not have to first do the grouping,
+the summarizing the aggregation just
+to show the confidence interval on the average.
+You can let point plot do all of that for you.
+To wrap this up, let's see what we would need to do
+in order to make the plot
+manually using Panda's plotting methods.
+We have already created GAP year summary.
+We need to do some data manipulation.
+To use Panda's methods,
+we need to set the index to
+be the categorical variable we're interested in,
+which in our case is a year.
+We also need to isolate
+or select a small number of columns.
+I want to show the lower
+bound on the confidence interval,
+I want to show the conditional mean,
+and I want to show the upper bound on
+the confidence interval while still
+having the index be one of the columns.
+Now, as you can see,
+I have the confidence interval bounds and
+the average with the index attribute now is the year.
+Let's make the plot GAP year summary, LOC,
+all rows for year, life expectancy,
+CI lower, life expectancy average, life expectancy,
+CI upper set index,
+year go to a new line plot ax = ax.
+I'm using the Panda's method.
+By default, Pandas will make a line chart
+for each column in
+the data frame with respect to the index.
+Again, I only selected the three columns.
+I'm interested in the average and then
+the bounds on the confidence interval because by default,
+the plot method will show
+a curve for each column with respect to the index.
+The point is showing the average, the conditional mean,
+and the lower and upper bound
+as an error bar rather than these three lines.
+I prefer the points because now we get
+the exact values where the categories,
+where the average is calculated,
+rather than just some line.
+Again, in summary, the point plot
+is really going to save
+you a massive amount of time
+when you are visually exploring data.
+You don't have to keep doing all of
+the grouping, the aggregating,
+the data manipulation, just
+to make this one plot because after all,
+you may have a large number of categorical variables and
+many continuous variables that will have to be
+summarized for the groups
+of the categories of the categoricals.
+You want to be able to make your plots quickly and
+easily so you can go through the whole data
+set rather than having to
+continuously redefine new data frames,
+do some data manipulation,
+just to plot them.
+I hope you liked this video.
+I hope it helped reinforce what the point plot is doing,
+I hope it demonstrated why it's useful because after all,
+how do we know if the averages are different if
+the 95% confidence intervals do not overlap?
+This the point plot,
+the reason why it's so
+useful is because the point plot lets you answer.
+Is there a difference on average?
+Essentially, in statistics terms,
+the point plot is the visual t-test.
+I very rarely execute t-tests.
+I basically make these kinds of charts,
+and I examine, is there
+an overlap between the 95% confidence intervals.
+Because if the 95% confidence intervals do not overlap,
+then we can be confident that there is
+a difference in the average across the categories.
+For example, in this case,
+yes, we are confident that on average,
+the life expectancy in 1952 was
+different than the average life expectancy in 2007.
+These 95% confidence intervals do not overlap.
+But now, focus on 1977 and 1982.
+Are the averages different between these two years?
+Well, we have overlap in the 95% confidence intervals.
+So no, we cannot
+distinguish the averages between these two years.
+We think that within the margin of error,
+the averages are basically the same.

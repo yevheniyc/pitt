@@ -1,0 +1,125 @@
+Source: https://www.coursera.org/learn/the-art-of-data-visualization/lecture/Aglor/advanced-plotting-with-seaborn
+
+English (auto)
+You're now going to look at some of the advanced plotting options that Seaborn library can
+provide to us.
+So one of the useful functionality that Seaborn provides is that we can actually combine multiple
+views on the data.
+We can use the join plot and pair plots functions to employ multiple kinds of plots from different
+modules to represent different aspects of a data set in a single figure.
+This is useful to combine these different perspectives that provides better insights
+into understanding of the data.
+For example, we can combine and scatter plot with marginal histogram or other distribution
+to show both the relationship between the two variables as well as their individual
+distribution.
+So here allows us to add the different kinds of charts that we talked about, the relational
+versus distribution, general versus categorical, they can actually be combined together into
+one plot that would provide more insight into understanding the data.
+This is particularly useful when you want to analyze bivariate relationships and gain
+insight into how subsets differ within kind of the general relationship that you are observing.
+So for example, we can do the join plot and here this is the central plot is the same
+plot that we saw before, which is a relational plot that is plotting a scatter plot of the
+total bills versus the tip, which point with the different points and colored by the time
+variables representing lunch versus dinner.
+And then what you can see on the marginal histograms along the top and the right axis
+displays the distribution of these two variables.
+So here we can see the distribution of on the right side, we can see the distribution
+of the tip and again, the colors are representing lunch versus dinner.
+And on the top, we can see the distribution of total bills.
+So at the same time that we can see the relationship between these two variables, we can also see
+how each of these variables are distributed themselves.
+And we can see kind of all of these together.
+And we can also see it for the this time variable of lunch versus dinner.
+This is the code to create these join plot.
+So you can see that you can, there is a function called join plot, and it has three, four parameters
+in this case, the first parameter is providing the data set that we are using the tips data
+set.
+Then the next is providing the x and y variable.
+So in this case, the total bill and tip, and then we are providing the variable to be used
+for depicting different the data in different colors.
+So we are using time in this case to have that as a distinguishing color.
+Another way that we can combine plots is using per plot, which is used to create a grid of
+a scatterplot for every pairs of possible, every possible pairs of numeric variables
+in the data set.
+So in this case, that our data set has basically three numerical variables of total bill, the
+tip and the size of the party at and has like categorical variables of time.
+So when you create actually a per plot, you can see actually add all of these different
+combination of these variables.
+So per plot is similar to join plot.
+It combines joint and marginal views, but rather than focusing on a single relationship,
+it visualizes every pair was combination of variables simultaneously.
+In this example, you can see we have created a per plot for tips data set, which is a grid
+of a scatter plots for every pair of numeric variables in our data set, along with histograms
+along the diagonal to show each variables distribution.
+So here you can see the both on the diagonal, the histograms of each of the variables, and
+then see every pair was relationships as well.
+And this is the code that generates this a simple line of per plot, and you're providing
+basically just the data set of because it's looking at all of the possible variables in
+the data set.
+And if you want to provide any kind of categorical variables for changing the color and distinguishing
+the using the color to distinguish across that category.
+We can also control the aesthetics of the figure and controlling aesthetics always helps
+to communicate better about the visualization.
+So effective communication of quantitative insights to an audience depends on having
+figures that catch the attention and drive you're in.
+And Seaborn comes with a number of customized themes that and a high level interface for
+controlling the look of matplotlibs figures.
+So you can basically have like the figures that are created and then use Seaborn as a
+way of manipulating how they look like.
+So it's easier to communicate the information to the readers.
+Drawing attractive figures are important when making figures for yourself as you explore
+a data set.
+It's nice to have plots that are pleasant to look at.
+So even if you're just doing this maybe for an assignment, but if you're doing it for
+work, then it's even more important to have these visualizations that are effectively
+communicating the data.
+Visualizations are also central to communicating quantitative insights to an audience.
+And in that setting, it's even more necessary to have figures that catch the attention and
+drive you're in.
+Matplotlib is highly customizable, but it can be hard to know what setting to tweak
+to achieve an attractive plot.
+Seaborn comes with a number of customized themes and a high level interface that makes
+it very easy to make those sorts of customization and make kind of the figure looks better.
+So we can look at some of these in the next slides.
+So here you can see that in this example, we have used the default theme options available
+in Seaborn to add the grid to the graph.
+The grid, in this case, helps the plot to serve as a lookup table for quantitative information.
+And the white and gray helps to keep the grid from competing with the lines that represent
+the data.
+So we are basically adding kind of these visual elements into the graph that makes it easier
+to read.
+And these are just by very small kind of changes in the code that we can make these aesthetic
+changes.
+You can have these different themes that you can use.
+There are five preset Seaborn themes, dark grid, white grid, dark, white, and text.
+They are each suited to different applications and personal preferences.
+The default theme is the dark grid, which is what you have seen in previous slides as
+well.
+The white grid theme is similar, but it is better suited to plot with heavy data elements,
+such as in this case, the box plot that you can see in this figure, that there is a lot
+going on in the box plot.
+So you don't want to have a background that kind of distracts the audience from focusing
+on the most important parts of the visualization.
+And to basically set these slides, the code is what you can see here.
+You can set the slides styles to white grid, and then you just basically create the box
+plot.
+In this case, our data is just a randomly generated numbers, and then the line box plot
+basically draws the box plot with whatever data set that you have provided.
+You can also scale the plot elements.
+Seaborn splits MapPlotWidth parameters into two independent groups.
+The first group sets the aesthetic style of the plot, which is what we looked at it,
+and the second scales various elements of the figure so that it can be easily incorporated
+into different contexts.
+So as you create visualization, you have different purposes for the visualization.
+You might want to use it in a presentation, which is different than if you want to use
+it maybe in a paper or a poster.
+A separate set of parameters control the scale of the plot elements, which should let you
+use the same code to make plots that are suited for use in settings with larger or
+smaller plots are appropriate.
+The four preset contexts in the order of the relative size are paper, notebook, talk, poster.
+The notebook style is the default style.
+So here you can see the distinguishing of the first one, paper, on the left side.
+The second one on the right side is the setting of talk.
+And then in now next one, you can see the poster setting, and you can see how the scale
+of the same graph is basically changing, making it more appropriate for different size and
+different contexts.

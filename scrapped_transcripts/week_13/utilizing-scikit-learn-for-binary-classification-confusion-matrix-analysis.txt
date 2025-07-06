@@ -1,0 +1,95 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/FCgkJ/utilizing-scikit-learn-for-binary-classification-confusion-matrix-analysis
+
+English
+That said, there is a useful reason
+to use the sklearn function.
+This useful reason requires
+specifying or naming the output.
+The following only works for binary classification problems,
+which is what we're working with right now.
+And in this alternative approach,
+we can label, what gets returned by
+the confusion matrix function.
+I'm going to name the returned
+variables TN, FP, FN and TP.
+PN for true negative, we classify the non event and
+we're right, PP we classify the event and we're right.
+FP we classify the event and we're wrong,
+FN we classify the non even, and we're wrong.
+So again, T and F is the classification correct, true or false?
+P and N is the model classifying the positive case,
+the event or the negative case.
+These 4 objects are assigned the result of confusion matrix,
+but we convert that 2d array into a 1d array using the ravel method.
+So ravel converts this 2d array into a 1d array,
+and we're extracting out the results.
+So to see that, let's call confusion matrix
+again df copy y to numpy df copy pred class to numpy.ravel.
+The result has now been converted to a 1d array,
+and we're going to assign each of those elements
+to their own variables df copy.y to numpy,
+df copy thread class to numpy.
+I'm converting them to numpy because sklearn works best
+with numpy compared to panda so that's why I'm doing it.
+But now tnt51, scroll back up to our heat map,
+that's exactly what we see here.
+True tn stands for true negatives.
+Negative we classify the non event true it was
+correct we had a correct classification.
+Now we could, we can calculate
+accuracy using the confusion matrix.
+Accuracy is the number of correct classification
+true negative plus true positive,
+divided by all of the number of observations.
+The number of observations is
+the sum of the 4 cells in the confusion matrix.
+This is the exact same value as what we saw when we calculated the accuracy.
+Now these counts, they are useful and
+interpretable, but they are counts,
+they are not proportions.
+The great thing about accuracy is that it is a proportion,
+it does not care about sample size.
+We can convert the confusion matrix counts to proportions as well.
+These proportions change the question,
+about what we are accurate relative to.
+So accuracy does not care how
+the model is accurate.
+But, what if we wanted to know
+the accuracy when the event is observed?
+Okay, when the event is observed.
+Let's scroll back up to the confusion matrix,
+the event is observed when y equals 1.
+When y the output is 1.
+And so if we look closely here,
+there are two cells that get summed together
+to give us the total number of observed events.
+Those cells we classify the non event, so
+we have a negative, and we're wrong, false negative.
+We add to that, we classify
+the event and we're right.
+Classifying the event P for positive we're right T for
+true, the number of events is equal to
+the false negatives plus the true positives.
+Let's confirm that is the case.
+False negatives plus true positives,
+df copy y.valuecounts,
+we observe the event 48 times, so
+FN plus TP is the total number of events.
+The true positive rate TPR,
+also known as sensitivity,
+is the proportion of times the model
+correctly classifies the event
+when the event is observed.
+So when we calculated accuracy, we looked at all of the rows of the data.
+All 4 cells in the confusion matrix
+were summed, but now we are covering
+up when the event doesn't occur.
+Now I'm not interested when the event doesn't occur,
+I'm only interested when the event occurs.
+And I want to know how many times is the model correct,
+divided by the total number of events,
+or true positive divided by true
+positive plus false negative.
+The model has a sensitivity or
+true positive rate of 56%.
+When the event occurs the model is correct 56% of the time.

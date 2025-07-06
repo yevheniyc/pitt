@@ -1,0 +1,100 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/kXRa3/understanding-polynomial-interactions-in-linear-models
+
+English
+In the formula interface,
+the asterisk asterisk or power operator
+denotes the degree of interaction between the inputs.
+Saying x1**2 is saying interact x1.
+It doesn't really know what to do to interact x1.
+Therefore, you cannot use
+the asterisk asterisk operator
+to raise an input to a power.
+That's why you need to use the np.power function.
+Here, I'm now fitting the model again, but my formula,
+y tilde np.power (x1,
+2) + np.power (x2,2).
+This is now the coefficient or
+the slope multiplying x1^2.
+If I want to have linear and quadratic polynomials,
+I need to include both in my formula,
+x1 plus np.power x1 squared,
+plus x2 plus np.power x2 squared.
+Now we have second degree polynomials for each input.
+But now, why does this matter
+compared to the interactions?
+A shortcut is that you can create up to and
+including all degree of interactions
+using the asterisk asterisk operator
+in the formula interface.
+Fit_i smf.ols formula, data.fit.
+Again, the data is df.
+But now the formula, y tilde (x1+x2)**2.
+This looks like you're saying x1+x2
+, that quantity squared.
+Then if you go back to what high school algebra,
+this is your FOIL method, x1+x2*x1+x2.
+You would think you'd have to do the
+first, then you have the outer,
+the inner, the last.
+But that's not what's happening.
+This formula will not
+produce quadratics or second degree polynomials.
+This formula says, give me the main effects of everything
+inside the parentheses and
+include up to this degree of interaction.
+The degree of interaction is
+how many inputs are getting multiplied together.
+A second degree interaction
+multiplies two inputs together.
+A third degree interaction
+multiplies three inputs together.
+Now, why is this important?
+You can use this notation to create
+very complex interactions between
+many different types of features.
+Thus, you can even interact nonlinear features together.
+For our last model,
+our formula will interact
+the linear and the second degree polynomials
+between x1 and x2.
+Same data, but now the formula,
+y tilde, use a parentheses,
+x1 plus np.power x1 squared plus x2 plus np.power x2
+squared asterisk asterisk 2 fit_j.params.
+Do you see all of
+these coefficients that now got estimated?
+We used the same polynomials from
+before but now by interacting,
+we were interacting all four of these x interacting x1^2.
+This is equivalent to x1^3.
+X1x2,
+x1 interacting with x2^2,
+x1^2 interacting with x2,
+x1^2 interacting with x2^2,
+x2 interacting with x2^2 squared.
+This is equivalent to x2^3.
+You therefore need to be very
+careful when you interact to
+make sure you're going to produce
+the kinds of features you're hoping for.
+It's not really all that readable to say x1 interacting
+with x1^2 when you want x1^3.
+One thing that I recommend and sorry,
+this is now the last model,
+but when you want to interact polynomials,
+I like to separate the polynomials
+derived from each input using
+parentheses in the formula interface.
+Now fit_k smf.ols formula,
+data.fit, again,
+the data is df,
+the formula, y tilde, ()*().
+In the first parentheses x1 plus
+np.power x1 squared interacting
+with x1 plus np.power x2 squared.
+Now, here are the main effects
+of each input raised to a power x1*x2,
+the interaction between the two inputs,
+x1 interacting with x2^2,
+x1^2 interacting with x2,
+and then x1^2 interacting with x2^2.

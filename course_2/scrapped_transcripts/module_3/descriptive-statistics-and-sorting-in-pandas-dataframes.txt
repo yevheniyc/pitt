@@ -1,0 +1,101 @@
+Source: https://www.coursera.org/learn/the-art-of-data-visualization/lecture/xGoAj/descriptive-statistics-and-sorting-in-pandas-dataframes
+
+English
+Let's confirm.
+Let's go back to the NumPy array.mean.
+Axis equals 0.
+We want to summarize a long axis equals 0.
+Here we are now getting the average per column 11,
+11, 12, 12, 13, 13,
+14, and 14.
+We're going down the rows.
+But anyway, you can see
+the mean is giving us the same result
+as when we apply
+the mean method to the NumPy data frame,
+and also we can get the same thing for
+the std method if we use the correct ddof.
+Again, 1, 2, 3,
+4, 1, 2,
+3, 4, four columns.
+Besides applying these methods to the NumPy object,
+we can get a quick summary of
+the important descriptive statistics by just
+calling.described on the Pandas data frame.
+Let's now do the same thing for the baseball data frame.
+We saw previously that this data frame does
+not contain numbers, it contains strings.
+Notice the descriptive statistics are different.
+Instead of giving mean and standard deviation,
+we get the number of unique values.
+Do you see the one here for division and league?
+Well, there's only one value down
+all of the rows in this column.
+There's one unique value.
+That's exactly what
+the unique summary descriptive
+statistic is providing to us.
+The number of unique values per column is
+something we will be talking about in
+more detail over the weeks to come,
+but here we get
+a quick demonstration of it just from a Pandas method.
+One of the takeaways from this is
+that you can quickly
+summarize your entire dataset with one method,
+and depending on whether you
+contain all numbers or all strings,
+the summary statistic you should focus on is different.
+Over the next few weeks,
+we'll learn how to handle what happens if we have
+data frames with both numbers and strings.
+Now, as I mentioned before,
+there are many more methods,
+but we will not show most in this video.
+Instead, let's consider how to
+sort or order or arrange the data frame.
+We're not going to see how to calculate the mean
+and the standard deviation with Pandas in this recording,
+even though we know how to do that already with NumPy.
+But let's go back to
+the baseball data frame now and look at the team column.
+I typed these is seemingly no order,
+Pirates, Reds, Cubs, Cardinals, Brewers.
+But I would like to sort the columns.
+I would like to sort the columns in
+alphabetical order based on team.
+The method is sort values.
+Now, when you provide the argument for how to sort,
+I want you to use a list.
+Inside this list, you should
+put the name of the column as a string.
+Now look very closely at the results here.
+Brewers, which starts with a B is now the top row,
+followed by Cardinals, Cubs, Pirates, and Reds.
+But look at the city column.
+Milwaukee is also located at the top.
+Pandas views the entire row as getting
+rearranged or reordered when we sort based on one column.
+All columns are actually going to be
+rearranged but you're rearranging
+them based on one particular column.
+This is a much more intuitive way to think about
+rearranging when you're rearranging your data.
+You are specifying one column,
+but the entire table
+or data frame is being impacted by that.
+But now something to note,
+the data frame itself has not been changed in memory.
+Every time I type baseball DF,
+you can see the pirates are still located at the top.
+This is because most Pandas methods
+do not modify in place.
+When I sort by a particular column and just display it,
+it's like I'm looking at what happens,
+but I'm just exploring the options,
+I'm not storing the result.
+Another thing to note,
+look at the index.
+The index, again, is associated with the row.
+If the rows get reshuffled,
+the location of the index also changes.

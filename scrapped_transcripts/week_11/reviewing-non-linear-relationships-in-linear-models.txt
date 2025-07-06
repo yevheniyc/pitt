@@ -1,0 +1,143 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/UfYgp/reviewing-non-linear-relationships-in-linear-models
+
+English
+Hello, everyone. As you can see,
+I have Jupyter Notebook up.
+I'm in the folder for this week of the course.
+I want you to go ahead and launch a new Jupyter Notebook.
+If you need to, pause the recording
+and start Jupyter, and when you come back,
+launch the notebook, and let's name
+this notebook, week_10_review_lm_ nonlinear.
+Because the purpose of this video is to review
+that one last assumption of linear models
+that linear models do not mean straight lines.
+Let's put in some header information,
+CMPINF 2100 Week 10, review,
+linear model assumptions,
+linear models allow for non-linear relationships.
+Let's go ahead and import the modules.
+Again, we just need the big four of numpy as np,
+pandas as pd,
+matplotlib.pyplot as plt,
+and seaborn as sns.
+Let's go ahead and set up the problem statement.
+We previously reviewed the major assumptions
+of a linear model,
+but there's one more we need to cover.
+Linear models do not mean straight lines.
+The mean output or trend can be
+related to a feature derived from an input.
+That feature can be the result of
+a non-linear transformation of the input.
+The trend is, therefore,
+non-linearly related to the input.
+What matters is that the trend is linearly
+related to the unknown intercept
+and slope of the linear model.
+What matters is that the trend is
+linearly related to the unknown regression coefficients.
+Let's see that by working with
+the sine wave from last week.
+Again, I'm going to type this in in math using LaTeX,
+where the trend, or Greek letter Mu,
+is equal to an intercept plus
+a slope times a function of the input.
+This function for this week is the sine wave.
+I could use a cosine.
+I could use a natural log.
+I could use a log base 10.
+There's many different things I could use here,
+but we will work with the sine wave.
+The unknown intercept and slope,
+those are linearly related to the trend or average,
+even though the input is not.
+That's what the last assumption of the linear model is,
+is that the regression coefficients are
+linearly related to the trend.
+Let's visualize behavior.
+Just as we did with the linear relationship,
+define a set of
+true regression coefficients to generate the data.
+Again, I'm just choosing these.
+I could do something else,
+but I'm now going to have an intercept of 0.25 and
+a slope of negative 2.25, just like last week.
+Just as with the linear relationship example,
+let's create a data frame with
+many input values from a lower bound of some number,
+and because I'm working with a sine wave,
+I want to use negative Pi,
+3.14159, to positive Pi, 3.14159,
+with 101 evenly spaced points
+between the lower and upper bound.
+We need to now calculate the trend given the input.
+I'm making a new column in my data frame,
+df_viz, named trend.
+The formula, if you will,
+is very similar to what we had in the previous video.
+It's intercept plus slope,
+but I'm not multiplying the input directly.
+Instead, there's a function
+that is first applied to that input, the sine wave.
+The non-linear transformation np.sin,
+that function is applied to the x column from df_viz.
+I multiply the slope with
+that derived feature and then add in the intercept.
+Visualize the trend given the input.
+Just as talked about in the previous video,
+we are going to use
+Matplotlib for most of the visualizations this week.
+I'm just going to create the line chart between
+the trend and the input directly
+with Matplotlib's object-oriented syntax.
+Using the axis object,
+apply its plot method.
+The x argument is for df_viz.x.
+The y argument is df_viz.trend,
+and let's set the color to crimson,
+and we can even specify the line width.
+We need to set the x-axis label because Matplotlib has
+no understanding of context
+whatsoever, and then plt.show.
+If you look closely at this plot,
+when the input x is zero,
+the trend is not zero,
+because I have a non-zero intercept.
+There is still a slope.
+It's difficult to see because
+the slope is not multiplying x anymore.
+The slope is multiplying a feature derived from x.
+Therefore, the main thing that we see is
+the non-linear relationship between
+the trend and the input x,
+that it increases,
+decreases, and then increases again.
+A linear relationship can only decrease,
+or only increase,
+or there's zero trend.
+A non-linear, the curve can change directions.
+Again, and as a reminder, remember,
+there is a linear relationship between
+the trend and the non-linear feature.
+If we now use the sns.relplot(data = df_viz,
+x = 'x', y = 'trend'),
+and we use the default scatter plot.
+Remember, if we use x here,
+we will get the non-linear relationship.
+To get the actual relationship that's linear,
+we have to instead,
+and now this is easiest, again,
+to do with Matplotlib,
+plt.subplots, ax.plot,
+the sine wave applied to x.
+Then the trend,
+color = 'crimson', plt.show.
+Now you can see the straight line.
+But this is not x.
+This is the sine of x.
+That's something that's really important.
+We are not creating
+the linear model really between the trend and the input.
+We're creating the linear model between the trend and
+some non-linear feature or function of the input.

@@ -1,0 +1,107 @@
+Source: https://www.coursera.org/learn/the-art-of-data-visualization/lecture/xhY30/summarizing-arrays-continued
+
+English
+But very important,
+the above values are wrong.
+NumPy is dangerous.
+It's made by a company used by millions
+of people in other companies in
+universities all over the world and
+the default way of calculating the variance
+in standard deviation is wrong.
+You have to be very careful with Python for data analysis, that's the truth.
+Although it's really popular, a lot of it is actually incorrect and wrong.
+It's very risky, this is a perfect example.
+NumPy uses what's known as the biased estimator for
+the variance in standard deviation.
+If you don't believe me or think I'm being harsh,
+let's take a look at its documentation.
+Nump.var, the argument in
+question here is called ddof.
+You can see by default, it is equal to 0.
+If we scroll down ddof, the divisor used in
+the calculation is N, the number of values,
+the number of elements minus ddof.
+By default, ddof is zero.
+You should never use this, that is wrong to do.
+Instead, the ddof argument
+must be equal to 1.
+This gives us the unbiased estimator.
+Now there's a lot of issues or there's a lot of ideas and
+statistical theory as what unbiased versus biased means,
+but here's a very simple way to think about it and why NumPy is wrong.
+Let's slice to one single value.
+When you have one value, the average is that value.
+Because remember,
+the average is the sum divided
+by the number of elements.
+So if you have 1 element, you're dividing by 1.
+The average is itself that makes sense, but
+standard deviation or variance?
+It's square, standard deviation is asking, how varied or variance?
+How varied, how different are the values?
+If you have one and only one value,
+it's not that there is no difference.
+It's not that there's no deviation.
+It's not that there's no variability.
+The real answer is you don't
+know what the variability is.
+So when you set ddof to one,
+to the value you should use if you have one and
+only one measurement, you get nan.
+This stands for not a number, because we don't know what
+the variability is when we have one and only one measurement.
+The real reason why NumPy by default uses the biased
+estimate is because NumPy hates to give you an error.
+Because if they give you an error, it seems like there's something wrong.
+There's something not right.
+And so by default, they allow one number to be used
+to calculate the variance and they'll say the variance is zero.
+Again, that is incorrect.
+It's not that there's zero variance.
+It's that you have no idea, you have no idea.
+I would prefer it if you instead get the weird nan
+because it's telling you, you have no idea.
+This is a very different thing than seeing the same value 20 times.
+When do you actually have zero variance?
+You have the same value many times.
+Now, it makes sense that the standard deviation of the variance is zero.
+It's literally the same number over and over and over again.
+But if you just have one number and you say,
+the variance is zero that has a very different or
+standard deviation is zero, that has a very different context, okay?
+It has a very, very different context.
+So long story short, never use the default var or
+std methods or arguments.
+Never, never, never, never,
+never always set the ddof argument to one.
+So in big array, if we want the variance, here it is.
+If we want the standard deviation, here it is.
+For comparison, compare the biased and
+unbiased estimators.
+We'll use some string manipulation, biased placeholder 1.6f.
+This gives us a number,
+unbiased placeholder 1.6f.
+We need to now provide the placeholders, big_array.var.
+Big_array.var(ddof=1), you
+can see these numbers are different.
+I see this mistake all the time.
+Not just students, not just in universities, but outside of universities.
+People will mistakenly use the biased estimator and
+they will have a different value.
+We do the same thing for a smaller one.
+The difference in the values is greater when you have small sample sizes.
+You might be thinking, well, if it really mostly matters at small sample sizes.
+Hey, I'm going to work with big data.
+I don't need to worry about this.
+A whole lot of machine learning algorithms.
+At the end of the day when we decide which model is the best,
+we will do so with five numbers and that's it five values.
+Even if you have millions upon millions of measurements,
+we will pick the best model using just five observations.
+So even the fanciest stuff in deep learning and
+all that other things, small sample sizes are always present.
+You should never use the bias estimator.
+So that's my rant, I hope you liked the this video.
+Thank you.
+That's all, I'll see you in the next one.

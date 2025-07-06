@@ -1,0 +1,103 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/g7j0o/understanding-residuals-and-the-root-mean-squared-error
+
+English
+There's another kind of performance
+based on errors or residuals.
+The error is the difference between
+the observed output and
+the predicted trend or fitted values.
+Let's calculate it.
+Because remember, df_copy,
+we have the fitted and the observed output y. df_copy,
+let's make a new column errors,
+df_copy.y minus df_copy.fitted.
+The errors can be positive or negative,
+and we can visualize the errors with respect to an input.
+sns.relplot data equals df_copy
+x equals x, y equals errors.
+Ideally, there should be
+no clear relationship between the error and
+an input because these errors
+are meant to represent unexplained variability.
+It's everything that the model cannot capture.
+If you would see a very clear trend,
+whether that's negative or
+positive or some other nonlinear trend,
+that's saying there's some feature
+that you should derive from
+your input to better
+capture the output to input relationship.
+By the way, the distribution of
+the errors should be Gaussian.
+I'm not going to make
+that histogram though for this case because we
+only have nine data points. It's not worth it there.
+If we had hundreds of observations,
+we would want to examine the distribution of
+the errors to make sure they are Gaussian in shape,
+but it's not really needed
+here because the data size is so small.
+But errors are so important.
+The statsmodels object already stores them.
+The other term for the error is the residual or resid.
+The.resid attribute is the errors.
+To show you that,
+let's assign the.resid attribute
+to a new column and df_copy residuals.
+The errors column we
+calculated previously is literally the
+same as the residuals column
+that came from the.resid attribute.
+The.resid attribute is already
+storing the errors for you.
+The residuals or errors
+can be calculated for every data point,
+but we want to summarize
+the error or residual across all the data points.
+There are two common ways to summarize the errors.
+The most common is to square the error.
+Squaring the error will convert
+any negative value to a positive value.
+There are only positive squared errors.
+The closer the squared error is to zero,
+the closer the prediction or
+model fit is to the observed output.
+The larger the squared error is,
+the worse the prediction is from the observed output.
+But the squared error,
+we have as many errors as data points.
+Instead, we summarize the squared error.
+The model itself, all of the coefficients,
+are estimated in order to
+minimize the sum of squared errors.
+Summing the squared error is known as the SSE,
+sum of squared errors.
+But the sum of squared errors
+increases as the number of data points increases.
+If we had a training set with 1,000 observations,
+this number would naturally be bigger because we're
+summing 1,000 things instead of nine things.
+For those reasons, we often average the squared errors.
+This is referred to as the MSE or mean squared error.
+If you take the resid attribute, you square it,
+and then apply the mean method,
+you now have the average squared error per data point.
+The MSE is really important,
+but it has one drawback.
+It is not in the same units as the output.
+The MSE is in the output units squared.
+For example, if you are
+predicting the sale price of a house,
+the MSE is in squared dollars.
+That doesn't make any sense to anybody,
+and so we apply the square root to
+the MSE to produce
+an error metric in the same units as the output.
+The square root of MSE is known as the RMSE.
+np., square root,
+sqrt apply to lm_fit.resid square.mean.
+This is the root mean squared error
+or RMSE of our regression model.
+This metric is in the same units as the output.
+If we were predicting the sale price of a house,
+this is in dollars.

@@ -1,0 +1,125 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/y7FQP/predicted-vs-observed-figure
+
+English
+Now, we have previously
+examined the model by making predictions,
+but we never actually talked about how do
+we measure performance or essentially,
+what is the goodness of
+fit of the model on the training data,
+the data used to estimate the coefficients.
+We made predictions on new data,
+but the predictions on
+the training data are
+stored with the fitted model object.
+The training set predictions are commonly called
+the model fits or the fitted values.
+There's actually an attribute.fittedvalues that gives
+us all of the predictions on
+the training set for the model.
+If we wanted to,
+we could visually compare
+the model fitted values or
+training predictions to the observed outputs.
+To do that, let's make a copy of the training set,
+and I'll call it df_copy where we take df,
+and for simplicity, let's
+focus on the input and the output.
+Let's remove all of the other columns,
+create the deep copy so we
+just have the training input and training output.
+Now, add in a column called the fittedvalues that
+stands for the predictions
+of the model on the training set.
+Let's now visualize these predictions.
+If we were using Seaborn,
+we could create the relationship plot
+between x and the fitted.
+You see the straight line
+because we have a linear relationship in
+our formula between the trend and the input values.
+If we wanted to
+compare the observed output to the model fits,
+one approach is to overlay the observed output versus
+the input with the predicted trend
+or fitted values with the input,
+and we'll do that here with Seaborn axis level functions.
+Plt.subplot, sns.scatterplot(data = df_copy,
+x ='x', y='fitted', ax=ax).
+Then sns.scatterplot(data = df_copy,
+x ='x', y='y', ax=ax), plt.show.
+We now have two colors.
+One color corresponds to
+the fitted or the model predictions,
+and the other color corresponds to the observed output,
+but this plot is really cumbersome and tedious.
+There's a lot going on.
+Instead, it is easier to directly
+relate the observed output and the model fits.
+This scatter plot is so important,
+it has its own name.
+It's called the predicted versus
+observed figure.. Let's take a look at our d f_copy.
+We have a column for the model
+fits or the predictions on the training set,
+and we have a column for the observed output.
+Let's make a plot to show the relationship between
+the observed output and the fitted values.
+This figure is not plotting predictions versus input.
+This figure is plotting
+the predictions versus the observed output.
+This Seaborn figure level function is very easy to make,
+but there's one thing we can add in that will
+really help the interpretation of this figure.
+Let's include a,
+and I'll put this in 45 degree reference line
+with our predicted versus observed figure.
+The easiest way to include
+this additional reference line is to
+use Seaborn axis level functions,
+rather than figure level functions.
+We need to initialize the figure and
+axis level objects, plt.subplots.
+The axis level for a scatter plot
+is sns.scatterplot(data = df_copy,
+x ='y', y='fitted', ax=ax).
+Then I'm going to include in a lineplot(data = df_copy,
+x ='y', and now,
+this will seem odd, but y='y').
+I'm assigning the same variable to the x and y arguments.
+I want this to be a red line, ax=ax, and then plt.
+show. We have the fitted or predictions
+for the training set and we have the observed outputs.
+Let's go ahead and make
+the prediction versus observed markers larger.
+I'm changing the S argument for marker size to 150.
+Now I have very large blue dots.
+Before this, let's include in the white grid.
+Let's set the style to be white grid.
+Now, the grid will help us
+better interpret what's going on.
+Let's examine when the observed output is zero.
+The red line tells us that here
+is the fitted or model predicted output of zero.
+Now, if the model fit or
+the predicted output is
+perfectly equal to the observed output,
+the blue dots will be located right along the red line.
+The closer the blue dots are to the red line,
+the better the model represents the training data.
+The smaller the error
+between the blue dots and the red line,
+the better the model is,
+but if you look closely,
+this is not considering anything about the input.
+It's only asking is the model fits or
+the predictions consistent with the observed output?
+That means this predicted versus
+observed figure can be created.
+Whether you have one input,
+two inputs, three inputs,
+or literally thousands of inputs.
+This figure doesn't care about the number of inputs.
+This figure is, what's the model prediction on
+the training set or fitted values
+versus the observed output?

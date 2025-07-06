@@ -1,0 +1,85 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/Muwqg/concatenate-part-2
+
+English
+We learned about a second kind
+of concatenation with numpy.
+We've learned about the horizontal concatenation
+or binding columns together.
+Our previous function called pd.concat.
+Although we specified the two data frames
+we would combine,
+the default axis argument is zero,
+meaning the data frames are vertically combined.
+Really, this is what was running behind
+the scenes axis equals zero.
+But just as with numpy,
+if we change axis to axis equals one,
+then the two data frames will be combined horizontally.
+Pd.concat(dfA0, dfA1), axis equals one.
+As you can see, we still have 12 rows.
+But look closely at the header row.
+Now the column names are repeating.
+It's not the index that repeats,
+it's the columns repeat.
+Let's confirm this by doing it one more time.
+Axis equals to one.
+But now extract out the columns attribute,
+and you can see, yes,
+the A column, as well as every other column repeats.
+The column names are no longer unique.
+Pd.concat(dfA0, dfA1), axis one.
+If we use the LOC attribute here,
+I just want to highlight,
+literally we get multiple columns out for A and
+B. I think this is very bad.
+I really dislike that pandas
+allows combining data frames horizontally,
+even if they have the same column names.
+I really dislike this.
+Be careful when you horizontally combine.
+For example, maybe you were
+intending to vertically concat,
+but you accidentally set axis equal to one,
+you will get repeated column names
+and your data analysis will essentially break,
+even though pandas right now will not break.
+Basically, everything that comes after
+this step is what will break.
+Why would we ever horizontally combine?
+Well, it's when you want to
+combine different columns together.
+Let's demonstrate this by creating
+a subset where we take,
+how about the first three columns?
+Do the hard copy,
+I'll call it dfA_left,
+then we take the last two columns,
+and I'll assign that to dfA_right dfA_left.
+Again, you can see three columns.
+DfA_right, again,
+you can see two columns.
+The point of horizontally combining is to bring
+together different columns that
+have the same number of rows.
+Pd.concat(dfA_left, dfA_right), axis equal to one.
+But be careful if
+you ignore the index with horizontal concatenation,
+pd.concat(dfA_left, dfA_right), axis equal
+to one, ignore_index=true.
+If you ignore the index
+when you're horizontally concatenating,
+you will remove the column names.
+If you are horizontally concatenating,
+I recommend never ignoring
+the index because your column names
+will literally go away.
+In summary, you vertically combine or vertically stack,
+vertically concatenate when you
+essentially want to add two data frames together.
+They have the same columns or variables,
+you want to grow your data.
+Your data has more rows.
+You want to horizontally concatenate
+when you want to bring together different variables,
+different columns that have
+the same number of rows into one new data frame.

@@ -1,0 +1,85 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/4Zb4S/problems-visualizing-continuous-variables
+
+English
+Hello everyone.
+In this video we're going to see how to visualize distributions
+of continuous variables using histograms.
+I already have Jupyter opened up to the directory associated with this week,
+if you do not, please pause the recording and do so.
+Once you are back, launch a new Jupyter notebook.
+Going to change the name of this notebook to week zero six histograms and
+I'll put in my header information Comp 2100
+week zero six creating histograms in pandas and Seaborne.
+So I'm not going to break up this video into two on one with pandas and
+one with Seaborne like I did with counting.
+In this one, we will use both pandas and
+Seaborne to see how to make histograms for continuous variables.
+Now, as an overview, we cannot use bar
+charts with continuous variables.
+That is because bar charts count the number of rows for each unique value.
+Continuous variables typically have far
+too many unique values to actually count and
+visualize with bar charts.
+Instead, we want to see the intervals
+where the variable is concentrated
+versus the intervals where
+the variable is not concentrated.
+Okay, so that's an overview and introduction.
+Let's go ahead and import the modules.
+We will use the same four modules from the previous videos.
+This week import numpy as NP, import pandas as PD,
+import map bot lib py bought as PLT and import seaborn as SNS.
+We will use the same two data sets as the previous video.
+I already have canvas opened up to that module to
+get the link for the Gapminder data.
+If you do not have this available, please pause the video and
+go to canvas to the module six data for this week page.
+Copy the Gapminder file or URL path,
+define a variable gap URL and
+read it in P-D read CSV gap URL sep account for
+the faculty tab separated.
+We can check dot info, very good.
+And as with the previous recording,
+we will also load in the penguins data set,
+again info to make sure it has worked.
+Okay, now that we have the data available,
+let's begin by visualizing the Gapminder data.
+As review country and continent are strings or categoricals.
+Year, is an integer but
+has twelve unique values.
+But I want you to look at life expectancy,
+it is a float and it has over 1600 unique values.
+If I take life expectancy and apply value counts to it.
+We get a series that's very long because after all,
+there's over 1600 unique values.
+But look at the counts, we have a lot of ones,
+some threes, some fours.
+Let's apply value counts a second time.
+Over 1500 values appear once and only once.
+In this data set for life expectancy, 59 of the values appear twice.
+Eight of them appear three times, and there's one and
+only one value that appears four times.
+Meaning if we would create the bar chart,
+if we would make the bar chart for
+this continuous variable with many unique values,
+it's simply unintelligible.
+So if I make this here where we take gap df,
+life expectancy value counts,
+blot kind equals bar, ax equals ax.
+You see, this doesn't work right away,
+it is taking a little while and it is completely unintelligible.
+I do not learn anything useful except for the fact of look,
+a lot of these values appear once and only once.
+But because this is a plot intended for categorical variables,
+I don't really know if these values are literally one or
+two decimal points away from each other, or
+if there is a larger difference between them.
+I'm not learning anything useful or interesting from the data this way.
+This is why when you have a continuous variable,
+especially with a large number of unique values, you cannot use bar charts.
+Instead, we need to use a plot
+type that is specific to the numeric or
+number data type.
+We still want to count, but
+we cannot count the raw individual values.
+Instead, we need to focus on intervals.

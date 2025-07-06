@@ -1,0 +1,99 @@
+Source: https://www.coursera.org/learn/the-art-of-data-visualization/lecture/eD4kG/series-concatenation-in-pandas
+
+English
+We have created several series in this example.
+We can Append or Extend or
+Combine multiple series together
+using the pd.concat function.
+We do need to be careful though about the way
+the arguments are provided to pd.concat.
+Pd.concat and now everything that we want to
+combine together needs to be contained in a list.
+So let's combine grocery_series
+with more_groceries with another_series.
+Again, all three of these series
+are placed as elements within a list,
+and that list is provided
+as the argument to pd.concat.
+And if you look closely on the printout,
+you can see that the index from
+each individual series was retained.
+When combining separate series
+together, sometimes we want
+a Brand New index attribute.
+To do so, we can use the ignore_index
+argument within pd.concat.
+So let's do this again, pd.concat
+we need our list of grocery_series,
+more_groceries, and another_series.
+But before running the line,
+include ignore_index = True.
+And now by doing that, the index is
+not the set of strings that we had before,
+the index has become a bunch of integers.
+Let's do this one more time and
+assign it to a_bigger_series, so
+pd.concat grocery_series, more_groceries,
+another_series, ignore_index = True.
+And then, just to be safe, sometimes like to apply the .copy method.
+Do you remember when we talked about side effects in Numpy,
+how side effects might produce that linkage or
+the dependency where by subsetting.
+Or slicing or combining things together we
+may produce a dependency back to the original object.
+By applying the .copy method, any possible
+linkage to the original objects will be removed.
+Now a_bigger_series,
+you can see its index is that RangeIndex,
+all because that we set ignore_index = true.
+One more time, let's just do this one more time, pd.concat.
+This time let's take grocery_series with
+more_groceries with another_series,
+and then a_bigger_series, and
+then combine them all together.
+Even though we had the strings
+as the indices previously,
+and then we had the Range Index,
+you can see the concatenation
+allowed the indices to all be combined.
+That's because pandas will convert data types,
+even if we weren't intending that to be the case.
+What I'm trying to highlight here is the fact that a_bigger_series,
+its index is a RangeIndex.
+So this is a bunch of integers really behind the scenes.
+When we combined our other three smaller series,
+though, we produced indices that were strings.
+But when we combine series that have strings for
+the index attribute and then integers a range index for
+the index attribute with another series.
+Pandas is going to change the data type,
+potentially of our integers,
+so we do need to be careful for
+how it's going to work with the index.
+Sometimes it will give us strange
+behaviors, and because of that,
+I think one of the safest things
+to do is to ignore the index when
+you combine series together.
+Part of the reason why I feel this way is because I
+personally believe if your index attribute is
+something other than a sequential counting number,
+you actually have another variable.
+And that's something that we will get to in the next video
+that discusses data frames.
+Because if you really have a second variable to go with
+the values you care about, we basically need to combine
+multiple series together to produce the data frame.
+In summary, the pandas
+series looks kind of like
+a mix between lists,
+1D Numpy arrays and
+Dictionaries.
+Values are stored and
+associated with an index attribute.
+The series can be sliced using the .index Location,
+and I use that term specifically.
+That's the quote unquote value of the index, okay.
+So I hope you like this video.
+Again, a simple introduction to the Panda series.
+We will build on this for the next one with a data frame.

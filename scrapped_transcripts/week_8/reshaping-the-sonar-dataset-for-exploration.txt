@@ -1,0 +1,125 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/QBxoV/reshaping-the-sonar-dataset-for-exploration
+
+English
+Sonar, as we know, has 61 columns.
+If we apply value counts
+to the result of the dtypes attribute,
+there's one column that is nonumeric.
+That's an object column.
+The way this dataset is organized,
+the very last column is the object.
+So it's actually very easy to find that object column.
+But as you can see,
+the names of the columns are just numbers because
+we didn't specify anything
+about the column names when they were read in,
+and there's no header row.
+I do not like to use numbers as column names,
+so let's change them using a list comprehension.
+Let's change the column names to
+the pattern X00,
+then X01, then X02,
+so on and so forth.
+This is how I want to name each of the columns.
+I can create that pattern using
+some string manipulation in Python, X%02d % 0.
+This placeholder, %02d,
+is going to look for a digit.
+It will then put a 0 to the left of
+the digit if the digit has less than two places.
+However, if I provide a digit that does have two places,
+now it will just write,
+for example, 10 or 33.
+I don't want to manually create
+each of these, and I don't have to.
+If you notice, the pattern is,
+I'm giving a different numeric value for the placeholder.
+Let's use a list comprehension,
+X%02d, placeholder d for d in sonar_df.columns.
+Because remember, the columns,
+they are integer numbers.
+If you don't believe me here,
+let me put it in a cell,
+sonar_df.columns, and see they're just integers.
+I'm using those columns,
+the columns attribute as
+the sequence in a list comprehension,
+where the iterating variables
+iterating over the sequence.
+I've now made a list,
+X00 up to X60.
+Let's change or override
+the columns attribute to be
+the result of the list comprehension of
+X placeholder 02d where
+the placeholder is d for d in sonar df.columns.
+Now, the columns attribute is X00 through X60.
+Now I can access each column with
+a name rather than a number,
+which I think is much easier and less confusing.
+We need to extract the numeric column names.
+We are going to follow
+the exact same procedure as we did for diamonds.
+We will select the dtypes where the dtypes are numbers.
+Pull out the columns attribute and force to a list.
+The length of this list is
+60 because there are 60 numeric columns.
+Then we need the name of the object columns.
+Sonar_df.select_dtypes( 'object' ).columns.tolist.
+This list has length 1.
+Let's create the long format.
+I'm going to put it in a cell reshape
+from wide to long format.
+Sonar_lf is sonar_df, reset the index,
+rename the columns from index to rowid,
+melt(id_vars=[ "rowid"
+]+ sonar_object_names, value_vars=sonar_numeric_names.
+If you're paying close attention here,
+this is the exact set of
+operations that we used with diamonds.
+Reset the index, rename that to rowid,
+and then reshape to long format where each row
+was originally defined as rowid and the object name.
+Notice, I'm just using
+the base Python list concatenation
+to combine this list with my previous object name list.
+That's the reason why I like to force
+the columns attribute to be
+a list because then I get
+very simple base Python concatenation additions.
+The names of the variables we will gather up or stack
+together are contained in the sonar numeric names list.
+This long format dataset has very few columns,
+but a lot more rows because we have stacked
+the 60 numeric columns into a new column variable.
+Each category of variable corresponds
+to one of the original columns,
+and there are 208 rows for each column.
+We can now use seaborn to
+associate facets for each unique value
+of variable to examine
+the original wide format numeric columns.
+Let's begin with histograms.
+This plot data is sonar_lf,
+x is the value column.
+The column facet is the variable column.
+Let's now wrap 10 facets per row.
+I want a histogram.
+The facet keywords, sharey: False,
+sharex: False common_bins=False, plt.show.
+Now, this plot will take a little while to
+create because it's going to make 60 facets,
+where there are 10 facets per row.
+Again, this works because
+the variable column contains
+a value for each of the original variables.
+We have stacked
+the original columns on top of each other.
+Rather than having to use a for loop,
+we can put all of the columns very easily
+together with basic seaborn functions.
+Everything is contained together.
+The axes are controlled
+by exactly how we want them to be.
+We can see that the distributional shapes
+are different for the different variables.

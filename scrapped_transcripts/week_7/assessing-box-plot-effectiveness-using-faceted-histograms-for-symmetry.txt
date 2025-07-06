@@ -1,0 +1,60 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/EKgTa/assessing-box-plot-effectiveness-using-faceted-histograms-for-symmetry
+
+English
+But okay, let's now dive a little deeper.
+What is the box plot best suited for?
+A box plot is at its best when the conditional distributions,
+so the distribution of the continuous for
+a given categorical value are roughly symmetric.
+That's really when the box plot has most of its assumptions satisfied,
+it really likes symmetric distributions.
+And even better is if the distributions are gaussian, but
+the main one is that they are symmetric.
+That means we should always check.
+We must check the shape of the conditional distributions.
+One way to do that is with faceted histograms,
+we will use the facets to represent the categorical variable.
+So in our box plot,
+let's go back to when we're studying the distribution given year.
+Let's return to the conditional distribution
+of life expectancy given year to create this figure,
+it's a distribution plot.
+The seaborne figure level function is
+sns.displot(), d-i-s-p-l-o-t,
+displot, not distplot, so displot.
+All plots start with data, so data = gap_df.
+We are focused on the continuous variable life expectancy, so
+that gets associated with the x axis.
+But now I want to use the facets, the column facets for year.
+Each facet or subplot now corresponds to
+a different column in this faceted figure.
+Now, there are so many facets here, it's a little difficult to see,
+and I can't really read what is the year per subplot.
+So I will wrap the facets, the col_wrap
+argument allows us to stop the columns and
+then wrap the next set of columns down another row.
+So it looks like we're going to create a grid of subplots,
+but we're really just taking all of our columns and wrapping them down rows.
+Col_wrap=4) means I will use 4 columns per row before wrapping.
+This is a quick way to zoom in to make the overall figure bigger and easier to see.
+Now we can see 1952, 1957, 1962, so on and so forth.
+The first takeaway that you should have from each of these
+histograms is that the distributions are not bell curves,
+they are not gaussian, they do not look like the normal distribution.
+But we are mainly looking for if the distributions,
+the conditionals are roughly symmetric.
+So if you could draw a line in the middle, or
+really if you could draw a line at their median point,
+does the left side look like the right?
+And now some of these you could see in this top row, they are not symmetric.
+As we get into the middle rows, a few of them are, and
+then the symmetry goes away.
+1992, this one definitely does not look symmetric.
+The left hand side looks very different
+from the right hand side, but nothing is extreme,
+none of the facets show extreme lack of symmetry.
+Now, a lack of symmetry is referred to as skew.
+So anytime you hear skew, think not symmetric.
+What does EXTREME SKEW look like,
+and what are the consequences of EXTREME SKEW?
+Well, let's load in a data set that has extreme skew.

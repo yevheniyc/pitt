@@ -1,0 +1,126 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/bWgS6/linear-separability-in-logistic-regression
+
+English
+But let's now change the problem a little bit.
+Let's focus on a really small dataset.
+I'm filtering to just the first nine rows.
+In this particular example,
+these first nine rows,
+which I'm visualizing here with
+a scatter plot follow
+or demonstrate a very particular property.
+another example or another problem.
+If you split the data into a very small set of data,
+you may not see this but for this particular example,
+when I plot the first nine rows,
+there's something very particular that occurs.
+Remember, y = 1 corresponds to the event,
+and y = 0 is the non event.
+These are the two classes or categories of
+the binary outcome and what do you see in this plot?
+You see all of the non events on
+the left side and all of the events on the right side.
+We can actually draw a line that
+separates the non events from the events.
+This line partitions or segregates
+the categories and so if you wanted to
+classify the event in this very simple situation,
+I mean, I could ask, hey,
+is the input greater
+than some value if it is classify the event.
+And in fact, that's what I
+visualize here in the next plot.
+I literally add in a vertical line.
+That vertical line is located at
+this one particular value x of -0.5.
+From a classification point of view,
+rather than predicting the probability of the event,
+and then comparing that probability to a threshold,
+I could just look at the input.
+Is the input greater than -0.5?
+If so, that's the event if not,
+that's the non event and this
+sounds great and this is a great rule.
+However, why did I choose -0.5?
+What if I chose -0.7,
+which I'm showing by this orange line.
+With the input at -0.7,
+I still have all of the events to the right of
+the line and all
+of the non events to the left of the line.
+The orange line, therefore,
+is accomplishing the exact same goal as the black line.
+We can push this even further and say,
+hey, let's split the difference.
+Let's put the line at -0.6,
+this green line again,
+all of the events are to the right of the line,
+and all the non events are to the left of the line.
+Essentially, all the lines
+are accomplishing the same goal.
+All three lines are completely linearly
+separating the classes but
+if I have three lines that accomplish this goal,
+what if I just drew another line
+here or a line in between the orange and the green?
+What if I drew a line right next to the orange,
+a little bit to the left of
+the black, so on and so forth,
+I could literally keep drawing
+lines in between this interval.
+There are an infinite number of lines that
+perfectly separate the events from the non events.
+If there are an infinite number of ways to accomplish
+a task that means you are very uncertain about something.
+We are very uncertain about
+the line that allows us
+to separate events from non events,
+there are many possible options we could use.
+Logistic regression struggles with linear separation.
+The ability to linearly separate the categories,
+logistic regression literally fails at doing this,
+it can't handle this situation.
+This might seem counterintuitive because again,
+I could literally just draw
+the line but remember, with logistic regression,
+we are trying to predict the probability of the event
+and if there are an infinite number
+of lines that accomplish the goal,
+that means there are an infinite number of ways of
+predicting the probability of the event.
+When you run stats models because it's
+just minimizing the loss to fit the model,
+when you have linear separability, it will crash.
+In fact, we actually saw this last week when
+we were manually applying cross validation.
+Do you remember how that last model,
+the most complex one,
+it didn't fit in all of
+the folds when we did cross validation, this was why.
+It actually had an issue that appeared.
+We just kind of glossed over at the moment and back then.
+You will encounter this in real settings and
+stats models will tell you
+if the issue is due to linear separability.
+It will say perfect separation detected
+results not available and to show you that here,
+I'm fitting the logistic regression model with
+the input linearly related to
+the log odds ratio on this small dataset.
+Notice, when I run this line of code,
+an error occurs and
+if you go all the way to the bottom of the error,
+it tells you perfect separation
+detected results not available.
+Perfect separation means you
+have linear separability between the classes,
+that's what the logistic regression model
+doesn't know how to deal with.
+Now, there are models that
+are designed to deal with this problem.
+They're in the class of support vector machines,
+but we don't discuss support vector machines in 2,100.
+We do reserve that for 2120
+so if you are really
+interested in these issues of separability,
+that's something we cover in 2120.

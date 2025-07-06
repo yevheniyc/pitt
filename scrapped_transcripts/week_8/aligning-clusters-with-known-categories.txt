@@ -1,0 +1,76 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/bho9R/aligning-clusters-with-known-categories
+
+English
+Let's visualize the cluster results on a scatter plot.
+And because we converted the k5 column to a categorical variable,
+the hue associated with k5 will by
+default use a categorical color scale.
+Now, if I go back and forth between the true groups and
+what we have here, outside of where the orange or
+red are located, they look really similar.
+Let's use a heat map to compare the cluster
+labels with the known true groupings.
+Fig, ax = plt.subplots(),
+sns.heatmap( data = pd.crosstab()),
+where we're making the cross tabulation
+between the true group, the clusters.
+And I want to keep in the marginal counts.
+Let's annotate, and I'll set the font size to 15.
+Since I'm annotating it with text, I don't need the color bar.
+And then ax = ax, plt.show().
+Okay.
+True group B,
+Corresponds completely to, Cluster 1.
+I know that because look at the marginal count.
+B has 60 observations, 1 has 60 observations.
+True group D, again, 60 observations,
+60 of the 61 are in cluster 2.
+Or 60 of them are in cluster 2,
+but cluster 2 has one other data point.
+That one other data point comes from known cluster C.
+So again, look closely here, cluster C has 60 total observations.
+59 of them are assigned to cluster label 4.
+One of them is assigned to cluster label 5.
+When I first looked at it, I thought there was one and
+only one misassignment, but that's not the case.
+Known group A, 59 of its 60 observations
+are assigned to cluster 0, but
+one of them was misassigned to cluster 4.
+Known group C, 59 were assigned to cluster 4,
+but 2 was misassigned to cluster 2.
+So there are actually two misassignments.
+And I know that because if a cluster is completely
+associated with one and only one known grouping,
+you will only see values along this main diagonal.
+If it's really perfect.
+Now, if it's misoriented, you'll see all of the counts
+associated with one and only one intersection.
+And what I mean by that is look at known group C.
+59 out of the 60 are associated with cluster 4,
+even though it's not perfect along the diagonal.
+And again, that's because we could call group C cluster 4,
+or we could have called group C cluster 1,
+the cluster label doesn't actually matter.
+But here we can see that there are two mislabels.
+Let's use the Marker SHAPE via the style argument in sns.relplot
+to check which specific data points are mislabeled.
+So sns.relplot( data = df.copy,
+x = x1, y = x2, hue = the cluster
+assignments, style = the true group.
+It's tough to see, But
+there's a green square instead of a green diamond.
+Likewise it's tough to see, yeah, purple circle instead of a purple diamond.
+Those are the mislabels.
+In general though,
+it's getting that there's some cluster group in the top left.
+It's getting there's another cluster group,
+then clockwise another one below it, another one below it.
+And remember, KMeans has no
+knowledge of the groupings.
+It's clustering only based on the numeric columns.
+It's able to separate just based on the distance.
+And it's doing so really, really well.
+It's only quote unquote messing up when you have data points at the borders.
+To use the geography analogy,
+is this city in Pennsylvania or is it in Ohio?
+It's right at the border, it might be tough to tell.

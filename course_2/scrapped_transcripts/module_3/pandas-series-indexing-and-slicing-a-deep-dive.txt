@@ -1,0 +1,76 @@
+Source: https://www.coursera.org/learn/the-art-of-data-visualization/lecture/JOr5L/pandas-series-indexing-and-slicing-a-deep-dive
+
+English
+If I would type grocery list, zero,
+grocery list, five,
+that's the last element in the list.
+But let's now work with grocery series.
+We can slice it just like we did the list using brackets,
+grocery series, grocery series.
+But look what happened when I provided negative 1.
+We did not get
+the same result as when we tried to index or
+slice grocery list when we used grocery series.
+Just why that is will be made
+more clear here in a minute.
+But the first thing to note,
+we know how to slice or index lists.
+At first glance, slicing or indexing
+a Panda Series seems very
+similar to how we did the operation with lists.
+But it's not a one to one.
+We cannot use the exact same procedures
+that we used with the lists.
+We'll find out why that is in a minute.
+But the.index attribute does
+not need to be a range index integer.
+In fact, we can access it,
+meaning we can change it.
+I'm going to assign
+some new values to the.index attribute.
+I'm going to type in a set of strings 0,1, 2,
+or I'm going to type in a list containing strings 0,1,
+2, 3, 4, 5.
+Now, if I access the.index,
+we do not get the range index, instead,
+it tells us your index has these values and the dtype,
+the data type is object.
+We will discuss the object data type
+in more detail later.
+But anytime you see
+a Pandas object data type, think character stroke.
+But let's now print our series to the screen.
+This clearly does not look like our list.
+It almost looks like a table or a 2D array with rows.
+We have the values on
+the right and we have the index on the left.
+I'm using those terms very specifically,
+the Pandas Series has both index and values,
+kind of like a dictionary with
+key valued defining each item.
+Grocery series.value returns just the values.
+Grocery series.index returns just the index attribute.
+But when we use the square brackets with a series,
+it's really intended to be thought of as we
+want the value at this key.
+Very similar to how the key value pair
+of a dictionary works.
+At the beginning, when I
+typed that a Panda Series is similar to,
+yet different from a Python list in a 1D NumPy array,
+that is because there are certain influences from
+the key value pair item from dictionaries.
+That key value pair influence is the fact
+that every value can be associated
+with an index when we slice the series,
+we could do so using the index itself.
+You can also still provide an integer,
+though you can give
+the integer index value
+even when there is some non-integer index.
+This can be quite confusing.
+Let's pause for a second,
+hold this thought,
+and let's continue to practice by defining a new series.
+This series will define
+the.index attribute when the object is created.

@@ -1,0 +1,122 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/GqvrF/from-ridge-to-lasso-understanding-l1-regularization-for-feature-selection
+
+English
+Hello, everyone. As you can see,
+I have Jupyter opened up to this week for the class.
+You can see the two notebooks that we've created so far.
+I want you to go ahead and reopen up
+the regularize ridge notebook.
+As discussed in the previous recordings,
+we are not making new notebooks.
+We're building off of the previous ones.
+So if you need to open up Jupyter Notebook,
+please pause the recording and do so.
+When you come back, click on "Regularized Ridge."
+I want you to hit "File," "Save
+As" and change the name of this notebook to
+Week 14 Regularize Lasso L-A-S-S-O, "Save."
+Let's change our header to Lasso.
+Which then you then go to Kernel,
+restart and clear output.
+We will restart everything.
+We will clear the output.
+Everything looks empty, scroll all the way down.
+Sell, run all.
+We're going to run everything.
+This will take a few minutes.
+Please just pause the recording and let it complete,
+and then we will continue. We're back.
+Everything has been rerun.
+We're right where we left off in the previous recording.
+I want you put in a new cell,
+and let's put in a new header, Lasso Penalty.
+The ridge penalty pushes coefficients close to,
+but never identically zero.
+That's what we saw in the previous recording
+that allowed us to convert
+our very complex model with
+81 features into a model
+that effectively behaves like a simpler one.
+It improves the performance on new data.
+But none of the coefficients were ever truly
+zero in our tuned model or
+even in the very small c result.
+The very small c,
+which is pushing the coefficients
+to be very close to zero,
+they are not identically zero.
+The Lasso penalty forces
+the coefficients associated with
+unimportant features to be identically zero.
+The Lasso penalty,
+therefore, turns off unimportant features.
+Throughout the semester, as we have been fitting models,
+a very common question that comes up is,
+well, the statistical significance
+mean the feature is important.
+Whenever I'm asked that, I always say no,
+statistical significance does not mean importance.
+Statistical significance means we are
+confident in the sign of the slope.
+We are confident that the coefficient is
+either positive or negative.
+The Lasso penalty is in fact,
+dealing with the idea of importance.
+Do we actually need this feature there?
+Because if we do not,
+then rather than having the coefficient be near zero,
+let's literally set the coefficient to zero.
+If the coefficient is actually zero,
+it's like we are removing that feature from the model.
+Just like the Ridge penalty,
+the Lasso penalty also has the C parameter.
+The C parameter dictates the coefficient estimates.
+The impact of C is the same for Lasso and Ridge.
+But again, the Lasso penalty will literally cause
+unimportant features to have zero for their coefficient.
+The Lasso penalty is also known as the L1 norm.
+The penalty argument is equal to L1.
+You must change the solver argument to saga S-A-G-A.
+If you're going to use Lasso you must
+set penalty to L1 as a string.
+This is lowercase l,
+and you must set solver to saga.
+This is why I've been telling you to type
+in the solver argument this entire time.
+It seemed up to this point weird.
+Like, what's the point of setting this?
+We don't know what LBFG is.
+The reason is because when we change
+to the L1 or Lasso penalty,
+we must set the solver argument to this value.
+Again, I always like to set everything,
+so I remember exactly what's being used,
+so we don't have to, double check or look it up.
+Let's try out three values for c to confirm
+the impact of c on the coefficient estimates for Lasso.
+Start with the default value of c=1.
+Let's go ahead and name this object
+Lasso default c is equal to logistic regression.
+We're going to fit it directly
+first before we cross validate.
+We will fit it on x_sk and y_sk,
+you force it to revel.
+Just as in the previous video,
+these two objects were
+defined in our first video this week;
+the training set feature array and output array.
+We're still using the hack,
+so fit intercept is false because
+the intercept is contained in our feature array.
+Now set the penalty lowercase l1.
+This stands for Lasso.
+Actually, first, let's do c=1.0.
+The penalty and the c value are set together.
+Solver=saga S-A-G-A then max_iter=25,001.
+Then since the fit is off to the right,
+put in the escape character,
+so the fit is on the new line.
+This line of code is therefore
+very close to what we saw in the previous video.
+We've only had to change penalty and solver.
+All the rest is literally the same.

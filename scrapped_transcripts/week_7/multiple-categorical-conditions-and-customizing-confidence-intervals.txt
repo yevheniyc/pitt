@@ -1,0 +1,72 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/yhoQ3/multiple-categorical-conditions-and-customizing-confidence-intervals
+
+English
+Not connecting the dots now really makes sense since Asia,
+Europe, Africa, America, Oceania, these are literally categories,
+there is no sequential behavior between them.
+But what we're looking at here is the average of life expectancy per category.
+Again, one of the major reasons why we would do this is we want to
+know is there a difference in the average across the categories.
+But we could also group by two categorical variables.
+One, or the primary categorical variable is associated with the x axis.
+While the secondary categorical variable
+is associated with the marker hue or color.
+The hue is the argument for seaborn to
+show a categorical variable by color.
+Sns_capplot data=gap_df, x.
+We will stick with year as the primary categorical variable.
+The continuous variable is still the same life expectancy,
+but now hue is associated with the continent.
+Then kind equals point.
+We'll use the same aspect ratio and join equals false.
+Now we don't see just one set of colored markers.
+We see 12345.
+We see as many colors as categories of the categorical variable.
+The orange dots are all markers associated with Europe.
+The point plot is still showing us the conditional mean or
+conditional average given a category on the x axis.
+But now the color also is telling us something about a secondary variable.
+Therefore, the orange dot is not only the average in 1952,
+it's the average in 1952 and Europe,
+just like how the purple dot here is
+the average in 1952 and Oceania.
+By using an x axis variable and hue,
+we are examining what's going on due to the combination or
+interaction of two categorical variables.
+This now shows us that in a given year, on average,
+we have different values for the life expectancy across the continents.
+It also shows us that for a given continent,
+the life expectancy is on average increasing over time.
+So look at the blue for Asia, for example.
+Up to this point I've been focusing on the dots, the averages.
+But what is the vertical line?
+Because each one of these plots, whether we're grouping
+by a single categorical or by two categorical variables,
+have a marker, a dot or a point, and a vertical line.
+Well, the vertical line is an error bar.
+The error bar is showing us, by default,
+the 95% confidence interval on the average.
+Confidence interval is sometimes denoted as CI.
+Let's examine what the actual argument is that is controlling
+the confidence interval and how is it, how it is shown.
+Let's go back to the life expectancy given year.
+So we'll only show one grouping using the same arguments,
+but now the error bar is an argument.
+What we're going to show on the error bar is provided by a tuple.
+The zero argument is where we put CI for confidence interval,
+and then the one position to the tuple is how wide
+that error bar or confidence interval needs to be.
+By default, we are showing the 95% confidence interval.
+This is the code that's being used whenever you just ignore or
+not include the error bar argument, or this is the default value.
+The 95 is a number that we can change.
+We can change the confidence interval size.
+For example, we can show the 68% confidence interval,
+sns_catplot data=gap df,
+x=year, y=life expectancy.
+Kind=point, aspect=2,
+joinfalse, errorbar, again,
+CI but now 68 instead of 95.
+The error bars are now shorter compared to what we had previously.
+Because we're only showing the 68% confidence
+interval instead of the 95% confidence interval.

@@ -1,0 +1,87 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/7nBTI/summarizing-numpy-arrays-and-series
+
+English
+Hello everyone. In this video,
+we're going to talk about
+summarizing methods for Pandas series.
+This way we will learn how to begin
+to explore data with Pandas.
+As you can see, I already have my Jupiter
+opened up in the working directory for this week.
+If you don't have this started,
+please pause the recording. Do so.
+Once you have,
+launch a new Jupiter notebook.
+I'm going to go ahead and change the name,
+the week_05_summarize_series, and
+then define the header information.
+Begin exploring data by summarizing Pandas series.
+We will explore data before training predictive models.
+This process is known as
+exploratory data analysis or EDA.
+It is very important.
+Important aspect of EDA is
+knowing how to calculate summary statistics.
+This notebook demonstrates how
+to summarize Pandas series.
+Go ahead and import modules.
+As with all of the other ones,
+you will import NumPy as np this week and Pandas as pd.
+Now before we demonstrate how to
+go about applying the summary methods for Pandas series,
+let's just do a quick review of NumPy summary methods.
+Let's create a list of integers
+and then convert that list to a 1D NumPy array.
+Name it my_list 10,
+20, 30, 40, 50, 60, 70, 80.
+Great. Convert to an array.
+My_array gets assigned the result of
+np.array applied to my_list.
+In the NumPy unit,
+we learned how to calculate
+the sample average or the mean.
+We also learned how to calculate the variance,
+specifically what we had to
+do to get the unbiased estimate.
+We also learned how to get the standard deviation,
+or really the unbiased estimate
+to the standard deviation.
+We can also get the minimum.
+We can get the maximum.
+There are even other summary stats
+which we will discuss in
+more detail when we start visualizing our data.
+Let's now start to see how to summarize Pandas series.
+Convert the list into a Pandas series.
+I call it my_series pd.series apply to my_list.
+Most of the Pandas series summary methods work
+very similarly to their NumPy counterparts.
+For example, I can apply the mean method,
+I can apply the min,
+I can apply the max.
+There's no difference at all
+in terms of the results with NumPy.
+But look closely at the variance.
+The variance result for the Panda series
+is not the same as
+the default variance result from NumPy.
+The Pandas result is the
+same as the unbiased estimate, ddof = 1.
+Look closely at the standard deviation.
+Well, the standard deviation is
+just a square root of the variance.
+If we apply the STD method,
+you will see the result of the STD method applied
+to my_array using the default method is different.
+As with variance,
+the Pandas series summary method for
+standard deviation is the same as the unbiased estimate.
+What this means is Pandas correctly
+sets ddof = 1
+when the variance or standard deviation are calculated.
+Pandas therefore calculates the unbiased estimate
+to variance and standard deviation.
+When you're using Pandas,
+you actually don't need to have to worry about
+ddof equaling one because
+Pandas already takes care of it for you.

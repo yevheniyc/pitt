@@ -1,0 +1,128 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/bW7dH/understanding-the-purpose-of-regularization
+
+English
+Why did we need the hack?
+Or what does the penalty argument mean?
+I've been setting penalty to none,
+and I'm describing it as I
+want Scikit learn to behave like Statsmodels.
+But why is this argument even here?
+What is the purpose of it?
+To get a sense for that,
+I want to first scroll back up to
+our list of the formulas.
+Several weeks ago, when we first typed
+in each of these different formulas,
+each of these different models, hopefully,
+you noticed, we were slowly adding in complexity,
+we were slowly adding in more features,
+then interacting features,
+then deriving features from the inputs,
+and we just kept increasing
+the complexity until we reached our final model.
+That last model, the one that has the 81 coefficients,
+if you look closely,
+it actually contains nearly all
+of the other features from
+all of the other models themselves.
+Our most complex model
+contains the features from the other simpler models.
+The formal term for this is the most complex model is
+a superset containing all features from all other models.
+We tried out each one of these models sequentially,
+that way, we could interpret what's going on.
+For example, if knowing
+the categorical input improves
+the performance compared to the intercept-only model,
+that tells us knowing this categorical input is useful.
+Likewise, if adding the categorical input to
+the continuous features improves
+the performance compared to
+not including the categorical input,
+that, again, tells us we need that categorical input.
+Likewise, if we interact
+the categorical with the continuous
+and that improves performance
+compared to only adding the effects,
+that tells us the interactions are really important.
+But our most complex model has
+so many features it overfits the training data,
+it memorizes the past
+and does very poorly on the future,
+on the new data.
+However, if we could remove or
+turn off features from this most complex model?
+What if we could identify the features that do not
+matter and remove them by setting their coefficients,
+their slopes equal to zero?
+Because if a coefficient or slope is equal to zero,
+that means whatever the feature is,
+we're going to multiply it by zero.
+If you have an input and you multiply it by zero,
+and you then add that input to
+another input that multiplies a non-zero slope,
+well, the one that multiplies zero,
+its effect is removed,
+it's effectively like this input was not included.
+This idea of using a method to force coefficients to
+zero if the feature does not matter is
+known as regularization or penalization.
+You will hear either term,
+but they mean effectively the same thing.
+We want to turn
+coefficients to zero if the feature doesn't matter.
+The term regularize or
+regularization comes
+from making the coefficients regular,
+near nice numbers, penalize,
+we don't want extreme coefficient values.
+Now, how does this work? We fit
+models by minimizing a loss.
+The loss depends on the coefficients.
+Behind the scenes, there's a function that we wish to
+minimize the loss given the coefficients,
+or really, let's describe it as find
+the coefficients that minimize the loss.
+You will actually see what that loss is in
+CMPINF 2120 if you continue in the program.
+But regularization modifies this approach.
+Instead of only minimizing the loss,
+regularization adds a penalty, so in regularization,
+we must find the coefficients that minimize
+the sum of the loss and the penalty.
+If large or extreme coefficients
+cause the loss to become small,
+but also cause the penalty to become large,
+then those coefficient values will not be identified.
+Really, that's conceptually what's going on,
+that's conceptually what's happening.
+We are adding in this penalty
+that depends on the coefficients.
+The primary goal is we want
+to convert a model that has many coefficients
+because it has many features into
+a effectively simpler model because we will
+turn off some of those coefficients.
+I know that's a lot of words for now,
+but I wanted to introduce it in the vein
+of we have a really simple model.
+Where's the perform? Here it is.
+The intercept-only or constant model
+that has some performance on the training set,
+so this model has no trends whatsoever.
+Essentially, all slopes are zero for this model.
+Then we have a very complex model,
+which has some performance on the training set,
+but we know it doesn't do well on new data.
+Our goal is to use
+a method that will select the important features for
+us to try and improve performance
+of this very complex model on new data,
+so that's the objective, that is the goal.
+Now, that's all for
+this video because I just wanted to introduce things.
+I'm going to save this notebook.
+Again, we will build off
+of this notebook in the next recording,
+so I will not start and we'll have to retype everything,
+we're just going to slowly build up.

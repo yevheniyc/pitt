@@ -1,0 +1,95 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/Ij73v/preprocessing-for-kmeans-clustering-data-distributions-and-visualizing-variables
+
+English
+Hello, everyone. In this video,
+we are going to continue our journey
+of applying kmeans clustering.
+As you can see, I already have a Jupyter Notebook open.
+We will not be using either of
+these small example CSV data sets,
+we will be using a real data set in this example.
+If you don't have Jupyter open,
+please pause the recording and launch it,
+and then once you do and come back,
+launch a new Jupyter Notebook.
+Let's go ahead and rename this file to week_08.
+Now, we will eventually get to kmeans.
+But this recording is actually about something different.
+This recording is something that will
+support how we apply kmeans.
+Preprocess.
+The name of this notebook is preprocess.
+Pumplet 2100, week_08.
+Let's put in our header information.
+This is an introduction to preprocessing.
+Preprocessing refers to transforming or modifying
+variables before running or executing an analysis.
+This notebook demonstrates why you need
+to preprocess variables before running kmeans.
+The next notebook, the next recording that uses
+the preprocessed results in K means.
+Let's import our modules.
+Again, we need numpy as np,
+pandas as pd,
+mapplotlib.pyplot is plt,
+and we need seaborn as sns.
+We need the big four like we
+have used in the last several weeks.
+Then read_data.
+Let's use the penguins dataset.
+Read in penguins from seaborn.
+The previous recording showed how to apply
+kmeans to one variable then two variables.
+The nice thing about the penguins dataset, is that,
+there are four numeric or continuous variables.
+It's a natural extension
+from what we have done previously.
+We could just go through and attempt kmeans,
+but because after all,
+we can make the pairs plot,
+and we can see there's these two clear groupings.
+But then in certain other subplots,
+maybe we can see a total three potential groupings.
+But before you execute kmeans,
+you must explore the data.
+You must visually explore the distributions,
+not just by creating a pairs plot.
+You see why. Let's use
+a wide format plotting operation from seaborn.
+Wide format. You give the data in its present form.
+Let's use disc plot,
+the figure level distribution plot.
+I'm just making the plot wider with aspect is two.
+By default, it's going to create
+a separate histogram for each numeric column
+in the dataset We know there are four.
+But all I can really see here is the red histogram
+for body mass G. I don't
+really see what's going on at
+all for any of the other three.
+A box plot from the wide format,
+plotting operations makes it even
+easier to know what's going on.
+Sns cat plot data equals penguins, kind equals box.
+Again, it's the wide format.
+We are not specifying any column.
+We're telling it, act on
+all numeric columns in the data set.
+By default, the x-axis becomes each numeric column,
+the y-axis is the value,
+the box plot summarizing the distribution per column.
+I can't see what's happening with three out of the four.
+I can only see what's going on
+with one because body mass G
+dominates in magnitude and scale,
+the amount of variation.
+Why does it matter that
+one variable dominates the magnitude and scale?
+Remember that kmeans considers
+similar to be based on distance.
+Distance depends on magnitude,
+and distance depends on scale.
+Essentially, when one variable dominates,
+that variable will dominate the distance calculation.
+We will only cluster based on body mass G,
+rather than clustering based on all of them.

@@ -1,0 +1,94 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/fFdlY/leveraging-the-formula-interface-for-feature-generation-in-linear-models
+
+English
+Again, the primary point of this video
+was to show you how the formula interface
+can generate many kinds of
+features for you and estimate their coefficients.
+I didn't go into visualizing
+the coefficient summaries because
+we already know how to do that.
+To reinforce this, when you make predictions,
+you do not need to
+create the interaction features yourself.
+You only need to define the inputs and
+the model object will generate
+all necessary features for you,
+because the formula interface remembers what to do.
+Let's see this by visualizing,
+how about this rather complicated model that has
+an interaction between second-degree polynomials
+between our two inputs.
+In the previous video,
+we learned how to create a grid
+of combinations of the inputs.
+Let's do that here. Again, input_grid pd.DataFrame,
+coming from a list comprehension,
+where we have columns named x1 and x2.
+The action here is creating x1 and x2 values in
+a row for x1 or x2.
+The sequence for x1 will come from np.linspace,
+df.x1.min so dfx1.dot max,
+and we'll use 101 unique values.
+The sequence for x2 is np.linspace,
+df.x2.min, dfx.x2.max.
+Again, we have 101 unique values of x1,
+nine unique values of x2.
+Let's make a copy of that input grid,
+name it viz grid.
+Predict the average output or
+trend using the last model we fit.
+Let's use Fit k here.
+This grid, included in a new column pred,
+which is fit_k.predict input grid.
+Now, we know this model
+has all of these different features.
+Yet our data frame for
+our inputs only has the x1 and x2.
+It doesn't have a column for the product of them.
+It doesn't have a column for the square of one
+of them or the product of the squares.
+But if we visualize
+the relationship of the predicted trend
+with respect to x1 as a line,
+and we color by x2,
+using our diverging color palette, remember,
+we must set the estimator to none and define
+each line as each unique value
+of x2 using the units argument.
+We are getting a non-linear relationship
+between the trend and input
+1 because our model
+knows it needs to generate that feature.
+We can also see that
+non-linear relationship between the trend and
+x1 depends on the value of x2.
+That's why you see these different colored lines
+that are moving.
+They're not parallel.
+This red curve, it's a parabola,
+but I don't have parabolas shifted up or down.
+The look of the parabola changes based on x2.
+All of those features were created for
+us on this new dataset because of the model.
+Now, you might be wondering,
+why did I make this model when we know
+the real answer is actually just a linear additive model?
+The purpose of this video was to show you how
+the formula interface deals with interactions,
+how it creates all the features for us,
+and then we can make predictions
+by only having to specify the input values themselves,
+not making all of
+those crazy interaction features that the model requires.
+The model does that for us.
+Now, would you want this model?
+That's actually a model selection problem
+that we will get to later.
+We haven't actually talked about
+how do you pick the best model yet.
+We've seen performance metrics,
+but we have not actually discussed
+how you pick the best model.
+We have been focusing on,
+how do you interpret.

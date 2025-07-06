@@ -1,0 +1,75 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/fki1C/introduction-to-working-with-multiple-inputs-in-regression
+
+English
+Hello everyone, as you can see I already have Jupyter opened up.
+I'm in Week 11 for the class's directory,
+if you don't have Jupyter opened, please pause the recording.
+Start Jupyter once you're back,
+then I want you to launch a new Jupyter notebook, a new Python 3 Kernel.
+Let's go ahead and change the name of this Jupyter
+notebook to Week 11 features more inputs intro.
+Last week we learned about using the linear model to solve regression problems,
+but everything we did involved a single input.
+Today, we're going to talk about how do you handle a case with
+more than one input?
+Great, let's now go ahead and put in our headers.
+Conf 2100, Week 11,
+introduction to working with more than one input,
+we will learn the basics of working
+with more than one input by focusing
+on two inputs in this notebook.
+Here we're going to work with two inputs but
+everything you're going to see will scale to more inputs.
+We will focus on interpretation in this notebook rather than fitting models.
+So before we can understand the fitting results, we need to know how to
+properly interpret what's happening and that's the goal of this example.
+Let's now import our modules, for this example, we need the big 4.
+So I want you to import NumPy as NP, import Pandas as PD,
+import MathPlot.lib.PYP as PLT, and import Seaborne as SNS.
+We will not be fitting models, so we do not need stats models for this example.
+Great, now introduction,
+we know how to work with one continuous
+input in our linear models for regression.
+I'm not going to type equations in this notebook to save some time,
+but on canvas you will find a presentation that supplements this programming example.
+And in this presentation I have all of the equations already typed out.
+Last week we learned when we want to predict the average output,
+or as I call it the trend,
+we know how to create a model that linearly relates an input to that trend.
+This is your classic best fit line.
+It involves an intercept plus a slope times that input.
+But we also learned linear models can handle
+nonlinear output to input relationships.
+We can predict the average output as an intercept plus
+a slope times a nonlinear transformation of the input.
+And this nonlinear transformation is often called a feature.
+We can derive any kind of feature we want from our continuous input.
+We are simply applying a function, and
+last week we worked with the sine, the trigonometric function sign.
+We also saw how to work with polynomials such as x squared and x cubed.
+But now we're going to consider what happens if you have two
+continuous inputs, and I'm just going to name those x1 and x2.
+But these can be any names, the name doesn't really matter,
+the name is about the context of the problem.
+But when we have two separate inputs,
+we must decide the kinds of features that we can derive from those inputs.
+And as you'll see, there are really two main categories of features.
+The first kind are additive features and
+the second kind are interaction features.
+Let's begin with the simplest kind of additive features.
+When you add, you are literally adding the effect of one input to another.
+And that simplest kind is we add linear relationships together.
+Now, our equation for the average output is
+not intercept plus slope times input,
+it's intercept plus a slope multiplying input 1,
+plus another slope, a different slope multiplying input 2.
+The reason why this matters is by including or
+accounting for a second input, we are including a second slope.
+This is allowed to be a different number than the slope multiplying input 1.
+Our regression model therefore has an additional coefficient.
+We will need to estimate and intercept a slope multiplying input 1 and
+a slope multiplying input 2.
+Therefore, there are a total of three coefficients that will
+need to be estimated.
+Again, the reason why this is important is we must understand and
+be able to interpret the unknowns that are getting estimated by our regression model.

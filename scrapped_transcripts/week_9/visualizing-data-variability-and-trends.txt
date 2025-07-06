@@ -1,0 +1,92 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/v3fW6/visualizing-data-variability-and-trends
+
+English
+I left join at its default value
+because it's now joining the sequential values along x.
+That helps you see the wiggliness that's going on here.
+Alternatively, we could create
+this figure with the sns.lmplot,
+and we use lmplot for
+trends previously but it's actually rather flexible.
+We can give it the same arguments x and y but to
+tell it to calculate the average of
+the output for each unique value of the input,
+you want to set fit_reg equal to
+false and x_estimator to the np mean function.
+This says, for each unique value of the input,
+calculate the average of the output.
+Do not fit the linear regression model,
+the best fit line, but by default,
+it does display the 95% confidence interval.
+We could use either approach here of
+catplot or the lmplot version.
+Either way, we're examining our confidence on
+the average and the average itself as your input changes.
+On average, the output y
+is decreasing as the input x increases.
+It does not follow a perfect straight line.
+We still see some kinks here.
+What if we used 20 replications instead of four?
+Well, let's just go ahead and execute that.
+Let's initialize our list.
+Use the same structure for the four loop for
+ix in Range 20,
+append to the list,
+the result of generate lm_y, ix,
+df.x, my_intercept, my_slope, Sigma_noise.
+The result is, again, a list.
+Here, 20 elements long.
+Incatnate everything vertically,
+study_20_df equals pd.concat,
+study_20_list, ignore_index equals true.
+Now we have a lot more rows
+because we have more replications.
+Let's first make the catplot data equals study_20_df,
+x equals x, y equals y, kind equals point.
+Look at what's happening with the averages.
+We don't have as large of the kinks that we have.
+We also have smaller uncertainty on the averages.
+Let's do this one more time.
+Replicate but with 500 times.
+Rather than using just four replications, and remember,
+we're not replicating now
+just observations at one value of x,
+we are actually generating
+nine random numbers around
+the average four times, then nine times.
+Now we're going to do it 500 times.
+Let's initialize an empty list,
+study_500_list for ix in range 500,
+study_500 list, append, generate_lm, ix, df.x,
+my_intercept, my_slope, Sigma_noise.
+Combine everything together into
+a single data frame, pt.concat,
+study_500_list, ignore_index equals to true.
+Now let's make the catplot, sns.catplot,
+data equals study_500_data frame,
+x equals x, y equals y, kind equals point.
+With 500 replications,
+the averages are much
+closer to that straight diagonal line.
+Also, the averages were so confident in them,
+we can't even really see
+the confidence interval because
+we just have so many data points.
+Do you remember back when we were
+simulating the standard error on the average?
+The standard error is Sigma divided by the square root of
+N. We have 500 data points now to calculate our average.
+We are much more confident in it.
+If we would keep going,
+if we were to use 5,000 replications,
+the line that gets connected would be perfectly diagonal,
+and you wouldn't even be able to see
+any uncertainty on the average.
+Now, there's one other thing I want you to see from here.
+I will plot the observations from the 500 replications on
+top of the true trend and
+the sample average at each input location.
+I'm going to just provide the code to
+do this just to speed things up because
+making this figure isn't as important
+as the interpretations of the figure.

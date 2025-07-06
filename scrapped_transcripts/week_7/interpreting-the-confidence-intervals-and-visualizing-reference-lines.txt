@@ -1,0 +1,112 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/jekLJ/interpreting-the-confidence-intervals-and-visualizing-reference-lines
+
+English
+We now have an interval that
+describes our uncertainty on the average.
+Look closely here, for example,
+in the year 1952,
+our conditional or summarized
+mean given this one category is roughly 49.
+But we feel there's a 95% confidence that
+that average is between 47 and let's just call it 51.
+This is our uncertainty or lack
+of confidence on our estimate.
+Next, look at how about 2007?
+Yes, we think the average in 2007 is 67,
+but our uncertainty says we think there's
+a 95% chance the average is between basically 65 and 69.
+This interval gives us
+far more information than just saying one number.
+This interval allows us to
+express how confident we are on our estimate.
+If our standard error is very, very low,
+the 95% confidence interval will
+be small around the average.
+Let's return to the point plot.
+sns.catplot(data = gap_df,
+x = 'year',
+y = 'lifeExpectancy',
+kind = 'point') and then
+set the aspect to two, join = False.
+In 1952, the 95% confidence interval 47-51.
+Let's look at our figure, focusing on 1952.
+We can see the average is something less than 50.
+We can roughly see that yeah,
+this interval is probably 47-51.
+But let's be more specific.
+Let's really show that this
+is actually what the point plot is showing.
+We will need to use the axis level function
+for greater control.
+Now, in practice,
+you don't have to do what I'm about to do.
+I'm going to do a few steps to
+prove to you that this interval is,
+in fact, the average plus or minus 2 times
+the standard error to give us
+this exact confidence interval.
+It will also serve to review
+a few important pieces of syntax,
+such as creating the figure and axis objects,
+specifying the figure size with the plt.subplots,
+and the axis level function
+for a point plot is sns.pointplot.
+Previously, I was making it with
+the figure level function catplot.
+But here, I'm going straight to the axis level pointplot.
+While all figures, even axis level,
+start with a dataset,
+we still need to associate
+a column in the dataset with the x-axis,
+we still need to associate a column
+in the dataset to a y-axis,
+we still want to set join to falls,
+but now we need to specify which specific axis will
+this figure be associated with, and then we can show it.
+But remember, we are explicitly
+making the axis that the plot goes to.
+We can examine the attributes
+or methods for the axis object.
+One of the methods is get_xlim.
+get_xlim explicitly tells us
+the bounds on the x-axis within this plot.
+Now, these bounds,
+they may not look like what you
+expected to see because after all,
+our year is in the thousands,
+but the x_lim is something else.
+This gets at why I typically don't deal with
+the axis level functions in Seaborn or
+go into the underlying Matplotlib because
+the actual axis itself
+can have different values than what are displayed.
+This is part of the reason why I think
+Matplotlib can be so strange and confusing.
+I like to use Seaborn because it lets us
+focus on the values that we are
+displaying from the data rather than
+something about this little graphic that we are showing.
+But anyway, why did I need to
+go to that little minute point?
+Because I want to add in
+a horizontal reference line here and here.
+I needed to get
+the limits on the axes in order to draw this.
+Let's remake the figure. fig, ax
+= plt.subplots(figsize = (12,6)).
+sns.pointplot(data = gap_df,
+x = 'year',
+y = 'lifeExpectancy',
+join = 'False', ax = ax).
+Now ax.hlines.
+hlines is a method.
+I need to specify the value of
+the y-axis for the H line or horizontal line.
+I'm just going to do this manually with a list.
+Just to type it in.
+So 47, and then let's round to 51.1.
+So 47, 51.1.
+The xmin will be ax.get_xlim zeroth position.
+The xmax, ax.get_xlim,
+the one position, and I want to
+use a red colored horizontal line.

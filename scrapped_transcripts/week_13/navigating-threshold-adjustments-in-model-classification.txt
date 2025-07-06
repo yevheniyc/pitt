@@ -1,0 +1,134 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/g1dnY/navigating-threshold-adjustments-in-model-classification
+
+English
+Changing the threshold, again,
+is all about trade-offs.
+Changing the threshold is going to make one of
+your metrics very good at the expense of another.
+The exact value of the threshold
+you would ultimately want to use is one
+that's going to either strike a balance between them
+or you're in a situation where one
+of the classes is much more important than the other.
+An example I always use is,
+given that we all lived through the pandemic with COVID,
+if you were working on
+a health application and you
+trained a classification model
+to classify if somebody has
+COVID given some result of some simple test,
+you would prefer classifying the event that
+that person has COVID much more than
+classifying the non-event if you were deciding if
+someone should be able to enter
+a long term care facility or,
+a home for the elderly or a home for the very sick.
+If you have to decide if somebody should go into
+a medically fragile ward in a hospital,
+you would rather say,
+pretty much everybody could have COVID,
+and therefore, save the lives of those people in there,
+rather than allowing someone who has
+COVID to enter in
+just because your model said they did not.
+You changed the threshold based on
+which class is more important to your case.
+But now, to wrap this up, as you can see,
+this curve, it took a lot of effort to create it,
+which has three thresholds.
+The ROC_curve is tough to look
+at with just three threshold values.
+Instead, we want to try
+many different thresholds from near 0 to near 1.
+You do not need to do that manually.
+Instead, SKLEARN has a function to create it for you.
+This function comes from the sklearn.metrics
+module, you import roc_curve.
+The syntax for this is
+similar to what we did with confusion metrics.
+But the roc_curve function
+does not require classifications.
+The roc_curve function needs
+the model predicted event probability,
+and it will try out many different thresholds for you.
+The function will therefore classify for
+many thresholds and calculate
+the true positive rate and false positive rate.
+Everything that we had to do manually up
+here and then organize into an object,
+roc_curve will take care of it for us.
+It does this by returning three things,
+the fpr, the tpr and the threshold values.
+That's what gets returned by the roc_curve function.
+The zeroth argument is the observed output,
+y, which I like to convert to numpy before calling.
+The one argument is the predicted probability,
+which again, I like to convert to numpy.
+Again, roc_curve will take care of the classifications.
+You therefore have to provide the predicted probability.
+Now, each of these three objects that get returned,
+they are numpy arrays.
+They each have one dimension,
+they each have a certain number of values.
+Those values correspond to different threshold values.
+Let's visualize the roc_curve as a step wise line chart.
+Let's make it using Matplotlib directly.
+We'll make it with Matplotlib first.
+Fig, ax=plt.subplots, ax.plot.
+Actually, here, we'll do it this way first.
+Ax.plot, then we'll set the
+x-label, false positive rate.
+We'll set the y-label,
+true positive rate, plt.show.
+Now, the x argument,
+zeroth argument is fpr,
+the y-axis is tpr.
+Let's make it a black curve.
+This graph for the roc_curve produces step curves.
+They are not smooth.
+But the x-axis goes from zero
+to one and the y-axis goes from zero to one.
+Therefore, I like to force the figure to be square.
+Here I'm using the same width and height.
+But I also like to include in
+a 45 degree reference line
+that goes from zero to one and zero to one,
+making us a gray curve that has a dashed line style.
+Now, behind the scenes,
+we have different thresholds,
+even though you can't see it
+in the conventional roc_curve.
+Here, you are looking at
+how the false positive rate changes
+with the true positive rate.
+Very low thresholds are in the upper right,
+very high thresholds are in the lower left.
+The threshold is therefore decreasing left to right.
+Our default threshold of 50% is somewhere around here.
+Because remember, we had a false positive rate like,
+23% or actually,
+the true positive rate was 56.
+Yeah, here we go. It was right around here.
+The way most of these figures are made,
+the threshold is hidden from you.
+You can't actually see it.
+That's literally how many of these figures are created.
+If you ever forget where the low thresholds are,
+just remember,
+low thresholds have very high true positive rates.
+The low thresholds are up here.. Notice,
+in order to make a model that's
+essentially perfect when the event occurs,
+we can literally make this model have
+a sensitivity of near 100%,
+which is exactly what we want.
+It comes at the expense of being
+wrong over 80% of the time when the event does not occur.
+Likewise, if you want the model to
+never be wrong when the event does not occur.
+A false positive rate that's really,
+really tiny, you raise the threshold.
+But that comes at the expense
+of basically never classifying the event.
+The model is never right when the event occurs,
+so the true positive rate is zero.

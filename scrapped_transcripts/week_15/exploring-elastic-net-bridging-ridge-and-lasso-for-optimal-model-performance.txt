@@ -1,0 +1,117 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/aWwSC/exploring-elastic-net-bridging-ridge-and-lasso-for-optimal-model-performance
+
+English
+Hello, everyone. As you can see,
+I have Jupyter opened up to this week for the course.
+You could see the three notebooks
+that we've created so far,
+the introduction, Ridge and Lasso.
+If you don't have Jupyter opened,
+please pause the recording and do so.
+But as discussed in the previous videos for this week,
+instead of making a new notebook,
+I'm going to pick up
+where we left off from the previous recording,
+so I'm going to click on
+the Week 14 regularized Lasso notebook.
+Now, instead of going up and changing the name,
+as we did in the previous videos,
+I want you to go to File,
+Save As, and let's change it to Week 14,
+regularize enet, ENET.
+In the stock top cell,
+change this header to Elastic net.
+Parentheses enet, elastic net.
+Then kernel, restart and clear output,
+everything has now been cleared out,
+scroll all the way to the bottom,
+and I want you to run all.
+Now, this will take a while because it's
+re-running everything from the last few recordings,
+all of the fitting,
+all of the predictions,
+all of the cross validation,
+and thus tuning,
+so I'm going to pause the recording and let it run.
+When you're running, pause
+the recording and come back once everything is
+completed, it completed.
+The last regularization method we will
+discuss for this semester is the elastic net penalty.
+We have seen how Ridge pushes coefficients near zero,
+but never identically zero.
+We have seen Lasso
+literally can turn off unimportant features.
+But which of the two methods should you use?
+Well, one approach is to
+try both and use cross validation.
+to identify the better of the two,
+so, you really just treat it as a model.
+The model is not just the features you're using,
+but the way you are penalizing those features.
+In the previous recordings,
+we actually visualized the cross validation performance
+so we don't have to rerun any kind of cross validation.
+We can use the cross validation results
+we've already executed,
+so I'm actually just going to
+copy the Lasso visualization,
+scroll down, and in a cell.
+But I'm not going to show the individual folds.
+I'm also not going to show the value associated
+with the optimal C. Instead,
+I'm only going to show
+the average cross validation results.
+I want to directly compare
+the ridge results on
+average to the Lasso.
+I'm going to add in a legend here where I'm going to
+color the ridge results,
+steel blue, and I'll color
+the Lasso results orange and have the appropriate labels.
+To have the labels appear,
+I have to set or I have to use ax.legend to show them.
+The ridge result is shown in blue.
+The Lasso result is shown in orange.
+They both have really,
+really similar performances at
+their optimal value of C. If you look closely here,
+right, when we allow overfitting,
+so the large C allows over fitting,
+so the right hand side of this figure,
+you could see that Lasso is doing much better than Ridge,
+because Lasso is still trying
+to turn off the unimportant coefficients.
+But around the optimal case,
+the optimal value of the C parameter,
+it actually doesn't really seem to matter
+which particular math penalization method we use.
+Now, visually, we can
+identify that Lasso is the absolute best here.
+It has the highest holdout set average accuracy.
+It's a little bit above ridge,
+so we would identify Lasso as the best.
+However, rather than just trying out the two,
+what if we could blend or mix Lasso and ridge together?
+That is the mindset of the elastic net penalty.
+It mixes Lasso and
+Ridge to try and get the benefits of both.
+One of the last discussions for this week
+will introduce why this is beneficial,
+but it's really reserved for 2120 of why
+Elastic net is beneficial
+because it is a rather nuanced topic.
+The elastic net penalty also has
+the C parameter to
+control how the coefficients are estimated.
+The C parameter impact is identical
+to the Lasso and ridge C parameter impact,
+so large values of C allow overfitting,
+very tiny values of C force the trends to go away.
+But elastic net has
+a second tuning parameter that must be defined.
+The second tuning parameter is
+the mixing fraction between Lasso and ridge.
+This mixing fraction is
+known as the L 1 ratio inside kit learn,
+so the L 1 ratio is the mixing between Lasso and ridge.

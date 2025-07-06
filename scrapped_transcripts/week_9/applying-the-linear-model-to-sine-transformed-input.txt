@@ -1,0 +1,107 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/harAb/applying-the-linear-model-to-sine-transformed-input
+
+English
+Let's generate input values from negative
+PI to positive PI, or roughly PI.
+So I'm just going to type this in,
+df_sin is a dataframe created from a dictionary,
+where the key is x and the value is a linspace
+from -3.14159 to 3.14159,
+with 25 evenly spaced points.
+Let me show the head.
+There we go.
+The trend or average output is
+a function of the input.
+Now, instead of intercept plus slope times input,
+we have the trend is equal to the intercept
+plus the slope times a function of the input.
+I'm using np_sin, this is the NumPy sine function.
+What does this look like?
+Let's make the relplot(data = df_sin,
+x = x, y = trend, kind = line).
+You get your sine wave, your cyclic sinusoidal wave.
+Observations of the output
+are normally distributed given
+the input or given the trend.
+If we know the trend, we know
+everything about the distribution
+assumed by the linear model.
+Because the distribution is Gaussian,
+with a constant standard deviation centered at this trend.
+Let's go ahead and randomly generate it.
+Use the random number generator
+to generate the random outputs.
+rg = np.random.default_rng(2100),
+df_sin, add in the column y, rg.normal,
+where the location is the trend column.
+Force it to be numpy just in case,
+the scale is the constant standard deviation.
+It's a scalar number, it does not change as x changes.
+The size, we need as many observations as rows in the data set.
+Now, when we visualize the data as a scatter
+plot, The random data points,
+again, are following the trend, they have that cyclic pattern.
+Again, you might say to yourself, hey,
+the output is nonlinearly related to the input x.
+But that does not mean you can't use a linear regression model.
+The above data were generated from
+a linear model that satisfies all
+assumptions of the linear model.
+To see that this is indeed a linear model,
+let's create the feature s in the dataframe.
+Df_sin, the feature s is
+np.sin of the input x.
+Now, visualize the relationship
+between the random output and
+the feature derived from the input.
+sns.relplot(data =
+df_sin, x = s, y = y).
+If I showed you this plot and said, hey,
+we're going to fit a linear model to it, nobody would complain.
+But if I show you this plot and say, hey, we're going to fit a linear model to it,
+I don't know how often I hear, well, that's not a linear model,
+you need a fancy neural network.
+No, you don't, this is a linear model,
+you have literally seen how we've generated all of the data.
+It was all because we applied a transformation function to our input.
+We created a new feature that is
+linearly related to the trend.
+And by the way, if you look closely,
+when this feature is 0.00 here,
+here are the random measurements.
+But when the feature increases by one unit,
+notice roughly where the output is located.
+It's negative, it's -2.
+Well, if we go back up, the slope, -2.25.
+So for every one unit increase in sin(x),
+the slope tells us the increase or
+the change in the average output.
+The slope is therefore the exact same interpretation.
+It's just that it's applied in this transformed space rather than
+to the input directly.
+Let's conclude by simulation.
+Let's use the same simulation procedure,
+as the previous example, to reinforce,
+The assumptions of the linear model.
+We need a function that calculates the trend for
+a given input and intercept and
+slope, Which then
+randomly generates outputs around
+the trend for a given sigma value.
+Let's define this function as generate_lm_sin.
+We will use the same five arguments as the previous example,
+rid, xuse, b0, b1, sigma_use.
+The first thing that we will do is initialize
+the dataframe that contains the key x with the value xuse.
+Next, calculate the trend.
+The trend is the intercept plus the slope
+times the sine applied to the input x.
+Intercept plus slope times the transformation of x.
+Then randomly generate the outputs.
+We need the random number generator and
+the correct distribution, which is Gaussian.
+We have the location, which is equal to the trend, convert it to numpy to be safe.
+The scale is sigma_use, and we will generate
+as many random numbers as rows in our dataframe.
+Lastly, set the rep_id column to be the rid argument so
+we know how many times we have called this random number generator function.

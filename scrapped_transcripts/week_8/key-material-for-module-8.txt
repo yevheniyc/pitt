@@ -1,0 +1,47 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/jFHnd/key-material-for-module-8
+
+English
+Hello, everyone. Welcome to the eighth week.
+This week begins by reviewing
+several important aspects of visualization.
+This is so you can ultimately learn how to display and
+communicate patterns that you
+find when there are many variables involved.
+We need to review how to visualize those relationships in
+scatter plots by focusing on
+coloring and faceting our data.
+You will then review and
+learn why reshaping really does help you
+explore many columns in your EDA but you will still
+see how there's a fundamental limitation you have to
+still look at a large number of plots.
+What you will learn this week is how we can use
+algorithms or really models
+from unsupervised learning techniques,
+such as K means to allow us to
+cluster or group observations together.
+We are finding like valued rows and
+organizing them in such a way as to
+find similarity and display similarity.
+You will learn about the key arguments to
+the function calls and
+why you must set those arguments the way that you do.
+You will learn how to
+practically apply the steps and how to
+visualize and communicate the results
+ultimately leading to a general strategy
+for executing K means.
+This is generated on two very simple examples
+first before showing you how to do so on real data sets,
+considering how you must clean the data and
+preprocess it before you can actually execute K means.
+Lastly, you will learn
+how principal components analysis or
+PCA helps to streamline
+your cluster analysis visualizations.
+You will not learn what's going on
+behind the scenes with PCA yet.
+That's something for later but
+PCA does really help with visualization,
+and it is useful for supporting cluster analysis results.
+Good luck this week. Take care.

@@ -1,0 +1,108 @@
+Source: https://www.coursera.org/learn/the-art-of-data-visualization/lecture/3TT5w/conditional-subsetting-2d-arrays
+
+English
+But as we saw with the 1D array,
+slicing based on integers is limited.
+The conditional subset provides a much more
+utilitarian way of selecting values.
+We can apply conditional subset to 2D arrays just like 1D arrays,
+but we need to be careful about which dimension
+we are applying the subset or mask to.
+So let's look at our 2D array.
+I want to find all rows where the one column so
+Python notation the one column.
+The second column has
+values greater than one.
+We want to first identify all values in the one column.
+So I'm pulling out all of those values in the one column,
+and we will compare it to some test.
+We apply conditional test just like we would do,
+oops, not a sorry, my 1D to a 1D array.
+Once we have the conditional test,
+we can now apply that conditional test to the object.
+But I want to return the rows.
+And so the mask has to be
+applied to slice the row.
+Notice where this mask is applied.
+We are selecting rows based on this condition.
+So the mask itself is provided to the row index,
+not the column index.
+Let's see this again, but
+this time finding all rows with
+even values in the one column.
+To find an even number, we can use the percent operator,
+because the percent operator returns the remainder 6% 2 or
+really 6 divided by 2 has no remainder, the remainder is 0.
+So if you're an even number,
+the remainder when you divide
+by 2 will always be 0.
+So a very simple test for finding even numbers is to use percent.
+If the remainder of percent 2 is 0,
+you have an even number.
+If the remainder is not 0,
+you get a false.
+So let's find all rows where the one column is even.
+Again, we create the mask with the conditional test,
+and this one looks a little weird, because we are first
+identifying all of the values in the one column.
+Pulling out the remainder from dividing by 2, and then asking does that equal 0?
+We can find all the rows where the 0
+column is odd by using the not equal operator.
+So my 2D all rows from the 0 column,
+percent 2 if this is odd,
+if the number is odd, the value is odd.
+This remainder will not equal 0.
+Let's go ahead and now apply that mask.
+Percent 2 does not equal 0.
+Great, so we now have all of the rows where the 0 column has odd values.
+Now, implicit in everything that I've been doing here is slicing or
+conditionally subsetting does not modify in place.
+My 2D still exists in memory, just as it did when we created it.
+The fact that I have been slicing and
+dicing it, that changes the values.
+It changes what's here, but only in this one and only one instance.
+I can now come back and the whole thing is still there.
+Keeping or storing the results of a slice or
+a conditional subset requires
+assigning the result to a new variable.
+So let's make an array called
+the odd array, my 2D remainder 2.
+Does that equal 0?
+And you know what?
+I just want to keep just the first two columns.
+So we're going to slice this even smaller.
+My 2D, so what we did was we
+identified these rows here and
+we kept just the first two columns.
+Arrays are mutable so we can change values.
+Let's change the 0,
+0 element to 101.
+I made this change in odd array.
+Next, let's take the last element, an odd array, and make it -101.
+We've changed this small array.
+Let's check the original larger 2D array.
+It's unchanged because, after all, we were modifying a smaller or
+a new object that we created from that larger one.
+But what if we would have sliced rather
+than applied a mask to conditionally subset the larger array?
+So I'm going to re-execute grabbing the odd rows or
+all the odd values based on the 0 column and
+pulling out just the first two columns.
+But I will do so using a slice.
+This slice says start at the one row.
+Go to the last row and do so in increments of two.
+So it will start here.
+Skip the 2 row and go to the 3 row.
+I used a 4 because remember, when you slice,
+this is exclusive 1 to 4 exclusive in increments of 2.
+And let's assign the result to a new object.
+If we check our environment, you can see odd array and odd b,
+they have the same size, same shape, same data types.
+Obviously, the values are different because we
+modified the values of odd array.
+I want to modify the values in odd b very
+similarly to what we did with odd array.
+But I'll use 301 instead of 101.
+Odd b now 301, odd array still has the 101.
+What about the larger 2D array, my 2D.
+I want you to pause the video here and really look at these numbers.

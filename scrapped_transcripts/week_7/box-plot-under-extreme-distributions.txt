@@ -1,0 +1,80 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/HCRoP/box-plot-under-extreme-distributions
+
+English
+Let's now examine the conditional distribution
+of price given the categorical variable color.
+We will visualize the categories via facets.
+So we will use facets to show each unique value of color.
+So now the col,
+oops, forgot the plt.show.
+The col argument,
+the column argument is color.
+Each unique category of color is shown as the title.
+But one of the things that's challenging now is
+that it's difficult to see what's
+going on in certain facets.
+Why is that? Let's go back up to our bar chart.
+Even though our category with
+the smallest sample size is
+still in the several thousand observations,
+it has far fewer samples than
+the categories with the highest overall count.
+Color equals G has over 10,000 data
+points or five times the number of the J category.
+The y-axis is dominated
+by the groups or categories with the highest sample size.
+By default, all facets share the x and y-axis bounds.
+Sometimes we need to modify
+the bounds to allow them to be not shared or free.
+Let's change the y-axis bounds to be
+free in the conditional distribution figure.
+Sns.displot, it starts the same way, diamonds,
+x equals price,
+col column is color,
+bins equals 25, kde equals true.
+But let's now go to a new line.
+To modify the facet scales
+we need to use the facet underscore kws argument.
+So let me type that again,
+facet and FA tab.
+You should get the tab complete,
+facet_kws, this stands for keywords.
+Now we need a dictionary,
+where the key such as
+share y is the attribute of the plot,
+and the value is the value we want for that argument.
+I want to share y to be false.
+Now, each of the y-axis scales are different.
+They have different bounds.
+We're effectively zooming in on each of the categories.
+We can now see that each of
+the categories have this asymmetric
+or highly skewed distribution
+where most of the observations are on the left hand side,
+and there's this long tail to
+the right of low frequency values.
+They all have this. What is
+the consequence of the skew
+or long tail behavior on the boxplot?
+Let's create it.
+Sns now catplot data equals diamonds,
+x for a boxplot is not
+the continuous variable typically, it's the categorical.
+So when we're using faceted histograms,
+the categorical is the column argument.
+But now for the boxplot,
+it is the x axis.
+So color, y is the continuous,
+kind equals box,
+aspect equals two to make it wider.
+Now, we get these boxes.
+We can see the median.
+We can see the level of variation with the box.
+The boxes, well, some of them are different in height.
+The box length is different for J and I.
+But as a rough statement,
+the level of variation is relatively similar.
+It's not consistent,
+we don't have any drastic changes,
+but we can see that the median is seeming to
+be different across the categories.

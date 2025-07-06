@@ -1,0 +1,108 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/DfgJY/fitting-non-linear-features
+
+English
+>> Hello everyone.
+As you can see, I have Jupyter open for this week in the course.
+In this video we're going to fit a linear model again,
+but this time we are using the nonlinear output to input data.
+We will make use of all of the skills that we learned in
+the previous video of fitting the linear relationship,
+but now we will use a linear model to fit a nonlinear relationship.
+If you don't have Jupyter open, please pause the recording,
+start Jupyter notebook in the correct navigate to the correct
+directory, and then launch a new Python 3 kernel.
+Once you have the Jupyter notebook opened,
+let's change the file name to week_10_im fitting non linear nonlinear.
+And now let's put in the header information
+config 2100 Week 10 fitting linear models
+to predict non linear output to input relationships.
+Remember, a linear model is not just straight lines,
+linear models can include nonlinear
+features derived from the inputs.
+And so this notebook will show you how to include
+nonlinear features within the stats models formula interface.
+Let's go ahead and import the modules.
+As with the previous video,
+you need the big four numpy as np, pandas as pd,
+matplotlib, as plt, then seaborne as sns.
+And just as in the previous video,
+also import statsmodels.formula.api
+as SMF statsmodels.formula.api
+let's read in the data, but
+this time we will read in the nonlinear relationship example.
+So we are not using the linear relationship example, but
+I will assign the data to a data frame named df.
+So I'm using the same object names as in the previous video, but
+because this is a separate notebook, it's completely okay.
+So pd.read_csv week_10_nonlinear_data.csv,
+week_10_nonlinear_data.csv.
+This data frame has the exact same column names as our previous example,
+it has a few more data points than the previous one,
+but remember, in this case,
+the trend is nonlinearly related to the input x.
+Let's fit the model,
+nonlinear features can be
+directly included via or
+within the formula interface,
+we can apply functions in the string
+formula within the smf.ols function.
+Thus, instead of the formula
+reading as output is a function of input,
+the formula will read as the output
+is a function of a feature
+derived from the input.
+That feature is going to be directly calculated with a function call,
+and the easiest way to see this is to, again just go through the example.
+The syntax is rather straightforward and
+it just takes some practice to get used to it.
+Okay, so let's now let's fit the sine wave,
+where the output or really, really the mean output,
+because that's what is assumed by smf.ols,
+really the mean output is a function of the sine of the input sine.
+The sine function, I'll put function not the sign,
+positive, negative or positive.
+All right, let's see how to do this.
+We will assign the result to lm_fit as in the previous video,
+because this is a linear model.
+Smf.ols, ols has two main arguments,
+the formula and the data.
+Once we have initialized the object, then we fit the object.
+The data, well, that's just the data frame containing all the variables.
+So I'm still using the data frame named df,
+thus the data argument is equal to df.
+But now here's the key difference,
+instead of the formula reading as y tilde x,
+I am not doing this because if I used this formula I would
+be creating a linear relationship between the trend and the input x.
+Instead, I will first call the function np.sign and
+apply it to the input x, that function is
+written directly within the string.
+So I'm not making a new column in df,
+I'm not adding any new features or
+adding columns at all, the data stay the same,
+but the formula is now different compared to our previous example.
+I have the previous example where we were fitting
+the linear model with a linear relationship, again,
+the formula was y tilde x, but now we are applying
+a function in the formulas string to the input.
+If you run it again, this is a stats models data data type,
+it's a very complicated data type.
+It has the summary method just as the previous example,
+and as I said in the previous example,
+I prefer to print this method.
+Look closely at the in the coefficient
+area we still have the intercept, but
+we do not have a coefficient named x,
+the coefficient is named np.sine x.
+Again, let's contrast this to the linear relationship example,
+so I have that example here as its rendered HTML file.
+The slope was named x instead of np.sine x,
+that's because as a reminder,
+this linear model uses a non
+linear feature derived from the input.
+The trend is related to that feature rather than the input directly.
+And the math formula let me type it here in latex,
+the trend mu is equal to the intercept plus
+the slope times the sine of the input x.
+The name of the coefficient is really the feature that
+is getting calculated that that coefficient is multiplying.

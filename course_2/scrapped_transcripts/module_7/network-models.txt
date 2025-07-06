@@ -1,0 +1,74 @@
+Source: https://www.coursera.org/learn/the-art-of-data-visualization/lecture/oJDG1/network-models
+
+English
+In this lesson we are going to continue looking at network and network models in
+this case and understand how we can use some measurements to model networks. So
+when we think about network measures we can think about two groups of network
+measures that are at the node level that focus on the prominence and centrality
+and influence of nodes. And some common examples of these measures are degree
+centrality, closeness centrality and betweenness centrality. And the measures
+could also be at the network level which basically measure how fast the
+information or anything which is within the network is flowing within the
+network and happens in in the network. So that looks at kind of the network
+structure. Two common measurements at the network level are network diameter
+and network density. There are many other measures put at the network level and
+node level that can be used that we're not going to discuss all of those
+measures. The ideas in many cases are similar so we're just going to look at
+these and examples and learn how these measures works that then could could
+apply into other concepts as well. So let's start by looking at degree
+centrality which basically represents who knows the most actors. This is
+looking at the number of direct connections to other nodes and and if
+our network is a directed network and a directed graph then we can have two
+different kinds of degree centrality. An in degree which is basically how many
+incoming connections a node has and an odd degree which is about how many
+outgoing connections a node has. And in degree basically would represent
+popularity and status where odd degree represent the expansiveness and reach. So
+in this example for if you look at for example node 2, node 2 has three incoming
+edges coming to it so the in degree is 3 and there is one outgoing edge to
+node 4 so the odd degree is 1. If you look at node 1 then there is only an
+odd degree of 1 and in degree of 0. So you can basically just see here in this
+table the different kind of degree for each of those nodes. The next
+measurement is closeness centrality which is about who has the shortest
+distance to other actors. This is basically an index of expected arrival
+time. So think about for example if there is a rumor how long would it take that
+every node within the network knows the rumor if we start from a specific node.
+So for example node 2 you can see kind of has shortest path to like a lot of
+the different nodes versus node 5 that maybe has longer in on average kind of
+to all the nodes within the network. The way that you're calculating closeness
+centrality is basically by looking at the sum of the shortest path and and the
+reverse of that. So for example if you look at node 1 node 1 has a shortest
+path of 1 to node 2 so that's 1, a shortest path of 2 to node 4, a shortest
+path of 2 to node 3, and a shortest path of 2 to node 5. So if we add up 2 plus 2
+plus 2 plus 1 we reach at the number 7 and the reverse of that is 1 over 7. So
+you can see in this case that node 2 has the highest closeness centrality so
+if the rumor is first given to node 2 you would expect that the network much
+faster everyone in that network knows the rumor. The last measure is between
+the centrality which this is about who controls the knowledge flow. So here
+think about if we are removing a particular node how would that kind of
+interrupt the process of flow in the network. So for example here if I remove
+node 3 still the network can have the flow so it does not interrupt the flow
+but if I remove node 2 then it completely interrupts the connection
+between the right side of the network and the left side of the
+networks. So because of that we basically just consider that node 2 has a high
+between the centrality much higher than for example node 3, node 5, or any of the
+nodes within this network. So these were the node level measurements and
+the network level we have the network diameter as one of the measures which is
+represents how fast can information get transmitted in the entire network and it
+can be calculated as looking at the largest shortest path between any pair
+of nodes in the network. So for example in this network the largest shortest
+path happens between the node n1 and n5 or n1 and n4 which is 3 in both
+cases so the network diameter in this case is 3. The next network measurement
+is the network density which is basically represent how well connected
+the entire network is. So basically this is looking at how many edges actually
+in the network exist as opposed to like how many possible total edges could
+be in the network if every single node in the network were connected. So the way
+that you calculate network density is by dividing the number of existing edges
+to the least total number of possible edges which can be calculated by
+multiplying the number of nodes times number of nodes minus 1 divided by 2.
+This is basically calculating all possible edges that could exist within a
+network. So for example here you can look at these two different networks.
+Visually you can tell that the network on the right side is a much more dense
+and it has more connection than the network in the left and so if you
+actually calculate the network density given the formula that we just saw on
+the right side you get a higher density of 57% versus 19% in the network in the
+left side.

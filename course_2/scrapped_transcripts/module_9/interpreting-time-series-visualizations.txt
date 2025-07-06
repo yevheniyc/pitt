@@ -1,0 +1,43 @@
+Source: https://www.coursera.org/learn/the-art-of-data-visualization/lecture/dcFpn/interpreting-time-series-visualizations
+
+English (auto)
+In this lesson, after we have looked at how we can process time series data and we can visualize,
+we're going to look at how we can interpret time series data and make sense of time series data.
+So generally, when thinking about interpreting time series data, you want to think about these
+following questions. Relate to those major components that we discussed in the first
+lesson as well. In terms of, is there a trend? Does the series have a trend, whether that's
+upward or downward? Are there repeating patterns indication of seasonality? And are there any
+sudden spikes or drops that are indicative of anomalies? So as we look at different data,
+we want to answer these questions, which will help us make sense of time series data.
+So let's look at, for example, these time series data, which is basically showing some data over
+a period of time. And so now the first thing is that, as we talked about before,
+to be able to observe the trend, you might want to do some processing. So what we can do here
+is that we can do rolling mean to highlight the trends in this data. And we want to observe
+how the rolling mean smooths the fluctuation, and are they the long-term trends that change
+basically after we do this smoothing, and they will become visible. So in case of this data,
+if we do any 30-day rolling mean smoothing, you can see that the pattern follows, which is shown
+in red, follows the same blue pattern. So basically, it shows the similar sort of patterns of
+up and down over a certain regularity. Then in this case, we want to see if there are any
+seasonality. So what we can do here is that we learned in the last lesson, we can do resampling
+to check for seasonality, to look at periodic patterns in the data and how seasonal changes,
+basically, there are peaks or there are declines that happen in the data as we create this
+resampling. So if we do the same for the data, you can see these monthly averages that are
+presented with these, they're called dots. And you can see that there is a strong seasonality
+in this data after we have done the resampling of the data. How does trend compare to seasonality?
+Trend refers to the longer-term movements or direction in the data, whether that's upward
+or downward, there is flat, and it's consistent over time and does not repeat at fixed interval.
+Versus seasonality represents these repeating patterns or cycles that occur at regular
+intervals, monthly, quarterly, or yearly. These patterns are often influenced by then those
+specific time factors that we talked about before, such as holidays or weather. So if you look at
+here this example, you can see that probably there is no specific trend, but there is a strong
+seasonality that is happening, that things are basically repeating over this regular interval.
+So the ruling means smooth these short-term fluctuations in the data by calculating the
+average value over a sliding window frame. And this makes it easier to identify long-term trends
+in the data, reduce the impact of noise and outliers, and improve clarity and visualization
+for understanding patterns. And then the resampling, so those are the two processes that we just looked
+at, both doing the ruling mean and the resampling, that by aggregating data into the broader interval,
+whether that would move it from daily to weekly or from weekly to monthly or from daily to monthly,
+makes it easier to detect repeating seasonal patterns and highlight periodic changes such as
+peaks and declines and simplify and summarize the data for more clear visualizations and analysis.
+So as you think about interpreting the time series data, these are the kinds of processing
+that you can do and then look at kind of visualizations and make a sense of the data.

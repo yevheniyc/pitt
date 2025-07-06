@@ -1,0 +1,93 @@
+Source: https://www.coursera.org/learn/the-art-of-data-visualization/lecture/smizt/pandas-series-defining-indices-and-handling-non-unique-values
+
+English
+Previously we had a list
+which we converted to a series
+through the pd.series function.
+By default it made the index attribute for us.
+Instead, let's make a new series called more groceries,
+which gets assigned pd.series.
+The first argument will become the values,
+but there's also an index argument.
+I'm going to specify the values to
+be a list of apple juice,
+pop tarts, butter, and yogurt.
+I now need to specify
+the index for each one of those values.
+Let's do Item 1,
+Item 2, Item 3.
+Then just to demonstrate that
+the index does not need to be some sequential counter,
+the last one will be top gun,
+which doesn't sound like has anything to do with Item 1,
+Item 2, Item 3.
+Our pandas series,
+again, looks like a table where we have
+the values on the right and
+the index attribute on the left.
+To index the series, again,
+we give the index value,
+Item 1, apple juice,
+top gun, we get the last one.
+But again, we could provide the integer index to slice.
+Rather than typing,
+top gun, I could give a three in the bracket.
+Important, please be careful,
+if you define the index attribute
+manually upon creation of the series,
+the number of elements or entries
+for index must be the
+same as the number of entries for the values.
+For example, if I typed pd.series 1,
+2, 3, 4, so I'm giving a list with strings
+and then I say the index will be A, B,
+C, this will not work because I
+have four values yet, only three indices.
+The error tells you that.
+Length of values four does not match length of index.
+They must be the same.
+Let's now define this one more time.
+This time we will highlight what I think is
+one of the most confusing aspects of the index
+because I personally really dislike
+it and as heavy users love the index,
+I think the.index attribute is confusing
+because the.index attribute does not need to be unique.
+If we go back and take a look at our previous examples,
+like when we had the default range index,
+which is just a sequential counter,
+then when we manually defined the index as strings,
+then when we did it again,
+each one of the indices were unique.
+It made it seem like the index
+would uniquely define each value,
+just like it does in a Python dictionary,
+where you give the key and you get the value.
+But this is again where
+the similar yet different aspects
+of Pandas comes in from other parts of Python.
+Let's make another series.
+It will get assigned from Pandas series.
+We're going to make a simple list of ABC,
+which has the Index 1 as a string,
+two as a string, and then two again as a string.
+This does not produce an error.
+What you have for the indices,
+they do not need to be unique.
+You could have non unique values
+and you can have non unique indices.
+Now when I slice,
+slicing the series by giving the index
+will return multiple values if the index is not unique.
+Another series, (1), we get A.
+Another series (2) as a string,
+we get two values produced,
+B and C. Because both of
+these values have the exact same index.
+Now if you want to slice and only return the value,
+you need to apply or you
+need to use the.values attribute.
+If you only want to return the index,
+you need to use the.index attribute.
+If you slice at that index location,
+you get both the value and the index.

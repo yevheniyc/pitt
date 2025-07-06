@@ -1,0 +1,83 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/wMcLW/the-case-for-pca-for-clustering-analysis-on-the-wine-dataset
+
+English
+So let's now show that.
+Let's apply clustering and PCA together.
+Instead of visualizing the clustering
+results on the original variables,
+let's visualize the clustering results
+with the newly created PCA results.
+So from sklearn.cluster.KMeans
+run the cluster analysis for two clusters.
+Again set the number of clusters, set the initials, the random seed,
+set the number of initial guesses, set the max number of iterations.
+Fit and predict on the clean and standardized numeric columns.
+Add into our PCA pens data frame K2 using
+PD series clusters 2, where the index is
+defined to be the index of the PCA pens.
+And we know we want this to be a categorical variable.
+We can now look at the relplot,
+the scatter plot between PC1 and
+PC2 where we're coloring by K2.
+We have easily identified the two main clusters in this application.
+The two clusters are really perfectly shown in the newly
+created principal component space.
+Okay, you might be thinking to yourself, all right, that's great, but
+there's still only four variables.
+How useful is this, really?
+Well, let's go to a larger example.
+On canvas, there is the wine data set.
+You can find the wine data set on the data for this week page.
+Remember in the motivational discussion I showed how to download it?
+I want you to do the same thing here
+where I copy and paste the wine URL.
+And then I copy and paste the names
+of all of the wine columns and
+then read in PD read CSV wine
+URL names equal wine names.
+There are 14 columns.
+There are no missing rows, no missing values in this application.
+Now, cultivar has three unique values and
+if we would read this data set about this data set in greater detail,
+we would find out that cultivar is actually a categorical variable.
+This corresponds to a region in Italy where the wine comes from,
+because in this data set, every row is a wine.
+And all of these numeric columns that have more than three
+unique values are features about the wine.
+So let's convert cultivar to be a categorical variable.
+Wine data cultivar
+as type category.
+Now, why will PCA help here?
+We could make the pairs plot between
+all 13 numeric columns and
+I'll make it and I will color by cultivar and
+remove the sample size effect.
+Common norm is false.
+But this pairs plot literally takes a while and it's going to take so
+long I'm actually going to pause the recording.
+Okay, we're back.
+This took a while.
+If you tried running this on your machine, it might have taken a while as well.
+There are 13 by 13 subplots.
+You might see a few things stand out.
+There are some of these plots where we can see
+separation between the categories, but
+it requires you to actually go through and look at them.
+I would wager most people, when you make a plot like this and show it to them,
+most people aren't going to look at it, though.
+They'll gloss over and they'll just kind of skim it.
+Yeah, yeah, that's something because there's just simply too much data here.
+There's too much information.
+This is information overload.
+Instead, PCA allows us to
+exploit relationships
+between the columns we know if
+there are relationships by
+creating correlation plots.
+So figure fig ax PLT, subplots, SNS,
+heatmap data equals wine data core numeric only true,
+vmin negative one, vmax one,
+center equals zero, annotate,
+is true, set the keywords font size.
+And then these ones have to be pretty small with the default
+figure size cmap equals cool warm ax equals ax PLT show.

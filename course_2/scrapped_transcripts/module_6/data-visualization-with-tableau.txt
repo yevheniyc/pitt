@@ -1,0 +1,29 @@
+Source: https://www.coursera.org/learn/the-art-of-data-visualization/lecture/pGUUa/data-visualization-with-tableau
+
+English (auto)
+Tableau is a widely used visualization tool that offers great flexibility in analyzing
+data and creating visualizations, dashboards, and reports.
+Many users choose to publish their visualization and data storage publicly.
+According to Tableau's blog, over a million visualizations are published each year.
+One example of a Tableau data story explores social media use across the United States
+in 2024, broken down by age, gender, income, political affiliation, and race and ethnicity.
+The visualization reveals that young people aged 18 to 29 dominate social media usage
+and exhibit distinct patterns.
+For instance, platforms like TikTok and Snapchat are particularly popular among this age group.
+In contrast, individuals over 30 tend to use Facebook more frequently.
+Interestingly, YouTube stands out as a platform that is highly popular across nearly all age groups.
+However, social media usage is minimal among those aged 65 and older who primarily use
+YouTube and Facebook.
+Examining gender differences, the data visualization highlights both similarities and differences
+in social media usage.
+Overall, women tend to use social media more frequently than men.
+When looking at specific platforms, men are more likely to use Reddit, while women are
+more likely to use Pinterest.
+However, both groups show high engagement with YouTube, making it a widely popular platform
+across genders.
+As we'll explore in this module, this visualization is publicly available on Tableau Public.
+This means you can make a copy of it and customize it to suit your needs.
+In this module, we'll learn how to use Tableau Public for data visualization, as well as
+for creating interactive dashboards and reports similar to the ones shown in this example.
+Dashboards and reports provide dynamic, interactive ways to explore data and uncover insights
+from large datasets effectively.

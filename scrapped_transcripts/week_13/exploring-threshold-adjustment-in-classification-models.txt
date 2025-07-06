@@ -1,0 +1,96 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/FAGIp/exploring-threshold-adjustment-in-classification-models
+
+English
+Now, why would you ever want to change the threshold?
+Why would you want to try a threshold different from 50%?
+Well, it all depends on which error is worse.
+It all depends on,
+are you okay with
+misclassifying events or are
+you okay with misclassifying non-events?
+That's all I'll say about it in this class.
+We do return back to this question in
+2120 in a little more detail.
+But changing the threshold is how
+you can decide to classify
+the event very accurately
+at the expense of never classifying the non-event.
+But what I instead want to focus on is,
+let's graphically visualizing the impact
+of the different thresholds.
+We will visualize the sensitivity or true positive rate
+and the false positive rate for different thresholds.
+Let's combine everything together
+into a single dataframe.
+This dataframe will support,
+making a very specific graphic.
+This graphic is known as the ROC curve.
+ROC stands for receiver operating characteristic curve.
+This is a really confusing and strange name,
+but the ROC or ROC curve is a very useful graphical tool.
+Let's make a data frame named my ROC,
+which is equal to the result of pd.DataFrame.
+Now I'm going to use a dictionary that has
+three keys or will
+do four keys;
+TPR, specificity, FPR, and the threshold.
+The TPR, well, that's the sensitivity,
+and let's populate these within lists.
+We have the sensitivity at the lower threshold,
+the sensitivity at the default threshold,
+and the sensitivity at the higher threshold.
+Likewise, we have the specificity at the lower threshold,
+the specificity at the default threshold,
+and the specificity at the higher threshold.
+Likewise, the FPR at the lower threshold,
+the FPR at the default threshold,
+and the FPR at the higher threshold.
+The three thresholds were 0.25,
+0.5, and 0.75. Create a scatter plot
+between the true positive rate or sensitivity,
+and the false positive rate.
+Let's do this in Seaboard,
+sns.relplot(data = my_roc,
+x = fpr,
+y = tpr), plt.show().
+You can see there are three dots.
+But here, I'm going to raise the size of those markers,
+s = 300, the x-axis tells us the false positive rate,
+the y-axis tells us the true positive rate.
+This model is capable
+of having a true positive rate of 90%,
+but at the expense
+of increasing the false positive rate to be very high.
+To be over 55%.
+If the event does not occur,
+the model was wrong over 50% of the time.
+Now, if you want, you
+could cause the false positive rate to be very low.
+You could make it less than 5%.
+But doing that comes at the expense
+of reducing the sensitivity or true positive rate,
+the model is only accurate 20% of
+the time when the event occurs.
+Now, this ROC curve,
+even though it is telling you
+the true positive rate and the false positive rate,
+hidden behind the scenes,
+if you will, is the threshold.
+The threshold is actually controlling the TPR and FPR.
+In our simple ROC curve,
+let's color the markers by the threshold,
+hue = threshold, s = 300.
+When the threshold is 50%,
+here is that model's false positive rate
+and that model's true positive rate.
+Decreasing the threshold causes the true positive rate,
+the sensitivity to become very high,
+which is a good thing,
+but this is counterbalanced with
+the false positive rate also
+becoming very high, which is a bad thing.
+On the flip side, by increasing the threshold,
+you get the reduction in the false positive rate,
+which is a good thing at
+the expense of reducing the true positive rate,
+which is a bad thing.

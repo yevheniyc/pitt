@@ -1,0 +1,114 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/0uTfn/visualizing-all-linear-regression-assumptions
+
+English
+The blue dots that you're seeing now are
+the exact same blue dots shown in the catplot.
+But I've included the raw data as the black markers.
+You can't see the confidence intervals
+at all anymore because I'm
+showing you the actual individual data points
+that were randomly generated.
+At each one of the individual input locations,
+there are 500 data points here.
+Notice that we do not
+have all the 500 data points really close to the line.
+Instead, we have some that are quite far.
+But if you look closely,
+when I draw these diagonal lines
+near the lower and upper bounds,
+do you see how the range is basically the same,
+it's basically constant as the input changes?
+Let's look at the variation around
+the true trend in more detail via box plots.
+Sns.catplot(data=study_500_df, x=x, y=y, kind=box).
+Look at the height of the box.
+It's basically constant as your input changes.
+Look at the height of the whiskers,
+they're basically constant as your input changes.
+Sigma in linear models,
+the variation around the trend is constant.
+It does not change.
+It is not impacted by the value of your input.
+Linear models assume constant variation.
+This is incredibly important.
+It's one of the major assumptions of the linear model.
+We know that box plots summarize data,
+but box plots do not
+show the distributional shape of the data.
+Let's look at the distributional shape
+of the 500 replications at
+each input location using violins.
+Sns.catplot(data=study_500_df, x=x, y=y kind=violin).
+Now, this figure, it's a little tough to
+see because the violins are so crammed.
+Let's make it wider,
+raise the aspect ratio.
+The shapes of these violins look roughly Gaussian.
+If we would have used 5,000 replications,
+they would have really looked Gaussian.
+But let's help things out here and let's create
+a slightly smoother violin.
+This argument, bw is discussed in
+more detail in the visualization class 2130.
+I'm using it here now mainly as
+a teaching tool because by using this argument,
+look at the shape of each of
+the violins now at a given input location.
+You're seeing a Gaussian bell curve.
+The output is normally distributed.
+The width of that bell curve is constant.
+But what's changing is the location of the bell curve.
+The input causes the average output to change.
+Why did we do this?
+This simple simulation example reveals
+nearly all of the assumptions
+of the linear model for regression.
+You have learned that
+the average output depends on the input.
+Changing the input changes
+the average output or as I call it the trend.
+The variation around the trend is
+constant and does not change as the input changes.
+The output is normally
+distributed around the average output or trend.
+In statistics textbooks in machine learning textbooks,
+these assumptions are usually skimmed over very
+quickly with statements around here's your output,
+it's equal to this function.
+Here is your error. You error is normally
+distributed with mean 0 standard deviation Sigma.
+Then they talk about that your outputs are uncorrelated.
+But what you have learned here is the outputs are
+conditionally independent given your input
+and your intercept and slope.
+If you know your intercept,
+your slope, and your input,
+the output is normally distributed
+around that average with a constant standard deviation.
+This is to again highlight all
+of the tools we learned at the beginning of the semester
+enable us to study what's going on
+in challenging predictive analytics situations.
+We have actually used everything
+up to this point in the class.
+We've generated random numbers,
+we've studied averages, we've
+studied variations, we've studied distributions.
+We have conditioned on or grouped by
+individual input values to
+study the conditional distribution of our output.
+Now, will you need to do all of
+these actions when you fit your models?
+No. This example is
+to demonstrate the assumptions of the model.
+You will not need to make these figures
+though necessarily
+in your predictive analytics applications.
+Again, this is to highlight all of
+the assumptions because we cannot in practice,
+randomly generate our own data.
+We are provided a data set and
+we must estimate the unknowns.
+This example was to highlight
+the assumptions of the model.
+You will learn how to fit the model next week.

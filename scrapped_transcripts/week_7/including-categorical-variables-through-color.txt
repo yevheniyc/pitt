@@ -1,0 +1,84 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/mirLp/including-categorical-variables-through-color
+
+English
+The pairs plot not only tells you
+the relationship between each pair of variables.
+It lets you know how
+each variable is distributed by itself.
+This can be really helpful, for example,
+when we are looking at clusters.
+You see this one set of grouping,
+it's associated with this group.
+Then do you see this other concentrated interval?
+It's associated with the other group.
+Now, let me zoom back in.
+We can group or condition on categorical variables
+within pairs plots just
+like we did with scatter plots and trend plots.
+We can color by
+a categorical variable via the hue argument.
+With the relplot,
+remember how we could take penguins and
+for a particular pair of continuous variables,
+we could use hue to distinguish the species.
+We could do the same thing with lmplot.
+To help us understand how
+the relationship changes based on groups,
+we can color pairs plots via hue as well.
+The syntax is very similar,
+sns.pairplot(data = penguins,
+hue = 'species'), plt.show().
+We get the same set of subplots showing us
+the pair wise relationship
+between each pair of continuous variables.
+But now we are coloring by a categorical.
+The main diagonal is now
+the conditional KDE plot so that way we can
+see how does the distribution of
+one continuous variable relate to the categorical?
+I should note here,
+let me zoom out again,
+by default, pairs plot only shows you the numerics,
+and you don't have to say numeric only.
+Notice species is not shown in here by default.
+We can assign species to hue
+because penguin still has species in it,
+that column, even though it was not shown before.
+However, the above pairs plot is wrong.
+Look closely at the conditional KDEs
+along the main diagonal.
+Do you see the orange,
+how the orange KDE,
+the orange density plot is shorter than
+the blue and the green in every
+single main diagonal marginal?
+Look at the counts for the species.
+sns.catplot(data = penguins,
+x = 'species', kind = 'count'.
+Chinstrap has the smallest sample size.
+The default pairs plot in seaborn is wrong because
+the conditional KDE shown along
+the main diagonal is fooled by the sample size.
+We need to remove the sample size effect
+by setting the common_norm to FALSE.
+The exact same problem
+that occurs in the conditional KDE,
+this is the same problem in the conditional KDE chart.
+Let's go back to it.
+sns.displot(data = penguins,
+x = 'flipper_length_millimeters',
+kind = 'kde'), plt.show.
+This is the marginal,
+The marginal KDE is shown below for one variable.
+Now, the conditional KDE
+is shown with the wrong settings.
+The default settings, (data = penguins,
+x = 'flipper_length_millimeters',
+kind = 'kde', hue = species.
+You see how the orange KDE is the shortest one here?
+That's only because the orange bar
+for chinstrap has the smallest sample size.
+Remove the sample size effect with common_norm=False.
+sns.displot(data = penguins,
+x = 'flipper_length_millimeters',
+kind = 'kde', hue = 'species', common_norm=False.

@@ -1,0 +1,128 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/DbbLF/demystifying-the-confusion-matrix-in-binary-classification
+
+English
+The confusion matrix has
+a special and magic sounding name.
+But you already know how
+to calculate the confusion matrix.
+Because the confusion matrix is nothing more than
+the counts for the combinations
+of two categorical variables.
+This thing, the confusion matrix,
+it sounds completely brand new.
+It sounds like, we're getting near
+the end of the semester and here's
+something you've never heard of before.
+But it's just a fancy way of saying,
+what are the counts
+for the combinations of two variables?
+Specifically which variables are
+we interested in right now?
+Well, we're interested in the binary outcome,
+which in this example,
+is named y, and we're interested in
+the binary variable for the predicted class.
+When we were going through
+the visual exploration portion of the class,
+we learned how to visualize
+the combinations between two categorical variables.
+We learned about dodged bar charts and heatmaps for
+visualizing
+the combinations between categorical variables.
+The confusion matrix is a heatmap between
+the observed output class and the predicted class.
+That's it. That means to create the confusion matrix,
+we need to first cross
+tabulate the observed output
+with the predicted class.
+We need to call the pd.crosstab function where we
+take the observed output and the predicted class.
+The result is organized in something called a matrix.
+Think of that as a table.
+It's rectangular.
+The intersection between the row and
+the columns have a very important meaning.
+The intersection is the number of rows at
+this one particular combination of
+the predicted class and the observed class.
+However, you should know by now,
+I don't like to just display
+these numbers in a little table.
+Let's visualize the confusion matrix
+as a seaborn heatmap.
+Let's initialize the figure and axis objects.
+Let's now call the seaborn heatmap function.
+The data is the result of pd.crosstab,
+where we're cross tabulating
+the observed output and the predicted class.
+I like to annotate it.
+Here we can raise
+the size of the annotated text.
+You know what? Let's include in the margins.
+Now, by doing that, you can see we get the scientific,
+syntax format, scientific notation for the counts.
+Set the format to 3D.
+We get three digits and then let's
+lower size here. There we go.
+Now, what are we looking at in this heatmap?
+The vertical axis is the observed output.
+Zero has a marginal count of 67.
+One has a marginal count of 48.
+If we call value counts,
+that's exactly what we see.
+Now, look at the horizontal, pred_class.
+Pred_class 0 has a count of 72.
+Pred_class 1 has a count of 43.
+If we call value counts,
+that's also what we see.
+The margin is telling us the number of observation or
+the counts for the observed output class,
+y = 0, the non-event,
+the observed output class y = 1 event.
+Likewise, the marginal count for
+the predicted class y = 0 the non-event,
+the predicted class, y = 0, the event.
+But what we're really interested in is
+the intersection or combination.
+Pred_class 0, observed class 0,
+we are classifying the
+non-event and we observe the non-event.
+This is a correct classification.
+Pred_class 1, we are predicting the event y = 1.
+We observe the event.
+This is also a correct classification.
+Look closely at this confusion matrix.
+The main diagonal tells
+you the number of correct classifications,
+but it's telling you,
+are you correctly classifying
+non-event or you correctly classifying the event?
+What that also means is the
+off-diagonal is telling you
+the incorrect classifications or the errors.
+Look closely. Classifying y = 0,
+the non-event, but we observe the event.
+We classified the non-event,
+but we didn't see the event.
+The other kind of error in binary classification,
+we classify y = 1,
+the event, but we do not observe the event.
+We observe the non-event.
+These counts now have
+a very important set of interpretations.
+They have very particular names for the combinations.
+We predict, and we observe.
+We classify y = 0,
+the non-event, yet we observe the non-event.
+We have a correct classification of the non-event.
+This is known as a true negative.
+We classify the non-event,
+yet we observe the event.
+We were classifying the non-event yet we were wrong.
+This is known as a false negative.
+We classify the event y = 1,
+we correctly observe the event.
+This is known as a true positive.
+Lastly, we classify the event,
+yet we didn't see the event.
+This is known as a false positive.

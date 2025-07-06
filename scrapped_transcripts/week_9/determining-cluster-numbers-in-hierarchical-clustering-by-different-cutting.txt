@@ -1,0 +1,86 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/J0usB/determining-cluster-numbers-in-hierarchical-clustering-by-different-cutting
+
+English
+To see that, we can cut the tree.
+One approach is to cut based on a height.
+So if I would do hierarchy.cut_tree(
+hclust_ward, height = 3, or,
+sorry, height equals, let's go at 25,
+this really big array gets returned.
+So for right now, I want to just give you the shape,
+178 rows, 1 column.
+We had 178 data points.
+We are clustering the 178 data points together.
+But this is a two-dimensional array that is getting
+returned even though it has one and only one column.
+So instead of producing the two-dimensional array,
+let's apply the ravel method to convert the 2D array into a 1D array.
+That way, it's just a little easier to work with.
+Now, I'm going to apply the numpy unique
+function to the result of hierarchy.cut_tree(hclust,
+at a height of 25).ravel to show you
+that it's producing three clusters.
+Let me just copy this code to make it easy to now try cutting at 20,
+again, 3, then cut at 15, again, 3.
+If I cut at a height of 12, now I have crossed below
+this colored point and I have 4 clusters.
+But look what happens if I decrease from 12 to 10.
+Even though the height has only changed by two units,
+we have doubled the number of clusters.
+The number of clusters is now sensitive,
+it's sensitive to the height that we make the cut at,
+even though before, we were making the cut at 25, 20,
+or 15, and we still got the exact same number of clusters.
+I wanted to show this to you for two reasons, to, again,
+illustrate why the recommended value is what it is,
+by trying to find something that's not sensitive.
+And then also to show you, you can decide the number of clusters,
+even if it's different from what's being recommended.
+That's one of the great things of hierarchical clustering.
+You can make a choice that is different from what's recommended.
+I will often do that, where I will create a primary
+number of clusters, and then a secondary number.
+I could have made a cut down here where it's
+giving us these kind of fine grained tails.
+That's perfectly okay to do.
+A second way to cut, though, rather than specifying the height,
+is to specify the number of clusters you wish to return.
+So when you use this approach, you don't care how many clusters or,
+sorry, you don't care where the cut happens at.
+You just want to return a specified number.
+So if I want, for example, three clusters,
+all I have to say is n_clusters=3, and
+I will get three clusters.
+Again, you can see the three values, and
+if we apply the np-unique function, we can cut the tree,
+To confirm there are exactly,
+Three clusters.
+So let's now use the cluster results.
+We can do the same actions on the hierarchical
+clustering results that we did with KMeans.
+Let's add the hierarchical clustering from ward,
+its labels to the PCA dataset.
+So pca_wine['hclust3'] is a new
+column three clusters coming from the hierarchical cluster,
+pd.Series( hierarchy.cut_tree,
+(hclust_ward n_clusters=3).ravel.
+And then index=pca_wine_df.index.
+And just as with KMeans, I want this result to be a category,
+because as you can see here, when we apply the cut,
+the labels are integers, 0, 1, and 2.
+If we apply the .info method, you can see hclust_3 is a category.
+Whenever you execute clustering, you should always
+count the number of observations in each cluster.
+pca_wine_dfclust_3.value_counts, or
+you can visualize with a bar chart pca_wine_df,
+x=hclust_3, kind=count, plt.show,
+we get the same result, just in picture form.
+And let's color the PCA scatter plot between PC01 and
+PC02 by the identified cluster groups.
+sns.relplot(data = pca_wine_df, x='pc01',
+y='pc02', hue='hclust_3').
+We will get the categorical color scale by default because we made
+hclust_3 a category.
+Notice we are getting a cluster on the left at negative PC01 values,
+a cluster on the right at positive PC01 values, and
+then a cluster in the middle of PC01, but at positive values of PC02.

@@ -1,0 +1,117 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/Qy8G0/understanding-model-evaluation-metrics-and-performance-analysis
+
+English
+Now, the accuracy is easy to calculate.
+It's the number of correct classifications
+divided by the total number
+of data points, TN+FP+FN+TP.
+The sensitivity, the true positive rate,
+the number of true positives divided
+by the number of observed events.
+The specificity, the true negative rate,
+the proportion of time the model
+correctly classifies when the event does not occur.
+TN/TN+FP. The false positive rate
+is one minus the specificity.
+Lastly, what if
+we examine the behavior for any threshold value,
+and let's convert the ROC curve
+to its quantitative metric, ROC_AUC, roc_auc_score,
+train_copy, the observed output to
+numpy compared with the predicted probability to numpy.
+Remember, confusion matrix needs a classification,
+so you need to use a threshold to get accuracy,
+sensitivity, specificity, and false positive rate.
+But the ROC curve does not directly make classifications.
+You're going to use the predicted probability,
+and it will compare it to all possible thresholds.
+Let's now store the results in a dictionary.
+Model_name is assigned mod_name.
+The model_formula is assigned a_formula.
+Now, I want to store
+the number of coefficients in my model.
+Well, that's the length of the params attribute.
+I now want to retain what threshold value I used.
+Well, that's just equal to threshold.
+Next, I want the accuracy, accuracy.
+I want the sensitivity, which is sensitivity.
+I want specificity, again, specificity.
+I want the FPR, which is just the FPR.
+Lastly, the ROC_AUC, which is ROC_AUC.
+I don't want to return the dictionary, though,
+I want to return the DataFrame
+associated with this dictionary.
+So I will convert the dictionary to a DataFrame.
+But if you're looking closely,
+each of these things are scalar values.
+They have one and only one value.
+When you have one and only one value,
+you must set the index.
+Sorry, if you have one and only one row
+when you make the DataFrame,
+you must set the index,
+and the index must be within a list.
+We now have one function that allows us to fit the model
+for formula and assess
+the performance for any threshold.
+That's great. We can now apply
+any formula we want to a logistic regression model,
+fit it, and assess it.
+Now, why do we want to do this?
+Because let's define
+a very big list of different formulas.
+Going to name this list formula_list,
+and it's a big list.
+I'm going to now type in a whole bunch of formulas,
+a whole bunch of different models.
+The simplest one, y~1 is
+the constant probability of the event.
+Now, here is a sequence of models that you should often
+try out in either a classification
+or a regression problem.
+When you have categorical inputs,
+you should fit a model that
+only depends on the categorical inputs.
+This lets you know if the categorical inputs give you
+a better model than
+an average event probability in this case.
+Then you should fit
+a model that uses linear additive features
+just with the continuous inputs
+and does not have the categorical inputs.
+This lets you experiment to see if ignoring
+the categoricals gives you a model that's pretty good.
+Next, if you fit a model that only depends on
+categorical inputs and a model
+that only depends on continuous inputs,
+now add them all together,
+all linear additive features with
+continuous and categorical inputs.
+But we don't stop there because,
+remember, linear models are not just straight lines.
+Linear models can interact variables together.
+Here, I'm going to interact using the asterisk operator,
+the categorical input with each continuous input.
+Do you see the parentheses in the formula?
+The parentheses here are really important
+because that instructs the model to interact x5 with x1,
+interact x5 with x2,
+interact x5 with x3,
+and interact x5 with x4,
+but each of the continuous inputs are added together.
+We are not interacting
+the continuous inputs by
+themselves or the continuous inputs together.
+But let's now consider a situation where we interact
+continuous inputs, like with x1*x2.
+But I want to do more than just those two inputs.
+Instead, I need to use the ** or exponential operator.
+X1+x2+x3+x4 all raised to the power
+two does not mean square these values.
+As discussed last week,
+this really means create
+the linear additive main effects
+and interact up to all pair of variables.
+This is a shortcut to giving you
+all pairwise interactions between the inputs.
+This is a very handy model to try out.

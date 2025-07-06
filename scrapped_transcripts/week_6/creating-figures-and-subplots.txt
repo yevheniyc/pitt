@@ -1,0 +1,113 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/vintH/creating-figures-and-subplots
+
+English
+Let's execute Step 1 and Step 2.
+Step 1, as a reminder,
+we initiate the figure, plt.figure.
+But Step 2,
+we create the subplot.
+The subplot is made with another function from
+the matplotlib.pyplot module, so plt.subplot.
+Figure followed by subplot.
+Let's run that cell.
+Figure, subplot.
+Now, when we run the cell,
+we don't just get some weird set
+of characters displayed to the screen,
+we get a picture more aligned with
+what you were probably anticipating or expecting to see.
+There's a horizontal axis
+that travels left to right on the screen,
+which is usually called the x-axis,
+and then there's a vertical axis
+that travels up and down,
+which is usually called the y-axis.
+Now, before we move on to Step 3,
+let's review these two steps again,
+but this time show more of the arguments within Step 2.
+Again, Step 1, initiate the figure,
+plt.figure, Step 2, create the subplot.
+plt.subplot. There are three main arguments
+for the subplot,
+the number of rows,
+the number of columns,
+and a plotting index.
+Let me put in a comment here,
+so number of rows,
+number of columns, and a plot index or panel number.
+Let's run it. There is one row of subplots,
+one column of subplots,
+and we are specifically looking at
+plot index or panel number 1.
+You might be wondering, why did I type
+a one here rather than zero?
+Well, remember, I started this video by saying,
+Matplotlib is basically stolen from MATLAB,
+and MATLAB is one-based index,
+not zero-based index,
+so the MATLAB style,
+the stateful style literally
+follows everything that MATLAB does,
+so that's why it is a one rather than a zero.
+Again, with Python,
+a lot of things are really ports from
+other environments because people like Python so much,
+so sometimes the arguments
+are not consistent with the rest of Python,
+all depending on where they are stealing the stuff from.
+But okay. We now have a figure,
+we now have a subplot,
+but I want to be even more refined.
+Anytime you hear the term subplot,
+I want you to really think of the axis,
+the actual set of horizontal and vertical axes,
+the x and y-axes in the figure.
+Now, why am I trying to be very specific with that?
+The reason is because there's a hierarchy or
+levels between the various elements
+of our figures or plots.
+The supplemental readings for this week includes
+a link to this tutorial page from Real Python.
+Now, you don't have to read the entire website.
+As you can see, there's a whole lot of topics here.
+If you want to, you can,
+and the website does
+provide additional discussion points of a lot of
+the functions that we will be seeing
+throughout this class and in others.
+I will show you how I prefer how to make the figures,
+which isn't usually hint some of these approaches.
+But anyway, this particular portion of this website is
+very useful to help understand
+the hierarchy of the Matplotlib object.
+The figure that we were
+creating is like the picture frame,
+it's what holds or
+hangs the entire picture onto the wall.
+The axis, though, is contained within the figure,
+and it's the axis or
+the subplot that actually contains the data.
+This is important because as you'll see in a little bit,
+we can have multiple axes or
+multiple subplots containing different data sets
+within the overarching figure.
+A figure, its old name was
+the graphical device that
+contains the axes that hold the data.
+Again, if you need to review
+this terminology of figure versus axes,
+please take a look at
+this image available on the supplemental readings,
+and for even further detail of
+the different aspects or
+attributes of the plot and the axes,
+just a little below it,
+it has all the different terms.
+If you ever need an additional review, please come here,
+and this is linked to in
+the supplemental readings for this week.
+But all right. Let's now finally move to Step 3.
+Let's move to Step 3 and populate data
+within the axes contained inside the figure.
+We're going to do something really, really simple,
+we will show a simple sine wave as our data.

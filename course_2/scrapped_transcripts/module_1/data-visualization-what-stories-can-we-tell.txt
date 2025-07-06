@@ -1,0 +1,18 @@
+Source: https://www.coursera.org/learn/the-art-of-data-visualization/lecture/wPnX9/data-visualization-what-stories-can-we-tell
+
+English (auto)
+This is an example of stories we can tell with data around us.
+We Feel Fine is an artwork project which was created by a computer scientist and an artist
+who collected expressions of human emotions on personal blogs for several years.
+They identified any posts which included the phrases I feel or I am feeling and saved
+that along with any additional information associated with that phrase, such as images
+or metadata such as time of the post, location of the post, or weather at the time of the
+post.
+They were then able to create data visualizations, such as the ones here, to tell a story about
+the collective emotions, at different times and different locations.
+The first image uses pictures associated with these blog posts to create a collage to tell
+a story of how our collective feelings look like.
+The second plot shows a cloud of these feelings, with each dot representing one feeling and
+the color of the dot representing the sentiment of the feeling, with warmer colors representing
+happier and more positive feelings and colder colors representing more negative and sad
+feelings.

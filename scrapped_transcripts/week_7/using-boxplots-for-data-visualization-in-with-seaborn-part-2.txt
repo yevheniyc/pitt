@@ -1,0 +1,77 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/jsQxY/using-boxplots-for-data-visualization-in-with-seaborn-part-2
+
+English
+We examined the box for one category.
+Let's now go to the far right hand side.
+We get the box for a different category.
+You can see the median is at
+a different value on
+the right hand side compared to the left hand side.
+And in fact, the median of life expectancy in
+2007 is greater than the 75th percentile in 1952.
+Although we see that the medians have
+different values, examine the variability.
+Look at the height of
+the box because the height of the box,
+again, is known as the interquartile range.
+The difference between the 75th and 25th percentiles.
+The heights of the boxes,
+although they are different,
+they're roughly the same.
+Meaning the variability per
+year per category is relatively consistent,
+even if the central value,
+the median is changing year over year,
+or across the categories.
+We can, of course, examine
+a different categorical variable.
+Let's look at the relationship
+between continent and life expectancy.
+The plot is created the same way.
+It starts with the data.
+The categorical variable is the x axis now continent,
+and the continuous variable,
+still life expectancy is the y axis.
+Again, kind equals box aspect
+equals two to make the figure wider.
+In this case, where we
+have a true categorical variable on the x axis.
+Again, with the box plot,
+we want to first look at how the median changes.
+The location of the median,
+two of the categories have similar medians,
+and then you have three others that have lower medians.
+But the other aspect shown by this graph
+is how the variability
+is different across the categories.
+Here are two categories,
+the orange and the purple that have
+shorter interquartile ranges or shorter boxes.
+Meaning the variability, the variation in
+these two categories is
+lower than the variation in the other categories.
+Again, the whiskers extend
+the min and max to see the overall range.
+But we see some other things
+shown here, these little dots.
+I'll return to these dots in a little bit.
+But the main take
+two points that you can clearly see from this box.
+Medians are different and the variability,
+the box, the interquartile range,
+the location of 50%,
+the central 50% of the observations per category are
+different across the groups.
+When you have separation of boxes across categories,
+this is a pretty good indicator that you have
+different distributions of
+the continuous variable across the categories.
+Again, in summary box plots allow
+us to answer several important questions.
+Does the median appear to change across categories?
+Does the variation appear
+to change across the categories?
+Does the height of the box
+and which are all of more generally asking,
+are the summary statistics
+different across the categories?

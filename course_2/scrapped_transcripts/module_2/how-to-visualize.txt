@@ -1,0 +1,95 @@
+Source: https://www.coursera.org/learn/the-art-of-data-visualization/lecture/bfKJm/how-to-visualize
+
+English (auto)
+Now that we looked at the data visualization principles
+and learned about the different data types
+and what the different data types could
+mean for visualization, we're going to also look
+at how we want to visualize.
+And looking at the major types of data charts
+and thinking about what kinds of data types
+are actually appropriate for these different data
+visualization and when is the right time
+to use a specific visualization.
+One of the major forms of visualizations
+are line charts that you saw in the historical examples
+also as one of the early on examples of data visualizations.
+So in the line charts, the y value
+is a vertical position of the line
+that you're trying the parts of the data
+that you're representing in the line.
+The x value is the horizontal position of the line.
+The line connects the visual elements together
+and is typically used to show the relationship
+between two numerical variables.
+So if you look at, for example, this case
+that is basically showing the relative popularity
+of different visualization types in percentage.
+So that's kind of what is shown on the y-axis
+and then the x-axis,
+we have the different types of visualization.
+So here the line is actually connecting
+these data points together,
+which in this case, because this continuity
+is not meaningful.
+And so what is going from table to scatterplot
+is not meaningful.
+A line chart is probably not the right format
+of presenting these data.
+In this case, we might want to consider a bar chart,
+which is another very popular examples of data visualization
+which the bars are separated graphical elements
+to represent data values.
+So here is the same information,
+but this is a more meaningful representation of that data
+by showing these separated visualizations
+of the values of popularity
+of each data visualization types.
+Another very common data visualization is maps
+and showing data in maps can provide new insights
+and reveal patterns.
+So this is a very famous examples
+from the work of John Snow,
+which showed the cholera deaths
+are clustered around water pumps,
+as you can see in these darker areas on the map.
+And this was actually what helped to the discovery
+of the water contributing to the outbreak
+and helping actually to remedy that.
+Showing data on maps could actually be done
+in different formats.
+You can have the density maps for each observation.
+For example, a cholera death in the case of the cholera map
+is indicated by a dot or a similar marker
+and higher density means higher frequency.
+Cholera maps where data is aggregated to geographical areas
+is another way of using maps as data visualization,
+which uses the specific geographical boundaries
+often decided by administrative units,
+such as countries, regions, or counties,
+the value is shown by color of that unit.
+So this is the example that we saw earlier
+in terms of the census data and population density.
+Combining the standard chart types with maps
+is another way of showing data on maps.
+So you can have bar charts that are displayed on a map
+or the circles like the examples that you saw
+in terms of the migrants going from the countries
+around Greece into Greece,
+that you had the circles as a way of more a chart type
+that's like a bar chart overlaid over a map
+to show both the geographical distance
+and also other attributes in the data.
+These are more different types of charts
+that you can also consider.
+You can have a scatter plots
+that basically shows the dots over certain points.
+You can have timelines
+and you can combine these different
+kinds of visualizations together.
+You are provided with resources
+to explore these different kinds of chart types.
+And as we go through the next modules,
+you will also learn how to create yourself
+using programming codes,
+these different kinds of chart types.

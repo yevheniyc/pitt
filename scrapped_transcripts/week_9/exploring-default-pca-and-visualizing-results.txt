@@ -1,0 +1,104 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/3HPnR/exploring-default-pca-and-visualizing-results
+
+English
+Let's now execute PCA,
+but we will not use
+the same approach that we have used up to this point.
+We will not specify the n_components argument to PCA.
+Every time we have used PCA up to now,
+we have only done so to support visualization,
+and we have been focused on two principal components.
+But let's see what happens if we use
+the default arguments to PCA,
+meaning we will not specify
+arguments when the PCA object is initialized.
+Let's execute all of this in one line of code.
+sonar_pca initialize the PCA object,
+but again do not set n_components.
+We're providing all default values.
+Then fit and transform Xsonar.
+Notice, I'm still using
+the standardized features, the standardized columns.
+It's really important that you
+use standardized variables when you
+fit and transform PCA.
+Let's now check the shape, sonar_pca.shape.
+We no longer are getting two columns returned.
+Instead, we have as many columns as the dataset that we
+provided to the fit and transform method.
+There are as many columns returned
+as the number of columns in the data.
+We have previously specified
+n_components equal to two
+just to support simple visualization.
+But PCA is capable
+of giving you more than just two new variables.
+PCA creates as many new variables
+as there are in the original data.
+This object right now is a NumPy array.
+I want to convert it to a DataFrame before we do
+any visualization to help you understand
+what these new variables are.
+Convert sonar_pca to a DataFrame using
+the naming pattern pc01,
+pc02, pc03,
+so on and so forth.
+To do that, we will use
+the same setup for a list comprehension,
+where the action is a string PC with the placeholder 02d.
+Set the placeholder as d for d in range.
+But now, I'm going to say that
+the range starts at one because
+historical convention is that you
+have the first principle component,
+pc1, not the zero principal component.
+I'm naming this PC
+to the number of
+columns plus one because up to and excluding,
+so to include the total number
+of columns, I need the plus one.
+pc01, pc60.
+Again, pc01 to pc60.
+Create the DataFrame containing all PCs.
+sonar_pca_df, pd.DataFrame,
+sonar_pca where the columns are named
+the list comprehension of
+the action string PC placeholder 02d,
+where the place holder d is for d in range 1,
+sonar_pca.shape 1 plus 1.
+We have 60 columns.
+Their names pc01 up through pc60.
+Let's now visualize the principal components.
+Use Seaborn wide format plotting to examine
+the box plot or summary stats for each of the PCs.
+sns.catplot data equals sonar_pca_df, kind equals box.
+There are 60 box plots shown
+here because we have 60 columns in our DataFrame.
+Since there's so much stuff,
+let's make the figure very wide to space it out.
+Now, you might be asking yourself,
+gee, there's so much going on here.
+What can I possibly pull out from this figure?
+First, the boxes.
+Fifty percent of the rows,
+50% of the observations are
+contained in this box for pc01.
+Likewise, 50% of the observations
+are contained within the box for pc02.
+As you scan left to right,
+you should see that the height of the box is decreasing.
+The variation is decreasing from
+pc01 to the higher numbered PCs.
+This is especially easy to
+tell when you look at the range, not just the box.
+Do you see how the whisker and
+the extreme values they are
+decreasing from left to right,
+so principal component 1,
+then principal component 2,
+then principal component 3.
+We're creating this funnel.
+The amount of variation
+in principle component 60 is really,
+really tiny compared to
+the amount of variation in principle component 1.

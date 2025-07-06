@@ -1,0 +1,98 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/EEGps/exploring-the-pitfalls-of-misapplied-linear-regression-in-binary-classification
+
+English
+Let's see what happens if we would mistakenly
+fit the linear model for regression.
+Because remember, the column y is an integer.
+So if we would by mistake fit the ols model, smf.ols,
+it has a formula, it has a data set, and you fit it.
+The data is df and the formula is y tilde x.
+When you run it, nothing gets displayed.
+Binary classification, you should see and be told something about some optimization.
+Just why that is discussed in 2120.
+Just why you have this optimization.
+Okay, for now, just knowing you must see this is good enough.
+But because logistic regression is
+a generalized linear model,
+many of the interpretation concepts still apply.
+Meaning our logistic regression has coefficient estimates,
+our logistic regression has standard errors,
+our logistic regression has p-values,
+our logistic regression has confidence intervals.
+We have all of the exact same set of interpretations as in
+the regular linear model for regression.
+What is the sign of the slope?
+What is its uncertainty?
+Are we confident that the sign is positive or negative?
+If so, the 95% confidence interval does not contain 0,
+and therefore, the p-value,
+Will be less than 0.05.
+This model says the input x is statistically significant
+in this application, its sign is definitely positive.
+In fact, because everything is so similar,
+if you go back to last week when we fit multiple regression models.
+And we defined that function, my_coefplot,
+to visualize the coefficient estimates, or the coefficient summaries.
+And you paste it in and you call it for the logistic regression model,
+you can still visualize the coefficients.
+The fact that the 95% confidence interval does not contain 0 means
+the input x is statistically significant.
+The difference between the interpretation of
+the logistic regression slope versus
+the regular linear model slope is that
+the logistic regression slope is not
+how much the average output changes
+due to a one unit change of the input.
+The slope is how much the log-odds
+ratio changes as the input changes
+one unit, that's the key.
+So we can't actually say that a slope of
+roughly 1.2 causes the probability to change 1.2 units.
+We're actually saying a slope of 1.2 means for
+every one unit change in the input x,
+the log-odds ratio changes by 1.2 units.
+Likewise, if the slope was negative, the log-odds ratio would decrease.
+That means even though that the interpretation is slightly different,
+finding statistical significance is still the same.
+But let's now interpret things through predictions.
+Fundamentally, we are predicting
+the event probability.
+The .predict method,
+Therefore returns the predicted probability.
+Let's see that by define a visualization
+grid between a very negative input and
+a very positive input.
+So I'm actually going to extrapolate, and
+the reason why I'm extrapolating will make sense here in a minute.
+But our minimum is -2 and our maximum is roughly 2.5 for the input x.
+Let's use a lower bound of -5 and
+an upper bound of positive 5 for
+the input in the visualization grid.
+So input_grid = pd.DataFrame using a dictionary x,
+where we have the value being a linspace
+of -5 to 5, num = 251.
+Now, this is extrapolating,
+meaning my inputs are outside the bounds of my training set.
+You should very rarely do this, but the reason why I'm doing it
+will make sense here in a minute, it will make sense in a minute.
+Define a copy of the input grid.
+I'll name it df_viz = input_grid.copy and
+now include a new column for the predicted
+probability from the logistic regression model.
+Let's name it df_viz, or
+let's name this new column pred_probability.
+It gets a sign, fit_glm.predict.
+So there's a predict method for our logistic regression
+model just as there is for our regular regression model.
+The input argument is input_grid.
+Here's the predicted probabilities,
+and if we apply the .describe method,
+you can see the minimum predicted probability
+is just above 0 and the maximum is less than 1.
+So if we visualize the predicted
+probability with respect to
+the input in the visualization grid,
+sns.relplot(data = df_viz,
+x = x, y = pred_probability, kind = line).
+I don't need to set anything about the estimator or
+the units because I have one and only one line.

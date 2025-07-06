@@ -1,0 +1,84 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/g6Oox/unpacking-grouped-correlation-plots-analyzing-continuous-variables-across
+
+English
+What happened? Initialize the figure,
+initialize the axis object.
+One row, as many columns
+as unique categories as of the groups.
+For IX in range of the length of the groups.
+I have this sequence.
+I need its length,
+make use the range generator object to give the index.
+I'm using Corp group to identify all rows based on
+the index location with
+the index location key coming
+from this slice of the groups.
+Then we have how you set up
+the correlation plot, -1 to +1,
+centered at zero, corr 1, annotate is true,
+assign the axis, change the title of the axis.
+Why do you only see red here?
+You don't see any blue even though
+we previously saw blue?
+Well, let's go back to our grouped trend plot.
+All three curves are positive when you group by species.
+That's exactly what we see up here.
+Again, grouping by a categorical can
+change our opinion about
+the relationship between the team continuous.
+Lastly, to conclude,
+we can create group correlation plots
+between more than just two continuous variables.
+Corr per group all penguins.group by
+species corr numeric only equal to true.
+Now, corr per group all,
+all four numeric columns are included.
+You have a four by four dataframe because you have
+a repeated three times because we have
+four continuous variables for each of the three species.
+Just to save a little time,
+let's copy and paste all this code.
+Something I typically don't like to do,
+but I want to just speed this up.
+Also to highlight how general this approach is.
+Initialize everything. That's the same.
+Define the four loop. That's the same.
+I want to iterate over the groups. That's the same.
+But I'm not slicing Corp group now.
+I'm slicing Corp group all.
+I need the same setup for my corr plot.
+The axis title is still the same.
+Again, we now have
+correlation plots grouped by each individual species.
+You only see red here even though when we looked at
+the correlation plot for or ignoring any grouping.
+We had negative relationships
+between some of the variables.
+That meant the fact
+that we had different species was actually
+masking or hiding
+the real relationship between these variables.
+You had to control or account for
+each species to really know how
+the individual continuous variables
+are related to each other.
+You have now seen three different ways
+of showing relationships.
+Scatter plots, trend plots,
+and now correlation plots.
+Scatter plots are basic.
+Trend plots give you a line to
+help see the relationship, the linear relationship.
+Correlation plots summarize that linear relationship
+with a number that can be negative or positive.
+Correlation plots scale to
+a large number of variables quite easily.
+Whereas in scatter plots and trend plots,
+it's really studying just two variables,
+two continuous, but we can use color and facets to
+examine the impact or
+influence of multiple categorical variables.
+Correlation plots can be grouped
+and that grouping is shown via facets.
+I hope you like this video,
+please let me know if you have any questions. Good luck.

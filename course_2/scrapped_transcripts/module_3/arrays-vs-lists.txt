@@ -1,0 +1,180 @@
+Source: https://www.coursera.org/learn/the-art-of-data-visualization/lecture/VRGQK/arrays-vs-lists
+
+English
+Now, I personally don't like np.arange.
+I don't like it because of the exclusive stop.
+The np.linspace function is very
+similar to np.arange but its arguments are start,
+stop, inclusive,
+and number of points.
+I personally find this easier to think
+about compared to the exclusive stop,
+so np.linspace 0,
+I'm now going up to and including 6.
+The third argument is named num and it's
+how many points or
+how many elements we want returned in the result.
+Notice when I press or I use one here,
+one gives me literally
+just one value because it's not the increment,
+it's not adding, it's not the step,
+it's how many points.
+Num 6, we'll say start at zero,
+end at six,
+and give me exactly six points between those two,
+so 1, 2,
+3, 4, 5, 6.
+This means if you want to use np.linspace to
+have a nice number between each value,
+you have to think about what's the difference
+between the increments and the number of points.
+For example, I'm drawing this little picture,
+this little picture has 1,
+2, 3,
+4 increments or bins or intervals,
+and yet it has 1,
+2, 3 4, 5 points.
+If I want to have four intervals,
+I need five points.
+Likewise, if I want to have
+six evenly spaced intervals between zero and six,
+I need 6+1 points,
+or seven points between zero and six.
+I know it can seem to be a little
+confusing at first when you're going back
+and forth between np.arange versus np.linspace,
+the primary point is to find what works best for you,
+how you like to think about it.
+I prefer np.linspace,
+I start at something,
+I end at something,
+and I have to specify how many points in between them.
+I find np.linspace much easier to set up
+and use and manipulate
+compared to thinking about the exclusive stop.
+But the main point that I want you to have right now is,
+it's very easy to
+always check and confirm our attributes.
+Whether you use np.arange,
+you start somewhere,
+and you can even start at a negative number,
+end on a positive number,
+by or about 25,
+or by increments of one,
+or we'll make something like 1.2,
+np.arange, -10, 10, 1.2.
+How many elements are there per dimension?
+Shape will tell us that.
+With np.arange, you
+specify the difference between each value,
+and you need to check the resulting shape.
+Np.linspace,
+you know exactly how many points you're going to have.
+You're going to have
+exactly the number of points that you
+specify with the num argument.
+Again, notice these results here,
+they are different,
+even though there are 17 points,
+the np.arange does not include
+the end point, whereas np.linspace does.
+Let's wrap up this video by discussing
+a few other very important differences with lists.
+Operators may behave differently
+on NumPy arrays compared to lists.
+For example, let's say we have a_list 1, 2,
+3, 4 or actually,
+let's go back to a_list 0 through 5.
+We can check if the values in a_list are the
+same as what's in
+another list through the equals equals operator.
+But if I want to check,
+or if I want to apply the equals equals
+operator to another array.
+Notice we do not get a single true or false statement.
+Instead, we get
+an entire array of true false statements.
+What's this mean?
+It means the equals equals operator
+is actually checking two different things.
+Whether we have lists or NumPy arrays.
+For lists, the equals equals operator is just checking,
+are these lists the same, yes or no?
+But with arrays it's actually checking are
+the individual values the same between these two arrays.
+Let's do this one more time, a == np.
+array and I will put in -10,
+1, 2, 3, 4, 5.
+Notice that the zero element is false because a,
+it's zero element is zero,
+and I compared it to an array
+where it's zero element is -10.
+Now, something that you should be
+careful about when you're
+using the equals equals with arrays.
+Let's see what happens if we
+use two arrays of different sizes,
+so, five versus 10.
+You can see this is actually
+not an appropriate operation to do.
+It even gives us this little warning
+that it's not even going to
+allow you to make
+this comparison at some point in the future.
+It's going to say they're not the same sizes.
+You shouldn't do this because it literally
+can't compare each element by element set of values.
+But obviously, if the sizes are different,
+they can't be the same.
+If your goal is to literally just check,
+are the arrays the same or not,
+not the individual values,
+then you need to use the np.array_equal function.
+Because here, it's going to compare two arrays.
+Our first argument, say,
+is our reference case and then we have
+a second argument where we can
+have a second case that we will compare it to.
+These two arrays are the same,
+array equal, but if I now type in -10,
+those are obviously false.
+They are different, they are not the same.
+Lastly, the plus operator behaves differently.
+If we have two lists and we add them together,
+we combine or concatenate the two lists,
+but with NumPy,
+if we have two arrays and we add them together,
+the elements are added.
+1+3,
+2+2,
+3+1, meaning it lists
+the plus operator will change
+the overall number of elements that get returned.
+With arrays,
+the operator does not change the number of elements.
+It is going element by element,
+adding them together, so np.zeros(5)+np.ones(5).
+It has five elements,
+each of them are just 0+1.
+If we have 10 zeros and we add them to five ones,
+this does not work.
+This is a very common error
+that can occur in data analysis
+where you will have
+different sized arrays getting added together.
+This cannot happen.
+It does not know what to do.
+The reason for it. Here, let's display these to find out.
+Ten, five.
+Will add zero and one. This is one.
+Zero and one, one.
+It keeps adding each element
+to each pair of elements together,
+but then once the second array stops,
+it doesn't know what to do
+anymore and that's why you get the error.
+I hope you found this video useful.
+The primary point was to contrast
+the NumPy 1D array with the base Python list.
+That's all for this video.
+I'll see you in the next one.

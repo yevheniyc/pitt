@@ -1,0 +1,100 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/unrF1/advantages-of-long-format-data-in-efficient-conditional-visualization
+
+English
+Okay, so you might be saying, why am I doing this instead of a for loop?
+Why is the long format so useful?
+Because we can easily group by categorical variables.
+We can group each facet by
+a categorical variable to study
+the conditional distribution for
+each numeric column.
+So let's group by species.
+And now just to show you that I can use everything that we just typed,
+I'm copying it, I'm not going to retype it.
+Because I want to highlight the only change now is hue=species.
+We get the correct conditional distribution for
+each numeric variable and we have removed the sample size effect.
+But because we have reshaped and
+we kept all non numeric columns,
+we can facet by more or by other variables.
+For example, let me paste this in so I have the same structure.
+I want to use the row facet for
+species because now I want to have the hue
+associated with the sex of the penguin.
+This is the real motivation for why you don't want to just rely on for loops.
+Because yes, we could have used the for
+loop to create this figure where we have a separate
+facet per column in the original data frame.
+But now this figure, and let me zoom out so you can see it easier.
+This figure we have for each individual column,
+we have separate facets for the species.
+If you would want to use a for loop to correctly construct this figure,
+you have to make sure your filtering is very carefully applied.
+You might now have to switch to nested for loops, you have to be very careful.
+You cannot as easily extend the same style of code, because remember,
+in seaborn everything is associated with a column in the data frame.
+Here's the variable on the x axis, here's the variable for
+the horizontal facets, here's the variable for the row facets,
+here's the variable that defines the colors for the KDE.
+Those are all columns, we didn't need to do any other actions to make this graph.
+This also means we can use other types of
+plots from the long format without changing anything.
+We can show the conditional distributions for
+each numeric column grouped by island or
+grouped by species as box plots.
+Sns_catplot data=penguinslf,
+x equals the x variable for the box plot will
+be species, the y variable will be value.
+The facets will be controlled by variable, the kind will be box.
+Everything is dominated by the body mass.
+We need to specify share y is false.
+And now with catplot, the share y and
+share x arguments are just that, they are arguments,
+they don't need to be contained in a keyword dictionary.
+And just to show it, let's wrap the facets so we have two per row.
+This chart would be quite difficult to do and organize it correctly
+compared to our previous ones if we were doing it with a for loop.
+Because this structure is different from what we had up here.
+And yet we still use the same overall general syntax.
+This allows us to see that for the Adelie species,
+it's low for all of the variables except for bill_depth.
+And what do I mean by that?
+For example, look at body mass.
+The Adelie, its box is on the low side compared to gen two.
+For flipper_length, it's on the low side compared to gen two.
+For bill_length, the Adelie's on the low side compared to gen two,
+but for bill_depth, it flips, Adelie is higher than gen two.
+So again, we are able to examine how all of
+the variables are behaving because of the facets.
+We can include an additional grouping.
+Via the box hue.
+So let's examine the differences between male and
+female penguins as the hue SNS here.
+Actually, I will copy just to show how close this code is.
+Sns.catplot, penguins_lf, x=species, y=value.
+Col is variable, col_wrap is two, but
+now hue equals sex, kind is box share, y false.
+The blue are the males, so the males are heavier than the females.
+And again, you get to compare what's going on across the species per variable.
+This one would be very difficult to do with the original data set with for loops.
+So, in summary, wide format is intended for
+studying relationships between variables.
+We can create the scatter plots and
+the correlation plots as needed in the wide format.
+Long format is intended for
+grouping variables together,
+that's really where the long format shines.
+We needed to group by the column,
+by the different categorical variables to make these kinds of plots.
+Now, which version is better?
+Wide or long?
+It depends on what you're using them for,
+it's not about saying this is the one and only one version to use.
+As a data scientist, I will constantly go back and forth between wide and long.
+You just have to get comfortable working with them.
+That's all for this video, I hope you liked seeing it.
+I hope you liked seeing how by just reshaping to long format,
+you can expedite creating your conditional plots,
+your conditional distribution plots.
+And via faceting, rather than having to manually go through and
+create each of them separately.

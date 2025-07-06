@@ -1,0 +1,92 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/ETD1T/reading-data-into-dataframes-from-excel-files
+
+English
+Hello, everyone. In this video,
+we're going to talk about reading data into Pandas.
+As you can see, I already have a Jupyter Notebook opened.
+Please pause the video and open up one
+in the appropriate directory
+on your own computers, then come back.
+But I'm going to now go ahead
+and launch the new Jupyter Notebook.
+I'm going to name this one, week_05_read_data,
+put in my headers,
+read data into Pandas.
+The modules that we will use,
+we will use NumPy and Pandas just like last time.
+Import NumPy as np.
+Import Pandas is pd.
+But now, before we do anything,
+we need some preliminaries for this recording.
+You need to download the four files
+into the same directory as this Notebook.
+It will take you to a spot
+that is really just a data dump.
+It has links to four files.
+I want you to download each file.
+Now, I'm just manually going to select and
+cut all four files and then open them up,
+go to the exact same working directory as the project.
+You can see the filter_pandas_with_strings file
+from the previous recording.
+You can see the read_data Jupyter Notebook here.
+I'm pasting all four files
+into this location, into this directory.
+I'm now going to go back into Jupyter.
+Let's make sure the files were downloaded
+and saved within the correct location.
+To do that, we need to import the os module.
+You all have this. It's one of the base Python modules.
+It comes with Anaconda. We have it.
+I now want you to run the os.listdir function.
+This listdir function lists
+all files and directories within our current directory.
+If we want to know our current working directory,
+the function is getcwd.
+You can see where I'm currently located.
+Within this directory,
+we see the four files,
+three of them end with CSV extensions,
+and one of them ends with XLSX.
+This recording is all about reading data from
+Excel and CSV files into Panda's data frames.
+We will begin by reading Excel files.
+Let me open up that directory, Excel_Example_Data.xlsx.
+You have to have Excel on your computer to open
+up this actual file.
+You don't have to do so though in order to read it.
+But this is what the file looks like.
+It is a spreadsheet.
+This Excel workbook consists of four sheets.
+I left the default sheet name for sheet 1,
+and then I modified the sheet names for the other three.
+But I want you to just look at this data now.
+Again, there are rows and columns here,
+because this is a spreadsheet.
+Let me minimize it and go back to Jupyter.
+To read data from Excel,
+we need to use the pd.read_excel function.
+Now, the reason why I wanted
+us to make sure that we have these files
+in the same directory as our current Notebook is
+because it makes it very easy to read in the file.
+In fact, by just typing
+ex as a string within read_excel,
+the Excel_Example_Data.xlsx file is available.
+I have the data as read into Pandas
+on the left and
+the Excel Workbooks view of the data on the right.
+Now, we didn't discuss anything yet
+about how this function reads in the data,
+but from just looking at the way the data are presented,
+you can see we have a top header row.
+This top header row
+has bold names or bold face font letters.
+Those are the column or variable names.
+On the left hand side,
+we have the bold letters, the index.
+Now, in the Excel file,
+we do not see the index.
+We'll talk about that here in a minute.
+But you can see the row,
+that becomes the column names.

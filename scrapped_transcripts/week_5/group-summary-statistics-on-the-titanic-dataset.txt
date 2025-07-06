@@ -1,0 +1,110 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/yygLz/group-summary-statistics-on-the-titanic-dataset
+
+English
+Now, we can finally ask,
+does the average of B change across the categories of E?
+The values are changing and
+the standard error on that average looks
+to be pretty small or relatively small so
+we can probably confidently say the average is changing.
+Now we will quantify that statement,
+that we're confident the average is changing when we
+get into modeling and visualization.
+But for right now, we're just
+displaying it so we can see that
+the average is in fact different
+across the categories of the grouping variable.
+We can also group by multiple columns
+if we supply multiple column names within a list.
+Instead of just grouping by E,
+let's group by E and H. Now,
+to aggregate here, I'll just do this just to save time.
+I'm only going to do the average of B,
+and the numrows of B,
+and the number of non missing B count.
+If we run the groupby with multiple grouping variables,
+the result is this strange looking data frame.
+The display helps illustrate what's going on.
+You see how when I put my cursor here,
+it almost looks like there's a hook being selected.
+When you have multiple grouping variables,
+let me just copy this and then paste it in,
+the resulting index is a multi index,
+which again, I really dislike.
+The multi-index is annoying and
+causes a lot of filtering issues.
+Again, I highly recommend and
+encourage resetting the index.
+Now, the grouping variables are just regular columns,
+and therefore they are easy to filter.
+But the purpose of grouping by
+multiple variables is maybe we want to know,
+does the average of B
+depend on the combination of two things,
+or two or more things?
+Let's wrap up this demonstration on a realistic example.
+As with the previous recording,
+we imported from Seaborn the Titanic dataset.
+Import seaborn as sns and then load dataset Titanic.
+I'm not going to go through and do
+all the exploration that we
+need because that was in the previous recording.
+But one of the things that we saw was
+that the survived variable,
+zero or one,
+one means the person survived.
+Thirty eight percent of the people survived.
+But because survived is zero or one,
+if you apply the mean method to it,
+you actually get how many survived.
+The reason for that is it's zero or one.
+Remember, mean is sum
+all of the values and divide by the length.
+If you sum zero or one,
+you're counting how many times one occurred.
+That's why applying the mean method who survived gives us
+the proportion of times this event occurred.
+Now, throughout the entire dataset,
+we're ignoring any other variable.
+This was the survival rate.
+But does the survival rate depend
+on the passenger class?
+There was a variable pclass
+which we saw in the previous recording
+had three unique values;
+first class, second class, and third class.
+Let's group by pclass.
+Even though pclass is a number, an integer,
+we can groupby it and apply methods to
+summarize the survived column.
+This way we can study or explore,
+does the survival rate change
+across the pclass categories?
+Titanic groupby pclass. Here,
+we'll include dropna, false and aggregate.
+I usually like to first just show the number of rows,
+naming that new column numrow, survived size.
+How many non-missing rows are there?
+Survived, count.
+How many survived?
+You take the survived column and apply sum.
+What is the proportion that survived?
+You take the survived column and you apply mean.
+What's the standard error on the proportion survived?
+Or really, let's call it survive_sem.
+Then reset index,
+pclass 1, 216 rows,
+136 people survived, 63% survival rate.
+First class passengers,
+63% survival rate, second class passengers,
+47% survival rate,
+third class passengers, 24% survival rate.
+Does the survival rate depend on the passenger class?
+Yes. The standard error on the mean,
+we can see this is a pretty tiny number,
+we can trust this.
+If you've ever heard or read anything
+about the Titanic, yes,
+the wealthy had a higher survival rate
+than the poor citizens who were stuck in,
+say, the bottom of the ship.

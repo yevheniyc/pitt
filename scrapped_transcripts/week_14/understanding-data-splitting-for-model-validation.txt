@@ -1,0 +1,102 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/3iTUc/understanding-data-splitting-for-model-validation
+
+English
+Last week, we concluded by saying the performance metric,
+such as accuracy or ROC AUC.
+The performance metric on
+the training set does not matter.
+Because we don't actually care how well the model does,
+we do not care how well
+the model performs on the data used
+to estimate the regression coefficients.
+The data used to estimate the regression coefficients,
+the intercept and slopes
+is referred to as the training set.
+So it doesn't actually matter how well
+the model behaves on
+the data used to estimate all the coefficients.
+The reason is because the training set
+does not tell us if we
+can trust the model on new data.
+If any of you have ever
+invested money to say the stock market,
+or maybe if you have
+a job and you have a retirement account,
+you have to decide how to handle your retirement saving.
+But you will often hear from
+financial advisors or even if you've just seen
+commercials for financial advisors that
+past performance does not
+necessarily mean future performance will be the same.
+That's really what we're getting at here.
+Think of the training set as the past data.
+It's historical. We have observed everything.
+We can fit the models to the past data.
+What we learned last week was when we
+fit and assess the performance on past data,
+the data we have collected,
+The model that does the
+best is the model that has the most coefficients,
+the most features in the model.
+The more features we have,
+the more coefficients that must be estimated,
+and the more coefficients we have,
+the better the model will appear to do
+on the data used to estimate all those coefficients.
+Again, think of this as the past.
+In the past, this model did super well.
+But what will happen in the future?
+Will this model continue to do
+well tomorrow or next week or next month,
+because that's what we actually care about?
+The answer is that, again,
+the training set does not let us
+know if we can trust the model in the future.
+We need new data in
+order to know if the model will continue to do well.
+But we do not have new data,
+and this is where we really get into the conundrum.
+We want to know how well the model does on new data,
+but we don't have any new data.
+This is the only data we have.
+We therefore need to approximate new data.
+We need to somehow approximate the effect of training on
+historical data and then
+testing or validating on new or future data.
+The approximation is known as splitting.
+We will split the data we have into two portions.
+One portion is dedicated to training,
+and the other portion is
+dedicated to testing or validating.
+However, you should not split the data once.
+Most classes, textbooks, references, things online,
+you will be introduced to these ideas by splitting
+the data into a training set and a validation set.
+I don't like that. I don't like that so much.
+I'm not even going to show it to you in this course.
+Why am I saying don't do that?
+We need to know if our models are reliable.
+If we split once and only once,
+we will not have variation in the performance.
+We cannot calculate the average performance.
+So I dislike the single train test split so much,
+I'm not even going to show it to you.
+Instead, we will replicate
+the process of splitting
+the data into training and test splits.
+By replicating multiple times,
+we can then average performance to
+get an idea of the expected behavior on new data.
+I'm using the term replicate very specifically because we
+replicated sampling at the start of the year or
+at the start of the semester.
+That is exactly what we will do now.
+So we are basically going back to the beginning.
+We are going to randomly sample multiple times.
+But at the beginning of the semester,
+we were calling
+random number generators for specific distributions.
+We were generating brand new data many times.
+Now, we will randomly
+sample subsets of the data that we have.
+We are therefore randomly selecting rows.

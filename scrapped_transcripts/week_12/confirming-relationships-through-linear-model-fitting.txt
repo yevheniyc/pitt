@@ -1,0 +1,71 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/wKQey/confirming-relationships-through-linear-model-fitting
+
+English
+Let's now fit models.
+So fit linear models to confirm the visualizations.
+This first model that we visualized is equivalent
+to fitting the output with respect to x1.
+Let's confirm that.
+Fit a linear model with a LINEAR RELATIONSHIP
+between the trend and x1 BY ITSELF.
+I'll name it fit_x1 smf.ols, remember,
+there's a formula argument and
+a data argument, and then we fit the object,
+the data equals df and the formula is y ~ x1.
+This has a summary method, but let's just focus on the regression coefficients.
+Here are the estimates.
+There's the slope multiplying x1, you can see it's positive.
+We can check its standard error, we can check its p value.
+The p value is really tiny, the p value is less
+than the common convention of 0.05.
+Therefore, x1 is a statistically significant positive slope.
+We can also examine the confidence interval,
+and as we saw last week, we can rename those returned
+columns to be conf_lwr and conf_upr.
+That way they're a little easier to read.
+The 95% confidence interval, the bounds are both positive.
+So again, we are confident that this is a positive slope.
+Let's now fit a linear model between the trend and x2 by itself.
+I'll name this fit_x2 smf.ols.
+There's a formula, there's a data set, and then we fit.
+Again, the data is df,
+the formula y ~ x2.
+Our slope that we're estimating is now on x2 and not x1.
+The variable that we include in
+the formula is what tells the function
+which column to look at in the data frame.
+And as a reminder, you do not need to tell it, you have an intercept,
+it knows to use an intercept automatically.
+But now with our formula, y ~ x2,
+we're saying the average output is a function of x2 by itself.
+The slope on x2 is a negative number, that's what's getting estimated.
+Remember, we will never know the true answer,
+we have to estimate the coefficient given the data.
+But now, how confident are we in that estimate?
+Well, we can look at the standard error, we can check the p value.
+This p value, oops,
+is not less than 0.05.
+Therefore, we feel it's not a statistically significant relationship,
+even though it's negative.
+And again, we could look at the confidence interval and
+let's rename those bounds 0 to conf_lwr, 0 to conf_upr.
+The bounds are not the same sign.
+There's a negative sign and a positive sign, therefore,
+we're not confident that the slope is definitely negative.
+Therefore it's not statistically significant.
+We can also visualize the coefficient summaries, and
+this is something that we saw last week.
+And just to speed things up, I'm not going to type this function indirectly.
+Instead, if you would go to our fitting multiple regression models
+from week 10 example, we fit a handful of models, but we were visualizing
+these coefficient summaries using the approximation where the 95%
+confidence interval is approximately two times the standard error.
+So I'm just going to copy this function, the my_coeffplot function.
+I'm copying it from last week's example.
+I'm bringing it over to this week.
+I'm pasting it in.
+I can now apply my coefficient to fit_x1.
+The 95% confidence interval does not contain 0.
+We therefore feel this is a statistically significant positive relationship.
+However, if I examine the coefficient summary for the model just x2,
+even though the estimate is negative, the 95% confidence interval contains 0.

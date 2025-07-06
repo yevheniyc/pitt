@@ -1,0 +1,116 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/lc3LG/exploring-distributional-shapes-of-continuous-variables
+
+English
+This is just one of the variables, though.
+When we made that first call,
+and we saw the subplots,
+we had other shapes of distributions,
+for example, let's look at the pop variable.
+Look at the distributions of
+the other continuous variables in gap_df.
+Sns.displot.
+I'll make each of these with a figure
+level functions, gap_df,
+now x = pop,
+kind = hist,
+and let's include the kde.
+This distribution is tough to look at.
+For the counts of the bins,
+we see these really huge spike,
+then there's this long tail to the right.
+The kde is showing us something similar
+where the density is highest on the left,
+and then there's this long trailing tail to the right.
+The purpose of showing this is for you to
+see that the distributional shape,
+the way the bins are organized,
+the way the kde line is drawn,
+they are not always the same.
+You're not always going to get things that look like
+nice bell curves or flat uniform distributions.
+You might have something that looks roughly
+nice or you might have
+a distribution where a lot of
+the observations are bunched together at one end,
+and then there's this very long tail
+that gives you extreme values.
+The fact that we have this very long tail
+means the distribution is not symmetric.
+There's a high concentration on one side,
+and then this very low,
+but yet extreme set of values on another side.
+Asymmetry is something that's quite common.
+It may not appear as extreme though as
+what we're seeing with this population variable,
+for example, gdpPercap,
+kind = hist, kde = True.
+It is also asymmetric
+where a lot of the values are on the far left,
+and then there's this tail to the right.
+But it's asymmetry or
+skewness is not as extreme as what we saw above.
+The purpose of data exploration is for us to
+just identify variables that
+have nice looking distributions versus those with
+definitely weird behavior with
+these very long tails and
+extremes and those that have this asymmetry,
+but maybe not as quite extreme.
+Let's wrap this up by
+examining a few variables from penguins.
+Penguins.dtypes, there were four floats.
+All of those floats have
+at least double digit unique values,
+so they should be treated as continuous.
+Let's first focus on the flipper lane.
+Again, I want to know how this variable is distributed.
+Let's create its distribution plot
+with Sebornpigure level function displot.
+I'm working with a different dataset,
+so my data is changing.
+The data argument is now penguins.
+I must now identify the one column,
+the marginal distribution to make.
+One column ignoring everything else.
+Kind = hist,
+and let's include in the kde = True.
+The histogram is revealing to
+us there's this interval of high count on one side,
+another interval of higher count on the other,
+and in between those two, the count decreases.
+The kde point agrees with it.
+Where there is this high concentration,
+it decreases, and then another concentration.
+The data or this variable's distribution
+looks like a mountain range,
+where we have one peak to
+the left and another peak to the right.
+This is showing us the variables,
+its values can be clustered at different locations.
+There's a cluster around 190,
+and there's another cluster around 215.
+This example is, therefore,
+showing you several representative shapes.
+You could have data that is uniform,
+you could have data that have really long extremes,
+and you can have data that have
+different clusters where there's high concentration,
+and then a low concentration region in between them.
+Again, the purpose of data exploration
+is for us to just find out what's there.
+Let's just do one more for penguins,
+even though there's a total of four,
+but penguins is the data set, x.
+Let's now do bill_depth,
+mm, kind = hist,
+kde = True, pot = True.
+Again, we have another distribution that this time,
+it doesn't look so crazy.
+We don't have these really long tails one way or another.
+It also doesn't seem to have one cluster next to another.
+The data are all just located somewhat in the center.
+Again, the purpose of this,
+a few possible shapes you may find,
+two different ways to visualize those shapes,
+the histogram with the bins,
+the kde with the smooth curve.

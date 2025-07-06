@@ -1,0 +1,119 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/TNhVH/need-for-preprocessing-and-standardizing-variables-for-fair-clustering-analysis
+
+English
+If you describe the data,
+you can get that same thing but with the hard numbers.
+Look at the difference in the means,
+40, 17, 200, 4,200 or something in the tens,
+something in the hundreds, something in the thousands.
+Look at the standard deviation,
+single digits, double digits, triple digits.
+A change of a value of one for
+bill depth is equal to nearly its standard deviation,
+but a change of a value of one
+for body mass G is next to nothing.
+That doesn't matter. If we
+use the data or if we use
+the columns with the raw values,
+the magnitudes and scales
+will impact the cluster results.
+We do not want the magnitudes and
+scales to impact things.
+Essentially, we want to work with variables that
+are roughly the same magnitude and scale.
+We need to remove the scale
+and thus transform or modify the variables.
+That's why we must preprocess.
+I'm now going to demonstrate how to do this manually.
+I very rarely execute these actions manually,
+but it is important to see them.
+There are many different preprocessing operations.
+But we will focus on one very important approach,
+and that approach is called standardization.
+Standardizing means you are calculating the z-score.
+What is the z-score?
+It's the number of
+standard deviations away from the average.
+It requires two simple steps
+or it requires two summary statistics.
+It needs the sample average
+and it needs the sample standard deviation.
+The z-score is calculated by centering,
+which means you subtract
+the value from the sample average,
+and then you scale,
+you divide the centered value
+by the sample standard deviation.
+Let's demonstrate on one numeric column in penguins.
+Let's demonstrate how to do this.
+I'll make a new dataset,
+a new data frame, which is a deep copy.
+I'll call it penguin_z.
+My goal is to
+apply the standardization to flipper_length_millimeters.
+I, therefore, need to calculate its sample average.
+I also need to calculate its standard deviation.
+Centering, you take
+each observations value and you
+subtract the sample average.
+Now you might see a few odd looking things
+printed to the screen here.
+We will return to these in
+the next recording because they are important.
+But for right now, just focus on
+the average or focus on the values.
+When you center,
+you calculate the difference
+of the value from its average.
+You can have positive and negative numbers.
+Then you scale.
+You take the center value,
+which is the variable,
+minus its mean and you divide by
+its sample standard deviation.
+You no longer have values in the original units.
+You have a variable minus
+its mean divided by the standard deviation.
+You have a unitless number.
+The z-score is how many standard deviations
+is the value from its average.
+Let's assign the z-score to a new call.
+I'll just copy this code,
+so I don't have to redo it.
+But penguins_z, assign it to flipper_length_zscore.
+There we go. Now let's compare
+the original or raw variable to
+its standardized z-score value.
+penguins_z.loc, all rows of
+the flipper_length_millimeter column
+and the flipper_length_zscore column.
+You can see the values are in the hundreds.
+But the z-score,
+we only see single digits printed to the screen.
+Compare the summary statistics between the two.
+penguins_z.loc, all rows
+of the flipper_length_millimeter column,
+the flipper_length_zscore column, describe.
+Now, when I apply the describe method,
+it's easy to read the summary stats on the raw variable.
+But because of the scientific notation,
+we might miss that this mean is
+zero because it's e to something really tiny.
+What can help is you can
+round to a certain number of decimal points.
+Here I'm rounding to three decimal points.
+Now, the sample average in the raw variable is 200,
+but the sample average for the z-score is zero.
+A standardized variable, by definition,
+has an average of zero.
+Now look at the standard deviation.
+The raw variable is 14,
+but the z-score is one.
+By definition, a z-score or
+a standardized variable has a standard deviation of one.
+The min is negative 2, the max is two,
+whereas the raw value,
+the min is 170 and the max is 200.
+We have converted from whatever the original scale is,
+the original range to
+something usually between negative 3 and positive 3.

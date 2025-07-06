@@ -1,0 +1,151 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/cDN7f/hierarchical-clustering-and-dendrogram-visualization-explained
+
+English
+But the goal of hierarchical clustering
+is to start at an uninteresting state,
+start where all observations are their own cluster,
+and then merge or
+join or fuse observations
+together into clusters based on similarity.
+The closer data points are to each other,
+the more similar they are considered to be.
+But once you have created two clusters,
+hierarchical clustering will then
+those clusters into a bigger cluster.
+Then hierarchical clustering will fuse
+together larger clusters into still bigger clusters,
+creating a hierarchy of
+clusters within clusters until finally,
+all clusters have been merged into
+a single large cluster containing all observations.
+What I just quickly describe to you is known as
+the agglomerative approach where we
+start with all data points
+at the bottom in separate clusters,
+and then we start merging
+similar data points and then similar clusters
+together until we have created
+a single enormous cluster that has all observations.
+That's how you read the dendrogram.
+You start at the bottom and you work your way to the top.
+The y axis or the height is a measure of dissimilarity.
+If you notice at the bottom,
+it starts at zero because
+every data point is perfectly similar to itself.
+Mergers or joints at
+lower heights correspond to
+more and more similar data points
+being combined together.
+However, mergers at very tall heights
+represent dissimilar units being merged together.
+Those units can be
+individual data points, joining a cluster.
+They can be smaller clusters,
+joining a larger cluster,
+or they can be two very big clusters
+finally merging together to produce the entire data set.
+If you want more as to what's going on,
+there's a presentation that discusses
+hierarchical clustering in more detail,
+and it walks you through the basic approaches for it.
+I like this tiny little diagram
+of illustrating all of the points that I just mentioned.
+Here's the source where it comes from.
+This is a pretty good repository of
+information on different data analysis techniques.
+All of the examples are in the R language,
+however, rather than Python.
+But in this little cartoon,
+the data points, we have just five of them.
+For the agglomerative procedure that I just described,
+the initial step is that every data point
+is in its own cluster or leaf.
+The first step, we join the
+two similar data points together.
+The second step, we join
+the similar data points together.
+Which then leads to combining
+a data point with a group or cluster.
+Finally, all data points are
+combined together into a single root node,
+a root cluster, one cluster containing everything.
+Again, we start at an uninteresting state.
+All observations are in their own cluster.
+We end at an uninteresting state,
+all observations contained in one cluster,
+the interesting aspect comes from cutting the tree.
+You literally slice horizontally.
+Wherever you cut one of these vertical lines,
+that's called cutting a branch.
+If I would make a cut here,
+I have the clusters into two clusters.
+If I instead would cut at this height,
+I would have cut into four clusters.
+Now, by default,
+the scipy hierarchy dendrogram
+will recommend a number of clusters to you.
+It does that visually through color.
+You can see 1, 2, 3,
+4, 5 colors displayed.
+That corresponds to making a cut at 1,
+2, 3, 4, 5, at these branches.
+If you would go into the documentation,
+do you remember how I said scipy is
+literally a copy of Matlab?
+The logic for deciding these recommended number of
+clusters is literally how Matlab
+recommends the number of
+clusters and hierarchical clustering.
+It even states this is what Matlab
+does in the documentation.
+But now, why did it choose that number of clusters?
+We'll return back to that question in a little bit.
+But when you're making these figures,
+let me just copy this code to save a little time.
+I like to remove the labels at the bottom.
+I can't see or read any of these labels.
+I know that the bottom shows each data point,
+so set the no labels argument to true.
+The figure is actually faster now.
+We are suppressing
+the x axis or horizontal axis labels, but that's okay.
+The primary aspect of this dendrogram is so that we can
+see where we start fusing clusters into larger clusters.
+Now, this name, complete
+the complete linkage represents
+how clusters themselves are fused together.
+The reading demonstrates how
+cluster analysis works using the same,
+very simple one variable example from
+last week where we have
+15 observations that we wish to cluster together.
+Here, it walks through and
+discusses how to read the dendrogram,
+which we just discussed.
+Mergers that occur at
+lower heights are observations that are very similar.
+They are literally close to each other.
+Their distance is small.
+Mergers that occur at higher heights are less similar.
+So do you see these orange markers?
+They are further apart than
+the two blue markers are to each other.
+Likewise, the three markers and the orange cluster
+are closer together than
+they are to the observations in the blue cluster.
+But we now have to ask,
+how do we merge these two clusters together?
+We do that through something called the linkage,
+and the linkage describes how we
+define similarity between groups of observations.
+The complete linkage, which we have used so far,
+represents similarity as the maximum distance
+between the two clusters.
+That's really easy to visualize
+in this simple one variable example.
+The maximum distance is
+the furthest two points spanning the two clusters.
+It's called complete because we are
+completely spanning these two clusters.
+The similarity between them is represented
+by the maximum distance between the groups.

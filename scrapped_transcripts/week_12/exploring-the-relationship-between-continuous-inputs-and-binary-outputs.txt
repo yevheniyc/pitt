@@ -1,0 +1,106 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/lfTYJ/exploring-the-relationship-between-continuous-inputs-and-binary-outputs
+
+English
+Now, when we consider the input,
+the input is continuous.
+We could create its histogram,
+data = df,
+x = x, kind = hist.
+It's roughly symmetric. It's not perfect.
+But what really matters is how does
+the continuous input relate to the categorical output?
+We can do this several ways.
+Let's create the catplot where x is
+y and y is x, kind = box.
+We're creating a boxplot.
+With this boxplot,
+the x-axis is categorical variable.
+But the context here is
+this categorical variable is our output.
+The vertical axis or the y-axis is the continuous input.
+Again, when we make these boxplots,
+we're really looking for,
+are there separations between the boxes,
+or are the level of variation,
+the height of the boxes different across the categories.
+Now, I can't really see any differences in heights.
+The variation seems to be the same,
+and the boxes do not overlap.
+Therefore, it seems there's
+no a huge difference in the distributions,
+though the medians do have different values.
+Boxplots do not show the distributional shape.
+We should also examine a violin plot.
+Alternatively, you could use a conditional KDE, but here,
+I really want to focus on the violin to show
+the differences in the conditional distribution
+across the categories.
+These conditional distributions do
+look a little different.
+When y = 1,
+the event, there seems to be one mode,
+whereas when y = 0,
+the non event, we don't
+really have as defined of a single mode,
+there might even be two.
+Perhaps the reason why the boxes
+had some overlap was because
+the shape of the distributions
+were, in fact, quite different.
+Lastly, what is the average continuous input
+given the binary output or the point plot?
+Data = df, x = y,
+y = x, kind = point, join = false.
+The 95% confidence intervals do not overlap.
+Therefore, it seems on average,
+the input is different when
+the event occurs compared
+to when the event does not occur.
+This is our first clue that on average,
+there seems to be a difference.
+In the input when the event is observed.
+The visual exploration suggests
+that the input is related to the binary output.
+Well, let's now fit our logistic regression model
+to find out if that is indeed the case.
+Now, we know from the previous video.
+Logistic regression is not
+modeling the average output directly.
+Logistic regression is modeling the log odds ratio,
+the logit of the probability.
+Our conventional regression formula
+is therefore trying to ask if
+the log odds ratio changes as the input changes.
+The syntax for doing this, though,
+in stats models is going to look very
+similar to what we had with the linear model.
+The syntax for fitting a regression model for
+binary classification is very similar
+to that for the linear model for regression.
+However, we must tell stats models,
+this is a logistic regression problem and not regression.
+Therefore, when we fit our model,
+and here I'll name it, how about
+fit_glm for generalized linear model?
+Our function is smf.logit, Logit.
+It is not OLS.
+It is logit.
+The logit function has
+a formula and a dataset and you fit it.
+It is therefore very similar to smf.ols.
+Our data is the data we're using,
+and now our formula, y tilda x.
+We're trying to predict the log odds ratio,
+but we have to tell stats models,
+your output is related to
+the input via the logit transformation.
+It's really the logit function from SMF that is
+the secret source for us to
+know this is a binary classification problem,
+even though the formula looks the same.
+Now, when you run this,
+your first clue that you did something correctly
+is that you are told
+an optimization terminated successfully.
+You did not see this
+when the regression linear model was ever fit?

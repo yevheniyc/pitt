@@ -1,0 +1,110 @@
+Source: https://www.coursera.org/learn/the-art-of-data-visualization/lecture/ae0Iw/what-to-visualize
+
+English (auto)
+Now that we looked at different principles of data visualization,
+next we're going to be looking at what to visualize and think about
+data types and how data types are related to data visualization.
+As we think about data visualization,
+it is important to understand different types of data.
+Since the type of the data can impact
+effective ways that we visualize each type of the data.
+When thinking about numbers, for example,
+we have two main categories of numbers to consider.
+Categorical and quantitative.
+Categorical data defines discrete levels of
+a variable that don't have
+a consistent quantitative differences between them.
+If you're going to look at examples of this and what each of these means,
+they include nominal and ordinal types.
+Nominal data represent allocation to
+distinct categories and are neither measured nor ordered.
+For example, a record of a student's course choices constitutes nominal data,
+which could be correlated with the school's results.
+Ordinal data represent allocation to distinct categories that are ordered.
+For instance, movie rating is an ordinal scale.
+Thinking about basically this ordinal versus quantitative,
+an important distinction as we think about visualization is that
+quantitative scale preserve equality of intervals,
+and an interval could be actually meaningful.
+As you can see these two different charts here,
+here is basically when we are showing some quantitative data,
+for example, shipment quantity.
+The intervals here are meaningful,
+and the distance between 1 and 2 is
+the same meaning for everyone as they are looking at this visualization.
+Versus if we are showing, for example,
+product rating, which is more of a categorical rating,
+then these interval differences between 1 and 2 or 2 and 3,
+is basically different for different people.
+It could be like that.
+This is what you can see in this graph is how one person interpret
+the difference versus another person could actually be interpreting these differently.
+For example, for one person,
+5 is much better than 4.
+For another person, maybe there is a huge difference between a jump from 1 to 2.
+That's a point of consideration that if you are trying to visualize ordinal data,
+you might want not to use these sorts of visualization that necessarily
+communicates an equality of intervals when it's actually not true to the data.
+Continue thinking about these differences between the different types.
+When we think also within the quantitative data,
+thinking about interval versus ratio data,
+here the main difference is that whether there is a absolute zero,
+a true zero or not.
+If you think about interval data,
+those are numerical data that are the equal intervals are meaningful as we talked before,
+but they don't necessarily have a true zero points.
+Here, if you think about temperature, for example,
+the intervals are meaningful from 10 degrees to 20 degrees or
+20 degrees to 30 degrees is the same meaning.
+But the zero here does not communicate absence of no temperature.
+The zero doesn't mean no temperature.
+It basically just means another value within these scale of temperatures.
+Versus if you think about number of boxes,
+here 1 to 2, 2 to 3 is again meaningful intervals and is interpreted the same for everyone,
+but zero here means no boxes.
+Here, we actually have a true zero.
+Again, these are the points of consideration as you think
+about when you're dealing with different kinds of data visualization.
+Other data types to consider and attributes of data to
+consider as you think about data visualization,
+we talked about categorical or quantitative data.
+Data could also be sequential,
+which means quantitative data that progresses in a natural logical order,
+often representing in a single direction of going from one way to another.
+Timelines are good examples of that.
+Diverging datasets, these are the data that has
+a central point that diverges in two opposite direction,
+often positive and negative.
+Here, it could be like a temperature or maybe scales of
+racing when you can have both positive and negative when zero being neutral.
+Cycle datasets are data that repeat over
+a regular interval or is psychotic in nature.
+Again, maybe something that are related to time would be an example of cycle,
+and considering representations that communicate
+these psychotic information is useful for these kinds of data.
+You can bring together these data types with the different principles that we discussed,
+particularly the Gestalt principles of data visualization,
+to think about what would be the best way of visualizing the data that you have.
+Similarly, there are different formats given these different data types
+that you can consider to visualize the data and to organize the data.
+You can have tables,
+which basically are columns of attributes and rows of items,
+and each cell is representing a certain value.
+You can have networks,
+which is basically link and nodes that nodes are
+representing data points and links are representing connections.
+Fields that are basically identifying a particular value within a column or
+an arrow and providing information about that specific field of the data.
+You have text that could actually be represented,
+and we will talk about text visualizations in one of
+the modules as well.
+You can have multidimensional tables or a special representation
+which relies on geographical or especially locating the data,
+and you can have trees which relies on a specific structure that exists within the data.
+These are different formats to consider that not only what type of data you have,
+what is the relationship between the data?
+Is your data more of a table?
+Is your data has some sort of hierarchy like a tree?
+Is the data more of like a network?
+Again, you can bring the different principles and these data types all together to
+think about visualizations and what is the right visualization.

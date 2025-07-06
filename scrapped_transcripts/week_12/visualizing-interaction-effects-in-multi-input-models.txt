@@ -1,0 +1,113 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/fERfD/visualizing-interaction-effects-in-multi-input-models
+
+English
+Let's now visualize the average output or trend with
+respect to 'x1' for each 'x2' unique value.
+We will use the exact same setup.
+A seaborne line chart,
+data = study_interaction_withrespectto_x1_df,
+x = 'x1',
+y = 'trend', kind = 'line'.
+The hue will be 'x2'.
+Let's stick with the diverging 'coolwarm' color palette.
+I must remove calculating
+the summary stat, estimator = None.
+I must define each line is based on 'x2' plt_show().
+If we count the number of lines, 1, 2,
+3, 4, 5, 6, 7, 8, 9,
+we still have nine unique values of
+'x2' but we don't have the lines shifting up or down.
+We have different slopes.
+Look closely here.
+When x2 is -3,
+the trend or average output is
+decreasing for a one-unit change of Input 1.
+We know the linear or main effect,
+the slope multiplying Input 1,
+we know it's positive,
+and yet our relationship
+with respect to x1 for a given value of x2
+has a negative relationship
+but when x2 is at a different value,
+such as its largest value in the chart, x2 = 3.
+That's this dark red line.
+Now, a one-unit change in x1 is
+producing a positive change in
+the average output and
+that change is greater than the slope of the main effect.
+What this means is an interaction represents that
+the relationship with respect
+to one input depends on the other input.
+The slope or the relationship between the trend
+in input 1 is not simply positive.
+We have to know the value of x2.
+The same idea holds for the relationship with
+respect to x2 and let's just
+quickly confirm this by calculating a function,
+calc_trend_withrespectto_x2_with_interaction
+using the same arguments x1,
+x2, b0, b1, b2, b3.
+We need our pd.DataFrame
+coming from the dictionary that has key x2.
+We have to set the constant value for x1,
+and we have to calculate the trend,
+intercept plus slope times x1 plus slope times x2 plus
+the interaction slope times
+x1 * x2 and return that DataFrame.
+If we study the interaction with respect to x2,
+and we apply this function for
+each value of x1 in the sequence x1_values_b,
+again, we're using a list comprehension
+calc_trend_withrespectto_x2_with_interaction,
+x1, x2,
+values b, b0, b1, b2,
+b3 and then concatenator combine everything,
+study_interaction_withrespectto_x2_df =
+pd.concat( study_interaction_withrespectto_x2_list
+, ignore_index = True).
+We can now visualize sns.relplot(
+data = study_interaction_withrespectto_x2_df,
+x = 'x2',
+y = 'trend', kind = 'line'.
+hue = 'x1',
+palette = 'coolwarm',
+estimator = None, units = 'x1'.
+Even though the slope multiplying Input
+2 is much smaller
+compared to the slope multiplying Input 1,
+even though that is the case,
+and even though we saw x2 its main effect
+caused a small change on the average output,
+the interaction is actually producing what seems to
+be a large change
+of the trend with respect to one unit change of x2.
+The magnitude and sign,
+whether positive or negative of that change, however,
+depends on the value of x1.
+Again, if we have a different value of x1,
+the relationship of the average output with
+respect to x2 is in fact different.
+Ultimately, what this is leading to is, again,
+the relationship of the average output
+with respect to one input depends on the other input.
+Interactions provide a lot of flexibility.
+Interactions allow the inputs
+to impact the behavior of other inputs.
+We no longer just have
+parallel lines where we
+shift the relationships up or down.
+The relationship depends on something else.
+This is a very powerful concept and technique.
+Config of 2120 will revisit these ideas to give
+a more firm discussion on how do you
+interpret what's happening but as a quick spoiler,
+interactions are difficult to interpret.
+I know this was a long video,
+but I hope you liked seeing first
+the equations as well
+as how to interpret the visualizations.
+At the end of the day, when we make predictions,
+this is what we will be doing.
+We will be predicting the average output,
+so we need to know what the models are
+capable of doing with these average outputs.

@@ -1,0 +1,84 @@
+Source: https://www.coursera.org/learn/the-art-of-data-visualization/lecture/ZWZiO/lesson-3-demo
+
+English (auto)
+Here is basically that's what you should
+be seeing if you are following along and you
+have done what we covered in the last lesson,
+which is creating your account and then
+logging in and then starting basically with the tips dataset,
+and you should be able to basically see these information here.
+The first thing is that we can,
+let's say that for example,
+we want to look at how to visualize average amount of tip over different days.
+Here the days then is basically
+our qualitative dimension that we want to look at,
+then the numerical tip data over those days.
+What we are going to do is that we can drag the day into the column,
+and then you can actually click on this little arrow that appears there,
+making sure that that is considered as a dimension,
+and we basically just leave it there.
+Then we can now drag tip here,
+and so you can see that by default,
+it basically does some aggregation,
+so showing the total amount of tips for that day.
+Let's say that we want to look at the average tip.
+What you can do is that you can click again on
+this and you can go to the measure.
+Remember, this is now a numerical field,
+which is a measure, and choose the average here.
+Now we can see the average amount of tips over different days.
+One of the things is that you can notice here that the days maybe are
+not sorted in the order of the day of the week,
+so you can actually sort your data.
+We can click here again on that little arrow and click on
+sort and either you can sort it ascending or descending,
+or you can actually sort it manually in this case,
+because of the order that we want to show the days.
+Let's say that we want to make sure that that follows the day of the week,
+so it starts with Thursday and Friday,
+Saturday, Sunday, and so now your data is sorted.
+The other thing that you can do is,
+as I mentioned, you can have these calculated fields so that you can
+add other information and data into your visualization.
+Let's say that, for example,
+here we want to show the error bars over this average amount of tips over the day,
+so we want to make sure that we can show an error bar,
+which is like one standard deviation.
+What you can do is that you can actually do these calculated fields.
+We want to, here in this case,
+calculate the standard deviation of tips,
+so what you do is that you click on this little arrow here,
+and then we can say,
+create calculated fields, and here it allows you to
+basically provide any calculation that you want to do.
+In this case, we want our error bar to be the average amount of tip,
+so it actually shows that by default.
+If you start typing, it also shows
+the functions that are available for the calculation.
+This is going to be the average tip plus the standard deviation.
+Here again, you can see all the different function,
+and we want the standard deviation of tip.
+Basically, then just say,
+okay, and it's going to now be adding these fields here,
+which is your error bars.
+Now, if I want to add the error bars here to my visualization,
+I can go to the analytics tab,
+and we're going to be looking more into the analytics in the next lesson as well.
+But here, we want to add a reference line,
+which is basically our error bar.
+You drag this and drop it here,
+and in this case,
+we want the reference for each of the cells,
+so just drag it into the cell,
+and then you see basically now these options that you can add.
+What we wanted to do is that we wanted to have this error bar,
+so we're just going to drag the error bar so that we have that also available.
+Then here, we want the option of line,
+to be added, and we want this error bar that we calculated,
+the average of error for each of the cells,
+and now you can see actually that you have
+that error bar added to your visualization.
+As I mentioned before,
+now we can actually publish this visualization to make sure that it's actually saved,
+so that would be available to come and to work with it again.
+Okay.

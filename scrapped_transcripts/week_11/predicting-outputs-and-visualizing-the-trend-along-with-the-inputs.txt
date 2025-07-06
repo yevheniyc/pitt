@@ -1,0 +1,90 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/18A9M/predicting-outputs-and-visualizing-the-trend-along-with-the-inputs
+
+English
+What's the purpose of this new dataset?
+We can ask what if questions.
+What if the input is at
+a new value that we did not see previously?
+What will the output be?
+Because my visualization DataFrame
+does not have any output.
+I don't know what the output is.
+That's the whole purpose of the model.
+That's why we made the model in the first place.
+It now gives us the ability to ask what if questions.
+Let's now see how to do this.
+The stats models of
+fitted object includes the dot predict method.
+This method will let you predict a new dataset,
+given the fitted model.
+The new dataset must have a column for
+the input that was in or used
+in the formula for the fitted object.
+You see how in the formula there is x.
+My new dataset must have a column named x,
+and we have that here.
+Let's go ahead and make the prediction.
+Make the prediction and assign to the
+pred or the lm_pred object.
+Lm_pred it's assigned lm_fit.predict.
+The argument to lm_pred is df_viz.
+Lm_pred is a pandas series.
+It has as many elements.
+It's size is equal
+to the number of prediction points
+or rows in the new data set.
+Let's make a copy of the prediction or the visualization
+DataFrame and add the prediction to this copy.
+I'll say df_viz_copy gets assigned df_viz_copy,
+and now add in to df_viz_copy
+the predicted trend, so lm_pred_trend.
+Now I have what is being predicted from my model.
+We can visualize the predicted trend
+with respect to the input,
+and let's do this with Matplotlib.
+Fig.ax = plt_subplots,
+ax.plot (df_viz_copy.x, df_viz_copy.pred_trend,
+and we'll color this blue),
+ax.set.xlabel(x), ax.set.ylabel( trend), plt.show.
+Here is the predictive trend.
+Include the training set as a scatter plot.
+I will just copy the previous lines of code.
+I will change the y label to y,
+ax.scatter,(df.x, df.y, color equals white).
+The predicted trend it's trying to draw
+through the scatter of the observed data.
+It's trying to find what is
+the best fit line through that observed data set.
+Now, because this is a toy problem,
+and we generated the data,
+we know the real answer or the true trend.
+Remember, that's contained within
+the true intercept and true slope.
+We know the parameters,
+so let's pull those out.
+My intercept is,
+let's apply np.unique(df.true_intercept),
+my slope, let's apply np.unique (df.true_slope).
+We can now just calculate display the true trend,
+the true mean relationship to
+the input with the predicted trend,
+which is based on the data.
+Let me just copy the previous code to speed things up.
+I'll now add in a label to be the model,
+and I want to include in the legend.
+The blue line is the model, ax.plot(df.copy.x).
+Now, the trend I want to show is my intercept plus
+my slope times the actual input.
+I'm going to color that crimson and label that the truth.
+The red curve, this is
+the actual relationship between the trend,
+the average output and the input.
+Our modeled trend is not perfect because we only
+have these nine data points
+that were used to estimate the coefficients,
+the intercept and the slopes.
+But because we will never know the true relationship,
+we must always include
+the confidence interval on the trend.
+We must always represent
+the uncertainty on the trend given the fitted data.

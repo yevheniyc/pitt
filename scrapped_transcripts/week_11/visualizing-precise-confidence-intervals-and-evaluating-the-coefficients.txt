@@ -1,0 +1,124 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/H9OMJ/visualizing-precise-confidence-intervals-and-evaluating-the-coefficients
+
+English
+However, if you want the exact 95% confidence intervals,
+then we need to do some extra manipulations
+using the.conf int method.
+We need to use
+lm fit conf int or as you saw me create previously,
+this entire data frame that has it.
+To make it, we need to
+calculate the lower change on the error bar,
+and the upper change on the error bar around the average.
+This is how Matplotlib requires
+us to do it and I find these to be
+really tedious so I'm just going to show this quickly.
+The lower error is the con fit infos estimate minus
+the lower bound on the confidence interval
+and the upper error is
+the upper bound on
+the confidence interval minus the estimate.
+Now when we create the figure, ax error bar,
+the y is still the index,
+the x is still the estimate.
+But the x error has to now be
+provided as a list
+where the zero element in the list is the lower error,
+and the one element in the list is the upper error.
+I think it's really confusing
+because it means we're essentially doubling
+how many items we have to
+provide relative to the y and x arguments.
+I really dislike this,
+but this is again,
+just the way Matplotlib requires it.
+Again, just to say the plug in the visualization class,
+you learned how to make these figures in R. They were
+really really easy to do compared to this.
+But now, I'm just filling out the reference line,
+the line with the color,
+setting the x label,
+coefficient value, and then show.
+Now, that was a whole lot of work really to just
+show you there ain't much difference here.
+You could see the ever so slight difference on
+the left and right sides
+like there's ever so slight difference.
+The differences gets
+even smaller the larger the data size becomes.
+That's why I will typically use
+the approximation
+of two times the standard error just because
+it's so much easier to implement to create
+the 95% confidence interval approximation compared to
+the extra data manipulations that we
+have to do just to use Matplotlib.
+Now, one final thing to wrap up this example.
+Let's compare our coefficient estimates
+to the true coefficients
+that generated the data because remember,
+we know the real answers.
+The real answers we kept here,
+the intercept and the slope and so if we
+use the np unique function,
+we can get
+the single
+or unique slope.
+Now, it doesn't matter which version of
+the coefficient summary figure we use.
+I'll just use the one that we made above,
+but add in the true coefficients
+as markers that generated the data.
+You can't do this in a real problem,
+but you can do it when we know the right answer.
+The y argument will be the index,
+the name of the coefficient,
+and the x argument,
+I need a list here.
+NP unique apply to the true intercept,
+np unique apply to the true slope and I
+want these to be large red markers so color red size 125.
+Do you see this red dot right here,
+this is the coefficient or slope
+that is multiplying the input that generated the data.
+The black is our estimate of that slope.
+You can see the estimate it's pretty
+close but we can also see
+the real answer is within
+the 95% confidence interval on the estimate.
+This uncertainty interval is really representing to us,
+given our limited set of observations,
+our nine measurements, how trustworthy is our estimate?
+Well, we are pretty good here,
+it is capable of
+learning the real coefficient quite well.
+Are both coefficients estimated perfectly?
+No. The intercept is estimated
+worse than the true value for it.
+But still the true value
+is within the 95% confidence interval on the estimate.
+The real answer is within the margin
+of error of our coefficients.
+This is to just confirm to you
+the fitting procedure is capable
+of recovering the right answer.
+Again, the main purpose of this video.
+Although we saw how to use
+the formula interface from
+the OLS function from statsmodels,
+the real purpose of the video was for you to see
+how to interpret our coefficients
+that are getting estimated.
+That we can learn how
+to extract the coefficient estimates,
+what the standard errors are,
+what the 95% confidence interval
+is and the relationship to the p value.
+That way, we can understand that
+the p value is not telling you if an input is important.
+It's telling you if you are confident in the sign,
+whether the slope is negative or positive.
+Importance is something we
+will return to at the end of the semester.
+But for now, we're just focused on is
+the sign negative or positive.

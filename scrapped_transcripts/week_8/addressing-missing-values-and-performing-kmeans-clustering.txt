@@ -1,0 +1,101 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/uJCEK/addressing-missing-values-and-performing-kmeans-clustering
+
+English
+The reason why it is always critical
+to follow the basic steps for
+EDA is we need to always
+remember if our dataset has missings.
+Now, when we first started to explore penguins,
+we talked about that.
+But one of the reasons why I dislike the way
+info method works is you get the number of non missings.
+I think when you first
+read in a dataset and check its info,
+it can be easy to just kind of
+scroll your eyes down here and not
+realize there is a difference
+between the number of non missings and
+the number of rows for a few of these columns.
+That's why I prefer to
+display the actual number of missings.
+All four numeric columns have missings.
+If we look at some of the rows,
+we can see the fourth row,
+according to a person,
+we have missing values for all of these numeric features,
+as well as the sex of the penguin,
+for this one that's in Adelie from Torgersen.
+For whatever reason the data were just not recorded.
+The standard scalar method drops NAs,
+drops missings behind the scenes.
+The KMeans methods cannot handle missings.
+It doesn't know what to do with them.
+Now, there are many different ways to handle them,
+but the simplest and most basic action
+for dealing with missings,
+is to remove them.
+This is how you should always start.
+Even if your goal is to do something very fancy,
+never get ahead of yourself.
+Always start simple.
+The simplest thing is to remove the missings.
+Removing any row with at least one
+missing will return the complete cases.
+You don't have to do this manually.
+There's a method in pandas that will do it for you.
+Let's create a new data frame called penguins_clean,
+where we take the penguins dataframe and we
+apply the dropna method,
+and then we force a deep copy.
+Penguins_clean now has just 333 rows.
+The original penguins had 344.
+Penguins_clean has fewer rows because it
+dropped every single row that had at least one missing,
+we now have zero missings in our clean dataframe.
+We must now preprocess
+the cleaned dataframe and repeat the steps.
+Let's go ahead and make a new pens_features_clean,
+which is penguins_clean,
+select dtypes number, copy,
+and now standardize the clean numeric columns.
+I'll name this result X,
+initialized standard scalar fit
+and transform in one line of
+code where you are fitting and
+transforming based on pens_features_clean.
+Again, we have 333 rows because we have
+the cleaned dataset and we can
+examine the box plots
+to confirm that we have removed
+the magnitude and the scale.
+Now we can execute KMeans clustering.
+Clusters_2 = KMeans.
+I want two clusters,
+set the random seed,
+set the number of random restarts,
+set the max number of iterations per restart,
+fit and predict the standardized columns
+based on the clean dataset.
+Again, I get this warning because I'm a Windows user.
+Assign the cluster labels to
+columns in a copy of the cleaned data.
+Penguins_clean copy, penguins_clean.copy,
+and now penguins_clean_copy k2,
+pd series, clusters_2 index,
+penguins_clean_copy.index,
+and then force to be a category.
+There we go. K2 is a category.
+We can look at the counts
+for each unique value of the k2.
+We can look at a pairs plot for
+each unique value or
+a pairs plot where we color by the cluster labels.
+Make sure you set common norm to false to
+remove the sample size effect of the conditional KDEs.
+But again, why is it critical
+to first start with two clusters?
+The pairs plot shows us what's going on is
+it's splitting the data in this simplest possible way.
+We can see that through
+the build depth and flipper length scatter plot.
+It's literally separating based on this diagonal line.

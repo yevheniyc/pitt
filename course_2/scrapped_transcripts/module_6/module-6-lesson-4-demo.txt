@@ -1,0 +1,61 @@
+Source: https://www.coursera.org/learn/the-art-of-data-visualization/lecture/1XOFc/module-6-lesson-4-demo
+
+English (auto)
+Okay. So let's look at the demo that see
+how the filter options and some of the analytics options of Tableau works.
+Let's say that we want to create a scatterplot to look
+at the tip by the size of the bill.
+So what we are going to do is that we are going to move
+the bill and the tip into our row and column.
+Because we want to do in this case that see basically these as single data points,
+you're going to change these to dimension,
+as you can see here.
+Then we can basically click on this show me,
+and you can see this is like it decides as a scatterplot.
+So we have these nice scatterplot that basically
+shows how the tip is distributed across the total bill.
+We can also switch this around to have the total bill
+being on the x-axis and having the tip on the y-axis.
+So now let's say that we want to filter out by different gender.
+So what we can do is that we can drag that sex variable into the filters here,
+and so that opens the filter option,
+and then you can say that we want to just have female,
+or we just want to have like male,
+so and basically apply that into our dataset,
+and that's going to change what we see.
+So that's the filtering options that is available.
+So I'm going to now remove maybe the filter,
+have all of the data,
+and what we can do is now look at,
+so we want to see what is actually the trend of how this tip relates to the total bill.
+We can see that this probably as the size of the bill increases,
+the tip also increases,
+but we want to see what models it most accurately.
+So what we can do is go to this Analytics tab,
+and then you can see this trend line.
+So similar to what we did with the reference line,
+we basically drag it,
+and then you are seeing here is these different options.
+So let's say that we'll start by linear.
+So then what you've done,
+so you can actually click on this line,
+and then this basically provides the information about the fit,
+which is the r squared is one variable that is important.
+So that shows the fit and the p-value that mentioned.
+So you can use this information to decide what is the best fit.
+You can also see the equation of this linear regression model here.
+So let's say that I'm going to now remove this one and try a different trend line.
+So again, drag this,
+and then let's say that we think it's maybe more like a logarithmic model.
+So then that shows the pattern.
+Again, if you click on it,
+now it shows you the equation for the logarithmic.
+So that's like a linear logarithmic,
+and then you can see the r squared here and the p-value.
+So in both cases, the p-values are significant.
+Your r squared is slightly smaller.
+You want to have actually higher r squared here.
+So that probably says that the linear model probably was slightly better fit.
+But in both cases, probably these are good fit.
+So that's how you can use the filter and the analytics parts of Tableau also
+to have additional information that you can add to your visualization.

@@ -1,0 +1,118 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/5cuRh/summary-stats-variability-and-correlation-on-all-pca-components
+
+English
+Let's use the.describe() method to
+look at the values of the summary statistics.
+sonar_pca_df.describe. Again, we have pc01 through pc60.
+Here's the mean. Here's the standard deviation.
+This is a single digit number.
+Just to help, let's round to
+three decimal places: single digit, single digit,
+single digit, but
+do you see how the standard deviation keeps
+decreasing as I go from pc01 to 2 to 3 to 4?
+If we go to the very end,
+that standard deviation is much,
+much smaller, but it continues to decrease.
+Let's visualize the standard deviation.
+Let's take the result of.describe() and then use
+the location key of
+std to pull out the standard deviation.
+This is a Pandas series.
+Use Panda's plotting methods to show
+the standard deviation versus the PC number.
+Let's initialize the figure and axis plt.subplots().
+sonar_pca_df.describe(). loc[std ].plot(ax=ax) plt.show().
+Because this is Panda's plotting,
+we don't get any labels by default,
+so let's set the x-axis' label to be principal component.
+Let's set the y-axis' label to be the standard deviation.
+The standard deviation is
+decreasing as we move left to right.
+Each subsequent principal component
+has lower variability than the one that came before it.
+The official terms are Principal Component 1, 2, 3, 4;
+they are the low order PCs.
+Principal components, in this case, 20,
+30, 40, 50, they are the high order PCs.
+Higher order principal components have
+less variation than lower order principal components.
+The LOW NUMBERED PCs have
+GREATER variation than the HIGHER NUMBERED PCs.
+This is by design.
+PCA CREATES the new variables
+such that PC01 has the HIGHEST variation.
+Then PCA creates PC02 to have the NEXT highest variation.
+Then PCA creates PC03 to have the NEXT highest variation.
+So on and so on,
+the variation decreases for
+each subsequent principal component.
+That is literally how PCA is constructed.
+The maximum number of principal components
+equals equals the number of columns in the data,
+but the new variables are constructed in
+such a way that the first few have the most variance.
+This plot, it resembles the kneebend plot.
+From your KMeans,
+where we're looking for some kind
+of point of diminishing returns as
+represented by a kink or
+an elbow bend or knee bend in the plot,
+where you keep decreasing the amount
+of variation up to a point where
+the continued use of
+principal components only changes things a little bit.
+Now, we will return to this idea of
+picking the number of
+principal components to really use later on,
+but I wanted to introduce this to you from the concept
+now of the relationship to the kneebend plot,
+where at some point,
+we are only capturing a very tiny amount of variation,
+and it's those first handful
+that give us the most bang for our buck,
+the most variation within each principal component,
+but there's one more important aspect of the PCs.
+We previously saw that
+the original 60 numeric columns were correlated.
+Let's check the correlation structure
+of the newly created PCs.
+Let's initialize the figure
+and then use sns.heatmap
+where data is sonar_pca_df_corr,
+and let's apply to the numeric only,
+even though there are only numeric columns here,
+but it's just good practice.
+Lower bound -1,
+upper bound one, center is zero,
+cmap='coolwarm', ax=ax plt.show().
+Part of the reason why it's so critical to use
+a consistent set of bounds: lower bound, upper bound,
+center point, is we are able to look at
+that figure and pull out
+the same interpretation as our original figure.
+When we examine the original variables,
+we saw that there's
+many variables that are positively correlated,
+as well as groups of variables that are anti-related,
+they have anti or negative correlation coefficients,
+one goes up, the other goes down.
+But now, look, when we examine
+the correlation structure of the principal components,
+you only see a non-gray color along the main diagonal.
+Every other pair of variables are uncorrelated,
+a correlation coefficient of zero.
+PCA is created such
+that the NEW variables are UNCORRELATED.
+PCA is created such that the LOW NUMBERED PCs have
+the HIGHEST variation while
+the HIGHEST numbered PCs have the LOWEST VARIATION.
+But ALL PCs are UNCORRELATED.
+That's really the benefit here.
+You're crafting new variables which by design,
+the lowest numbered ones have the most variation.
+All of the higher numbered ones
+are essentially points of diminishing returns,
+they're not helping you,
+but all of these variables
+are uncorrelated to each other.

@@ -1,0 +1,73 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/8a0WM/advanced-variable-combination-visualization-faceted-dodged-bar-charts-and
+
+English
+Now, in truth, we can use faceted
+bar charts and dodged bar charts
+to deal with the combination of
+three categorical variables.
+For faceted bar charts,
+we can use one variable for row facets and
+another for column facets.
+Because remember, in our case,
+we also have the variable sex and
+we can get its marginal counts.
+But let's now look at the combination of all three categorical variables.
+This is equivalent to taking the grouping by species,
+island and sex, applying the size,
+resetting the index, The name numerous.
+Now we get the number of males and females per island, per species.
+If we use the faceted bar chart,
+data = penguins, x =, how about species?
+The row facet is sex, the column facet is island, kind = counts.
+Look very closely, we have a title here, per facet,
+it tells us the values for both variables.
+For the row facet, you can see we have male female, that's changing down the row.
+For the column facet,
+Torgersen Biscoe versus Dream Island.
+Three categoricals can be shown with dodged
+bar charts because one of the variables must be assigned to the facet.
+SNS catplot data = penguins,
+x = species, hue = island, followed by,
+how about column = sex, kind = count.
+This is now telling us the number of males on a single island by species,
+likewise the number of females.
+And of course we can switch this up,
+we could do data = penguins, x = species,
+hue = sex, column = island, kind = count.
+This shows us that per island per species, the number of males and
+females is very similar.
+One final way to visualize combinations is through heat maps.
+These are some of my favorite ways to show the combinations.
+Bar charts show counts via the height of the bar.
+Heat maps show the count via
+the color within the tile.
+But now, before we make the heat map,
+let's first look at the raw data,
+focusing on the combination of two categorical variables.
+Let's go back to species and island.
+So penguins, groupby species, and island,
+apply size and then turn it into it, back to a data frame.
+To make the heat map in seaborne,
+we need to reshape or reformat
+the way the counts are organized.
+We need the values for the categoricals
+to be the column names and the row index.
+The values in the cell are the counts for the combinations.
+The easiest way to create the counts,
+This way is with the pd_crosstab function.
+pd _ stands for cross tabulation.
+To create the cross tabulation, you call pd_crosstab,
+and then you specify the variables.
+What variables do I want to use?
+I need to access the particular column.
+I want to use species and I want to use island.
+The values are the same, they are just organized differently.
+Instead of having the row being a combination of the two,
+now it's the intersection of the row and the column that gives us the combination.
+You see the zero here?
+These are all combinations that were not observed in the data set.
+It's not that we had necessarily missing values, because for
+penguins is na.sum, species and island have zero missings.
+But what we are instead looking at is,
+is there a species of chinstrap observed on the island Biscoe?
+And the answer is no, that combination does not occur.

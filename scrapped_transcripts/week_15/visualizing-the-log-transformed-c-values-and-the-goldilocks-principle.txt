@@ -1,0 +1,84 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/fXV2C/visualizing-the-log-transformed-c-values-and-the-goldilocks-principle
+
+English
+By convention, this style of figure is
+visualized with the log transformed C rather than C directly.
+So let me just copy this code, paste it,
+and wrap np.log around the Cs.
+The x-axis is no longer C.
+Let's change it to the log of C.
+This is the natural log of C.
+The log has now stretched out all of the tiny values,
+all the negative numbers here.
+These were all of the really tiny values of C.
+The positive values for
+the log are the much bigger values which have been compressed.
+So the natural log stretches tiny values and compresses big values.
+We still have five curves because we have five fold cv like there's
+this one fold the model does better in.
+There's another fold where the model does much, much worse in.
+We are not interested in the behavior per fold.
+We are interested in the behavior on average across the folds.
+So I'm going to take the scores and
+apply the mean method,
+in this case to the rows or along the rows.
+because again, ridge_tune.scores (1.0).shape,
+I'm applying along the rows.
+So I'm summarizing all of the values across the five rows,
+calculating this down each column.
+That's what this means.
+Include the average
+performance as a blue line.
+So let me just copy this code here to get the same figure.
+But now add in one more ax.plot.
+np.log ridge_tune Cs_,
+(ridge_tune.scores_(1.0).mean(axis=1
+color = blue.
+The blue curve is the average across the five folds at each unique value of C.
+So at this one value of C, this is the average holdout set accuracy.
+At this other value of C, that's very,
+very large, on average, the model is 60%.
+However, when C is really, really tiny,
+the average across all of the folds is about 66%.
+The right hand side of this figure, large C,
+large coefficients overfitting.
+The far left-hand side of this figure,
+very small values of C, small C, small coefficients.
+The coefficients have all been pushed very close to 0.
+This is called underfitting.
+The model is not capable of explaining any of the trends, no trends.
+However, in the middle, the Goldilocks problem,
+there's a value of C that produces, on average,
+better behavior than the simplest possible model and the most complex model.
+This procedure of regularization is therefore starting,
+if you will, from our most complex situation and
+trying to turn off the features that don't matter,
+which cause the performance to get better and better and better.
+Until we start to turn off too many features and
+which makes the performance worse and worse and worse again.
+Let's include as a vertical line the optimal or tuned value for C.
+Ax.Axvline at the x position np
+log ridge tune scores.c_color=red line
+style = dash to make it a dashed red line,
+oops ridge tune, there we go.
+So now that vertical line tells you the exact value,
+Of C that optimizes the performance on average.
+The tuned ridge coefficient estimates
+are therefore in between the large
+estimates that caused overfitting and
+the small estimates that produced no trends.
+And so let's see that directly,
+coef_compare (ridge_tune_C) pd series (ridge_tune).
+Even though this is the cross validation result,
+it still has a coef attribute.
+Let me then set the index there to be the same.
+So coef_compare, and let's again sort the values by the coefficients that
+minimize the loss only, and we'll put it in descending order.
+So notice this coefficient, which was originally very large and
+positive, when we tune the model, it's no longer large and positive.
+It's been pushed closer to 0.
+Same thing with the most negative value, it has been pushed much closer to 0.
+We have converted the complex model into a simpler model.
+Let's use predictions to demonstrate this fact.
+So I know it might be hard to see, how is this simpler.
+So let's use predictions to show you that it is actually simpler.

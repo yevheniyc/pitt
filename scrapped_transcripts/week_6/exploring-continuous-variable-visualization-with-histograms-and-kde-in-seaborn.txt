@@ -1,0 +1,92 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/0aLjD/exploring-continuous-variable-visualization-with-histograms-and-kde-in-seaborn
+
+English
+Now, in seaborn, besides using the axis
+level hist plot function, we can also create
+the histogram using the figure level function.
+The bar chart figure level function was sns catplot.
+The goal was to work with categorical variables.
+But the goal for visualizing the distribution
+of continuous variables is different
+from counting categoricals.
+Thus, the figure level function is different.
+The figure level function is sns displot.
+It's a distribution plot.
+We want to know how distributed the values are,
+where they are not concentrated versus where they are concentrated.
+We want to know the shape, what's something that looks like it's in
+the middle versus something in the extremes.
+So the figure level approach,
+sns displot data equals the data set, x equals the variable.
+We must specify the kind of distribution plot, plt show, so kind equals hist.
+But then we can specify any arguments we want, like to use 10 bins.
+We have now created the same kind of plot, but again,
+it looks different because this is the figure level versus the axis level.
+But now what happens if we use fewer bins?
+Sns displot, data equals the data set.
+X equals the variable lifeExp.
+But if we would kind equals hist.
+But if we would now use bins equal to three.
+Do you see how the total count is much higher per bin?
+Fewer bins mean the intervals are much larger.
+Larger intervals mean there's a lot more observations per bin.
+The count per bin can now increase.
+But if we use just three bins, it looks like, hey,
+all the data is really on the right hand side.
+We have lost the nuance of this kind of almost plateauing before increasing again.
+What if we use many, many bins?
+Sns displot, data equals gap df, x equals lifeExp,
+kind equals to hist, bins equal to 201.
+So now if I use 201 bins, the interval
+within each bin is really, really tiny.
+It's a really narrow, tiny interval.
+The number or count per bin is now a lot smaller.
+Although we can see every little nook and cranny.
+That also means we see a lot of wiggliness.
+The bins go up, they go down, they go up, they go down.
+And so it may look like where a variable is
+concentrated is changing very rapidly.
+But really what we're looking for,
+the histogram, we want just general or
+rough ideas about how the concentration is distributed.
+And so for those reasons,
+it's better to use a small to moderate number of bins.
+I'm personally a big fan of 21.
+Kind equals to hist, bins equal to 21, the exact number of bins,
+though, it does depend on the total sample size,
+the number of unique, and the number of unique values.
+The larger the sample size you have,
+the more rows in your data frame, the more bins you can use.
+The fewer rows, the smaller the number of bins you should use.
+Often the default number is pretty good, but if you're still not sure,
+there is an alternative kind of way of visualizing the distribution.
+In addition to the histogram,
+you could use the kernel density estimate or KDE plot.
+The figure level function approach to do this is displot data equals your data set.
+X equals your variable, which in our case is lifeExp.
+But instead of kind equals hist, it's kind equals KDE.
+Now, there's a lot of stuff that actually has to happen in order to create
+this graph.
+The first hint about it is the y-axis is no longer count, it's density.
+Density is kind of like the physical density,
+it represents where things are concentrated.
+The higher the value of density, the more concentrated.
+The lower the value of density, the less concentrated.
+It's trying to give you a smooth idea of just how distributed the variable is,
+where it's roughly uniformly distributed
+versus where it's concentrated versus not concentrated.
+I personally think it's quite helpful to
+combine the histogram with the default number of bins with the KDE.
+So sns displot, data equals your data set.
+X equals to variable, kind equals to hist,
+KDE equals true, plt show.
+In comp if 2130, we discuss histogram versus KDE in
+much more detail, give much more understanding
+of what's going on with the KDE versus the histogram.
+But for now, our purposes, we want to know where the values are concentrated.
+So high count, high bins, tall bins,
+high KDE density versus where they are not concentrated,
+low count, low bins, low KDE density.
+Combining the two and overlaying them gives us an idea of,
+hey, what's the general shape?
+And how does that general shape compare to the low counts?

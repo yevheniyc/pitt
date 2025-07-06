@@ -1,0 +1,82 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/gBrhB/compensating-sample-size-and-interpreting-the-results
+
+English
+Look at the difference between
+this figure and the one previously.
+Now, all three have
+roughly the same height on the y-axis.
+This is really important.
+We have removed the sample size effect.
+The fact that chinstrap has
+fewer data points is no longer influencing our results.
+But how can we interpret this figure?
+Do you remember when we first looked at
+the distribution of this variable flipper length,
+and we talked about how there was
+one set of concentrated values,
+one cluster to the left,
+and one cluster to the right?
+Well by conditioning on
+or being given the value of a grouping variable,
+grouping by species,
+we have learned the right cluster
+is mostly the gentoo species.
+The left cluster is the combination of
+the others with adelie being further to the left.
+We are partitioning or separating,
+segregating the different clusters
+into different categories or groups.
+You are set maybe your customers.
+Certain customers have higher values
+of a variable than others.
+That's really the power of this categorical to
+continuous relationship or conditional distribution plot.
+What is the distribution of
+a variable given the value of a categorical?
+We're trying to see if those distributions
+are different across the categories.
+Now, the distribution that we're looking at here,
+this continuous conditional distribution.
+This is telling us a lot,
+but it is still quite busy.
+Sometimes we just want to know useful summary statistics.
+For example,
+is the median changing across the categories?
+What is the median?
+Fifty percent of the observations
+are less than the median,
+and 50% of the observations
+are greater in value than the median.
+Fifty percent of the observations are
+less in value than the median,
+50% of the observations are
+greater in value than the median.
+So if you take the penguins dataset and you describe it,
+one of the summary statistics that
+gets presented is the 50%,
+or 50 percentile, or median.
+This is the value where 50%
+of the observations are less than it,
+50% of the observations are greater than it.
+It is another form of sensual behavior,
+but it is different from the average.
+For example, we can
+show that this is indeed the case if we take penguins.
+We pull out flipper length,
+we calculate its median.
+Let's now filter penguins by asking
+how many observations have
+the flipper length less than its median?
+Let's pull out just the number of rows.
+Let me just copy that,
+paste it in and divide by the total number of rows.
+It's just under 50%.
+We do less than or equal.
+Now we hit right just a little over 50%.
+The point of this here is
+this median point is really trying to
+divide our data set into half of it is to the left,
+half of it is to the right.
+There is another form of central behavior.
+We can easily visualize how
+the median changes across categories via a box plot.

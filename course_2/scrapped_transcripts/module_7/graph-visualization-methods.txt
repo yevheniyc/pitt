@@ -1,0 +1,125 @@
+Source: https://www.coursera.org/learn/the-art-of-data-visualization/lecture/PktaF/graph-visualization-methods
+
+English (auto)
+In this lesson, we are going to be looking at
+the network layouts and how
+the layouts can be represented in different network visualization.
+As we saw in the first lesson also,
+that there are different kinds of network visualization layouts
+that would represent how
+the nodes and edges in the network are visualized.
+Some of the common layouts are first directed layout,
+circular layout, tree layout,
+radial and grid layout,
+and we're going to be looking at how each of these look like,
+and when would we use one over the other,
+when we think about network visualization.
+First directed layout is a popular method which basically
+arranges nodes and edges by
+simulating physical forces acting on them.
+It basically positions the nodes in such a way that edges are of
+similar length and there are minimal overlap or crossing
+resulting in more pleasing and easy to interpret graph,
+as you can see in this example here.
+Some of the strengths of using
+first directed layout is that it works well for
+medium size and unstructured graph.
+It automatically reveals clusters or communities
+within the network as you can see here,
+for example, the nodes highlighted as red
+or the nodes on different corners of this network as well.
+It minimizes edge crossing,
+which makes the visualization easier to read.
+Common use cases for these layout is social networks,
+biological networks, or knowledge graphs.
+The next layout is a circular layout,
+which is a graph visualization techniques
+where all nodes are arranged on the circumferences of a circle,
+and edges are drawn either inside or outside of that circle.
+The strength of the circular layout is its neutrality.
+It's placing all vertices and equal distances
+from each other and from the center of the drawing.
+None is given a privileged position,
+countering the tendency of viewers to
+perceive more centrally located node as more important,
+which is the case in the layout that we saw before.
+Common use cases for circular layouts are things like core diagrams,
+again, biological networks, or group comparisons.
+The next layout is a tree layout,
+which organizes nodes in a hierarchical manner,
+starting from a root node and expanding upward in levels.
+It is particularly effective for representing
+parent-child relationship.
+That's what's the nature in the network,
+like organizational structure, for example.
+As you can see in this example,
+I'm showing the CEO and the VPs and so on.
+The strength of a tree layout is that it
+clearly shows the hierarchical relationship.
+If that's what is in the nature of the data that you're working with,
+then that makes it more visible like
+taxonomies of organizational structures.
+It's easy to interpret large trees or flowcharts,
+because you can actually focus on different parts of
+this layout and understand each part separately.
+It prevents overlap,
+making it very scalable for large dataset.
+The common use cases of that is organizational charts,
+file systems, trees, or networks like that.
+The radial layout is similar to circular layout.
+The radial layout places a central node in the middle
+with all other nodes arranged in concentric circles around it.
+Nodes that are further from the center
+are less related to the central node.
+What's different than the circle is that you
+still have that distance as well.
+It almost looks like a combination,
+a circle versus a tree layout together.
+Each part of the circle can have
+that separate tree structures that has its own meaning as well.
+The strength of the radial layout is that it emphasizes a central node or entity,
+making it ideal for showing the importance of a single node in a hierarchical network,
+and allows for clear visualization of different levels of importance or influence.
+It's useful for a large network where centrality of one node matters.
+Common use cases of that is influence networks,
+hierarchical data, and network centrality analysis.
+Particularly when we want to do network analysis,
+that maybe focuses on a specific node,
+so more of egocentric network analysis as well.
+The last one is a grid layout,
+which nodes are arranged in a grid-like structure.
+This regular positioning is useful for a structured graph like matrices or lattices,
+and can help compare agents as nodes.
+That's particularly useful like in this example that you
+can see in representing, for example, the city structures.
+The strength of a grid layout is that it provides a clean,
+organized appearance, especially for a small graphs or bipartite graphs,
+ideal for a structured graph such as matrices or regular grids,
+and it simplifies comparison between adjacent nodes or categories.
+Common use cases are for bipartite graphs,
+lattice networks, or agency matrices,
+or as you can see here in these ads representing city structures,
+which is an example of a lattice network.
+How do we choose now the right layout?
+First, directed layout is best for general use cases,
+where a graph structure is complex and community detection is important.
+Sequeral layout works well for symmetric relationships or when comparing groups.
+Tree layout is ideal for hierarchical structure like organizations.
+Radio layout is useful when emphasizing a central node or entity,
+and grid layout is perfect for a structure of bipartite networks.
+You can have this in mind as you do network visualization,
+and you try to decide which layout to show.
+In the next module,
+you will learn how to use Python to actually do network visualization,
+and the network layout is one of
+the parameters that you can always identify as you're creating network visualization.
+In addition to Python,
+which is what we are going to be seeing in terms of learning how to do network visualization,
+there are also tools that already exist that provide
+a graphical user interface for doing network visualization.
+Examples of that would be Gephi and Ciderscape.
+Both are open-source tools that could be used for network analysis.
+Gephi is particularly good for larger networks,
+and Ciderscape is designed for biological networks and networks such as that.
+You can also use Tableau that we saw in the last module
+for interactive visualization around network as well.

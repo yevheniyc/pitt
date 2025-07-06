@@ -1,0 +1,84 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/bxrsE/exploring-continuous-relationships-with-trend-plots
+
+English
+The overall syntax though is
+consistent to what we saw with relplot.
+We have the function lmplot,
+all figures start with data,
+the data are penguins.
+We'll use the same x-axis variable, flipper_length_mm,
+the same y-axis variable, bill_depth_mm, plt.show().
+The markers are the same thing
+that we discussed last time.
+Each marker is a separate data point,
+a separate row,
+in the data frame.
+But now, there is a blue line and
+a ribbon that help us
+understand the relationship between
+these two continuous variables.
+Do you see how this line is diagonal?
+It starts higher on the left,
+and then as the x-axis variable increases,
+the line is decreasing,
+meaning bill depth is decreasing,
+it's going down as flipper length is increasing.
+We are viewing an ante
+or negative relationship between the two variables.
+Essentially, the slope is negative of this best fit line.
+But what happens if we
+group or condition on a categorical variable?
+Let's color via the hue argument by species.
+When we did not color, again,
+we can see that the relationship
+between the two variables,
+bill depth decreases as flipper length increases.
+But now we will use the same kind of
+syntax of sns.lmplot(data='penguins',
+x='flipper_length_mm', y='bill_depth_mm'),
+but now adding hue='species'.
+We no longer see one line.
+We see three separate lines,
+and those three separate lines are
+colored consistently with the markers.
+When we isolate one species,
+for example, gentoo,
+now the slope of the line is different.
+It starts on the low side,
+and then as flipper length increases,
+bill depth also increases.
+Given or grouping by or conditioning on,
+so I'm using three different terms
+that all mean the same thing,
+given or grouping by or conditioning on the species,
+changes our opinion about
+the relationship between the two continuous variables.
+Grouping by species reveals
+a positive relationship between the two.
+In the context of this problem,
+if the flipper length is increasing,
+you can say it's a bigger penguin.
+If the bill depth is increasing,
+you could say it's a bigger penguin.
+So if you get bigger penguins,
+you would expect that the features, the attributes,
+the characteristics of the penguins
+should just be bigger,
+bigger beaks, bigger heads, longer flippers.
+It makes sense that
+those two variables should be positively related.
+When we ignored, however,
+the grouping of the species,
+we instead got negative relationships
+between these because fundamentally,
+these three species of penguins are different species,
+they are different sizes,
+and so just putting everything all together
+masked the real natural relationship
+between these two variables.
+Again, grouping can
+change our opinion about the relationship.
+Also, I should point out,
+we can, of course,
+create the trend plot
+between two different continuous variables.

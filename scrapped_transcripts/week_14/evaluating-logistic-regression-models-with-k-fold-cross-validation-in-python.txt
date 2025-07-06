@@ -1,0 +1,139 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/uKAKp/evaluating-logistic-regression-models-with-k-fold-cross-validation-in-python
+
+English
+Hello, everyone. As you can see,
+I have Jupyter opened up to this week for the class.
+If you don't have Jupyter open,
+please pause the recording
+and launch it and then when you come back,
+I want you to launch a new Jupyter Notebook,
+a Python 3 kernel.
+Let's go ahead and set the name, Week 13,
+CV for cross-validation,
+logistic, for logistic regression, stats models.
+Let's put in our header information,
+CMPINF 2100 Week 13.
+Let's apply cross-validation
+to logistic regression models.
+We will use stats models to fit
+and make predictions with logistic regression models.
+We will use the same dataset from
+Week 12 and fit all 17 models from Week 12.
+We will use cross-validation to estimate
+the average accuracy on new data for all 17 models.
+This cross-validation accuracy metric
+will be used to identify the best model on new data.
+That's what cross-validation is being used for.
+We're going to try and identify
+the best model that we expect on new data.
+Therefore, our best model
+will not be based on the training data alone.
+I want you to import the modules that we need.
+We will import some other ones in a little bit.
+For right now, I want you to import the big
+4: import NumPy as np,
+import pandas as pd,
+import matplotlib.pyplot as plt,
+and import Seaborn as sns.
+Once you've done that, then I want you to read the data.
+Again, use the Week 12 example,
+DF, PD read CSV.
+You have to move back to Week 12,
+then read in the file, week_12_binary_classification.csv.
+Now, let's set the goal.
+The goal is to use k-fold cross-validation to
+evaluate the performance of the 17 models from last week.
+Those 17 models were identified by their formulas.
+This is the rendered HTML report
+from last week's multiple models.
+Either the Week 12
+classification multiple models notebook.
+All of the formulas were provided within a list.
+Now, I'm not going to retype
+these formulas because if you remember from last time,
+it does take a little while to type these up and I
+want to make sure I'm using
+the exact same formulas from last week,
+so I'm going to actually just copy this entire cell.
+I'm just copying all the code in
+this cell and I'm pasting it into my current notebook.
+If I check the length of this list, there are 17,
+and each element in this list,
+it's really a character string.
+But we know for the context
+we're using that character string as a formula.
+The zeroth element is
+the constant event probability
+or the intercept-only model,
+and then the 0, 1, 2, 3.
+This is the model.
+The third element, all inputs,
+linear additive features for the
+continuous and the categorical,
+just added together,
+and then we tried out a whole bunch of
+other kinds of models,
+many of them quite complex.
+With the last one, as we saw at the end of last week,
+it has 81 regression coefficients.
+We will use stratified
+cross-validation because we are
+working on a classification problem.
+From sklearn.model_selection, I want you
+to import StratifiedkFold,
+and let's continue to use five-fold cross-validation.
+We will split the data five times,
+kf equals StratifiedkFold,
+n splits five,
+shuffle equal to true.
+Now to set the random state,
+I usually just do one-on-one,
+but just to show you,
+you can use any integer.
+Here I'm going to use a very different integer, 9483156.
+This integer is controlling
+the random number generator that will
+ultimately split the data in each fold.
+Again, I usually do one-on-one here,
+but I just wanted to do this to
+show you you can use any integer.
+As we saw in the previous video,
+this object understands it's
+going to split data five times,
+but it won't actually do it
+until we're effectively in a for loop.
+Now, we will fit
+the logistic regression models using stats models.
+I forgot to mention. If you
+don't think you have the right formulas here,
+please just take my example,
+of my rendered report,
+that way you get the exact formulas that I have.
+Great. Now let's import
+statsmodels.formula.api as smf.
+We're almost done.
+We need a few more helper objects
+that will help us execute everything.
+We need the column names for the inputs,
+and we will need the output column name.
+You'll see why we need those here in a few minutes.
+But to get the inputs,
+we need to drop the output column,
+force the deep copy,
+we have just the inputs,
+extract out the columns attribute,
+and then I like to force this to be a list.
+Let's now assign that list
+to an object called input_names.
+We have one output,
+and it's named y,
+so I'm just going to manually type y as a strain.
+Now, last week, when we fit all of these models,
+if you remember, we defined a function.
+Let me zoom it in. We actually defined
+a function that allowed us to
+pass in a name of the model and a formula,
+and the function then did everything.
+It fit the model,
+and then it calculated
+the performance metrics on the training set.

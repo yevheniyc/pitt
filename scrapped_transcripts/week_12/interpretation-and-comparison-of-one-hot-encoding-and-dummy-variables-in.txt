@@ -1,0 +1,113 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/8locm/interpretation-and-comparison-of-one-hot-encoding-and-dummy-variables-in
+
+English
+The estimated coefficients when one-hot-encoding is
+used corresponds directly to
+the average output per category.
+If we add this now to our summary,
+I'll name it to onehot_coefs, fit_b.params, df_summary.
+There we go. I needed to do
+a PD series because the index here is very different.
+Reset_index, index equals
+df_summary.index. Of course, there we go.
+It wants to mess up with everything.
+Fit_b.params, reset_index.
+Drop equals true. There we go.
+That was the problem.
+I left this in because I wanted you to
+see how to troubleshoot,
+because when you start interacting to try and
+interpret the coefficients in
+models that have categorical inputs,
+it can get a little tricky,
+whether you're working with dummies or one-hot-encoding.
+There we go. The one-hot coefficients
+directly correspond to
+the average output at that category.
+The dummies correspond to the relative difference.
+But now, let's check how the predictions work,
+pred_from_onehot,
+fit_b.predict, input_grid, df_summary.
+Whether you're working with dummies or one-hot-encoding,
+you're fundamentally
+predicting the average per category,
+so you will get the exact same prediction.
+Many times when categorical inputs are
+introduced and you learn about dummy variables,
+it's very easy to think,
+hey, I need to be worried about my reference category.
+After all, the coefficients are
+the difference relative to the reference,
+so isn't that a big deal?
+The real answer is no, it doesn't mean anything.
+The reason why it doesn't matter is you're
+fundamentally predicting the average per category,
+and the average is always intercept plus slope.
+Whether you have a slope that is
+some relative difference that
+gets added to the reference category,
+or if you don't have an intercept and you
+literally have the average per group directly,
+the predictions will be identical.
+But now, why do I personally
+like and prefer dummies compared to one-hots?
+Let's examine the coefficient summaries.
+According to the one-hots,
+because they're the average value per group,
+none of these 95% confidence intervals contain zero,
+and there's no reason for them to.
+This is the uncertainty on the average per category.
+Our convention of "Does
+the 95% confidence interval contain zero?"
+is really a question of,
+is the relative difference matter?
+Does it matter that you're
+multiplying some slope by some input?
+Does this cause a change in your average output?
+Fundamentally, the slope is a change.
+If you use the one-hots, the convention of,
+"Does the 95% confidence interval contain zero?"
+no longer applies.
+If we check the p-values,
+all of the p-values are less than 0.05 because
+the p-value by definition is literally,
+does the 95% confidence interval contain zero?
+Why do I dislike one-hots?
+You cannot use the conventional approaches for
+identifying statistical significance when
+you have one-hot-encoded variables.
+One-hot-encoding literally requires you to
+directly compare
+the confidence intervals with each other.
+This chart is literally
+the same thing as the point plot
+that we created previously.
+A very common mistake is to fit a model with one-hots,
+check the p-values to see if the categories matter.
+Because according to this, all of them would matter.
+But that's not what we really care about.
+What we care about is which of
+the categories is somehow different?
+The reference category allows you to get some idea that,
+hey, look, this category,
+it's different from some reference point.
+This category, it's different from some reference point.
+This category, it's different.
+This category, it's different.
+All of these other categories
+are the same as the reference.
+When you make the prediction,
+you're fundamentally getting the average,
+but to know which category "matters",
+you're focused on relative differences.
+One-hot-encoding causes you to no
+longer be able to use
+the p-value to identify statistical significance.
+That's why I personally dislike one-hot-encoding,
+and I prefer dummy variables.
+Which way you want to use in truth, it's up to you.
+Because as we have seen,
+the predictions don't care.
+But if you're going to interpret what's going on,
+and you should,
+I feel the dummies make that easier to do.

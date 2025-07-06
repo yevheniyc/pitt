@@ -1,0 +1,81 @@
+Source: https://www.coursera.org/learn/the-art-of-data-visualization/lecture/uXvzi/creating-2d-arrays-from-1d-arrays
+
+English
+Alternatively, we can create
+2D arrays by combining 1D arrays.
+Let's make two very simple 1D arrays.
+An array containing zeros,
+another array containing ones.
+A 1D array does not have rows or columns,
+it really simply has length.
+It's listed as one dimension.
+Here you have three corner,
+meaning the first dimension,
+the set zero dimension has three elements.
+It looks like a row
+of values rather than a column of values,
+but really a 1D array
+doesn't have an idea of row versus column.
+Row versus column is a two dimensional thing.
+Think of a 1D array as really just having a length.
+Again, b 1D.
+It has just values elements in one dimension.
+We can use the NP concatinate function
+to combine the two 1D arrays.
+We already know how to chain them together.
+If we provide the two as elements in a list,
+NP concatinate places them side by side.
+But I don't want to do that here because putting
+the two side by side gives me another 1D array.
+Reading a 2D array from 1D arrays
+requires changing the syntax to NP concactiting.
+This syntax is a little strange.
+You need a list of lists, a, b.
+In many ways, it looks very similar to how
+we created our 2D array from a list.
+We are giving it a list of
+lists because each list is a row.
+I think this format just looks a little strange,
+since after all you're having to embed
+the 1D array in a list which is already in a list.
+There are specialty functions that
+simplify stacking arrays together.
+Stacking arrays on top of each other is
+known as vertical stacking or vertical combining.
+The np.vstack function gives us a simpler syntax.
+We need a single list and each element of
+that list will be
+vertically stacked on top of each other.
+Combining arrays side by
+side is known as horizontal stacking.
+The np.hstack function,
+we'll place them side by side.
+We can combine or stack
+more than two arrays at the same time.
+Let's create another array.
+How about an array of two's and an array of three's?
+I can vertically stack them together, a, b, c,
+d as elements in a list provided by v stack.
+Each of the 1D arrays become rows
+and this 2D array has four columns.
+We can also stack 2D arrays together.
+The previous example here was stacking 1D arrays,
+but we can combine 2D arrays on top of each other.
+Let's demonstrate this by combining
+v stack with another v stack,
+a, b, c,
+d. The np.vstack was a 2D array,
+two rows, three columns.
+The second np.vstack,
+2D array, two rows,
+three columns, we put those two on top of each other.
+Really 2D arrays are
+1D arrays stacked on top of each other.
+You can basically think of each row as like a list.
+The lists are now ordered down a spreadsheet.
+That's why a 2D array is table like.
+That's all for this video.
+The primary purpose again here was to
+demonstrate what a 2D array looks like,
+it's like a table compared to
+a 1D array which really just has a length.

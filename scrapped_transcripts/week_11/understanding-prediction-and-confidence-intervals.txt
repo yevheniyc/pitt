@@ -1,0 +1,128 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/u5HAJ/understanding-prediction-and-confidence-intervals
+
+English
+The prediction interval is a constant with interval.
+Its width does not change.
+That's in contrast to the confidence interval.
+You could see the confidence interval is actually at the
+narrowest in the middle of the training data,
+and it becomes wider at the bounds of the training data.
+The prediction interval is
+what's representative of that level
+of variability that we
+specified when we generated the data at the beginning.
+Do you see this outer ribbon here,
+that 95% uncertainty interval
+that was talked about when the data were generated?
+That outer ribbon when we specified
+Sigma to our random number generator,
+the scale, that is
+what the prediction interval
+is attempting to approximate.
+It tells you where individual data points
+can exist and live.
+The example I like to use when I think
+about the difference between
+the confidence interval and
+the prediction interval is
+that if you go
+outside and take a temperature measurement,
+if you could measure the temperature on one day
+100 years in a row and
+calculate the average of those 100 measurements,
+the confidence interval tells you where
+that average will exist.
+For example, if I wanted to measure
+the temperature on May 5th for
+100 years every day on
+May 5th or every year on May 5th
+at 3:00 PM in the afternoon,
+I go outside and measure the temperature.
+If I calculate the average,
+that average number will be somewhere inside
+this 95% confidence interval with 95% chance.
+That is fundamentally different than asking,
+where will a single measurement exists?
+That's what the prediction interval is telling you.
+If I go outside on May 5th
+in 2016 and measure the temperature,
+that measurement will be somewhere between the lower and
+upper bound of this 95% prediction interval
+with 95% chance.
+That one data point.
+That's why it's really just coincidence if you have
+individual data points that
+live inside the confidence interval.
+Because the prediction interval
+is what is really stating
+where the measurements will exist.
+As a plug, CMPINF 2120,
+the applied predictive modeling class,
+goes into more detail about the differences
+between the confidence interval
+and the prediction interval.
+For this class in 2100,
+what I want you to know is that
+all regression models actually
+have two kinds of uncertainty.
+We are uncertain about
+the average output and we
+express that with confidence intervals,
+and we are uncertain about
+individual data points or single measurements,
+single observations and we
+represent that through prediction intervals.
+You should always show both.
+Unfortunately, modern machine learning,
+you might only ever see
+a single line and not even a confidence interval,
+the uncertainty, is provided.
+This should be very leery and cautious when you don't
+even see a confidence interval
+from a prediction of a model.
+A confidence interval tells you
+how uncertain the model is
+about what can happen on average.
+That is super important,
+but it doesn't tell you what can
+happen with a single data point.
+Oftentimes,
+even very high quality journals
+completely ignore prediction intervals.
+Because if we would include them,
+what that would ultimately tell
+us is our models actually stink.
+Our models are not truly
+capable of predicting an individual data point.
+They are often really only
+capable of predicting what can happen on average.
+For those reasons, academics
+hate showing prediction intervals because it
+would say that all of their hard work actually
+doesn't help them answer one single question.
+They can only answer what can happen on average.
+But if you're going to take
+the measurement of a temperature tomorrow,
+you're not working with the average.
+You are, in fact, working with a single data point.
+You need the prediction interval to know
+how much you can trust that model's prediction.
+We can visually see
+that trust by if I draw a horizontal line here.
+The only place where
+we are confident that the measurement will
+be definitely above zero is on the far left-hand side,
+and the only place we are
+confident that the measurement will
+be definitely below zero is on the far right-hand side.
+This large integral in the middle,
+there's a chance we will see
+negative and positive measurements,
+even if we are confident that
+the average output is decreasing as the input increases.
+Again, the main purpose of this video
+was for you to see how you can create
+your own data and
+make predictions to study the trends of the output,
+express the uncertainty of that average output,
+and express the uncertainty on individual measurements.

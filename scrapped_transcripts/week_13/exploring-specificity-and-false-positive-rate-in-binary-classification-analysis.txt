@@ -1,0 +1,88 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/u0rbh/exploring-specificity-and-false-positive-rate-in-binary-classification-analysis
+
+English
+Likewise, we can focus on the non-event situation.
+The true negative rate, or
+also known as the specificity
+is the proportion of times the model
+correctly classifies the non-event
+when the event does not occur.
+So if we scroll back up to the confusion matrix,
+we are now ignoring all observations of the event.
+We're instead focused on, how many times did
+the model correctly classify the non-event out
+of the number of times the non-event was observed?
+Or we take the true negative and we divide by true negative plus false positive.
+The specificity of this model is 76%, so when the event
+does not occur, the model is accurate 76% of the time.
+And just to confirm to you the number of true negatives and false positives,
+or the sum of the true negatives and false positives is 67.
+That's the number of times we did not see the event.
+Again, let's go back to accuracy, how often is the model right?
+Regardless of why it's right, it's accurate two thirds of the time.
+However, if we focus more on the event,
+when the event occurs, the model is right 56% of the time.
+If we focus instead on the non-event,
+the model is right 76% of the time.
+Sensitivity and specificity let
+you know which class, event or
+non-event the model is better at predicting.
+This is giving you more granularity than just,
+the model is right two thirds of the time.
+You are literally being told which of the two classes the model is better at.
+So this says, the model does a better job at
+classifying the non-event than it does the event.
+A related statistic to the specificity
+is the false positive rate or FPR.
+The false positive rate is 1 minus the specificity,
+so 1- ( TN / ( TN + FP ).
+This tells us the model is wrong 24% of
+the time when the event does not occur.
+The model is wrong 24% of the time when the event does not occur.
+The specificity is, the model is correct when the event does not occur.
+So in summary, the confusion
+matrix is the counts or
+provides the counts for
+the combinations of the observed output and
+the model predicted class.
+The confusion matrix has four cells in
+a binary classification problem,
+because there are four combinations.
+Those cells have important meanings.
+We have a true positive or TP,
+classify the event, and observe the event.
+So it's a correct classification.
+We have the true negative or TN,
+classify the non-event, and observe the non-event.
+This is a correct classification.
+False positive, FP, classify the event,
+and observe the non-event.
+This is an incorrect classification.
+False negative, FN, classify the non-event,
+and observe the event.
+This is an incorrect classification.
+Again, the second word, positive or negative,
+denotes what the model classifies.
+True or false tells you if the classification was correct.
+Accuracy is the proportion of
+correct classifications, or
+( TN + TP ) divided by the sum of
+the four, ( TN + TP + FN + FP ).
+Sensitivity or the true positive
+rate is the proportion of correct
+classifications when the event
+is observed, or TP / ( TP + FN ).
+Specificity or the true negative
+rate is the proportion of correct
+classifications when the event is
+not observed, TN / ( TN + FP ).
+The false positive rate is the proportion
+of incorrect classifications
+when the event is not observed,
+1 minus specificity.
+So the purpose of this recording, besides reviewing all the steps,
+is to really highlight to you, when you are working with binary classification,
+you need to know more than just, is the model accurate?
+You need to be able to break down, how is it accurate?
+Is it because it's better at predicting the event, or
+is it because it's better at predicting the non-event?

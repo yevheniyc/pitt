@@ -1,0 +1,91 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/tH7PK/correlation-plot-of-all-variables
+
+English
+Cmap=coolwarm. Why is it so critical that
+we always use -1 to +1 with 0 in the center?
+Well, let's comment out what we heard.
+Now, if we use the default color scale,
+we still get that dark black color here
+because the main diagonal is always
+a correlation coefficient of 1.
+If we did not annotate it,
+we might be fooled into thinking, hey,
+this is a low correlation
+coefficient just because it's dark black.
+But if we examine the color scale in more detail,
+we would see, this is still positive.
+It's not right next to zero.
+But the average person is not going to
+spend a whole lot of time
+double-checking your color scales.
+You need to make sure that
+your correlation plots are constructed such that
+a person can consistently look across
+different correlation plots and
+still reach the same conclusions quickly and easily.
+By scanning across these two,
+I know which has a negative correlation versus
+which has all only positive correlation.
+But correlation plots are particularly
+great for showing the relationship
+between more than just two continuous variables.
+We'll touch on this in
+another video, but just to show it,
+we can show the correlation coefficient between
+all pairs of continuous variables in one chart.
+Just copy here.
+I won't even copy and paste this just so we
+can see it, penguins.corr.
+If we call the method as it is,
+you can see we get a warning.
+It gives us out the correlation matrix,
+only for the numeric variables,
+so just to be safe,
+let's set numeric only equal to true,
+to remove the warning.
+We now have the correlation
+coefficient between each pair of variables.
+Bill depth and bill length,
+body mass, and bill length.
+Here's what we just looked at before.
+Here's flipper length.
+Now, here it is flipper length and bill depth.
+But you can see there's
+even the pairs we did not look at;
+bill depth and bill length,
+flipper length, and bill length.
+Body mass, and flipper length.
+We can show all of those pairs within a heat map.
+Numeric only true,
+vmin-1, vmax 1, center=0, cmap=coolwarm,
+annotate true, ax=ax, plt.show.
+Here, let's raise the font size.
+Since we have the annotated correlation plot,
+let's even remove the color bar.
+So Cbar false to give us even more space.
+This correlation plot is
+showing us the linear relationship
+summarized by one number for
+every single pair of variables.
+Even though in our scatter plots,
+we were only able to look at
+just two continuous variables at a time,
+the correlation plot can
+scale to many pairs of variables.
+This is part of the reason why
+this is such a powerful graph.
+It really lets us examine
+a huge number of variables all at once.
+But that's not the only thing we can do.
+We also need to consider grouping.
+Remember, we saw that grouping by a categorical changed
+our opinion about the relationship
+between two of the continuous variables.
+Let's make the trend sns.lmplot penguins.
+We'll focus here back on
+the flipper length millimeter and
+the bill depth millimeters.
+Remember how we had that negative relationship?
+But if we grouped by species,
+and represented that grouping as the hue,
+we now had three positively sloped lines.

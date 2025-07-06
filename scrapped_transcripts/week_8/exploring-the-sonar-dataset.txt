@@ -1,0 +1,84 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/KM7jl/exploring-the-sonar-dataset
+
+English
+We can also create the conditional KDE,
+where we color by the object column.
+Sns displot data equals sonar_lf.
+Again, x equals value, column equals variable.
+We will continue to wrap 10 columns per row,
+but now kind is KDE.
+The hue will be X60, common_norm is false.
+Now let's make sure that we are not
+sharing the y and the x axes across the facets.
+Again, it's very important to set
+common_norm to falls to remove the sample size effect.
+I haven't looked in depth in this video
+how to count the number of rows per category of X60,
+but you know how to do that with
+value counts and visualize it with bar charts.
+Again, the colors are corresponding
+to different conditional distributions
+of each numeric column for the two categories of X60.
+Let me copy this.
+Well, actually, no, I'm not going to copy it.
+We can also use violins to directly
+compare the conditional distributional shapes,
+the conditional, sns catplot data equals sonar_lf.
+This time, x will be X60,
+y is the value.
+The column is the variable,
+and we will wrap again 10 columns
+per row, kind equals violin.
+Because it's catplot there's
+an actual argument for share y,
+so I can just use it directly.
+Again, 60 facets will be created,
+one facet per column in the original wide format dataset.
+This allows you to examine how
+the conditional distributions are
+different for each variable.
+Let me copy the code here.
+Because again, we can also consider
+the point plot to examine conditional means.
+Now, you will examine if the average is different
+for each variable grouped by the object column.
+Again, separation between the vertical lines,
+the 95% confidence intervals,
+how you know that the averages are different.
+But there is something unique about this dataset.
+To see it, let's use wide format seaborn plot.
+So seaborn has wide format capability.
+Wide format means you provide the dataset,
+but you don't specify any individual column to use.
+You just specify the kind.
+The categorical plot kind equals box,
+and then let me make it wider here,
+raising aspect of 3.5.
+By default, the wide format plotting will
+create a box plot for each variable in the dataset.
+All of the variables are contained in a single axis.
+So you get all numeric columns lined up side by side.
+What's unique about the sonar dataset is,
+it has already been specified by
+the original data authors that
+no variable is outside the bounds 0-1.
+As you can see, some columns span that
+range while other columns do not.
+Some are very, very narrow,
+they're really tiny range.
+But no variable is outside the range 0-1.
+That's how the authors made it.
+So you might be thinking to yourself, "Well,
+why would I need to then even consider the long format?
+Why can't I just rely on the wide format.
+For example, I want to make
+a point plot where I don't join them.
+Why can't I just rely
+on this plot to study what's happening?"
+It's really critical to
+remember what the wide format is doing.
+It's letting you compare across the columns.
+It's not letting you compare
+grouped by a categorical variable,
+We cannot easily group
+by a categorical with the wide format.

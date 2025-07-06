@@ -1,0 +1,106 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/ZFlnC/visualizing-linear-relationships-in-regression-models
+
+English
+But before we go through how to interpret the fitting results,
+let's visualize what this model looks like.
+Specifically, I want to visualize what the average output or
+trend looks like with respect to input one for
+a given or single value of input two.
+Okay, let's now go back into our Jupyter notebook.
+Let's begin with additive features using or
+additive linear relationships.
+So I'll put in a section header, additive linear relationships.
+Okay, now we will define a function
+that calculates the average output or
+trend given input one and input two and
+the three regression coefficients.
+The purpose of this function is to allow
+visualizing the trend with respect to input one.
+So I'm going to define a function, def to define a function,
+calc for calculate, trend, wrt with respect to x1.
+Okay, I'm using names consistent with the equations in the slide deck.
+So calc the trend with respect to x1.
+This function will have the following arguments, x1 comma x2.
+So my two inputs b0, b1 and b2.
+I'm using b in Python everywhere where you see a beta in the slides.
+This is a function, so I need the colon operator to define it, and
+now I go inside the body.
+Let's create a temporary Pandas data frame that I'll name res_df.
+It equals a dataframe, and I'll create that data
+frame from a dictionary where the key is x1 and
+the value is x1 that I'm providing.
+Now I am in setting this up, intending it to have
+multiple values of x1 and just a single value of x2.
+So let's now go ahead and add x2 as a column to our data frame.
+x1 will have multiple values, x2 will have a single value.
+Let's now calculate the trend or the average output.
+And remember, the trend is intercept plus slope of input one
+times input one plus slope of input two times input two.
+Let's now see that in code.
+Let's define the new column trend
+intercept plus slope times input
+one plus slope times input two.
+Again, I'm accessing the column x1 and x2 using the dot notation,
+and then let's return the temporary data frame res_df.
+To demonstrate the relationships, let's define the following coefficients.
+Now, as we discussed over the last couple weeks,
+these coefficients will ultimately be estimated when we fit the linear model.
+But to understand and interpret what's going on,
+let's just specify these values for now.
+I want my intercept to be negative 0.25.
+I want slope one to be 1.95, and slope two to be 0.2.
+Again, I am making these choices.
+I could have made the coefficients much larger.
+I could have made the coefficients smaller.
+I could have flipped the signs, made the coefficients negative or one negative,
+one positive.
+But this is what I decided to use.
+The main thing I want you to focus on though is notice the slope
+multiplying input one is larger than the slope multiplying input two.
+And we will examine the consequence of that here shortly.
+Let's now define 101 evenly or
+uniformly spaced values of the input x1
+between negative three and positive three.
+Let's create an object x1_values,
+which is the result of NP linspace from negative three
+to positive three with 101 evenly spaced values.
+So the num argument is used, number of points 101.
+The result is a numpy nd array.
+It's a one dimensional array that has 101 values.
+Let's calculate the average output for
+a single value of x2 at zero.
+How trend with respect to x1,
+x1 values zero, b0, b1, b2.
+The result, as you can see, is a data frame.
+X2, we can see printed to screen, has one and only one unique value.
+But of course, we can confirm that,
+With the value counts.
+Oops, I made a mistake.
+Should be x1 values.
+There we go.
+x2 has one unique value zero with 100, and it appears 101 times.
+Let's visualize the relationship
+between the average output and input one.
+Let's do that with Seaborne.
+SNS, a relationship plot is created by the rel plot figure level function.
+Now, what will be the data?
+The data here is the data frame resulting from
+our function calc trend with respect to x1,
+x1 values x2 of zero, b0, b1, b2, x equals x1.
+y equals trend, kind equals line.
+So I'm explicitly telling Seaborne I want a line chart.
+So set the kind argument to line.
+We get a diagonal line.
+It's a linear relationship, because remember, we are working with that
+the input one is linearly related to the trend or the average output.
+If you look closely, here's when x1 is zero,
+the intercept is not exactly zero, but it's close to it.
+It's actually negative 0.25.
+It's equal to the intercept we set.
+But if we have a one unit change of our input x and we go up,
+we find the line, we see the trend is very close to two.
+Meaning the average output has a change of roughly two,
+or has a change very close to two for a one unit change of the input.
+Because the slope is literally how much does the output
+change on average, for one unit change of the input.
+And remember, we set that the slope is very close to two.

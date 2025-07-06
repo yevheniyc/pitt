@@ -1,0 +1,70 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/1jII5/exploring-continuous-relationships-with-scatter-plots
+
+English
+Hello everyone, in this video we're going to talk about scatter plots.
+As you can see, I already have Jupyter opened up in the directory for
+this week in the class.
+If you don't have Jupyter open, please pause the recording and launch it.
+And once you have done that, we will then create a new Jupyter notebook.
+Let's change this file name to
+week_07_scatter_plots and
+then put in the headers CMPINF 2100 week 07,
+visualizing continuous to continuous
+relationships scatter plots.
+Let's import modules, I want you to import in
+the big four import numpy as NP, import pandas as pd,
+importmatplotlib.pyplot is plt and import seaborn as sns.
+Okay, let's now read in the data.
+We will use the penguins data set for this example,
+to get penguins, we will call the sns load
+dataset function with the argument penguins.
+So penguins as a string as the argument to load
+dataset is assigned to the penguins variable.
+If we apply the dot info method,
+we can see it has seven columns, we have worked with a few of
+these columns previously when we were considering counts.
+So looking at bar charts, making visuals for marginal histograms so
+distributions, and then looking at conditional distributions,
+conditional kdes by grouping a continuous variable by a categorical variable.
+So we will not begin with the essential information since we have already done
+that, we will not look at counts or bar charts or marginal distributions.
+We will not look at conditional distributions, so box plots,
+violin plots, point plots.
+Instead, we are going to exclusively focus on
+continuous to continuous relationships.
+The fundamental plot for showing the relationship
+between two continuous variables is the scatter plot,
+and this is typically how charts or visualization is introduced.
+You make a simple scatter plot, but I like to introduce visualization
+with how I feel you should visualize the data when you explore.
+By beginning with marginal distributions, asking what are the counts of
+categoricals, then the distributions of continuous variables.
+Looking at combinations of categoricals, then conditional distributions,
+and then you look at the continuous to continuous relationships.
+In seaborn, the figure level function for
+showing relationships is the sns rel plot function.
+Remember, figure level functions,
+the naming convention is what is the goal,
+the goal here is to study a relationship.
+The x axis is associated with a continuous variable and
+the y axis is associated with a second continuous variable.
+In our example, using the penguins data set,
+let's use the flipper length and
+the bill depth as our two continuous variables.
+To make the figure,
+sns rel plot data equals penguins.
+All charts, all figures, start with data, data equals penguins.
+And then the x axis will be flipper length millimeters,
+the y axis will be bill depth millimeters,
+plt show, we have one on the x, one on the y.
+Every single dot or marker that
+you see is a single observation or
+row in our data set.
+So this dot right here, it is an observation or
+row in our data set that has a flipper length of
+about 205 and a build depth of roughly 14 and
+a half, that's this one data point.
+You can see that there are regions that have multiple data points,
+multiple observations with very similar values.
+And then there are a few that are kind of away from the main body or
+clustering of the observations.

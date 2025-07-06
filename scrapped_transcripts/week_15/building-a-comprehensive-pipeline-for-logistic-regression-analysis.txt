@@ -1,0 +1,130 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/snwMX/building-a-comprehensive-pipeline-for-logistic-regression-analysis
+
+English
+Hello, everyone. As you can see,
+I already have a Jupyter Notebook opened up.
+If you don't have Jupyter Notebook
+with a Python 3 kernel open,
+please pause the recording and do so.
+I'm going to change the name of
+this file to week_14_pipelines_logistic.
+In this example, we're really going to
+bring together pretty much everything
+from the entire semester into
+one application through a pipeline.
+Let's go ahead and set our header information CMPINF
+2100 Week 14 and this
+is all about creating
+a pipeline to manage the pre-processing,
+training, cross-validation, and tuning of models.
+We will specifically work with
+a logistic regression example
+to continue the theme for this week.
+I want you to start out by importing the big four,
+import numpy as np,
+import pandas as pd,
+import matplotlib.pyplot as plt,
+and import seaborn as sns.
+We will import other modules and functions later on.
+Once that is completed, we will read some data.
+Now we have been focusing
+on a single example in the last few weeks.
+That example has come from the 12th week of the semester.
+If I read in that dataset,
+and I go back to the 12th week and I read in that file,
+this example was relatively
+small but as you've seen over the last few weeks,
+it has posed some significant challenges.
+However, there's one aspect of
+this problem that I constructed for you.
+I made sure all of
+the continuous inputs have the same scale and magnitude.
+Realistic examples though will most likely
+not have all continuous inputs
+with the same magnitude and scale.
+Also if we check the correlation plot, which here,
+I'm going to make as a heatmap in seaborn,
+sns.heatmap(data =
+df12.drop(columns={'y'}).corr(numeric_only = True),
+and actually, here I will also draw
+the y column before I do this
+because that's the binary output.
+vmin=-1, vmax=1,centre=0,
+cmap='coolwarm', ax=ax, plt.show.
+If I annotate this,
+will be easier to see.
+All of these continuous inputs are not correlated.
+In realistic examples,
+such as some of the final projects,
+you may need to deal with highly correlated inputs.
+Even though this example pose significant challenges,
+there are two very important areas that it
+does not cause problems.
+Let's wrap up this week.
+Let's work on an example that has
+many continuous inputs that are
+correlated and have different scales and magnitudes.
+We actually worked with such
+an example earlier in the semester.
+The Sonar example is
+a binary classification problem with
+many correlated continuous inputs.
+We worked with this application in
+depth in the ninth week of a semester.
+If you go to your examples from the ninth week,
+the URL for downloading the data is provided
+so I'm just copying that here, pasting it in.
+You can then see the code
+needed to read in the data because
+this dataset does not have a header row, paste in.
+There are 61 columns with relatively few observations.
+We don't have thousands and thousands
+of observations in this dataset.
+There are only 61 columns here.
+If we check the names of the columns,
+they're all just integers and we
+handle this by changing
+the column names so I'm just going
+to copy this from the ninth week of the semester.
+This is all available in the course.
+You could go to
+the page to get it if you don't have it already.
+Now, all of the columns have easier-to-work-with
+names and if we check the dtypes,
+There's one and only one object column.
+That object column X60,
+the last column is
+the binary variable where we have either class N or class
+R. The goal of this application is to train
+a binary classifier to
+classify if the observation is metal,
+given the 60 continuous features.
+Let's change the last column
+to a name representative of an output.
+sonar_df.rename I'm going to
+rename the column x 60 to be response.
+And I want to do that in place.
+Now, sonar_df.dtypes there we go.
+The response is an object.
+There we go now, we have the response having categories
+or R. The inputs,
+as we saw earlier in the semester,
+have different magnitudes and scales,
+though, all are between 0 and 1.
+And we can confirm that with the wide format
+plotting options from seaborn.
+Some of the inputs cover the full range 0-1,
+whereas others are much smaller in scale.
+But the real issue here is
+the inputs are highly correlated.
+We create the sns.heatmap
+(data=sonar_df.corr(numeric_only=True),vmin=-1,
+vmax=1,centre=0, cmap='coolwarm', ax=ax.
+I'm not even going to annotate this one.
+It's just clear, you can
+see there are some highly correlated,
+some anti-correlated, some that have no correlation,
+but there's a strange correlation structure
+present in the data.
+Variables next to each other
+are very highly correlated together.

@@ -1,0 +1,41 @@
+Source: https://www.coursera.org/learn/the-art-of-data-visualization/lecture/nprUn/welcome-to-the-art-of-data-visualization
+
+English (auto)
+Welcome to the course on the art of data visualization.
+Data visualization is a storytelling in a graphical medium.
+Not only does it communicate the data,
+it can evoke emotions through art and creativity.
+This course helps you explore the basic principles of data visualization,
+including telling a story, making a good sign,
+fulfilling a purpose, incorporating human perception,
+using color and visual elements,
+and selecting the appropriate chart format.
+The art of data visualization course will cover
+topics and the techniques of creating data visualization,
+as well as the art of developing
+a compelling and effective data visualization.
+We'll look at visualization examples and
+work on identifying their strengths and weaknesses.
+We'll learn to use Python programming to create different visualizations.
+We'll learn how complex data such as
+network and time series data can be visualized.
+We'll work with maps and interactive visualization,
+and we will put all these visualization together to tell
+engaging stories with data that can evoke the audience's emotion.
+You will gain knowledge to begin developing
+a discriminating eye for good visualization,
+and learn how to most effectively communicate
+information using visual elements.
+You'll learn central principles of perception and data organization.
+This introductory course assumes
+minimal technical background in terms of basic programming.
+It provides references to
+these limited required prior background knowledge,
+making it an ideal course for learners with
+limited previous experience in data analysis and data visualization.
+If you're interested in creative ways of exploring data,
+learning to write computer programs,
+and using new tools to explore data visualization,
+you'll be successful in this course.
+Enjoy the journey through data visualization,
+programming, art, and storytelling.

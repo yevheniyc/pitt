@@ -1,0 +1,99 @@
+Source: https://www.coursera.org/learn/the-art-of-data-visualization/lecture/3M6eZ/combining-arrays
+
+English
+Now, the Python community loves
+to assign masks to new objects.
+It's really common to see
+a conditional test assigned to a new variable.
+I despise this.
+I do can't stand it.
+The reason I need to remember what object
+the mask was applied to and what the conditional test is,
+If I pick up this work a month from now,
+I'm not going to remember what a mask is referring to.
+Instead, I prefer to just apply
+the conditional test directly to the slice.
+I feel this is easier to read,
+it is easier to remember,
+it requires less variables to be
+defined inside your notebook.
+It also means I can very easily
+change my conditional test.
+If I want to find where A is less than 1, I can do that.
+If I want to find where A is
+greater than 4, I can do that.
+I don't need to define a new masking variable.
+Let's return to the B array.
+Member B has 21 values, 21 elements.
+I want to find all values of B or
+return all values of B that are less than 3.
+I don't need to make a masking object,
+I can just provide that conditional test
+directly into the slice.
+Try some more conditional tests.
+B greater than 3,
+B or B is less than or equal to 4,
+so on and so forth.
+The next way we can manipulate A arrays is we
+can combine multiple arrays together.
+But before we see how to do that,
+let's create two small lists.
+A list 1, 2,
+3 and B list 3, 2, 1.
+We know that the plus operator
+combines the two lists together.
+A list plus B list,
+put the two next to each other.
+Now, if I would do B list plus A list,
+it would have a different order,
+but it still puts the two together.
+However, we know that
+the plus operator does not work the same way with num Pi.
+Let's create two arrays from those lists.
+A array is made from A list,
+B array is made from B list.
+We know that if we add the two arrays together,
+each element is added together.
+Remember, num Pi is about math.
+It's not really about data storage, it's about math.
+But sometimes we need to modify
+the objects rather than adding the values together.
+We can combine, or the fancy term is
+concatinate the arrays using the np.concatinate function.
+It's a very long word.
+I spell it wrong all the time, but C-O-N-C-A.
+Then hit CON tab, you'll see concatinate.
+Now, the syntax for this function is a little confusing.
+We separate them by commas,
+but that doesn't work correctly.
+You'll get an error.
+It tells us only integer scalars can be converted.
+Instead, to use concatinate,
+you have to provide a list.
+Each element in the list will
+be the arrays that you want to combine together.
+Now, what's going on when we make this list?
+It's really behind the scenes,
+is creating a list where there are two elements.
+The first element is our original array A array,
+our second element is the other array,
+B array and concatenate combines the two together.
+If we would change the order,
+that changes the order of how they
+are combined, or concatinated.
+We can combine more than two arrays
+by providing more elements in the list.
+Let's combine all four arrays that we have
+made in this notebook, NP concatinate.
+We'll type it in as A array, A B array.
+All of the values in
+all four arrays are now combined together.
+A array was 1, 2, 3,
+B array was 3, 2, 1.
+A was negative -101-101,
+then B was -5-+5.
+Now, what's important is the result of
+this concatenation, is an array.
+Meaning the np.concatinate function gives us arrays with
+all the same attributes and
+methods as if we made the arrays ourselves.

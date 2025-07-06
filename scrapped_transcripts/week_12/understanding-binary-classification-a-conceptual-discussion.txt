@@ -1,0 +1,144 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/VgAVS/understanding-binary-classification-a-conceptual-discussion
+
+English
+Hello everyone. No programming in this video,
+this is a purely conceptual discussion.
+Because up to this point,
+we have covered regression problems,
+predicting continuous outputs using the linear model.
+But now we'll transition into binary classification.
+But in order to do that, we need to have
+some motivation to understand where this thing
+called the logistic comes from and why we have
+to deal with this logit transformation.
+The goal in binary classification is to
+classify an event or a non event.
+The output is fundamentally non numeric.
+The events can be true,
+they can be false, they can be hit out,
+they can be pass fail,
+whatever the events are but I'm
+just labeling them as event for what
+we're trying to classify and
+the non event, the other category.
+Now, even though event and non event, those are strings.
+Commonly, when you work with binary classification,
+the output will be encoded as an integer.
+The event will be output equal to one,
+while the non event is output equal to zero and here I'm
+just using the common convention that
+I use of y is the output.
+What's really important here is that y,
+even if it's encoded this way and is thus an integer,
+it is not a continuous number.
+Therefore, this is not
+a regression problem and then
+that's a very tempting mistake to make.
+You check your data types you
+see the output is an integer,
+and therefore you fit a regression model.
+That will fundamentally give you the incorrect results.
+The reason for that is that ultimately,
+there are two and only two unique values.
+We have just so happened to name those values or label
+them one for the event and zero for the non event.
+Regression is only appropriate when
+the output could have many allowable numeric values.
+Thus, when you are working
+on a binary classification problem,
+you cannot work with linear models.
+The reason for that goes back to the assumptions of
+the linear model that have tried to stress
+over these last few weeks.
+The output is normally
+distributed around the average output or the trend,
+and normally with a Gaussian or bell curve
+is the fundamental important thing here.
+Let's go back to the math,
+where we have our output normally distributed
+around the trend or average with some standard deviation.
+This is how we call the random number generator to create
+that average output around
+the trend and just for simplicity,
+I'm using a single continuous input
+linearly related to the mean.
+We know that the average output or
+trend will change as the input changes.
+But let's now consider our binary output situation.
+Our output y has
+two and only two unique values or categories.
+There's y = 0 and y = 1.
+There is literally no observation in
+between or outside of these two values.
+The fact that the linear model
+assumes the observed output to be
+normally distributed around the average
+pictorially means we have to ask ourselves,
+where would the Gaussian or the bell curve be located?
+I'm drawing a bar chart here to say, look,
+I've observed this number or this count of
+y = 0 and this count of y = 1 but obviously,
+the bars could be the same height or the bar for
+y = 1 could be taller but this
+is just an illustrated example.
+Now, if we would place a Gaussian
+in the center between these two,
+that would be saying the average could
+be a number in between y = 1 and y = 0.
+But we will fundamentally never see
+any value except y = 1 and y = 0.
+Therefore, the linear model would never
+be able to predict either of the observed outputs.
+If we would instead locate or
+center our Gaussian at y = 1, well,
+now the bell curve can extend above
+y = 1 but y = 1 is just an artifact,
+you can never have an observation of y greater than one.
+Just like how, if we
+would center the bell curve at y = 0,
+the Gaussian would say,
+you could see our observations less than zero,
+but that cannot happen.
+We will only have y = 0 or y = 1, nothing else.
+The consequence of this is
+binary classification models cannot
+use a Gaussian distribution the output
+is not normally distributed around the average,
+and therefore, you cannot use
+the same assumption for
+the distribution as the linear model.
+A different one has to be used,
+and binary classifiers use
+a distribution known as the Bernoulli.
+Now, we will see the Bernoulli in more detail,
+if you continue and take
+CMPINF-2120 because there we get more into the math,
+and we can see the consequences of using the Bernoulli.
+But for right now, in 2,100,
+what matters is we are still
+needing to know the average output
+because this Bernoulli distribution,
+it has an average.
+But what matters is
+the special meaning or the context of this average,
+because in the Bernoulli the average
+corresponds to the probability of the event.
+We are still fundamentally going to model the average,
+but now because we have
+a different probability distribution,
+that average is the event probability.
+What this means is binary classifiers are
+not trying to actually model
+or predict event or non event,
+they are instead predicting the event probability.
+This is how simple binary classifiers work,
+this is even how neural networks and deep learners work.
+There's a particular class of
+classifiers that do not work this way,
+and we will talk about them in 2,120.
+They are those associated with support vector machines.
+But a vast majority of
+binary classifiers are actually trying to
+predict the event probability
+and if you're interested in neural networks,
+that's how they operate.

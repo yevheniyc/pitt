@@ -1,0 +1,118 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/7DJsC/introduction-to-fitting-linear-models-using-statsmodels
+
+English
+Hello, everyone. As you can see,
+I already have my Jupyter session up and running.
+I'm in this week's project directory.
+We have reviewed the key assumptions of the linear model,
+and we have generated two example datasets.
+We are going to begin actually fitting
+a linear model using first,
+our simple linear relationship example.
+Now that we have reviewed,
+and discussed all of the assumptions in depth.
+Let's now actually fit
+a linear model for regression problems.
+Again we will start with the linear relationship example.
+If you don't have Jupyter open,
+please pause the recording.
+Go ahead and launch it.
+Once you're back, then start a new Python 3 kernel,
+launch a new notebook.
+Let's name this notebook week_10_lm,
+for linear model, fitting_ linear.
+LM fitting linear, where
+the linear denotes
+the linear relationship that we will use.
+Let's put in our header information,
+CMPINF 2100 Week 10.
+This week we will finally fit a linear model.
+Let's fit a linear model consisting of
+a single continuous input that is
+linearly related to the trend or mean output.
+Essentially, this is your classic best fit line.
+We will actually get the best fit line here.
+Let's begin by importing modules.
+First, import the big four,
+numpy as np,
+pandas is pd,
+matplotlib.pyplot as plt,
+and seaborn as sns.
+But we need one more module to fit the linear model.
+We will use stats models
+to fit the linear models for regression.
+Later, we will use
+scikit-learn for fitting the linear model.
+But let's start with the stats models formula API.
+The formula API allows us to fit models,
+as you'll see, with formulas.
+This really streamlines and simplifies
+the processes we need to execute to fit models.
+Scikit-learn, which we have used for clustering,
+is a very popular module for predictive models.
+But stats models is actually quicker and easier to use,
+and so that's what we will start with.
+To import stats models,
+you need the import keyword,
+then import statsmodels.formula.api
+as smf. Stats models formula API.
+This is such a long name.
+No one wants to keep typing that,
+and so the common alias is smf for stats models formula.
+Import statsmodels.formula.api as smf.
+If you do a who's,
+let me make that with a code cell.
+We have the big four, numpy, pandas,
+matplotlib pyplot, seborn,
+but now we also have smf.
+Let's go ahead and read data.
+We will use the very simple linear relationship example
+that we created previously.
+If we go back to the file manager in Jupyter,
+remember, we have the Week 10 linear data CSV.
+Let's read in that dataset,
+then assign it to DF.
+Pd_read_csv.
+Now, if you type in Week and then hit "Tab",
+you should have the
+week_10_linear_data.csv file available,
+because that dataset is in
+the same working directory as this notebook.
+This dataset is small.
+If we use the.info method,
+we know it has nine rows.
+We're not going to explore
+this dataset because we made it.
+We know what's in here. We have a continuous input x.
+We have a continuous output y.
+There are zero missing.
+We also have some bookkeeping information that told us
+the parameters that were used to
+generate the data, as a reminder.
+We will fit a linear model between the input x,
+and the output y,
+assuming a linear relationship
+between the trend, and the input.
+We're going to use statsmodels.
+The statsmodels function for
+fitting linear models for regression is smf.ols.
+OLS stands for ordinary least squares.
+This will give us the estimate that
+minimizes the sum of squared error.
+We will talk about errors little later
+after we've gone through working with the object.
+The smf.ols function,
+works slightly differently than how scikit-learn works.
+The object is initialized with a dataset.
+So you have to provide
+the dataset when you initialize the object.
+You then fit the object with the.fit method,
+but the data has already been provided.
+The model we want to fit is
+specified via the formula argument to smf.ols.
+The formula is a string,
+and this string follows a very particular syntax.
+The string has the output,
+and now I'm using the placeholder
+less than greater than,
+the output, Tilda, the input.

@@ -1,0 +1,113 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/rH0ke/analyzing-the-confidence-intervals-and-coefficients
+
+English
+What I typically like to do,
+I will extract the 95% confidence interval bounds
+and store the estimate with
+the standard error with the bounds.
+Let's assign this to the result of
+co-et_fit_ info = lm_fit.
+conf_int apply the rename method to the columns.
+Now I'm using the key value pair
+dictionary, ci_lower,1, ci_upper.
+Now add in a column for the estimate,
+which is equal to lm_fit_params,
+and then add in a column for
+the estimate standard error, lm_fit_bse.
+If you're wondering why it's called bse,
+do you remember in my math notation,
+I typically call the slopes Betas?
+This is historical convention
+for slopes in applied statistics,
+the Beta or B parameters.
+Now, we have a single DataFrame where
+the index in that
+DataFrame are the coefficients we're estimating,
+the intercept and the slope.
+We have the lower and upper
+bound of the confidence interval.
+We have the estimate itself that
+minimizes the sum of squared errors,
+and we have the standard error on that estimate.
+All contained in one place.
+Now, if we go back up to the summary table,
+there's really one additional piece
+of information that I haven't talked about yet.
+It's this really funky looking thing
+where p is greater than
+the absolute value of t. This is known as the p-value,
+and the p-values it's
+really important for historical reasons.
+It's overplayed.
+It actually isn't as important as
+journal articles will make you think it is.
+Let me put in some text here.
+We can extract the p-values for
+the coefficients using the.p-values attribute.
+This is an attribute, not a method.
+The p-value is described
+as something really magical and important.
+It is used to identify statistically significant inputs.
+A statistically if I didn't spell that right.
+Significant input is one that has
+a p-value typically less than 0.05.
+That is the common convention.
+If the p-value is less than 0.05,
+we have a statistically significant feature
+or statistically significant input.
+Essentially, you have lm.fit_p-value less than 0.05.
+You see how x is true,
+that means the input x is considered by
+common convention statistically significant.
+But the p-value is nothing magic or special.
+In fact, it can be completely
+described using a simple graphic.
+Let's visualize the coefficient estimates as markers
+in a scatter plot and
+the confidence intervals as error bars.
+Now, this figure,
+I wish it was easier to make in Seaborn,
+but unfortunately, we have to drop down to Matplotlib.
+We need to use the Matplotlib axis level or axis
+object.error bar method to
+visualize the confidence interval.
+As a reminder, we have the color fit info,
+where we've organized everything,
+or we can use
+the attributes and methods of the fitted object directly.
+I'm going to use the estimates or
+I'm going to use our object that we compiled here.
+But again, Matplotlib I've said before it's dangerous,
+and it's set up in
+a very strange manner for handling error bars.
+The error bar method wants us to
+provide the value of the error around the marker,
+rather than the limits of the interval.
+Therefore, I typically create
+the following coefficient plot visualization
+using the approximation based
+on two times the standard error.
+What I'm about to show you is just an approximation,
+but it works really,
+really well, and it is,
+in fact, it's less work and it's easier to create.
+It will make more sense once I make it.
+The first thing we have to do is
+initialize the figure and axis objects,
+and now use the error bar method to show
+the estimates as markers
+and confidence intervals as error bars.
+Create a horizontal error bar.
+It will be horizontal.
+The name of the variable will be on the y-axis,
+and the coefficient value will be the
+x-axis, ax.error bar.
+The y value, I will use the CMF fit info index.
+The x value will be the MCF fit info estimate.
+The x error bar,
+so look closely at these arguments,
+the value on the y-axis,
+the value on the x-axis,
+and now the x-axis error is
+two times the estimate standard error.
+Then plt_ show.

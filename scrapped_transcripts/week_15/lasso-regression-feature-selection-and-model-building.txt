@@ -1,0 +1,129 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/5RdLN/lasso-regression-feature-selection-and-model-building
+
+English
+Now, when you run it, it is slower than ridge.
+The LASSO penalty is more challenging to fit.
+This actually does take a little longer to run.
+If we check the score,
+the training set accuracy,
+you could see it's a little lower with
+the default value of C compared to
+the ridge value of C. Which,
+if you remember, fit_sk_none.score
+is different than when no penalty is applied.
+The ridge penalty is
+a different mathematical form than the LASSO penalty,
+even though they both involve the C parameter.
+The actual mathematics of LASSO versus ridge,
+again, is discussed in 2120.
+What matters right now is
+conceptually what these two are doing.
+They are both trying
+to prevent extreme coefficient values,
+but they do so slightly differently.
+If we examine the coefficients themselves for LASSO,
+do you see a handful of zeros here?
+We never saw perfect identical zeros
+in the previous recording.
+The ridge was not
+capable of having a coefficient identically zero.
+But a LASSO is capable of having identically zero.
+This is the key difference between ridge and LASSO.
+Again, even without getting into the math,
+we could see it here in the code.
+Literally, there are entries with
+zero as the value
+of the coefficient and if the coefficient is zero,
+the feature has been removed.
+Try very large value for C with LASSO.
+Let's now push C to the extreme
+, lasso_large_c logistic regression().fit.
+Again, fit on x_sk, y_sk.ravel.
+We're using the hack fit intercept false,
+oops, the penalty,
+L1 for LASSO,
+C. Let's use 10,000.
+So four zeros.
+Solver is saga, max_iter 25,001.
+You can put fit with the escape character on a new line.
+Check the training set score, 80%.
+It's close to what we
+saw with the large C training set score from ridge,
+which is very close to
+the training set score when we do not use the penalty.
+Therefore, very large values of C,
+even with LASSO are allowing large coefficient values.
+And I know that this is tough to look at here.
+But if we just scroll through here some larger numbers,
+even though most of these are small.
+Then lastly, push C to
+the other extreme where C is very small.
+Lasso_ small_C = logistic
+regression().fit on the training set.
+Again, we're using the hack,
+penalty l1c = 0.1 231.
+So 10^-4 solver = saga,
+max_iter 25,001, let's put
+fit on the new line, lasso_small_C.score.
+When the C C is really tiny,
+just as we saw with ridge,
+we have pushed all
+of the coefficients to be so close to zero.
+Oops, I did the mistake here.
+This needs to be the case without any of the features.
+We have forced the model to
+behave as if it's the intercept only model.
+Very small values of C forced
+the complex model to behave like an intercept only model,
+which has no trends.
+But what's really interesting with LASSO is now instead
+of having the coefficients be close to zero,
+they have now all been set to zero.
+These are all identically zero,
+all features have been turned off.
+The penalty or the LASSO penalty
+has literally converted the very complex model with
+81 features into a model with no trends.
+Literally no trends.
+They are all turned off.
+Just as with ridge,
+we need to use cross validation to
+identify the best value of
+C and now that we know what LASSO is doing,
+tuning C will effectively
+select the bare minimum set
+of features needed to maximize performance.
+Tuning C for LASSO
+identifies the most important features needed.
+LASSO is an incredibly important method and approach,
+which I feel in modern analytics, data science,
+machine learning applications,
+everybody wants to just jump straight
+to your neural networks,
+your deep learners, your very fancy models.
+But we know how to generate very complex features.
+We can interact all the different inputs.
+We can create non linear polynomials.
+If we're not sure what to use,
+just create a very complex model and let
+LASSO figure out which of those features you need,
+and it will do so by tuning the C parameter.
+Let's go ahead and do this,
+LASSO tune logistic regression CV.
+We will fit it on the entire dataset.
+We're using the hack.
+Fit intercept is false.
+We are applying the LASSO or L1 penalty,
+just like ridge,
+let's use 101 C value so that
+C's argument to logistic regression, CV is 101.
+Solver is saga, max_iter 25,001.
+Let's put the fit on
+a new line with the escape character.
+Oops, actually, I forgot.
+Let me pause it. There we go.
+I killed it because I forgot to set the CV argument.
+I forgot to set the CV.
+CV equals KF,
+I'm using the same stratified
+five fold cross validation that we used for tuning ridge.

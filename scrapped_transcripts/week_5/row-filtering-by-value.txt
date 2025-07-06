@@ -1,0 +1,91 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/sXI7a/row-filtering-by-value
+
+English
+You we can now filter rows.
+Filtering refers to selecting rows
+based on conditional tests and
+last week we mostly focused on
+conditional tests applied to numeric columns.
+So I want to find all rows where the wins column is greater than 65.
+The reason why we're working with such a small example here is that way we
+can confirm that yes, there are two rows that satisfy this condition,
+the cardinals and the brewers.
+We can literally just see the result from visual inspection.
+When we apply the mask, the result of the conditional test, we get out the two rows.
+And to review from last week, if you look closely,
+there's actually a lot of important details in this one line of code.
+I'm using the dot notation to access the column, I'm interested in wins.
+I'm applying the conditional test and using that result to identify the row.
+I know it's the row because it's to the left of
+the comma within the dot loc attribute.
+Remember, dot loc is the very formal way that we can identify rows and
+columns based on their location rather than
+their index position in a data frame.
+We also saw that we can apply conditional tests to strings.
+For example, we use the equals equals operator
+to check which row of team is exactly equal to pirates.
+This doesn't surprise us that we get the one row where team is pirates.
+We also saw how to use the or
+operator, the vertical
+bar to find all rows where
+the value equals a or b.
+Or the value is one of those presented,
+Last week we demonstrated this and remember,
+each condition needs to be applied within a parenthesis.
+But we demonstrated this by asking for
+finding the rows where the team is equal to cardinals or
+the team is equal to the brewers.
+You can see there were two rows that get returned because team is cardinals or
+brewers.
+This is of course very different from an and operation.
+We're looking for one value or
+one variable that can have one of several options.
+The equal sign operator combined
+with the or operator is useful,
+but or is correct to use, but
+it does not scale well.
+For example, if we needed to check for
+ten possible values, we would need to
+type in ten different conditions.
+So that's a whole lot of typing.
+Instead, we can use the is in method
+to streamline the or operator.
+So instead of having to type two literal separate conditions separated by or
+if you look closely, we're applying the test to the same column.
+So let's just check.
+Is the value of team in the following
+collection or list?
+Look closely at the syntax.
+The variable does it have a value in this list?
+We don't have to worry about the or operator.
+We don't have to provide the equals operators,
+we are just asking does the variable have values in this list?
+And this syntax scales to
+many more values is in.
+So I could type cardinals, brewers,
+pirates, so on and so forth.
+This is much easier to read, it's much easier to think about and type.
+Although I presented is in with strings,
+the is in method can also be applied to numbers.
+For example, maybe I want to find
+all rows where the losses has values
+in the collection of 70 and 90.
+I just picked these two and I wanted to simply
+just demonstrate that we can use is in so
+70 or 90 on numeric columns.
+But the is in operator is especially
+useful for string filtering.
+For example, maybe we want to find all values
+that are in some variable like top teams.
+And I'm just going to very simply define this variable
+as let's first find all rows where games back is
+less than ten, but focus just on the team column.
+Let's copy it and then force the result to a list.
+So two list is a method associated with pandas series.
+You can see there are these two teams.
+Now I can apply my conditional
+test to team asking to find all rows
+where team is in my top teams list.
+I wanted to just demonstrate this to you to highlight.
+We don't have to just manually type in the values we're searching for,
+we can contain them in an object like a list.

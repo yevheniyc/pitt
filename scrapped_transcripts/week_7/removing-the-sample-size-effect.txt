@@ -1,0 +1,76 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/o9g8w/removing-the-sample-size-effect
+
+English
+Now, we are removing the sample size effect.
+And so if the peak of the KDE is actually lower,
+that would represent the distribution is spread out more.
+Or another way I like to view it,
+the conditional KDE should give you
+the same conclusion as the violin plot,
+sns.catplot(data = penguins).
+x = species, y = flipper_length_mm,
+kind = kde, or sorry, kind = violin.
+And let's do the inner is the quartile.
+When you have the violin plot, you're not actually interested
+in necessarily the maximum global height, everything is relative.
+It's the relative height of the peak compared to the minimum per group.
+The violin has no influence of sample size.
+We want to have the same conclusion for
+our conditional KDE as we do with the violins.
+What this means is you must remove the sample
+size effect with the pairs plot just
+as you did with the conditional KDE.
+The one caveat is, when you do this,
+you cannot just say common_norm= False.
+It doesn't know how to use common norm for pairs plot.
+Instead, there's an argument diag_keywords, diag_kws.
+Now, we can provide any of the keywords to the conditional KDE as a dictionary.
+The key is the argument common_norm, the value False.
+We have now correctly removed the sample size effect,
+we can better interpret the conditional
+distribution of each variable given the species.
+So now, when you see this green conditional density,
+it is really reflecting that that group corresponds
+to this species, this category of species,
+while the other grouping is a mixing of those two.
+But the benefit really of the pairs plot is if
+our goal is to help separate the three species from each other,
+we want to find one picture that shows that to us in the easiest way.
+The pairs plot gives us the conditional distribution along the main diagonal,
+and we never see all three KDEs, all three densities, fully separate.
+You always see two of the colors overlapped.
+That means we need to examine more dimensions at a time,
+such as a scatter plot, to see if we can separate all three.
+For example, we were looking at flipper_length and bill_depth,
+it's easy to separate the green from the orange and blue, but
+we can't easily separate the orange and blue in this view.
+However, the pairs plot shows us all pairs of continuous variables.
+And so rather than having to manually try out
+all of the combinations for the scatter plots,
+we get to see in one picture all of the options we could have tried.
+Using bill_depth and bill_length is
+one way to help separate the three, or
+at least roughly do so.
+There's kind of these three regions of color.
+bill_length and flipper_length is another option,
+where you kind of can draw these regions that separate the three.
+So again, the pairs plot is kind of one graph that works pretty
+well at letting you examine a lot of information in one picture.
+The one drawback is the pairs plot works best
+when you have less than ten variables.
+You can get away with up to 15 to 20.
+But anything more than 20
+is information overload,
+because 20 variables produces
+a pairs plot with a 20 by 20
+plot matrix, or 20 squared,
+which is 400 plots.
+Nobody's going to look at 400 plots, 10 by 10, or 100, is already a lot.
+When you have less than ten, it's manageable.
+4 by 4, this is 16, I can actually look at all of these.
+So as great as a pairs plot seems, the one thing you have to remember
+is you can't really use it if you have a huge number of variables.
+But that's everything for this video, I hope you liked it.
+I hope you found it useful to review some of these important aspects of
+visualization, and
+how the pairs plot can really help streamline your exploratory data analysis.

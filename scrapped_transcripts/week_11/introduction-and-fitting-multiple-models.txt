@@ -1,0 +1,126 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/gvvdJ/introduction-and-fitting-multiple-models
+
+English
+Hello, everyone. As you can see,
+I already have Jupyter opened up.
+I am in this week's directory for the class.
+The previous videos showed how to
+fit linear models with stats models,
+showed how to make
+predictions to help interpret what's going on,
+and the last one discussed
+various regression performance metrics.
+Well, this video will conclude by bringing
+together all of these different aspects
+to work on a more realistic application
+where we will fit multiple regression models.
+We will use the nonlinear
+relationship data but this time,
+we will not fit
+the actual sine wave that was used to generate the data.
+Meaning, we're going to try out several models,
+and we're not sure which one is the best.
+If you don't have Jupyter open,
+please pause the recording, start Jupyter,
+and then when you have done that,
+you've navigated to the right directory,
+come back and launch a new Python 3 Kernel
+to start a new Jupyter notebook.
+Let's name this
+notebook week_10_regression_multiple_models.
+Let's go ahead and now set
+our headers count to 2,100 Week 10,
+fitting multiple regression models.
+Fit different regression or
+linear models to the non-linear relationship data.
+Let's go ahead and import the modules.
+As with all the previous videos,
+you need the big four: import numpy as np,
+import pandas as pd,
+import matplotlib.pyplot as plt
+and import seaborn as sns.
+Also, as with the previous videos,
+you need to import stats models.formula.api as smf.
+Once you've done that, read in the data assigned
+to the df object, pd_read_csv('week_10_nonlinear_data.csv').
+We are using the nonlinear data.
+There are 15 observations here,
+and we know that there's some input
+X non linearly related to
+the random output that was generated
+because there's a sine wave for the trend.
+Let's pretend we do not know
+the real relationship between the input and the trend.
+Let's pretend this is a real application.
+To make that more concrete,
+let's make a dataset a data frame df_train
+where we select all rows
+for the x and y columns to make a deep copy.
+Now, this dataset only
+has the observed output and inputs.
+The real true trend has been removed as have all
+of the coefficients and Sigma that generated the data.
+When we fit linear models,
+we need to decide the relationships
+or features to use to predict the trend,
+the average output using the inputs.
+The simplest possible linear model is
+an unknown constant average or intercept only model.
+This is actually the simplest possible thing you can use.
+Let's fit this simplest model to begin.
+I'll name this one mod_00.
+We need smf.ols.
+We need a formula.
+We need a dataset, and we will fit.
+Now, the data that we will use here is df_train.
+But the formula this time will look a little weird.
+The formula will be y tilda 1.
+This does not say you have the output is equal to one.
+One is a short cut in
+the formula interface to say y is a constant.
+We must therefore estimate
+an intercept and only an intercept.
+We are estimating what is that unknown average?
+We do not have
+a slope to also
+estimate with our intercept.
+This is the simplest possible model.
+But as you can see, we still
+have the estimate, the standard error,
+and the confidence interval,
+We can therefore visualize
+the coefficient summaries of
+our estimates using a coefficient plot.
+Just to save time, I'm going to copy
+this function defined in
+the previous regression metrics recording.
+Now, call this function on mod_00.
+This is a very uninteresting figure.
+It's just saying, here's your estimate for
+the intercept and it's 95% confidence interval.
+But we have the r^2,
+which is zero,
+there's zero linear relationship
+between the model fits and the predictions.
+We also have the residuals,
+which can be summarized such as by squaring
+them and applying the mean,
+and then applying the square root.
+This is the RMSE of the intercept only model.
+The question becomes, can we do
+better than the intercept only model?
+Let's start with the linear relationship
+or the classic best fit line.
+I'll name this one mod_01 = smf.ols(formula=, data.fit).
+The data is df_train,
+the formula now y tilda x.
+We know the real formula should be the np.sine(x).
+But following the conventional approach.
+You will often begin by fitting a linear relationship.
+Now, we can visualize
+that relationship between the input
+or we can visualize the coefficient summary.
+According to this model,
+there is a statistically
+significant negative relationship
+between the input x and the observed output.

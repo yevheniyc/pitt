@@ -1,0 +1,67 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/XuH5l/creating-visually-appealing-bar-charts-with-seaborns-catplot
+
+English
+Changing the figure size requires the height, and
+aspect arguments, so because we are not defining
+the figure in axis objects, we need to use arguments
+specific to the figure level function to control it,
+so here, let's do the horizontal bar chart.
+Again, kind equals count aspect to this will stretch it out,
+make it wider, so if you want to make the figure wider,
+change aspect, if you want to make the figure taller, change height,
+Now, why do you want to use figure level versus axis level,
+that will be made more clear when we discuss combinations,
+But we can go ahead and look at the bar charts for
+the other variables, Look at the bar charts for
+the other variables in penguins,
+SNS cat plot data equals penguins.
+Let's use a horizontal bar chart here we'll do a vertical bar chart for
+species kind equals count again, I'm not specifying
+anything about the axis because it's handled by the figure
+level function SNS cat plot data equals penguins.
+X equals island kind equals count PlT show again it's
+easy to read we get the label legends I don't have to
+remember what's being PLO It's already telling me,
+so pandas does not automatically label the legends or label the axes.
+Seaborne does, so you get higher-quality figures,
+they're easier to read, Gapminder counts,
+I'm now going to use the figure level function again but
+now the data is changing, It's going from penguins to gap df,
+so the data argument is different.
+Let's first look at continent kind equals count,
+ELT show again, even though it's a vertical bar chart,
+the bars are going up, the text is easy to read,
+it's already horizontal, now let's look at
+country SNS cap, what data equals gap data.
+X equals country kind equals count,
+Okay, it's not that clear, not that easy to read
+that's all right Let's maybe first stretch
+it out X equals country, kind equals count,
+aspect equals five let's really make it wide.
+All right, that didn't help either so
+let's switch to a horizontal bar chart,
+this is a common thing to do If you have very long category labels,
+use a horizontal bar chart rather than a vertical bar chart,
+but even though the text is made horizontal, I need to increase the height.
+So let's go height of oops let's make it 15 ,there we go,
+this is a little easier to read by default,
+each of the bars are given different colors this is,
+again, not necessary It just helps our eyes see some
+separation just as talked about in the previous video.
+We can see here that the heights are the same all countries have the same count,
+The continents did not have the same count because some
+continents have more countries than others and again, lastly,
+SNS cap plot data equals gap df x equals year kind equals count,
+The text is a little tough to read, so let's just stretch it out,
+aspect two, make it a little wider, and now it's easy to read.
+Again, the text is horizontal,
+Hopefully you can see one of the other nice things of using the figure-level
+functions I don't have to initialize or define the fig and
+ax objects I don't have to figure out what names I should use for them.
+If the common value names, the common names are appropriate,
+I just get to call the function it makes it, I think, easier and
+faster to work with, but the primary point, the graphics,
+the figures all start with the data set, you are still picking one variable.
+You are assigning it to either the horizontal, the x axis,
+or the vertical, the y axis.
+You must specify the kind of plot to make.

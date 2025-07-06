@@ -1,0 +1,73 @@
+Source: https://www.coursera.org/learn/the-art-of-data-visualization/lecture/3a41I/advanced-visualization-techniques
+
+English (auto)
+In this lesson, we are going to look at how we can use the NetworkSX Python library
+to visualize some of our real-world networks, create a network from file as opposed to
+the previous example that was more like a toy example. So we are going to use college football
+data. The data contains a network of American football colleges between the division IA
+colleges during regular season in fall 2000. And so the nodes represent teams and the edges
+represent teams playing with each other. The first thing that you want to do is that
+you want to be able to load the file into your network. And in this case, you can actually use
+different Python libraries to load the data to any format, even if you have it in a zip file.
+So here you can see the specific libraries that allow you to work with different
+data sources and also with extracting files from a zip archive.
+So the URL request is used to download the zip file from a remote URL.
+And so you can directly just put the URL here in your code. Then the IO allows the downloaded
+data to be treated as a file-like object that you're downloading from the URL. And then the zip
+file is used to extract files from the zip archive. Here is how you're going to be actually making
+use of those. The URL for the data that I mentioned is specified here. Then you use the URL
+open function of the library to open the URL. And so this command establishes a connection to that
+URL and then retrieves the data from the URL. So then the variable here is going to be a file-like
+object that allows you to read the data from the URL. Then the next step is to read the data
+into the memory function that is available for the sock variable now reads data from the URL
+into a sequence of binary data. And then the bytes IO wraps the binary data into an in-memory file
+like object that would allow you to manipulate or process the data as if this was a file without
+kind of having to save it to the disk. So it basically becomes available in the memory.
+And then once we have read the file into the memory, we can close the connection because now
+we are working with basically that instance of the file in the memory. So we don't need
+the connections to that URL to keep being open. The zip file will create the object to interact
+with the in-memory zip file and the ZF now is basically a variable that allows access to the
+file stored inside that zip archive. Then next now we are going, so inside that zip file, if you
+open, go to that URL and you open it yourself, you'll see like that there is a file called
+football.txt. And here we are basically reading the content of that and we are decoding it into
+actually byte object as opposed to just text. The dot decode converts the byte object into a string
+and then text now holds the content of the file as a string so that we can actually process and
+do manipulation on it. And so the next is that we can actually also read the GML, which is the
+network structure data. So mentioned that NetworkX provides ability to read the network and the graph
+in different formats. So within that archive, there is also the football.gml that here now we
+are reading and extracting the content of that file, which is like a graph modeling language
+into the variable and the decode here converts this GML data again into a string. And so now
+GML holds the content of the file as a string. So now what we can do is that we can start looking
+at this content and basically extract this to build a structure from knowing kind of the file.
+The first line of the file is just a description. So we can just remove that first line and then
+we can parse this into the network. So here this parse.gml converts the GML data into the
+graph object and now G is representing the graph object which can be used for analysis or
+visualization. So to visualize then we can use the force directed layout to minimize the edge crossing
+and create a better layout and better looking network. So by using the spring layout command of
+the network X, we specify that that's the format that we are going to use. And then the seed,
+which can be actually any number here, just ensures the reproducibility of the layout
+by fixing the random number generator seed. Without that, every time that you run, you're
+going to have a slightly different network. And then we can draw the network and show
+that in the plot. So here the draw function visualizes the graph. And so the first parameter
+is our graph. The second parameter is the layout. And the third parameters are options that could
+actually allow some more customization of the look of the network. So it can have things such
+as the node size being 500 points or the node color being a light blue. If you want to change
+the layout to a different layout, then you can basically just change this variable position
+here to be a circular layout or being a spectral layout. So these different layouts that network
+X basically provides. And each layout has its own specific characteristic for different types
+of graph as we saw in the last module also. And you can actually play with these different
+layouts to see what fits better into what you're trying to visualize. So a circular layout,
+as you've seen, arranges the nodes in a circle. It's useful for comparing the structural symmetry
+in the graph. A spectral layout, it provides a structure preserving layout for graphs with
+clustering, so more similar to the first directed layout. So we can also, as I mentioned earlier,
+use some of the network measures as a way of individualization. So for example, to show
+the degree centrality and the importance of a node represented by the size of the node.
+So here you can see that we can create this vector that represents the degree centrality for
+each node. And so we then say, create this graph from this note list of all of the keys in that
+vector that we created. And we want the node size to be actually the value of the degree.
+Here you can see there is also v times 100 because the degree when it could be actually a small
+number and the nodes would look too small. So you can actually multiply that by a number which
+make it more visually clear. So that could be adjusted depending on how big the general degree
+centrality of the nodes are. But this function also normalizes the degree centrality. So that
+number generally becomes like a smaller number. So you probably want to do this
+multiplication to make sure that the visualization work.

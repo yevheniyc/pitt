@@ -1,0 +1,93 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/7lIIm/exploring-the-influence-of-coefficient-estimates-in-ridge-penalty-logistic
+
+English
+Here I used c = 10,000.
+Let's now use ridge small c.
+Again, logistic regression, we will fit it on the exact same training set.
+I'm using the hack so fit intercept is false.
+The penalty is still l2, but now the c value is 0.001 so
+you should have three zeros after the decimal point or
+one, two, three, four.
+This is ten to the -4, 110,000.
+The very large value is 10,000.
+The very small value I'm using is 10,000th.
+To complete this solver, lbfgs max_iter 25,001 again,
+let's put the fit on the new line.
+Again, the arguments are the same except the value of c.
+Check the training set accuracy or
+the score 66%.
+Where did we see 66% before?
+It was not the training set accuracy of our most complex model.
+66% was the training set accuracy of the intercept only model.
+Oops, I used the wrong arrays here.
+There we go.
+I had to use the correct array for that intercept only model.
+It's not exactly the same because
+the penalty here is not none.
+We have set the c value to be a very, very tiny number.
+Very small values of c cause
+the training set accuracy to behave
+like the intercept only model,
+aka the simplest possible model.
+Even though we started out with all 81 columns,
+we are getting essentially the same performance as a model.
+We are getting the same performance as
+a model that has no trends or no features.
+This occurs because the COEFFICIENT ESTIMATES
+are now very small.
+Ridge_small_C.coef, I know that these values are hard to look at,
+so if we would instead round this,
+you'll see how tiny these numbers are.
+So let's directly compare the ridge estimates for
+different values of C with the stats models results
+just to really drive home what's going on.
+So I'm going to make a a new data frame called coef_compare this data frame.
+Let's initialize it using a dictionary where the key
+is stats models and the values fit stats.params now,
+I chose to create the object this way because now I get
+the stats models names for all of the coefficients.
+And looking at the names of the coefficients is way easier
+than having to just look at the index position.
+But let's now add a column called ridge_large_C.
+Actually, note I'm jumping ahead of myself.
+Let's name this one sk_none after all,
+we forced scikit learn to behave like stats models fit_sk_none_coef and
+then we need to, as discussed last week,
+we need to force this coef object to be a 1D array.
+So that's why I'm applying the revel method and
+set the index here to be the index of coef_compare.
+So if you notice, I'm wrapping the coefficient estimates from
+the scikit learn model around the, I'm converting it to a panda series.
+That way it's very easy to directly add that result to the data frame.
+The coefficients are not perfectly the same, but they are really,
+really similar, down to three, four decimal points.
+The differences here are rounding, but they're really, really close.
+So by turning off the penalty setting penalty to none,
+we are getting coefficients that minimize the loss and the loss alone.
+But now add in columns for the RIDGE estimates
+coef_compare ridge_large_C, so
+I want you to first add in the result from the very large C value,
+apply the .revelle as before, and set the index.
+Oops, messed that up.
+The index to be the index from coef_compare.
+There we go.
+If you were wondering why I didn't add in the default C first
+before large C, we'll just take a look at the estimates.
+The large C estimates are very, very similar
+to the estimates when there is no penalty.
+So minimizing the loss and the loss alone is very
+similar to having a ridge with a very large C value.
+Next, let's add in the ridge with
+the default_C pd.Series ridge_default_C
+coef_.revelle index coef_compare
+index the default C of one gives us
+estimates that are different from
+the estimates when there's no penalty.
+Essentially, decreasing C causes the estimates to move
+away from when we are only focused on minimizing the loss.
+This the last extreme case ridge with a small C.
+Take those small C coefficients,
+apply.revel index coef.index.
+Now, hopefully it should be much easier to tell what's going
+on as C gets smaller and smaller and smaller.
+We are pushing the coefficients closer and closer to zero in magnitude.

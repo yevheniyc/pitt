@@ -1,0 +1,70 @@
+Source: https://www.coursera.org/learn/the-art-of-data-visualization/lecture/1V113/introduction-to-pandas-dataframes-converting-numpy-arrays-and-dataframe
+
+English
+Hello everyone.
+In this video, we're going to be working with pandas data frames.
+So we will be building off of the material from the previous recording.
+As you can see, I already have a Jupyter notebook opened up.
+So, again, please pause the video and open up your own if you don't have one already.
+Let me go ahead and rename this
+week_04_pandas_dataframes_intro.
+Put in some header information.
+Introduction to pandas dataframes.
+The previous video was all
+about pandas series.
+A series contains values associated with a single variable.
+The DataFrame is a collection of variables or
+a collection of pandas series.
+All right, let's go ahead and import modules.
+Pandas is built on top of numpy, so we need numpy and then pandas.
+So import numpy as np,
+import pandas as pd, and run that cell.
+The purpose of this video is to demonstrate how to create pandas
+DataFrames, that's what you're going to see how to do.
+We will create the DataFrames.
+However, a few ways to highlight the fact that data frames can be
+viewed several different ways or interpreted several different ways.
+The first approach is to go from NumPy to DataFrames.
+We've previously learned that pandas series are kind of like 1D NumPy arrays.
+Well, one interpretation of a DataFrame is that
+a pandas DataFrame is kind of like a 2D NumPy array.
+So let's create a data frame from a 2D NumPy array.
+We will make a simple 2D array
+that I'll name X by reshaping
+a 1D array into a 2D array.
+Notice I'm using arange to go from 1 up to but excluding 25.
+So this will be 24 elements as a 1D array, but
+then reshaping to produce 6 rows and the required number of columns.
+We have, of course, the shape attribute, 6 rows,
+4 columns to confirm, yes, there are two dimensions.
+The size, 6 times 4 is 24.
+Now, we learned from the previous
+week that we can select the zeroth row or
+the one row or the last row because,
+by default, NumPy is really row centric.
+Displaying the 2D array to the screen, the zeroth row,
+we get this top row, the one row, we get the row beneath it, the last row.
+Again, the very last row, each row in the printout or
+really the display kind of looks like a list, if you will.
+We know it's not a list, but each row kind of looks like a list.
+We also know how to slice all rows from a single column.
+So here's the zeroth column.
+We could do the same thing with the last column.
+We also know how to subset one element,
+such as from the zeroth row last column or
+the last row zeroth column.
+And we also know how to slice multiple rows and multiple columns,
+the first three rows and the first two columns.
+Okay, so this is a little review of the NumPy 2D array.
+Let's convert X into a pandas DataFrame.
+We will name the variable xdf.
+Df is the common convention for DataFrame, so
+anytime we work with a DataFrame, you will often
+see me name it or include df somewhere in the name.
+To convert x, the NumPy 2D array into the pandas DataFrame,
+we will call the pd.DataFrame function.
+We give it one argument, x.
+If we check the environment, x is a 2D array.
+6 by4 xdf is not a 2D array,
+it is a DataFrame.
+We can, of course, also confirm that with the type function.

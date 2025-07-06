@@ -1,0 +1,108 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/RCryT/fitting-array-and-design-matrices-using-array-interface-in-statsmodels
+
+English
+But I want to change gears and now
+introduce you to the array interface.
+There is an alternative interface to stats models.
+This alternative does not rely on the formula.
+Instead, we must provide arrays for
+the input features and for the output.
+This alternative interface is from the
+statsmodels.api module so you
+must import a different module now.
+Import statsmodels.api, and its common alias is sm.
+Look closely here at the two modules.
+statsmodel.formula.api is
+smf versus statsmodels.api is sm.
+However, I never import statsmodels.api alone.
+It needs helpers from the patsy module.
+We need a function for
+generating the feature and output arrays.
+We'll bring in too.
+From patsy, P-A-T-S-Y, import dmatrices,
+D-M-A-T-R-I-C-E-S, and then also from patsy,
+import dmatrix, D-M-A-T-R-I-X.
+I'll talk about the distinction
+between these two in a little bit.
+We will usually be working with dmatrices though.
+The dmatrices function uses
+a formula to specify the features from the input.
+We are able to still use a formula,
+but now the formula is not used to fit the model.
+The dmatrices function generates
+the output array and
+the feature array based on the provided formula.
+This array historically is so important,
+that historically the feature array
+was called, the design matrix.
+That's what the d in dmatrices stands for.
+It stands for design.
+The syntax looks a little strange because
+the dmatrices function returns two objects,
+it returns the output array,
+the feature array by calling
+the one function using a formula with a dataset.
+The arguments to dmatrices look very
+similar to the formula interface in statsmodels.
+But you're not fitting the model,
+you are producing the arrays.
+Let's see how this works.
+I will produce the output array and name it yobs_mat,
+my feature array that I'll name Xdesign_mat.
+I'm going to call dmatrices.
+The zeroth argument is the formula,
+and my formula is y Tilde x.
+The data set is df.
+Again, running this does not create a model.
+Instead, the two objects that get
+returned are these really special data types;
+a patsy design matrix.
+But these are nothing more than specialized NumPy arrays.
+They therefore have all of
+the same attributes as any regular NumPy array;
+just has a handful of extra things involved.
+They have the ndim attribute;
+the number of dimensions.
+But you can see there are two dimensions
+that has the shape attribute,
+how many rows, how many columns.
+The output array is two dimensions,
+but there's one column,
+whereas the feature array is two dimensions,
+but with two columns in this case.
+The output array has one column,
+but two dimensions,
+and so if we look at it,
+you can see it's stacked up or down.
+But it is typically better to work
+with a 1D output array and so we
+must convert the 2D array
+to a 1D array using the.ravel method.
+I will never use
+the return dmatrices output matrix the way it always is,
+the output array the way it is,
+I always convert it to a 1D array.
+It's just easier, less confusing,
+so I always use.ravel here.
+But now for the design matrix or the feature array,
+let me do the first.
+There we go, first five.
+It has two columns.
+The reason why the feature array has
+two columns is because there are
+two coefficients estimated in this model.
+To fit stats models formula params,
+there is an intercept and a slope.
+The number of columns in the design matrix or
+feature array is equal to
+the number of regression coefficients
+that must be estimated.
+This array is incredibly important.
+We don't get into the math behind how the models are fit,
+but all of the math actually stems from
+understanding the properties of
+this array of this design matrix.
+That's how critically important it is.
+To highlight that, the number of columns in
+this matrix literally corresponds
+to the number of coefficients that have to be estimated.

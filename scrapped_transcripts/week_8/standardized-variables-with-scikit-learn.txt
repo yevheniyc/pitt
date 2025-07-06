@@ -1,0 +1,81 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/Jt55O/standardized-variables-with-scikit-learn
+
+English
+Standardization is also called normalization.
+But I hate that term because it sounds
+like we are converting
+the variable to a normal distribution.
+But that is completely wrong.
+Standardizing does not change the distributional shape.
+Let's see that. Let's look at
+the distribution of the original variable,
+flipper length millimeters, using
+a histogram and throw in
+the KDE to show the smooth distribution.
+This is not Gaussian because
+Gaussians do not have two peaks.
+A Gaussian is symmetric
+with one peak right in the middle.
+Next, look at the z-score,
+the flipper length z-score,
+the standardized variable using
+the histogram and including the KDE for the smoothing.
+These two histograms literally look identical.
+I'm flipping back and forth.
+I can't see any difference between the height.
+I can't see any difference in the shape.
+The only difference is in the value.
+We're in the raw space
+versus the standardized or z-score space.
+Again, I will never call
+this normalization because I think that confuses people.
+It makes you think you're going to turn it
+into a Gaussian when you are not.
+You are literally just removing
+the scale and the magnitude.
+You're going to have it centered
+zero between single digits, positive and negative.
+Standardizing removes the magnitude and
+scale and returns negative and
+positive values around zero.
+Now, in practice,
+you don't have to go through and do this manually.
+You don't have to literally calculate the sample average,
+calculate the standard deviation,
+and execute the centering and scaling yourself.
+In practice, you can pre process with scikit-learn.
+Scikit-learn has many functions
+to support machine learning and data science.
+We have already seen k-means but scikit-learn has
+functions specializing in pre processing operations.
+We can get a specialized function for standardizing
+from sklearn.preprocesing import StandardScalar.
+StandardScalar will standardize the variables.
+StandardScalar is a data type class,
+but you can think of it as a function.
+Because we will essentially apply it
+very similar to what we did with k-means.
+Just like k-means,
+all scikit-learn learned functions
+follow the following recipe.
+You initialize the object based on assumptions,
+you fit the object given a dataset,
+and then you predict or
+transform a dataset using the fitted object.
+K-means returns cluster labels by predicting,
+but StandardScalar returns
+the standardized columns by transforming.
+I will not say predict now,
+I will say transform.
+Begin by initializing.
+Let's define an object pens_standardize.
+When you initialize the object,
+you have to call the function.
+The pens_standardized is just this data type.
+We need to identify the columns that we will standardize.
+A simple way to do
+that is through the select dtypes method.
+Let's go back to penguins.
+Select dtypes all number columns, copy.
+Now, pens_features is a dataframe
+of the four numeric columns.

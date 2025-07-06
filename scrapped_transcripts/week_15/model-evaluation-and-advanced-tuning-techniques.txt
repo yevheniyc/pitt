@@ -1,0 +1,116 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/kaeIu/model-evaluation-and-advanced-tuning-techniques
+
+English
+Now, how well does our model perform best score?
+On average, it has a
+79.8% accuracy on the holdout test sets.
+The best estimator attribute is
+the final model with the tuned parameters,
+and if you want in best estimator,
+it has a named steps, dictionary.
+This dictionary is how we access
+the underlying object so
+the named_step enet is a logistic regression object.
+If I copy and paste it here,
+we can get the intercept.
+We could get the coef
+to study what's happening in the underlying model.
+But the grid search result
+or grid search object is a full model therefore,
+we can directly predict with it.
+For simplicity here, I'm just
+going to predict the training set.
+The enet_search_result.predict X_train,
+and I'll just return a few.
+We are classifying now the categories.
+enet_search_results.predict_proba, and I'll return a few,
+two columns because we have two categories.
+The classes attribute tells us
+which column corresponds to which category.
+If I want to know the probability of metal,
+I can return the predicted probability
+for X_train and identify
+the one column where enet_search_results.classes
+equals equals M. Then if I force that to ravel,
+I now have a 1D array.
+You can interact with predictions just like we
+did when we were
+working with the built-in methods directly.
+Now, we could end here,
+but let's consider a few more possible actions to really
+show how far we can go with this
+because we can use PCA as a pre-processing step.
+Elastic net revealed
+the input correlation is causing problems.
+One way to manage
+correlation is to remove the correlation via PCA.
+Just like we did when we were exploring data,
+PCA can generate new uncorrelated features for us,
+and if you were working on any of
+the final projects that have highly correlated features,
+you were allowed to explore that data and
+start to model it by manually executing the PCA.
+But when using cross validation,
+you cannot execute PCA and then split.
+You must execute PCA within each fold.
+Pipelines will completely manage this for
+you so pipeline will
+correctly manage the PCA action for you.
+Let's use linear additive features from
+the principal components instead of the original inputs.
+Therefore, our new model
+will work with uncorrelated features,
+and since the features are uncorrelated,
+we can use Lasso rather than worrying
+about elastic net so we are simplifying the problem.
+However, we do not know
+how many principal components to use.
+Earlier in the semester,
+we focused on just two for visualization,
+and then we started to learn,
+we learned how the variance or standard deviation of
+the principal components decreases
+from the lower order PCs to the higher order PCs.
+But we do not know which PC, principal component,
+is associated with the binary outcome we therefore
+need to treat the number of
+PCs to use as a tuning parameter.
+This means you can tune
+pre-processing actions just like you tune models,
+and that's why I like this example because it
+really illustrates the flexibility of pipelines.
+First, initialize the Lasso model,
+and then define the workflow so lasso_to_fit,
+LogisticRegression, penalty l1, solver is saga.
+Let's set that random state
+again to really control everything.
+Max iteration is 25,001,
+and we will continue to use
+the typical fit intercept is true.
+Our new workflow consists of three steps.
+First, standardize because you
+must standardize before PCA.
+Second, execute PCA and lastly,
+fit the Lasso model.
+I'm going to name
+this workflow pc_lasso_workflow pipeline.
+Again, the steps argument is a list.
+I have three steps,
+so I have three tuples.
+The names of my steps,
+standardize the inputs, PCA, lasso.
+Again, these names are up to me, they're up to you.
+Then we apply standard scaler,
+then we apply PCA,
+and we apply lasso_to_fit.
+Look at that, I actually forgot to import
+PCA. Let's do that.
+Good thing I ran it so we need to import
+PCA from sklearn.decomposition import PCA.
+Now we can define the workflow.
+This pipeline now has the three steps.
+Again, we haven't set the number of components.
+We now have tuning
+parameters coming from two different steps.
+The parameter names reflect the step.
+They are associated with in the tuning grid.

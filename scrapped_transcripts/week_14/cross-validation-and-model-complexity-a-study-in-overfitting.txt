@@ -1,0 +1,101 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/rlpSi/cross-validation-and-model-complexity-a-study-in-overfitting
+
+English
+Let me just copy this code to save a little time.
+Let's try again on a more complex model,
+so a model that has more features,
+such as the model that has
+all inputs with linear additive features from them.
+I'll name this model model 3.
+It's the third element from my formula list;
+1, 2, 3, 4,
+5, five successful terminations,
+because I have 5-fold CV.
+Here's the accuracy on the training set in each fold.
+Here's the accuracy on the test set in each fold.
+Now, if you look closely,
+the training set accuracy numbers,
+they are different fold to fold
+because the data are different, fold to fold.
+The training data are different.
+But what really matters is, look,
+we're starting to get some pretty big variation in
+the test set performance because
+each fold has a different test set.
+The 20% of the data used for
+testing in each fold is different.
+What about an even more complex model,
+such as the 14th element?
+This model creates
+up to four way interactions between our inputs.
+It has the linear main effect, the pairwise products,
+the triplets and the four way interactions. Let's fit it.
+Let's name the model 14
+because we're using the 14th element in the list.
+It has been terminated successfully
+five times because we have five fold CV.
+Look at the training set accuracy.
+Again, they are different because
+the training set is different, fold to fold.
+But now look what's going on in the test set.
+Visually, just from the numbers getting printed,
+we can see the training set accuracy is around 75%,
+but we don't have any test set accuracy above 65%.
+What this is now telling you is
+this model with 46 coefficients getting estimated.
+This model is doing worse on
+new data than it was
+doing on the data used to estimate the coefficients,
+on the data used for training.
+The model with a large number
+of regression coefficients that need
+estimated has worse test set performance
+than training set performance.
+Let's now apply five-fold CV to
+all 17 models which range from simple to very complex.
+I call it execute cross validation.
+Let's initialize a results list.
+It's initially empty.
+Now I'm going to use a four loop,
+just like last week for m in
+range length formula list, colon.
+Now, just to help out, I want to print a string.
+This string will be formula ID,
+placeholder D where the placeholder is the
+iterating variable m. I'm
+doing this because I want to have printed out,
+which model that we are currently fitting.
+But what we're going to append to
+the results list is the result of train test logistic.
+Now I'll just type
+this out again here rather than copying it,
+but train and test logistic or CV.
+The formula name is m,
+the specific formula we are
+using is the mth element from the list.
+The data is df.
+The x names are input names.
+The y name is the output name.
+The CV object is kf,
+and we will continue to use the default threshold.
+When you run it, a whole lot
+of stuff starts getting printed.
+Here's model 0, the successful terminations.
+We keep scrolling down.
+But then when we get to the bottom,
+we start seeing warnings.
+We start seeing errors.
+Something is going on.
+We're getting a weird error that we don't know about.
+We're getting a weird error.
+Something isn't working, we're getting warning messages.
+This is occurring for Model 16.
+Now, last week, we never saw
+any warnings and we applied
+the fitting on
+the entire dataset everything worked correctly,
+even on the most complex model.
+But now, by randomly splitting
+the data into 80% for training and 20% for testing,
+we have created a condition where the model doesn't work.
+Everything crashes.

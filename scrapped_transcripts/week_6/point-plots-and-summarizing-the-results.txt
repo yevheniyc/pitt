@@ -1,0 +1,69 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/vpglC/point-plots-and-summarizing-the-results
+
+English
+The point plot is a specialty figure
+in seaborne focused on comparing
+average averages across groups.
+It comes from cath block because the goal is to examine a categorical variable.
+It starts with a data set.
+The x variable is intended to be the categorical, such as species.
+The y variable is intended to be the continuous variable.
+Flipper length, millimeters, kind equals a point plot.
+Now, by default, a line segment is included to connect the dots.
+The dots are the averages per category.
+But in this case, I don't want to connect the dots.
+I specify the argument join equals false.
+By default, the plus or
+minus 2 standard error interval, or
+95% confidence interval is included.
+That's that vertical line around the dot.
+This figure is therefore allowing us to examine
+what is the uncertainty on the average based on the sample size.
+The smaller the sample size, the greater the uncertainty,
+the larger the standard error interval.
+The purpose of this figure is if the confidence intervals do not overlap,
+that means we feel confident the average is different across groups.
+So I feel confident chinstrap is lower on average than gen two.
+I feel confident that adelie is lower on average than chinstrap.
+Remember earlier in the semester when we were generating all those random
+observations, calculating the average and
+calculating the standard error on the average?
+That's what this interval is.
+This interval is representing the amount of variability on the average or
+really the uncertainty on the average.
+But you don't have to go through and do all those calculations.
+The point plot does it for you.
+So again, what we've just examined here is we have seen
+three different ways to study if a categorical variable is
+associated with changes in a continuous variable.
+We looked at the conditional KDE plot we are looking for
+if the distribution itself changes,
+whether how it's located, its shape or its width.
+And look closely here.
+Remember how I mentioned the density?
+The maximum density is roughly the same.
+Well, if the density is lower, the variability will be higher.
+Look at the box plot.
+The box plot reveals all three categories have roughly the same box size,
+the difference between the 75th percentile and the 25th percentile.
+But this is called the interquartile range.
+It's another way of saying the variability.
+It's roughly the same.
+You see the whiskers?
+These extend out to the largest extreme values, or
+really the range, the min to max.
+We'll talk about these dots later.
+But the min to max, the range is roughly the same across the categories.
+So the variation is the same basically across the categories.
+That's why the these densities are roughly the same.
+The max densities are the same, roughly the same,
+even though we have different sample sizes.
+That's why it's so important to set common norm to false.
+So again, conditional distribution plot.
+Look at the shape.
+See if the distribution changes.
+Summarize the conditional distributions.
+Look at just the summary stats per group.
+A streamlined figure.
+You can include the averages, but if you're going to include the averages, it's
+actually best to examine the uncertainty on the average through the point block.

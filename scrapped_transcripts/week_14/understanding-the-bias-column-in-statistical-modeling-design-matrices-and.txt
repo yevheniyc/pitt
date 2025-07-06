@@ -1,0 +1,86 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/lAkBC/understanding-the-bias-column-in-statistical-modeling-design-matrices-and
+
+English
+Now, what's going on with this matrix, though.
+For example, just take a look here at the zeroth column.
+Look at the zeroth column of the design matrix.
+Xdesign, we'll look at first,
+how about 10 rows for the zeroth column.
+All of the values are ones.
+In fact, if you apply the
+np.unique function to the zeroth column,
+you will see there's one and only one unique value.
+The zeroth column of
+the design matrix or feature array is special.
+The zeroth column only
+contains ones or only contains the value 1.
+The zeroth column is referred to as
+the bias column or the intercept column.
+You can think of it as each column in
+the feature array is
+the value that will be multiplied by a coefficient.
+The slope multiplying x.
+Well, the one column here multiplies this coefficient.
+The bias or
+the intercept column multiplies the intercept.
+Any number times one is the number itself.
+In math notation, we typically wrote
+the formula for the average output as.
+Remember how we would have Mu,
+which is the average output,
+which is equal to the intercept plus
+the slope times the input.
+The slope is what's multiplying the input x.
+Well, you can think of the intercept or bias column as
+a special constant feature
+equal to one that multiplies the intercept.
+The math notation would look like this.
+The average output is equal to the intercept times
+one plus the slope times the input x.
+To reinforce that, look
+at the values for the input x directly in the dataframe.
+Look at the values for the one column in
+the design matrix at the head, and at the tail.
+You can see they're the same.
+Really, what's going on
+here is the design matrix is just
+populating the features from our inputs.
+The dmatrices function generates
+the feature values from
+the inputs as specified by the formula.
+If we wanted a more complicated set of features,
+dmatrices would create it for us.
+For example, let's create
+a quadratic feature from the input x.
+Just to show it, so I'll name this one y2
+, x2 is dmatrices.
+My formula y Tilda x+np.power(x,2), data = df.
+x2 now has three columns
+because it creates the bias column,
+the intercept column of ones.
+It creates the linear column,
+the linear feature, and
+it creates the feature derived from the input.
+These are literally just those values squared.
+Actually, here, let's just do this,
+df.x^2 squared, squared,
+squared, so on and so forth.
+The formula is creating those features for us.
+The sm module has functions to fit the models,
+just like the formula or just like
+smf but the syntax is different.
+The sm module names the functions with a capital letter.
+To distinguish from the formula interface,
+and you do not use the formula.
+Instead, you provide the output array
+and the feature array, the design matrix.
+The syntax for logistic regression
+looks like the following.
+sm.Logit with a L,
+output array, feature array,
+that sets the assumptions, and then you fit it.
+Again, it's formulated this way,
+so it looks like output tilde features,
+but you are explicitly giving the array for
+the output and the array for
+the features rather than the formula.

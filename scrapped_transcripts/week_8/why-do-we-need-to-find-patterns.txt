@@ -1,0 +1,92 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/0gZkO/why-do-we-need-to-find-patterns
+
+English
+Hello everyone.
+In this video we're going to motivate what finding patterns means.
+To do so, we need to take a trip down memory lane.
+In the first week of the semester, when we talked about the big picture and
+the overall goals in data analytics data science,
+we discussed a few different learning paradigms.
+That's a very fancy way of saying we discuss different kinds of
+modeling applications, the first of which is supervised learning.
+Supervised learning is also known as predictive modeling or
+predictive analytics.
+The goal is to learn a relationship between a response or output with inputs.
+We want to be able to predict the response given the inputs,
+the response becomes a defined target.
+We are able to assess how well our model fits the data
+because we can calculate an actual error or
+examine the accuracy of our model relative to the known observed target output.
+But there's another important type of learning
+paradigm known as unsupervised learning.
+In unsupervised, we do not make any distinction between inputs and outputs.
+You can think of it as we simply have variables.
+The goal is still to learn relationships,
+but without having an actual response.
+There is no target that we can use to
+assess how well our model fits the data.
+Therefore, unsupervised learning problems are actually
+very open ended and there is no defined right answer.
+As you'll see, some answers are more appropriate than others.
+But the goal is we want to try and
+find patterns either between the variables or
+between the observations.
+In terms of pandas data frames, we can either find patterns
+between columns or we can find patterns between rows.
+Now, why is this useful?
+Well exploratory data analysis,
+EDA is how we are finding or exploring a data set.
+To find patterns, we've discussed over the last few weeks that you need to know
+the number of columns, the number of variables and their names.
+You need to know their data types,
+you need to know their number of unique values.
+You need to know how many missings.
+This will allow you to describe or study the distribution of the variables.
+You can examine their summary statistics.
+For categorical non numeric variables, you can consider their counts or
+numeric with very low number of unique values.
+For continuous or numeric columns, you look at their histogram or
+their density plot.
+Then when you want to find relationships, you can examine
+combinations between categorical or non numeric variables.
+You can consider categorical to continuous relationships with the conditional KDE or
+the specialized plots of the box plot, violin and the point plot.
+And then you can consider relationships between continuous variables,
+scatter plots, pairs plots, correlation plots.
+All of these can also be grouped by categorical to study
+how grouped relationships change across categories.
+But as you've seen over the last few weeks, EDA can be tedious.
+It can be difficult to try and find those patterns when we have dozens of variables.
+And it gets even more challenging if we would have hundreds,
+if hundreds of variables and thousands and thousands of observations.
+To motivate this, let's consider we have a high dimensional problem,
+a problem with many columns, like maybe we have 50 variables.
+You might be tempted to want to use the pairs plot in order
+to study the relationships between every between each pair of variables.
+But I do not recommend creating a pairs plot with 50 variables.
+You would make a 50 by 50 plot matrix, and
+I can guarantee you nobody's actually going to look at all of
+those plot those subplots in your pairs plot, nobody will.
+Unsupervised learning can help you because it will help
+identify relationships and groups automatically.
+It helps us focus our attention on interesting behavior.
+For example, can we identify observations or rows that are similar to each other?
+Or can we visualize the data in an informative way, in a streamlined way?
+This week we will introduce two very important unsupervised learning
+approaches.
+We will first use clustering to group rows in the data.
+We will specifically talk about k means this week.
+Then, in problems where we have many variables,
+we will want to hopefully create new variables
+that represent all of the original ones.
+This allows us to create a smaller number of meaningful plots.
+We will discuss how to use PCA, principal components analysis this week.
+We will return to PCA later in the semester to discuss it in more detail
+because it is just that important.
+This week we will just introduce it to show how we can use it to help our EDA and
+later in the semester we will discuss more what it's doing.
+I hope you found this video useful to help motivate things.
+The next video will continue to motivate by showing you a few representative
+data sets to see why we want to be able to use these kinds of approaches.
+That's all for this one.
+Good luck.

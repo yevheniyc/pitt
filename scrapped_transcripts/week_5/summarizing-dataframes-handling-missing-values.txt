@@ -1,0 +1,132 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/tJ6xx/summarizing-dataframes-handling-missing-values
+
+English
+Now we know how to apply built-in functions,
+built-in methods and custom functions to DataFrames.
+But I want to spend a little bit of time
+on methods for missing values.
+There are specialized and predefined methods
+dedicated to identifying missing entries in a DataFrame.
+If we look at our total dataset,
+df, and we know that there's a fair amount of missings.
+We can see them.
+We talked about them when this
+joined dataset was created.
+Most of the columns have missings.
+The isnull method converts
+a series into a Boolean.
+A true value means the entry is missing,
+while a false corresponds to the value being present.
+If we take df.B and apply isnull,
+we get a Boolean series,
+but applying isnull to
+the entire DataFrame returns
+a DataFrame of Booleans, df.isnull.
+If you look closely,
+do you see where there's true?
+Those are the entries that are
+missing in the original DataFrame.
+Now, I personally don't use isnull that often.
+I instead prefer isna,
+it does basically the same thing.
+Everywhere where you see a true,
+that means the entry is missing.
+Since the result is a DataFrame,
+we can now apply
+any appropriate summary method to the Boolean DataFrame,
+such as summing the total number of missings.
+df.isna, again, this is a bunch of trues and falses,
+but if you now apply the sum method,
+this will sum up the total number
+of trues because every true that you see,
+it's really like a 1.
+Every false that you see is really a 0.
+The A column has two missings.
+That's exactly what the true false is showing us.
+The F column has no missings,
+the G column has five missings,
+1, 2, 3, 4, 5.
+The isna.sum is a really important chain of
+methods because it gives us
+a quick snapshot about
+which column has the most missing values.
+If you want the proportion missing,
+apply the mean method instead of sum,
+because sum is literally counting.
+If you have an enormous dataset, 100,000 rows,
+and you have one missing,
+that doesn't mean you should be super worried.
+Instead of looking at just the row count,
+it can also be useful to
+apply the mean method to get the proportion.
+In our small example,
+five missings corresponds to
+nearly 36% of the entries being missing.
+The above is the summary per column,
+but we can also summarize per row.
+Remember when I said that when you have
+different data types per column,
+you should not summarize per row.
+Well, when we apply the isna method,
+now every single column is Boolean, the same data type.
+Now I can very easily apply
+the sum method along axis 1 or to each row.
+The result shown below is the number of
+missings within each row.
+This becomes a very simple way.
+This is a simple way to identify rows with zero missings,
+or the row is complete.
+Every column has a value.
+We could take the loc attribute and filter to
+find all rows where the number of missings equals 0.
+Look at the index, 0,
+1, 2, 3, 4,
+5 and then there's a break before 9.
+That's because it needed to drop or
+get rid of the rows, filter them out.
+Remove them because we had missing values for
+G. Same thing for the last two rows,
+they're gone because most
+of the columns have missing values.
+This idea of removing
+all missings or remove any row that has
+at least one missing column is
+known as creating the complete cases.
+This is what happens behind the scenes in
+a lot of modeling methods.
+Behind the scenes in a lot of modeling functions,
+the missings are removed, dropped, or skipped.
+When you do this,
+you're removing the missings
+because you need to calculate summary statistics.
+You can't calculate the summary statistics
+if missings are present.
+But by removing the missings,
+you are in fact truly removing data.
+You are throwing away data,
+you're reducing the number of rows.
+When you're exploring, it's really
+critical to identify how many missings you
+have because when you do the simplest option
+of dropping all missings or creating the complete cases,
+you are throwing away data.
+If typing all of this in seems like too much,
+because this is so important,
+there is a streamlined operation,
+we're creating the complete cases.
+It's called the dropna method.
+You can see this produces
+the same result as when we set this up manually.
+In a summary, again,
+the point of this was to demonstrate how do
+you apply built-in functions,
+built-in methods per column into the entire DataFrame.
+You have to think carefully about
+if you're using a summary method
+appropriate for numbers and
+not strings or categorical variables.
+We also discussed in depth how
+missings are handled with summary functions,
+how missings are dropped.
+We also saw how to apply custom functions,
+even though the custom function we used was very simple.

@@ -1,0 +1,88 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/fv7SI/fitting-logistic-regression-models-with-scikit-learn-key-differences-from
+
+English
+Let's now initialize and then
+fit the SKlearn logistic regression model.
+The syntax is very different from statsmodels.
+Because in SKlearn the data are provided
+in the.fit call rather
+than in the initialization step as with statsmodels.
+If I scroll back up,
+where is it at, right here.
+When we fit the array interface from statsmodels,
+the data we're provided
+when the object was initialized and then we fit
+because this was similar to the format
+or formula and data in the formula interface.
+But now, with SKlearn,
+I'm going to assign the result to sk_default_typical.
+We initialize the object,
+we specify the assumptions,
+and we're using all default assumptions.
+Then we fit.
+Here, in the fitting,
+we provide the feature array,
+and then the output array.
+In SKlearn it's the fit that sees the data,
+whereas in statsmodels,
+it's the assumptions that sees the data.
+Notice too, the output is converted to a 1D array.
+Now, when you run this, nothing is printed to the screen.
+In statsmodels, we were
+told if the fitting
+completed successfully for logistic regression,
+whether we have the array interface
+or the formula interface, it didn't matter.
+SKlearn doesn't tell you that.
+SKlearn, it just completes.
+SKlearn logistic regression models have
+their own set of
+attributes and methods which
+are different from statsmodels.
+If we apply the DIR function to this object,
+you will see there is no.summary method,
+there is no.params attribute,
+there is no.BSE attribute,
+there is no [inaudible] method.
+The SKlearn logistic regression model
+does not provide whether
+the features are statistically significant.
+This is a major drawback of SKlearn.
+If you want to know if
+a feature is statistically significant,
+you should not use SKlearn.
+You should use statsmodels.
+SKlearn is not interested in that.
+That's the way it's set up.The coefficient
+estimates are available in the.coef_attribute.
+But before I show you that,
+just as a reminder, the coefficients from stats models,
+remember, there are two of them.
+But now, when I check the coef attribute,
+just a single coefficient is returned.
+That's because the typical usage of SKlearn
+is to house or contain
+the intercept in its own attribute.
+The intercept is contained in the intercept_attribute.
+Now, I personally find this very
+annoying because it's breaking
+up all of the regression coefficients
+that are getting estimated.
+Instead, let's not fit the intercept.
+Let's change the assumptions and the feature array so
+that SKlearn estimates the intercept
+as if it's a regular coefficient.
+We are essentially tricking SKlearn.
+We are doing this so we can
+have an apples to apples comparison with statsmodels.
+But you should also
+do this when you have categorical inputs.
+Next week, we will wrap up
+the semester by discussing just why this is the case.
+We will return to this point next week.
+For now, I just want you to see here's
+how we can force
+the intercept to be
+estimated as if it's a "regular coefficient."
+You need the intercept or bias column
+in the feature array.

@@ -1,0 +1,73 @@
+Source: https://www.coursera.org/learn/the-art-of-data-visualization/lecture/6fxEn/2d-array-attributes-and-creation
+
+English
+Let's convert the list of lists to a NumPy array.
+We'll name this my array.
+To convert the list to the array,
+we need the np.array function and we give it the list,
+just like we did when we
+made made a list into a 1D array.
+Type my array.
+It is a NumPy array.
+Arrays all have the same attributes.
+We can check the ndim.
+There are two dimensions.
+We can check the shape.
+Two numbers are now provided.
+Why are there two dimensions?
+Because the list of list
+is now converted into a two dimensional array,
+which is also known as a matrix,
+which looks like a table.
+It's not really a table, it's table like.
+2D arrays are matrices and they kind of look like tables.
+2D arrays have two dimensions.
+They have rows and columns.
+Shape tells you the number
+of elements per dimension.
+The zero element in shape 2,
+they are two rows.
+The one element in shape,
+there are two rows and three columns.
+Again, why did I type in the list of lists this way?
+To highlight, I wanted to
+organize things as rows and columns.
+We are getting the rows as the inner lists.
+We are getting the columns as
+the elements or values inside the inner lists.
+The size attribute is
+the number of total elements in the array.
+My array shape, the number of rows,
+times the number of columns equals the size.
+Let's see this one more time,
+but please remember the list of
+lists does not understand rows and columns.
+If I would create my_array_b, where,
+I'm typing in my list of lists all on a single line.
+This is how Python views the list of lists.
+My_array_b still has two dimensions.
+My_array_b still has two rows and three columns,
+my_array_b still has six total elements,
+because the NumPy array
+understands these inner lists become rows.
+This is a quality of NumPy,
+it's not a quality of base Python.
+NumPy is creating the two dimensions.
+Is creating the rows and the columns.
+Again, rows are vertical, columns are horizontal.
+Rows go down the page,
+columns go across the page.
+Creating a 2D array from
+a list of lists requires each inner list
+to have the same line.
+This is really important.
+If I would instead do NumPy array,
+and I'm going to have here two lists,
+zero, and then I have more ones.
+This array cannot be created
+because the first list only has three elements.
+The second list has more than three.
+A 2D array must have
+the same number of columns in every row.
+This is critical. That's why
+you cannot create the list that way.

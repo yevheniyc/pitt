@@ -1,0 +1,119 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/rlimh/visualizing-trends-and-uncertainty-intervals
+
+English
+Look very closely here at this code.
+I'm using the trend or the average output.
+I'm not focused on the input right now.
+This is really critical.
+The observations of the output
+depend on the average output.
+We know the average depends on
+the input through that mean trend function.
+That's how the input is
+influencing what are allowable values for the output.
+The plus or -2 standard deviation interval
+has a lower bound.
+Obs_lwr for lower,
+OBS lower 95 is
+the trend -2 times the standard deviation,
+whereas the upper bound on
+the plus or -2 standard deviation interval or
+the 95% uncertainty interval
+is the trend +2 times the standard deviation.
+Again, look at these two sets of lines of code.
+We have the average minus
+the standard deviation up to
+the average plus the standard deviation,
+whereas the 95% uncertainty interval is the average
+-2 times the standard deviation to
+the average plus two times the standard deviation.
+Our visualization data frame now has the input,
+the mean output or trend.
+The lower and upper bounds on
+the plus or -1 standard deviation interval,
+the lower and upper bounds of
+the plus or -2 standard deviation interval.
+These intervals tell us the probability of seeing
+a data point an observation of the output.
+Even though the mean or the trend is
+five-and-half when x is
+negative three-and-half in this case,
+there's a 95% chance we will see an output,
+an actual measurement between three and eight.
+The most common the expected value
+is five-and-half in the middle,
+but we can see a single data point anywhere from 3-8.
+Visualize the uncertainty or
+level of variation using ribbons.
+Now, this figure, it takes a little bit to set up.
+The first thing that I'm going to do is to put
+the scaffolding in place
+or the overall structure using comments.
+I initialize the figure and axis object,
+and then I put in a comment.
+I want to have the true trend.
+Then I will show the true variation around
+the trend by showing two intervals.
+The first one will be the two Sigma interval.
+The second one will be the one Sigma interval.
+Lastly, we need to set the labels and then show the plot.
+I'll type in plt show right now.
+The true trend is exactly what we created previously,
+where I'm using the plot method on the ax object with
+the x column as
+the x argument and the trend column as the y argument,
+and then I'm setting the color is crimson,
+and let's do the line width is 1.5.
+This is the same figure we made previously.
+Just I haven't set the labels yet.
+But let's now create the first ribbon,
+and a ribbon is made using the fill_between method,
+the fill_between method on
+a matplotlib ax object, so axis object.
+In fill_between, the zero argument,
+is the values for the x axis.
+Then the next argument is
+the lower bound on the interval,
+and I am starting with the plus or -2
+Sigma or 95% uncertainty interval,
+the larger of the two intervals.
+I need the lower bound followed by the upper bound.
+Now, before we show the plot,
+let's set the x label to be x,
+and let's set the y label to be y.
+Do you see this blue polygon
+that's appearing, this trapezoid?
+We filled between where we have the x axis values,
+and we're filling between the
+lower bound and the upper bound.
+This defines some rectangular polygon
+or trapezoid in this case,
+and then color is filled between there.
+Now, this color can be controlled.
+It's called the face color.
+Again, we could use black,
+we could use red, we could use green.
+I like to use a color of
+similar shade as the trend line, typically.
+We could use the same one.
+We could use crimson.
+But as you can see, I can't see the line anymore.
+For that reason, let's change the transparency.
+The transparency is controlled by the Alpha parameter.
+Alpha 0.35 makes that ribbon more transparent.
+If I had it very close to one.
+It would be much more opaque.
+If I had it very close to zero,
+we couldn't see it at all.
+Here I'm using 0.35.
+It's pretty transparent.
+But the reason why I'm not using
+a value of say 0.65 for the trick
+for Alpha is because I want
+to include in a second interval.
+I want to now fill between for x values of df.x
+using the lower bound of
+the 68% uncertainty interval or
+the plus or -1 standard deviation interval.
+Let's use the same face color,
+and again, the same transparency.

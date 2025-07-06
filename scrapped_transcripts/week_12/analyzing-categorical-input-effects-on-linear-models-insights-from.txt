@@ -1,0 +1,88 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/bqSnL/analyzing-categorical-input-effects-on-linear-models-insights-from
+
+English
+Now, visually, what we're looking for
+here in this box plot is for clear separation
+of the boxes across the categories.
+The location of the continuous output y, as shown by its median,
+is separated from all of the other medians that we can see here.
+But more importantly, that degree of separation,
+the box that has 50% of the observations are completely
+separated for x= e from all of the other categories.
+Similarly, the box for x is equal to f is
+separated from all of the other categories.
+X equal to j and x equal to i, they appear to be separated,
+but not to the same degree as e and f.
+So the conditional distribution of y seems to
+have differences for some of the categories.
+Let's now examine if the average output
+is different across the categories of the continuous or,
+sorry, of the categorical input.
+This is visualized with a point plot.
+SNS dot cat plot data equals df,
+x=x, y=y kind equals point,
+join equals false.
+If the confidence intervals do not overlap,
+then we are confident that there are differences in the averages.
+So according to this point plot, when x is e,
+the average is different from the bulk of the categories.
+Likewise, when x is f, the average is different from the bulk of the categories.
+And it also seems like that we are confident when x is j,
+the average is different from the rest.
+But all of the other ones, we can't really distinguish
+the differences in the averages across those categories.
+Now, why does this matter?
+Or why does this matter when we are talking about linear models?
+We have learned that linear models
+are fundamentally modeling the average output.
+And so, you have categorical inputs,
+the goal of the linear model is to predict
+the average output per category.
+The point plot is therefore a perfect representation
+of what the linear model is going to attempt to do, okay?
+It's going to attempt to do.
+But how can it predict
+a continuous value when
+the input is category?
+And as a reminder,
+x is a letter, not a number?
+Let's fit a linear model to find out.
+Fit a linear model that has a linear additive
+relationship between the average output,
+the trend, and the input.
+I'll name this one Fit a.
+It gets assigned smf.ols.
+There's a formula, there's a data set, and you fit it.
+The data is df.
+And now, the formula, it's a string, y=x.
+We're saying the output on average is a function of the input.
+Now, when you fit this model, you can see it worked.
+We know there's one input, but
+if we check the coefficient estimates,
+a single slope is not estimated.
+There are, N
+total coefficients that are estimated.
+The names of these coefficients look really, really weird.
+But when you have non numeric inputs,
+features must be derived from
+the input to allow multiplying
+the feature with a slope.
+This feature is known as a dummy variable.
+The dummy is a binary indicator.
+It is equal to 0 or 1.
+If the dummy is equal to 1,
+then the categorical variable equals that category.
+If the dummy does not equal one or
+equal zero, then the categorical
+variable does not equal that category.
+So that's why you see all of these additional features present.
+We have to calculate slopes for
+all of these dummy variables and
+how many dummy variables are created.
+The number of categories -1.
+So if we look at dfa and
+we check its n unique and,
+sorry dfx, n unique, there are ten
+unique values or categories.
+The number of categories, the number of unique values -1, there are 9.
+We have 9 slopes estimated plus the intercept gives us 10 total coefficients.

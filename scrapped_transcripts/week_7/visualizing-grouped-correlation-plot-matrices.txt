@@ -1,0 +1,104 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/kqimj/visualizing-grouped-correlation-plot-matrices
+
+English
+We can group by a categorical variable and
+apply the correlation or
+the core method to get the correlation
+matrix for each category.
+Let's see how to do that.
+And let's start simple.
+Back on just these two continuous variables even though we
+know you can scale to many continuous variables.
+Let's focus just on these two for now.
+Penguins.
+Well, we need to focus just on those two, flipper length and
+bill depth, but I'm going to group by species, so I need species.
+Groupby species, apply corr.
+Okay, now this resulting data frame is a little complicated looking.
+Hopefully you see where I put my cursor.
+The first two rows are the Adelie species.
+The intersection, so a column intersecting with a row,
+still tells us the correlation coefficient.
+But look at flipper_length and bill_depth.
+When we have Adelie, we have a positive number.
+When we have Chinstrap, we have a positive number.
+When we have Gentoo, we have a positive number.
+So the correlation coefficient is
+positive when we group by species,
+even though we previously saw that it
+was negative when we ignored the grouping.
+Also, just to further confirm, you see all these ones,
+flipper_length to flipper_length,
+bill_depth to bill_depth, a variable is perfectly
+correlated with itself even when you group by a categorical.
+We can visualize the grouped
+correlation plot or a grouped
+corrplot by iterating over
+the groups via a for loop and
+applying the SNS heatmap
+function to that group.
+So because SNS heatmap is
+an axis level function,
+it will not generate facets for us.
+So this is a drawback of using a axis level function.
+We need to manually make the facets now.
+So in the previous videos, when we did scatter plots with relplot and
+trend plots with lmplot, we could facet very easily, but
+now we, we can't facet easily.
+We need to manually make the facets.
+It's useful to define helper variables,
+helper objects to store the groups we will iterate over.
+So the groups for now are the unique values of species.
+And I like to force this to a list,
+just out of use, just for preference.
+I like to have this as a list.
+And now I want to create a new object,
+corr_per_group, which stores
+the correlation matrix between all
+of our continuous variables of interest
+grouped by our categorical variable.
+So corr_per_group is what we looked at before.
+Now, why would I want to create this?
+Well, corr_per_group,
+I can now use the index location
+To get out each individual
+species correlation matrix.
+But rather than working with just a hard coded string,
+remember, I have these values in the groups,
+I can now iterate over my list
+of the groups in order to create
+the correlation matrix per facet.
+So let's do that one facet or
+subplot per category or grouping value.
+Let's initialize the figure and axis objects.
+And I'll use axs now because we are actually creating subplots,
+one row, and I want as many columns as the length of the groups.
+And I'm going to now set the figuresize to something that I've used before.
+I want to make sure the axes are shared for
+x and y across all facets.
+Now, I will iterate for
+an index variable in the range
+over the length of the groups.
+So I'm using for ix in range of the length of the groups where the heatmap
+Is getting applied to a data set of corr_per_group
+at the location of the groups, Ix.
+This is just doing what we did up here.
+But we need to make sure that the heatmap has vmin of negative one,
+vmax of one, and center of zero.
+I like to use coolwarm.
+Let's turn off the color bar to save space.
+I want to annotate The size, we'll use 20.
+But now which axis are we using?
+Ax will be assigned to one of the axis
+objects because when you make
+subplots, Axs is a NumPy array.
+Now I'm staying inside the body of this for
+loop, and I'm going to modify the title of each facet or
+subplot to be species where the species is equal to.
+So this is a new title here.
+Let me write this a little cleaner.
+Species is equal to a string.
+There we go.
+And that string will be the_groups [ ix ].
+Enter and now dedent.
+So I did Ctrl+( plt.show.

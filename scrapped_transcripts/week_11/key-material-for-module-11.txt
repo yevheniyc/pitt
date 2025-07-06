@@ -1,0 +1,93 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/FZKJ8/key-material-for-module-11
+
+English
+Hello, everyone. Welcome to
+the 10th week of the semester.
+This week, we will spend more time
+working with linear models.
+We're going to focus on more of a practical set of
+examples rather than an introduction
+to all of the major assumptions.
+Now, that said, we need
+to start by reviewing those important assumptions,
+and that is done by generating data.
+Two datasets are created.
+One that comes from
+a linear relationship between
+a single input and the mean trend.
+The second comes from
+a nonlinear relationship between
+the single input and the mean trend.
+These two datasets are used to reinforce the fact that
+linear models do not necessarily mean straight lines.
+All of the remaining examples will then introduce
+the important concept using the linear relationship data,
+but then you see it again
+for the nonlinear relationship data.
+Now, those remaining concepts
+begin by how do you actually fit
+a linear model and how do you
+interpret its results through
+the coefficients that are estimated.
+This is done by using the stats models formula interface.
+Stats models is a module in Python
+dedicated to regression analysis.
+We will also use it for classification,
+but we are mainly using it
+now for working with regression models.
+You will learn how
+the formula interface of stats models works,
+why it's useful, and how it allows us to
+quickly fit many different kinds of models.
+You will learn how to extract the coefficient estimates,
+how to extract their uncertainty, their standard errors,
+and confidence intervals, and you will
+ultimately learn what statistical significance means.
+Spoiler alert. It's actually very
+straightforward to know
+what statistical significance means.
+And that is done through a simple visualization.
+Then you learn how to use
+predictions to visually interpret model behavior.
+You learn how to make predictions on
+new data to visualize the trend versus the input.
+You learn how to visualize
+the uncertainty on the trend
+called the confidence interval.
+And you learn how to visualize the uncertainty
+on a single measurement called the prediction interval.
+You learn how to describe
+the differences between confidence intervals and
+prediction intervals and especially
+why they are useful and distinct from each other.
+You do this again on the linear relationship
+and the nonlinear relationship examples.
+Lastly, you then learn how do
+you assess regression model performance?
+You learn what R-squared is and where it comes from,
+how it's not some magical quantity.
+You learn the difference between RMSE and MAE.
+And lastly, you learn how we can use
+these performance metrics to
+compare different models of the same data set.
+Now, this last question is actually one
+of the most important ones for the whole class,
+and we will continue to return to
+it for the remainder of the semester.
+But we needed to first introduce
+regression performance metrics before we got there.
+Really, again, this week,
+what are the assumptions of the linear model?
+How do we fit the model with stats models?
+How do we predict it and interpret it,
+and how do we assess performance?
+Good luck this week.
+I hope you enjoy working with
+these examples that introduce
+all of these major concepts,
+and all of these actions will help in the final projects,
+especially for those of you
+working on regression problems.
+You will see how to use
+these same ideas for classification problems next week.
+Good luck, please let me know if you have any questions?

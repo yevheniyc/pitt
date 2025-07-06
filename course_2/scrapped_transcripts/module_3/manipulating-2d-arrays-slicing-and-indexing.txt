@@ -1,0 +1,85 @@
+Source: https://www.coursera.org/learn/the-art-of-data-visualization/lecture/lKfkG/manipulating-2d-arrays-slicing-and-indexing
+
+English
+Hello, everyone.
+In this video, we will continue working with NumPy,
+learning how to manipulate 2D arrays.
+I already have my Jupyter notebook up and running.
+I'm in the file manager for the project for this week,
+I'm going to launch a new Jupyter notebook.
+Please pause the video and set up your Jupyter notebook and then come back here.
+All right, let's go ahead and
+name this one week_03_numpy_2D manipulate.
+I'll set up the section headers,
+manipulating 2D arrays.
+We can manipulate 2D arrays just like 1D arrays,
+but we need to be careful.
+That's one of the main things I want you to take away from NumPy.
+Please be careful.
+It sounds great, but you got to be very, very careful with NumPy.
+Let's begin by importing NumPy.
+Import NumPy as np.
+Create arrays, we will use
+a 1D array to contrast with
+manipulating 2D arrays.
+I'll name my 1D array, my_1d.
+And we'll use a simple NPA range with six values.
+For the 2D array, let's go ahead and
+manually create this from a list of lists.
+But rather than having our list with just two lists,
+I want to have a list with four lists.
+As we learned in the previous video,
+that means we will create a 2D array with four rows.
+I want to have my array have three columns.
+So our array will be four rows and three columns.
+Let's confirm it.
+Yeah, two dimensions, four rows, three columns.
+The total size four times three is 12.
+And again, to contrast this,
+the n dim the number of dimensions for the 1D array is 1.
+It only has values in one dimension.
+All right, so the first kind of way to manipulate is we can slice.
+We know that for a 1D array, you can index or
+slice just as you index or slice a list.
+But let's look what happens if we slice
+a 2D array just like a 1D array.
+My_2d 0, my_2d 1,
+do you see what's happening?
+If we give just a single number to slice,
+the 0 slice returned three things.
+The negative one slice,
+the last slice returned three things.
+Providing a single index to
+slice causes NumPy to slice the rows.
+It returns all columns from that row.
+The more formal syntax uses the colon
+operator to specify return all rows.
+And this is actually how I like to do it.
+I don't like giving one number and getting a whole bunch of things.
+I find it to be vague and confusing.
+I instead like to use comma colon.
+The reason for this is it makes it very clear.
+I want the zeroth row, all columns,
+or I want the last row in all columns.
+I want the one row in all columns.
+This highlights slicing or
+indexing 2D arrays requires
+an index for rows and columns.
+And that's the reason why I prefer this more tedious style.
+It also makes it very easy to now identify one value.
+For example, I want this value right here that I'm highlighting.
+This value is in the second row and the second column,
+or Python notation, the one row and the one column.
+To access that cell, I need its row
+position and its column position.
+Now, I'm pulling out one value from our 2D array.
+When you have this idea of providing
+the two indices, rows and columns,
+it's easy to slice a subset of rows and columns.
+For example, I want the first two rows in all columns,
+or I want all rows in the first two columns.
+We could even do the first three rows and
+the last two columns, okay?
+So you can slice and dice your array however you want.
+And because it's still an array,
+we can always check its attributes.

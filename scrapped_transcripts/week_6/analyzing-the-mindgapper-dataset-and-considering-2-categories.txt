@@ -1,0 +1,109 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/J9wzh/analyzing-the-mindgapper-dataset-and-considering-2-categories
+
+English
+Let's wrap this up one more time by examining the Gapminder.
+Gapminder, the year variable has just 12 unique values.
+That's what we've seen previously.
+Let's continue to treat it as a categorical for
+our visual exploration,
+let's examine if the year is associated
+with changes in the life expectancy.
+So in the lifeExp variable.
+Now as a quick reminder, sns.displot data = gap_df,
+let's first look at the distribution of life expectancy.
+Kind = hist, plt.show and here let's include in kde is true.
+Okay, there's the distribution of life expectancy,
+but let's now create the conditional
+KDE per year or given or grouped by year.
+Sns.displot data = gap_df,
+x = lifeExp, hue = year,
+kind = kde, common_norm = false.
+You should always get comfortable setting common norm to false.
+Now there's a lot going on in this figure.
+There's a lot happening because we have 12 different values of year.
+But just as a quick glance,
+you see how this lower mode is this lower cluster,
+lower years, this higher cluster, more recent years,
+the lower cluster lower life expectancy.
+The higher cluster higher life expectancy.
+We get a quick idea that the life expectancy
+is shifting to the right as the years increase.
+And that should make some sense, right?
+But because this is so busy, let's streamline things and
+focus on the summary statistics for
+now rather than on the distributional shape.
+We can do that with the box plot.
+Data = gap_df, x = year,
+y = lifeExp, kind = box.
+Since the x axis is a little tight,
+let's spread it out by changing the aspect ratio.
+The horizontal line is the median.
+The median life expectancy appears to be increasing as the year is increasing and
+this is the median across all the countries because remember,
+we had a large number of countries per year.
+The box is the variation of 50% of the data.
+So 50% of the countries per year are located in the box.
+These whiskers span the min to the max.
+So the minimum is down here.
+The country with the minimum a life expectancy.
+The country with the maximum life expectancy is up here at the top of
+the whisker.
+50% of the data per year below the box or, sorry,
+25% of the data per year below the box.
+25% of the data per year are greater than the box.
+50% of the data are in the box.
+However, if I was instead focused on
+is the average life expectancy changing?
+I need to examine the POINT PLOT.
+Sns.catplot, data = gap_df,
+x = year, y = lifeExp, kind = point.
+Plt.show again, let's stretch it out with the aspect.
+And now by default, the joined averages.
+It's not so bad because it's giving us how things are sequentially changing,
+but let's just go ahead and remove it.
+Join = false.
+So now what does this tell us?
+Two years that are side by side, which you can see they're separated by five years.
+Their confidence intervals overlap.
+So is there a difference in the life expectancy,
+the average life expectancy in 2002 compared to 2007?
+Well, we have overlapping confidence intervals, so the answer is no.
+We don't really feel confident there's a difference in the average.
+But now consider 1952.
+In 2007, those confidence intervals clearly do not overlap.
+We are confident that on average,
+the life expectancy in 1952 was lower
+than the average life expectancy in 2007.
+Now, the box plot, it's actually really, really flexible.
+We can color by a third variable or
+a secondary categorical variable in a box plot.
+So just to end on and show you what's going on here,
+let's examine the distribution of the average life or
+the distribution of the life expectancy per year per continent.
+Sns.catplot, data = gap_df,
+x = year, y = lifeExp.
+The color is hue, continent.
+Let's stretch it out.
+Plt.show, oops, I forgot to say, kind = bonds.
+You see the orange box plot?
+That's Europe.
+You see the blue box plot, that's Asia.
+Here's the median in Asia versus the median in Europe in a given year.
+The next year, the next year, the next year.
+See, the median is changing, it's increasing.
+The median is also changing for Europe, but it already started out much higher.
+The idea of grouping.
+We are grouping by year and continent.
+We are able to examine what is influencing a continuous variable,
+whether that's one categorical or two categoricals.
+The combination of two categoricals.
+So in summary, you want to study the marginal distribution.
+You then want to see how that distribution is divided across categorical variables.
+The shape, the summary stats, the average.
+And then you will consider if multiple categoricals are associated with
+differences in the distribution.
+Long story short, there's a lot of plots you're going to have to make, but
+notice there's a very common set of patterns.
+Study one variable by itself,
+then consider how two variables relate to each other.
+Examine multiple ways to see how those relationships can be visualized.

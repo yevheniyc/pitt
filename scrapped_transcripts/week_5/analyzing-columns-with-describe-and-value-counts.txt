@@ -1,0 +1,82 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/0JFIG/analyzing-columns-with-describe-and-value-counts
+
+English
+Lastly, it is always important to
+begin summarizing the columns, and
+we know how to apply the mean method,
+which we need to specify numeric only.
+But instead of having to go through and apply mean,
+standard deviation, min and max and everything else,
+we can just call the dot describe method.
+And now when you do this, you not only get the number
+of non missing rows via the count, you also get mean,
+standard deviation, min, max and then these quantiles.
+We will discuss these quantiles in more detail when we go into
+visualization via the box plot.
+But by df.describe only focuses
+on numeric columns, you can change
+that with the include argument.
+If you set include to object, now you get these summary stats,
+the count number of non missing, the number of unique,
+the most frequent values, how many times the most
+frequent value occurs for objects or strings.
+You can have every single column included, but
+the summary table looks weird because you get the missing entries for
+the summary stats really specific for categoricals,
+and then the summary stats specific for numerics in the different columns.
+So I never recommend doing include all,
+I think it's better to summarize the numeric columns and
+then summarize the strings categorical columns.
+After this, the next step is to begin counting
+the categorical or string columns.
+For example, A we see from describe has 12
+total rows with 12 non missing rows and 12 unique values.
+So we can now apply my favorite pandas method value counts.
+At first this result doesn't seem very interesting, but
+it is telling us each unique value has 1 and only 1 row or 1 count.
+Value count, similar to n unique
+is ignoring the missings by default.
+So if you also set dropna= false, now you will
+get how many rows there are for missing values.
+This is really the more complete way of getting the counts.
+Again, you can run the default, but
+then it's always a good practice to check if you know that there are missings.
+And after all,
+that's one of the you need to always check how many missings per column.
+Let's look at another categorical variable such as D E and H.
+We'll just go through these
+manually here, D value counts,
+I'll jump straight to dropna as false E.
+E has four unique values plus one more for the missing.
+Now the counts are really useful,
+they're telling us how many rows are present per value,
+but it's also good information to know
+the proportion per unique value.
+And you can get the proportion via normalize.
+So value counts normalize equal to true.
+This no longer returns the number of rows it returns
+the proportion of the rows per unique value.
+So 20% of all of the rows in the data frame have this unique value for E.
+However, I do not feel you should only show
+the proportion, because saying hey,
+7% of the rows are this one value, I have no context for
+what that means without first knowing the count.
+So again, always show the raw count
+before you show the proportion.
+It puts everything into context, yes, 7% of the rows are this one value, but
+there's only one row that has this value, that really puts everything into context.
+Value counts are very important to look at for
+strings or categorical or non numeric columns,
+but it's also important to consider
+value counts for numeric columns.
+And you want to look at the value counts for
+a numeric column when that column has few unique values.
+For example, column F only has four values, even though it is an integer.
+We get what the unique values are and how many times they appear in the data set.
+Again, we can also include in missings if there are missings, and
+after looking at the raw counts, it's useful to see the proportion.
+But so that again, in summary, when you start counting,
+you want to count more than just categoricals.
+You also want to count the columns that have the numeric columns
+that have relatively few unique values, and relatively few,
+in my opinion, when you're exploring less than seven, maybe less than $10.

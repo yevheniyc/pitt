@@ -1,0 +1,96 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/C7H0Q/addressing-box-plot-limitations-with-extreme-values-and-kde-plots
+
+English
+But now I want to address what these little dots are.
+The dots are always either
+above the top of
+the whisker or below the bottom of the whisker.
+The dots are known as outliers.
+But I personally don't like
+that term because when people hear outliers,
+they think it's this magical mystical thing.
+I instead like to call them extreme values,
+every dot you see is an extreme value.
+What does the extreme represent?
+The extreme is trying to represent these very long tail,
+low frequency values,
+the intervals that don't have as many data points.
+You might be thinking, well, okay,
+we have all of these extremes,
+this must be representative of
+skew and you would be right.
+But the box plot does have one fundamental limitation.
+It cannot show the shape of the distribution.
+It is only showing the summary stats.
+It can't show shape.
+Box plots can mislead you
+when you have highly symmetric distributions or
+highly asymmetric or highly skewed shapes
+because when we see the box,
+our natural instinct is to think most
+of the data are going to be contained in the box,
+even though in truth, it's 50 percent of the data.
+This is not wrong,
+50 percent of the observations are in the box.
+But are the most frequent values
+or are the most frequent intervals
+contained in the boxes?
+That's really what I'm getting at here,
+because when you see the median.
+If we're thinking of a Gaussian a bell curve,
+the most frequent values are truly in
+the center and if we see this box plot,
+we might think,
+hey, this is the most frequent value.
+The median, the most frequent,
+the most likely, the most populated values
+are somewhere around here.
+But we know that's actually incorrect.
+We know from our histograms that
+the most frequent intervals
+are literally at the lower bounds.
+The most probable value for
+color D is not right near its conditional median.
+It's actually closer to near its lower bound,
+and a boxplot cannot represent that.
+Extremely skewed distributions, we have
+the most frequent intervals
+near the lower or upper bounds.
+The boxplot cannot represent that behavior
+because boxplots cannot show the distribution shape.
+This is the fundamental limitation.
+We can see the shape with
+faceted histograms or KDE plots.
+But a drawback of
+facets is we have to look at many subplots.
+What if we used conditional KDE plots with
+the categorical variable associated
+with the hue argument.
+Remember, in seaborn,
+you can associate a variable with color via hue.
+Let's now make the conditional KDE,
+it's a distribution plot,
+so we need the sns displot function,
+data equals diamonds, x equals price
+because we're still looking at
+the distribution of a continuous variable.
+But now instead of using the column facet argument,
+we will use hue for color.
+We will use kind is KDE,
+we're not using a histogram we're using a KDE.
+If I would just create this plot,
+aspect make it wide.
+If I just make the plot as it is,
+and we get the overall distribution,
+we can see the orange, we can see the red,
+the pink, the J coloring is way down here.
+But this plot is wrong.
+The J KDE, remember,
+we previously saw, this is the lowest sample size.
+The fact that the pink curve is down at
+the bottom by default
+is simply just due to the sample size.
+You cannot use the default argument for common norm.
+Because by default common norm is true,
+but we need to set
+common norm to false to remove the sample size effect.

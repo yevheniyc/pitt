@@ -1,0 +1,88 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/ijSln/a-comparative-analysis-of-formula-and-array-interfaces
+
+English
+Let's go ahead and use it.
+Fit the logistic regression model
+using the formula interface.
+I'll name it fit_stats_array, gets assigned sm.Logit.
+For a linear model,
+for regression, this would be OLS.
+But here, we're working with logistic regression,
+so it needs Logit,
+yobs.mat.ravel and then Xdesign mat
+, and then you fit it.
+The array interface has
+the same attributes and methods as the formula interface.
+Therefore, we can check
+the coefficient estimates with.params,
+we can check the standard errors with.bse,
+we can check the confidence interval,
+we can check the pvalues.
+Really, the only difference here is
+that now the results are returned as
+NumPy arrays rather than
+Pandas series or Pandas DataFrames.
+The formula interface works with Pandas objects,
+the formula interface returns Pandas objects,
+while the array interface returns NumPy objects.
+That's one of the big differences.
+But the overall values themselves are the same.
+To make predictions, we must create
+the feature array on the new dataset.
+We previously made the input grid DataFrame,
+we must create the feature array
+for input grid in order to make predictions.
+But if you look closely, input grid,
+this new visualization DataFrame,
+it does not have the column y.
+Thus, if I would try and
+create the objects using dmatrices,
+where I type in the formula,
+y tilde x data equals input grid,
+you're going to get an error.
+You're going to get an error because
+the output column does not exist in this DataFrame.
+The dmatrices function creates
+the arrays when the output is known or observed.
+The sister function dmatrix is
+used when you only have the inputs and not the output,
+so dmatrix is what
+you should use when you are visualizing predictions.
+You should use dmatrix when you need to create
+the visualization grid to visualize predictions.
+Let's assign as the result Xgrid, dmatrix.
+The formula does not have an output,
+so we leave a blank tilde x.
+Everything to the left of tilde is an output.
+By leaving it blank,
+we're saying there is no output,
+but I can still define the inputs.
+Where should we be looking for these names?
+It's in the provided data set.
+The number of rows is now based on the number
+of rows in the provided data,
+the number of columns
+equals the number of columns for the design matrix,
+because it is creating the exact same features
+as the dmatrices call we used to fit them on.
+Essentially, behind the scenes,
+when we were using the formula interface,
+do you remember how we only had to
+provide the DataFrame to.predict?
+Behind the scenes,
+dmatrix is used to create the new feature array.
+Just to confirm it, if you check,
+I see the value you here,
+this column is the same as the input.
+Let's now add a new column to dfviz for
+the predicted event probability from
+the array interface,
+dfviz, pred_probability_statsarray.
+It's assigned the result of fit_ stats_array.predict.
+You cannot provide input grid, the DataFrame.
+You have to provide the feature array.
+Hopefully, just by displaying it here,
+you can see the predicted probabilities,
+they are the same because these two models are the same.
+We have just interacted or
+interfaced with the models differently.

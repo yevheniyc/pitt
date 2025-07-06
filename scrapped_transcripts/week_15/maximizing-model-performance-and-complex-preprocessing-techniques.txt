@@ -1,0 +1,117 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/IPJBV/maximizing-model-performance-and-complex-preprocessing-techniques
+
+English
+Now, I'm just going to demonstrate this
+by filtering to say the first 11 columns.
+If we created all pairwise products
+of the first 11 columns,
+this would be 66 features.
+If we use the first 13 columns,
+this would be 91 features.
+The first 15 columns would be 120 features.
+First 17 columns, 153 features.
+First 19, 190.
+The first 20, 210.
+Notice what I'm looking for here,
+how many features could I use and still have
+fewer features than rows,
+even though I'm creating all pairwise products.
+We can create all pairwise products
+if we have less than 19 features.
+Let's use PCA to generate
+the uncorrelated features and then
+derive the pair wise products
+from the principal components,
+so we are driving features from the PCs.
+Let's initialize the polynomial features, make pairs,
+degree 2, Interaction only true, include bias false.
+Define the work or the pipeline for
+the PC with interaction and lasso model.
+We'll continue to use lasso here.
+PC interact lasso workflow.
+Pipeline steps is a list.
+We have four steps,
+so therefore, I have four tuples.
+You see I'm making the tuples and then moving them.
+The first step will be name, standardize the inputs.
+Then execute PCA, then make the pairs.
+Lastly, fit the lasso model.
+We have standard scalar.
+We have PCA. We have make pairs.
+We have lasso to fit.
+Again, this workflow,
+it doesn't do anything yet,
+it's just specifying the steps,
+standardize, run PCA, create polynomial features,
+set up the logistic regression model.
+Let's use the same search grid from before.
+We can set up
+our PC interact lasso search as a grid search for
+the PC interact workflow using
+the PC lasso grid and our cross validation object,
+and now run the grid search.
+PC_interact_lasso_search_grid,
+PC_interact_lasso_search.fit_x-train_y-train. Now,
+we are fitting a model
+where we have created
+all pair wise products from the principal components.
+We are not using all of
+the original 60 inputs to make the pair wise products.
+We're using a certain number of
+principal components at a time with
+a certain C parameter
+to try and turn off the unimportant features.
+This does take a while because we no
+longer have just a really small number
+of variables at a time.
+We have potentially up to 160 180 or so features
+within the model.
+I'm going to pause the recording.
+You can pause as well if you're following along to let
+it run. Mine completed.
+Let's check the best params.
+When we originally used
+PCA with linear additive features,
+we needed 17 principal components.
+But now, by interacting
+or making the all pair wise products,
+we only need five principal components.
+The reason why we only need five,
+is we are able to produce
+a model that is better because we are
+multiplying all pairs of these five together
+while while keeping their main effects.
+We went from 79% for
+our PCA with lasso model
+or our elastic net which turned into ridge into
+a model that's 83.6% accurate on average.
+Again, we can always check lasso.cf,
+you can see none of these are turned off.
+There are more than five
+because we have all main effects,
+1, 2, 3, 4, 5,
+and then all pair wise products, PC1*PC2,
+PC1*PC3, PC1*PC4,
+PC1*PC5, so on and so forth.
+We improved the accuracy of
+a logistic regression model by
+executing rather complex pre-processing actions.
+This is still logistic regression,
+which most people would tell you,
+hey, this is a linear thing,
+but we have highly non-linear relationships,
+and we improve the performance
+compared to our simpler model from earlier.
+I know this has turned into a long video,
+but I really wanted to show it because it really brings
+together everything that we
+have done throughout this semester.
+It's a great wrap up for the semester because we
+needed to understand how to
+manipulate all the various data types,
+dictionaries, lists, tuples, data frames, arrays.
+We needed to be able to define objects.
+We needed to be able to manipulate objects,
+filter objects, call functions,
+This is really everything needed from
+the semester to make use of this in this application.

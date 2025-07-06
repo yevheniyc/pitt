@@ -1,0 +1,108 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/a7VeD/hyperparameter-tuning-with-gridsearchcv
+
+English
+Let's import the stratified KFold
+because this is a classification problem.
+From sklearn.model_selection import StratifiedKFold.
+Let's define our KFold object, StratifiedKFold(n_splits).
+We will continue to use five folds,
+Shuffle = True, random_state.
+Let's just use simple 101,
+and just to confirm it, there are five splits.
+We will search over a grid of candidate tuning parameters
+and the GridSearchCV function manages that search.
+From sklearn.model_selection import GridSearchCV.
+We need this function
+because we are not using Logistic Regression CV.
+In the previous recording.
+When we used Logistic Regression CV,
+we were just able to specify how many Cs and
+the values the L1 ratios to tune over.
+But logistic regression CV was
+specialized. This is all it could do.
+GridSearchCV, however, is very general,
+can actually be used for any model in scikit-learn.
+We will use it very often in
+Cf 2120 to tune any predictive model.
+Therefore, we need to define
+the grid of tuning parameters to use with GridSearchCV.
+This grid is defined within
+a dictionary using a very specific set of syntax.
+This syntax now is very specific,
+and you have to follow it
+identical or identically for it to work.
+I'm going to name this enet_grid.
+It is a dictionary, so I'm using curly braces.
+The key value pairs are
+items define the name and the values for the parameters.
+Since I have tuning parameters, I have two items.
+And now the naming convention,
+it begins with the name of the step.
+My step enet is named enet.
+Then double underscore or dunder,
+followed by the parameter name within that step.
+So the enet, logistic regression,
+I did not set C, the C parameter.
+So I'm saying I want the C dunder within the enet step.
+Likewise, within enet__ l1_ ratio,
+because some parameters have underscores,
+that's why we need the dunders,
+the double underscores separating
+the step name from the parameter name.
+And now in here,
+we can specify the values we will try out.
+Previously, when we were doing
+this with the built in methods,
+we were searching over -10
+to 10 in the natural log space.
+Let's do the same thing.
+Let's set up -10 to 10.
+I will just hear u17 unique values.
+But then because this is in the log space,
+I need to undo the natural log
+with the exponential function.
+I could do 101.
+This will take quite a while.
+For the moment, I just wanted to run quick.
+I'm going to only use 17.
+Then for l1 ratio.
+Although I could use many values,
+let's just try out three between zero and one.
+Zero is pure ridge,
+one is pure Lasso.
+We have now specified
+the possible candidate values
+for each parameter within the step.
+Initialize the grid search,
+enet_search = GridSearchCV,
+enet_workflow, the parameter_grid is enet_grid.
+The cross validation object is kf,
+and now run the grid search to tune the model.
+ent_search_results gets assigned enet_search.fit,
+and now we actually provide the training data.
+It is only here where we fit.
+Do we actually run the cross validation.
+There are 17 unique values of C. There
+are three values of l1 ratio, 17*3 is 51.
+I have 51 models therefore being trained
+and tested for each of the five folds.
+So there are 255 models being fit here.
+So this will take a while and
+GridSearchCV is slower than logistic regression CV.
+So I'm going to pause the recording.
+If you're following along, you should
+pause the recording as well until it
+finishes. Mine is done.
+The optimal or tuned parameters are provided within
+an attribute, enet_search_results.best_ params.
+The optimal l1 ratio is zero.
+Therefore, the elastic net has converted to ridge.
+The Elastic net is telling us it needs to use
+the ridge penalty because when
+it's trying to turn off
+the unimportant features via Lasso,
+the input correlation is screwing everything up.
+Again, the fact that Elastic net converted to ridge,
+Elastic net converted to ridge is
+the indicator that
+the input correlation is causing problems.

@@ -1,0 +1,90 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/0TVxZ/binary-classification-and-thresholding-in-logistic-regression
+
+English
+If the predicted probability
+is greater than a threshold, classify the event.
+The common and default threshold is 50%.
+So if we take the pred_probability
+and we compare it to 50%,
+every single row where
+the pred_probability is greater than 50%,
+we classify the event.
+You see false, true, false, false, true?
+Look at row 1.
+So a human would say second row.
+Pred_probability is 51%,
+that is greater than 50%,
+so we classify the event.
+However, rather than using false and true,
+I prefer to classify using the np.where function.
+This is an in-line if-else statement,
+the syntax is np.where, the conditional test,
+is the zeroth argument,
+the one argument is the value if true,
+and then the two argument is the value if false.
+So I like to use the
+np.where because instead of returning true or false,
+I get to explicitly control the value that gets returned.
+So np.where, my conditional test,
+df_copy pred_probability > 0.5.
+If that is true, return a one.
+If it's false, return a zero.
+Now, instead of having true false,
+I have zero, one.
+So look at row 0.
+False, the predicted probability is not
+greater than 50%, return zero.
+Likewise, in row 2,
+the predicted probability is
+not greater than 50%, so return zero.
+However, when the predicted probability
+is greater than 50%,
+this conditional statement is true, return one.
+So 0, 1,2, 3,
+4, you can see another one gets returned.
+Why would I want to use
+one and zero instead of true and false?
+Well, remember, the output is encoded as one or zero.
+So now I'm getting to return
+my classifications using the same labels as the data.
+I have a column pred_probability,
+let's assign the predicted classifications
+to a new column.
+Df_copy, I'm going to name this column pred_class.
+That gets the result of np.where
+df_copy pred_probability > 50%.
+If true, return one.
+If false, return zero.
+Now I have my classifications.
+I have converted the predicted probabilities
+into binary values of
+zero or one, df_copy pred_class value_counts.
+We can interact with the predicted class,
+just like we interacted with
+the observed classes, the observed output.
+Here, I'm using value_counts to count.
+Instead, we could use bar chart,
+we could do whatever we want with this variable.
+It has values of zero for
+the non event and one for the event.
+So in summary, when you
+are working with logistic regression models,
+they are actually predicting
+the probability of the event.
+That means you need to do something.
+You need to make a decision in order
+to classify non event and event.
+That decision is based on
+comparing the predicted probability to a threshold.
+If the probability is greater
+than the threshold, classify event.
+If the probability is less than a threshold,
+classify the non event,
+and the most common or default threshold is 50%.
+So if the predicted probability is
+greater than 50%, classify event.
+If the predicted probability is less than 50%,
+classify the non event.
+We now have predicted classes of zero or one.
+The next video we'll discuss how do we measure
+the performance of these classifications.

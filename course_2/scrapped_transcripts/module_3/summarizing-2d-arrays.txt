@@ -1,0 +1,54 @@
+Source: https://www.coursera.org/learn/the-art-of-data-visualization/lecture/qpWnB/summarizing-2d-arrays
+
+English
+Okay, lastly, summarizing.
+We can summarize 2D arrays, but again,
+we always have to be careful when we're working with NumPy.
+Let's first review 1D summaries.
+My 1D, remember, we can get the min,
+we can get the max, we can get the average,
+we can get the variance, but ddof = 1 to be unbiased.
+We can get the standard deviation.
+Again, ddof is 1 to be unbiased.
+But what happens if we summarize a 2d array?
+My 2d remember, we have four rows and three columns.
+If I want the min, this returns the minimum value in the entire array.
+If I want the maximum, it returns the maximum in the entire array.
+Likewise, the mean returns the average in the entire array.
+But part of using 2d arrays is we
+often want to summarize each column
+separately from the other columns.
+Meaning we do not want the overall
+summary across all columns returned.
+Instead of getting one number,
+I want to have a summary stat for every single column.
+There are three columns, so I should have three summaries.
+If I want the minimum per column,
+I have to specify summarize down the rows.
+Summarize down the rows, and again,
+I think this is a little confusing in the syntax.
+I like to think of it as I want the summary per column, but
+we have to tell it summarize down the 0 dimension down the rows.
+If you're ever not sure if you've done this correctly,
+always return back to the shape.
+If I have three columns,
+my summary should have three numbers.
+What this means is if I want the minimum per row,
+we have to apply the summary across the one axis.
+And again, if I have four rows,
+then I should have returned four summary stats.
+So always think carefully about which axis you're applying everything across.
+My 2d max axis 0 the maximum value per column,
+my 2d mean axis 0, the average per column,
+my_2d.std ddof = 1 axis 0
+the standard deviation per column.
+And again, if I wanted the standard deviation per row, ddof = 1, axis 1.
+Now I have four because I have four rows, okay?
+So that's everything for basic manipulations of 2D arrays,
+slicing, conditionally subset, sorting and summarizing.
+Again, please remember to be careful about side effects when you slice.
+And you always have to remember
+when you're summarizing which axis you want to use.
+Summarize per column, your applying it to the 0 axis down the rows.
+That's all for this video.
+I'll see you in the next one.

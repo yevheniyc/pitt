@@ -1,0 +1,75 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/LoOwW/analyzing-the-impact-of-threshold-adjustment-on-classification-metrics
+
+English
+But now to help this out, you don't have to program this,
+I'm going to copy it in from my notes, let's directly
+compare the confusion matrices between the two thresholds.
+Again, I'm copying this in, you don't have to program this right now.
+Oops, look at that, I had an error, that's okay,
+let me change that to this, there we go.
+DF copy, DF copy, DF Copy, there we go, all done.
+All right, so again, you can make this after the fact if you'd like.
+But the primary point here is I'm directly comparing
+the confusion matrices between the two thresholds we have tried.
+I want you to first focus on the horizontal rows.
+Remember these vertical positions, tell us the observed output.
+There are 48 events observed,
+there are 67 non events observed regardless of the threshold.
+So the margin for the Y categories doesn't change.
+But now look at these columns,
+which are based on the model predicted class.
+When the threshold was 50%,
+the model was classifying a total of 41 events.
+Well, by raising the threshold to 75%,
+the model is now classifying only 12 events.
+Fundamentally, the reason is, the predicted
+probability must now be much higher to classify the event.
+Like a predicted probability of 73% is not
+classified as the event when the threshold is 75%.
+We have therefore changed the classifications
+even though the underlying model is still the same.
+And we know the underlying model is the same,
+because I'm literally using the same predicted probability,
+that has not changed here, just our threshold value.
+If we check the accuracy between the observed output y and
+now the classifications from the higher threshold,
+the accuracy is different.
+It's not the same as what we had previously
+when we had a different threshold.
+Let's calculate the sensitivity,
+specificity and FPR for the higher threshold.
+So I'll name these tn higher,
+fp higher, fn higher, tp higher,
+the result of confusion matrix df
+copy y to numpy df copy cred class
+higherthreshould numpy revelle.
+The accuracy from the higher threshold,
+en higher plus tp higher divided by the sum of the four.
+Again, same number that we had up there,
+then we have the sensitivity from the higher threshold.
+Sensitivity is the true positive coming from the number
+of true positives divided by the total number of events observed,
+true positives plus false negatives.
+Raising the threshold decreases the sensitivity.
+When the event occurs, the model becomes less accurate because
+we are making it harder, if you will, to classify the event.
+What about the specificity, the number of true negatives
+divided by the number of non events the number of times the event
+does not occur, true negatives plus false positives.
+Raising the threshold increases the specificity.
+When the event does not occur, the model is now 97% accurate,
+but only when the event does not occur.
+If we look at the false positive rate,
+one minus the specificity,
+The model is never the false positive rate is 3%, let's just call that zero.
+The model is never wrong given
+the event is not occurring.
+So again, raising the threshold
+makes it harder to classify the event,
+meaning the false positive rate decreases.
+Because the model is basically it's not classifying the event,
+so it's never wrong when the event does not occur.
+So even though decreasing the false positive rate is a good thing,
+notice we reduced the sensitivity.
+The model is not as accurate given the event occurring.
+Okay, so we are trading off now what the model is better at.

@@ -1,0 +1,68 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/Kci0R/understanding-logistic-regression-the-sigmoid-curve
+
+English
+You see this curve?
+It doesn't look like a straight line, right?
+It's not a diagonal, even though our formula,
+if we go back, our formula looked like a straight line.
+But you have to remember,
+this formula is applied to the log odds ratio.
+The log odds is a straight line, but
+the transformation ensures the probability,
+is between 0 and 1.
+So we have to invert that straight line, and
+that creates something that looks like an S curve.
+The logistic function, or the inverse logit,
+is an S curve that squashes the unconstrained
+values of the log odds ratio to be between 0 and 1.
+Now, why does this matter?
+Why does this matter?
+What happens if we mistakenly fit
+the regular linear model?
+Remember fit_ols?
+It had coefficients.
+Fit_ols had standard errors.
+Fit_ols had p values.
+We could even visualize the coefficient summaries for our linear model.
+And according to this linear model, the input x is statistically significant.
+You will get no warnings because the model
+just knows the output is an integer, is a number.
+But let's predict with the incorrect linear model,
+df_viz['pred_from_ols'] =
+fit_ols.predict( input_grid ).
+And now, if we plot the line, the line chart df_viz,
+x = x, y = 'pred_from_ols',
+kind = 'line') plt.show, What do you see?
+This linear model is allowing predictions of the average output above 1 and below 0.
+It's a straight line, but it no longer respects the bounds on the probability.
+Just because you can fit a linear model, because of the data type of the output,
+and just because you don't get any warnings or
+errors when you fit that model, it does not mean it's appropriate.
+It does not mean it's the correct thing to be doing.
+So errors or not seeing errors is not a cause for you did something right.
+Now, one more way to see this,
+we could actually visually explore the logistic trends.
+The sns.lmplot function allows you to
+visualize the logistic regression fit.
+Sns.lmplot(data = df, x =x, y = y).
+If you use the default options,
+it is fitting a regular linear model.
+Do you see the confidence interval?
+It's allowed to be outside 0 to 1.
+But now, look what happens if you change the default behavior,
+if you set x = x, y = y, but logistic=true.
+When you set logistic to true,
+it takes a little longer, but now you get the S curve.
+The predicted probability does not stray outside the 0 to 1 interval.
+The logistic function is going to squash that probability.
+The confidence interval on the average output is also correctly applied.
+The uncertainty on the average does not go outside 0 to 1.
+So when you're visually exploring a binary classification problem,
+you cannot use lmplot with its default procedure.
+You must instead set logistic to true.
+And now, hopefully, you know what logistic represents, why we need to squash it.
+Because if we don't, our model will not respect those bounds, okay?
+So I hope you found this video useful to demonstrate why we need changes,
+and how to confirm that those changes are, in fact, working.
+It is not based on getting errors when you fit the ols function.
+You have to understand the context if your binary output is encoded 1 or 0.

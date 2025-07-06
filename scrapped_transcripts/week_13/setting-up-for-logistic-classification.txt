@@ -1,0 +1,83 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/ERA4O/setting-up-for-logistic-classification
+
+English
+>> Hello, everybody.
+As you can see, I have my Jupyter opened up.
+I'm in the folder for this week.
+Week twelve within the class.
+If you don't have Jupyter open, please pause the recording and do so.
+When you come back, I want you to launch a new Jupyter notebook.
+Start a new python three kernel.
+Great, once you've done that, let's change the name
+of this notebook to week 12 logistic classification.
+So last week we learned all about how to use stats models to fit
+a logistic regression model.
+We talked about how that model predicts the event probability,
+but we did not discuss how we actually classify.
+That's what this video is all about.
+So, week twelve logistic classification.
+Okay, once you've changed the name,
+let's put in the header information CMPINF 2100 Week 12,
+Making CLASSIFICATIONS with LOGISTIC REGRESSION.
+Let's go ahead and now import the modules.
+You need the big four that we've worked with throughout the semester.
+Import numpy as NP, import pandas as PD,
+import mapplotlib.pyplot as PLT,
+import seaborn as SNS, and just as with last week,
+you need to import the stats models formula API as SMF.
+We will fit and make predictions using the stats models formula interface.
+Once you've done that, the next thing is to read data.
+Now we will use the same data set from last week.
+We will use the same data set from last week.
+If I go back up to the file manager portion, see, I'm in the week 12,
+but if I click to go back into the CMPINF 2100 project directory and
+you can see all of the weeks, here's week 11.
+In week 11, there is the week 11
+intro to binary classification CSV file.
+You do not need to move this file into week twelve, but
+I want you to highlight the actions I took to get here to navigate here.
+I was in week twelve and I had to move backwards.
+Then I move forward to week 11, so
+you can see me doing that manually in the file navigator.
+Okay, let me move here back to week twelve.
+Now, the reason why I wanted to stress that is
+when we call a function like pd_read_csv,
+although throughout the semester we typically just type in the file path or
+the name of the file directly as the argument to the function.
+The argument is the path, it is not simply the file name.
+Therefore, we can provide more than just the file
+name when we need to move directories.
+So, as you can see, I don't have the week 11
+intro binary classification CSV file here in
+this current directory, but in this argument,
+the starting argument to read CSV if I first
+place two periods, so dot dot and then slash.
+That is the shortcut for move backwards,
+move back, or move up one directory.
+And now by doing that, the dropdown menu that appears is actually
+giving me a list of all of the directories one directory up.
+So let's again go back here, in the file management
+of Jupyter, do you see this little dot dot?
+This is exactly what I just typed in.
+I press dot dot to move back.
+Now I can select or type the week eleven directory,
+which is analogous to me clicking on week eleven.
+And now on the file path I can type week 11
+intro binaryclassification.csv.
+I am now accessing a file in a different directory.
+I can do that because all I needed to do was move back.
+I'm still relative to where I'm currently located,
+which is in the week 12 directory, but I moved back and
+then forward to a different directory.
+This allows you to have more flexibility than just constantly
+copying a file into different working directories in your computer.
+Okay, so this is a really handy shortcut to say move back one level.
+Now access a directory from that different level.
+Let's assign the result to DF.
+This is the exact same data set that we worked with last week that
+had a single continuous input X and a single binary output named Y.
+Even though Y is an integer, it has two unique values.
+So I'm not going to explore the variables in this data set because after all,
+we did that last week when we introduced fitting
+logistic regression with stats models.
+So we're not going to visually explore.

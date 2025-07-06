@@ -1,0 +1,94 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/jH5V5/reinforcing-linear-model-assumptions-with-sine-function-simulation
+
+English
+Again, let's practice the zeroth time,
+where we have df_sin.x, we have b0_sin,
+b1_sin, and the sigma_sin.
+Just do .info, we created a data frame with 25 rows and
+4 columns, x, trend, y, rep_id.
+Replicate the process, let's do it 9 times.
+We'll use the same approach as in the previous video,
+where we initialize an empty list, for ix in range(9).
+Append to that list the result
+of generate_lm, ix,
+df_sin.x, b0_sin,
+b1_sin, sigma_sin.
+Then concatenate everything together,
+pd.concat(study_9_list, ignore_index = True.
+We have a whole lot of rows because we've replicated that process nine times.
+Visualize the replications via facets.
+sns.relplot(data =
+study_9_df, x = x,
+y = y, kind = scatter,
+col = rep_id, and we'll
+show three facets per rep.
+We have replicated that noisy sine wave nine times.
+We can summarize by calculating
+the average output at each input location.
+Here, let's use catplot(data = study_9_df,
+x = x, y = y, kind = point) plt.show.
+We can spread it out, make it a little wider, make it a little easier to see.
+But again, we have that sine wave.
+I've connected the averages so
+you can easily see the sine wave, the up down cyclic behavior.
+Each x-axis tick is a unique value of the input x.
+Because I had sigma very low here,
+we can't even really see the variability or the uncertainty on the average.
+Replicate the process 500 times.
+Follow the same approach, study_500_list is empty,
+for ix in range(500).
+study_500_list.append,
+generate_lm_sin(ix, df_sin.x,
+b0_sin, b1_sin, sigma_sin.
+Concatenate everything together,
+pd.concat( study_500_list, ignore_index = True.
+And now, let's visualize
+the conditional
+distribution of y given x.
+Remember the assumption of the linear model.
+At each value of the input, there's a bell curve,
+there's a normal distribution.
+Around that average, the output is normally distributed with
+constant variance, but the mean is changing as the input changes.
+So let's now see that here.
+study_500_df, x = x,
+y = y, kind = violin.
+We'll make it wide so it's easy to see.
+And we'll use the same smoothing technique mentioned in the previous video.
+So it's obvious that these are Gaussians.
+The width of the Gaussians is basically constant because
+linear models assume constant variance around the average.
+Each one of the violins is showing you a Gaussian distribution.
+What is changing is where the Gaussian is located.
+That location or average or trend depends on your input x.
+It's just that now the relationship between the average and
+the input is nonlinear.
+But again, all of the assumptions discussed
+in the previous video are still valid and apply.
+So now why does this matter?
+Far too often, people will think a linear model or
+linear regression only applies if they see a linear trend.
+But that is not true, you do not need to
+jump straight to neural networks,
+deep learners, or gradient boosted trees.
+Very often, you just need to
+derive features from your inputs
+that are nonlinear functions.
+You can then fit linear models
+given those new features.
+Essentially, it's a very powerful technique that at first
+glance might seem very simple, because in truth, it is.
+You are using new variables created from your input to capture
+potentially very nonlinear output to input relationships.
+You don't need to necessarily worry about GPUs and working on the cloud and
+all those other things that you hear in the commercials and
+people want to publish papers on.
+In my experience, more often than not,
+you can use very simple models such as the linear regression
+model by just creating features from your inputs.
+We will discuss throughout the remainder of the semester why doing this is
+also beneficial from an interpretability and understanding later on.
+The main point of this video wasn't to show you how to create such models,
+it was to reinforce that the assumptions of the linear model
+are still valid even if you have nonlinear output to input relationships.
+It all depends on if you have created the necessary features.

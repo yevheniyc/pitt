@@ -1,0 +1,87 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/QnGIz/exploring-cross-validation-concepts
+
+English
+Hello, everyone.
+As you can see, I already have Jupyter opened up.
+I'm in this course's main directory, the project directory as I call it.
+We are in the 13th week of the semester, so I'm going to go ahead and
+navigate to week 13 and I'm going to launch a new Jupyter notebook.
+If you don't have Jupyter started, please pause the recording and do so.
+And once you're back, let's launch the new Python 3 kernel.
+Let's change the name of this notebook to week_13_cv_intro.
+This recording will introduce you to the concepts of cross validation.
+That's why it's being called CV,
+so you'll see those two initials quite often this week.
+Okay, let's put in the header information,
+CMPINF 2100 Week 13 Introduction to Cross Validation.
+Let's go ahead and import modules.
+You need the big four.
+There's some more that we will import, but for right now,
+I want you to import NumPy as NP, import Pandas as PD,
+import Matplotlib.Pyplot as PLT, and import Seaborne as SNS.
+We will use the data, the binary classification example,
+the data from Week 12 for this example.
+I'm going to read it in and assign it to the DF object, pd.read_csv.
+But as you saw, I don't have any CSV file in this directory.
+That's okay, I just have to move backwards to the Week 12 directory, and
+inside there is the week_12_binary_classification.csv file.
+So just as last week,
+I'm navigating backwards in the path to find the file that I need.
+This data set has a total of six columns,
+five of which are inputs.
+They all start with x, and the binary outcome is named Y.
+The X five variable is an object, just as discussed last week.
+So four of the inputs are continuous,
+one of the inputs is categorical, and the outcome is binary.
+Now, we learned last week, we learned
+how to fit logistic regression models and
+how to calculate their performance on the training set.
+So I'm not going to go and fit all of the models that we fit last week here,
+but I will illustrate the idea of fitting on the training
+set using the sns.lmplot function to visualize the model.
+And I will visualize the model with respect to x1.
+This is a logistic regression fit because the output is binary,
+so you must set logistic equal to true.
+It now understands that the integer values of one and
+zero actually correspond to y equals one for
+the event of interest, and y equals zero for
+the non event behind the scenes.
+It's now fitting a logistic regression model rather than a linear model.
+And obviously, we could visualize the relationship
+with respect to a different input.
+We just change it.
+Now, this does take a little while compared to
+the linear model, and sometimes it gets annoying for
+how long the visualization takes.
+So to speed it up, you can remove the confidence interval.
+I personally don't like to do this, but I know that when you're
+creating these figures, especially with the logistic regression trend,
+it can be a little annoying for how long they take.
+So if you turn off the confidence interval, ci = none, you just saw how
+much faster it was to produce this figure compared to the previous one.
+We can also color by a categorical input to
+examine if the relationship between the event
+probability and the continuous input depends
+on the categories or depends on groups.
+sns.lmplot(data = df, x = x2, x2 again,
+y = y, but now q is x5, logistic = true.
+And again, let's turn off the confidence interval just to speed it up,
+because this one actually will take a while.
+And obviously, we can change the input again.
+And so let's go back to x1, since we were looking at that one originally.
+There we go.
+So we're examining here how the probability of
+the event with respect to x1 changes when x five is b.
+That has a shallower slope compared to how the probability
+event changes with respect to x1 when x5 is c.
+The interaction or impact of the probability event with respect
+to x2 seems to be a little less across the categories of x5.
+So the impact of x five on the relationship with respect to x2 doesn't
+seem to be as strong as what we saw here with x1.
+Now, each of these figures,
+they are behind the scenes fitting a logistic regression model.
+We know how to fit the logistic regression models and
+examine if the features are statistically significant, okay?
+We know how to do that using the coefficient plots,
+using the coefficient summaries or the p values.
+But what I'm really interested in today is how we ended last week's discussion.

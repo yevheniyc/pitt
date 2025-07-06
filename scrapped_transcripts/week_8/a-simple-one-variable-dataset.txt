@@ -1,0 +1,106 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/vIfyg/a-simple-one-variable-dataset
+
+English
+Hello, everyone. In this video,
+we're going to actually use
+code to execute KMeans clustering.
+As you can see I already have Jupyter opened up.
+We will use the Cluster 1 variable example CSV file,
+so I hope you have downloaded it to
+the directory for this week in the class.
+If you don't have Jupyter opened please
+pause the recording and do so and once you come back,
+I want you to launch a new Jupyter notebook.
+Let's go ahead and rename this notebook to
+Week 08 kmeans 1 for one variable.
+I'll put in the header information, CMPINF-2100,
+Week 08, KMeans with 1 variable.
+You will almost never see
+KMeans actually applied with one variable,
+this is to just demonstrate what's going on,
+it's showing you how to execute
+the task demonstrated in
+the presentation all the slides available on Canvas.
+Let's import the modules.
+You need the big four,
+import NumPy as np,
+import Pandas as pd,
+import matplotlib.pyplot as plt,
+and import seaborne as sns.
+Next, you need to read in the data,
+I will sign the data to the df object, pd read CSV.
+Cluster 1 variable example, CSV.
+There are two columns with
+15 rows and because it's so small,
+we can just show the whole dataset.
+There's a variable X,
+this is the numeric value.
+True group is the actual grouping
+that generated each of the observations.
+The way this example is created
+is that there are three Gaussians,
+one centered at -2,
+another centered at 0,
+and a third centered at +2.
+Each of these three Gaussians
+generated five observations and
+our goal is to identify the three groups in the dataset.
+Because we know the original groupings,
+we will be able to compare
+the cluster analysis results to the known answers,
+this will help us make sure
+things are working as we anticipate.
+Now, let's visualize the observations
+using a specialized scatter plot.
+This scatter plot is discussed in
+detail in CMPINF 2130.
+For now, we will just use it but it's
+called the strip plot.
+It's associated with categorical variables.
+So sns.catplot = df,
+x = the x column,
+and now I will color by the true group,
+kind = strip and then you
+must please set jitter = False,
+J-I-T-T-E-R. Again, we discussed what this is in
+more detail in the visualization class
+but for now I just want to use it.
+Remember I said there were three groupings,
+a group centered at -2,
+a group centered at 0 and a group centered at +2.
+We can see the three groupings here but let's
+pretend we do not know the groupings.
+Can we cluster the observations just based on
+their values or the sns.catplot data = df,
+x = x,
+kind = strip, jitter = False.
+We are not coloring by the true groupings,
+you are just provided
+these observations and you want to be able
+to separate them into three clusters.
+That's what KMeans is trying to do.
+But before we can run KMeans,
+we need to organize the data appropriate.
+The function we will use once
+NumPy arrays and not Panda's dataframes.
+We need to convert our data frame into a 2D array,
+the data frame needs to be a 2D array.
+Let's do that, df,
+I'm going to select the X column,
+but now I will convert it to NumPy.
+However, two NumPy makes a 1D array.
+When I convert to NumPy,
+I will then reshape to give me
+all rows and definitely one column.
+You might be asking why are we specifying one column?
+Well, let's assign the result to a new object X,
+df.x to NumPy reshape
+as many rows as needed for one column.
+The X object has two dimensions,
+its shape is 15 rows and one column.
+The number of columns are the number
+of variables we will use when clustering.
+The number of rows are the number of observations or
+values that we will use to separate the data.
+We need to have a column,
+even if we have a single data point.

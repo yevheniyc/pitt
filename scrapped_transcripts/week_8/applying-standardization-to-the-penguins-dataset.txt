@@ -1,0 +1,99 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/QJqHu/applying-standardization-to-the-penguins-dataset
+
+English
+Preprocessing can work with Pandas DataFrames.
+We can create the pens_standardized columns
+by taking the pen_standardized method.
+Sorry, actually, let me change this up.
+Pen_standardized.
+Let's take the initialized object,
+reassign it to the fit applied to pens_features.
+So fit using the dataframe
+consisting of just the numeric columns,
+and now transform the numeric columns.
+Assign the result to Xpens,
+where we take pens_standardize,
+we transform using pens_features.
+The result, Xpens is a numpy array.
+The result has as many rows as the dataset and
+as many columns as our desired numeric features.
+You can accomplish initialize,
+fit, and transform in a single line of code.
+You initialize StandardScaler,
+you fit and transform with pens_features.
+The result is a numpy 2D array,
+as many rows as the dataset,
+as many columns as the number of features you're using,
+number of columns you provided.
+If initializing, fitting,
+and then transforming seems too slow,
+you can do it all in one line.
+But let's convert the return numpy array
+into a dataframe to support visualizing with Seaborn.
+To do that,
+I'll take pd.DataFrame, Xpens,
+where the names of the columns
+come from the pens_features.columns.
+But this dataframe is not in the original variable scale.
+Because as a reminder,
+body_mass_g dominates the magnitude
+and scale in the raw data.
+Let's use the wide format plotting options again.
+Again, body_mass_g dominates.
+But does body_mass_g still
+dominate based on
+the standardized or preprocessed variables.
+Sns.catplot data equals convert
+Xpens to a dataframe
+just to support the visualization or
+kind box aspect equals 2,
+to make it wider.
+Body_mass_g no longer dominates
+because we are now plotting the summary statistics
+where we've removed the magnitude and the scale by
+subtracting out the average
+and dividing by the standard deviation.
+We now have all four variables
+of roughly the same magnitude.
+The scale has been removed.
+You can examine things with a box plot
+or by copying paste the change kind to violin.
+Again, standardizing does not
+convert the distribution to a Gaussian.
+Body_mass_g has some skew,
+there's asymmetry here,
+and that asymmetry is preserved.
+Also, standardizing does not
+modify the relationships between the columns.
+Meaning, if I create a pairs plot
+using the standardized variables,
+that pairs plot will look identical to the original one,
+but all of the variables are
+nice numbers between basically -3 and +3,
+we don't have any disparity,
+meaning the correlation structure is unchanged.
+If I make a correlation plot using sns.heatmap
+data equals penguins correlation
+apply to numeric only columns,
+vmin -1, vmax 1, center = 0.
+Use a diverging color palette, let's annotate,
+here we'll set the fontsize 20, ax = ax.
+This is the correlation structure
+of the original dataframe.
+Let me copy this just to save a little time.
+But now instead of applying it to the original raw data,
+I'm going to apply it to the standardized variables.
+You get the exact same numbers because
+the correlation structure is
+not changed by standardization.
+The distributional shapes are
+not changed by standardization.
+All that's changed is we've
+removed the magnitude in the scale.
+This is really critical because now
+no single date variable will dominate the distance.
+I hope you'd like seeing this.
+The main point was to introduce
+the standard scaler, how to use it.
+The next video will now show how to use
+the standardized results to cluster penguins.

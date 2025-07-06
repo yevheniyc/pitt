@@ -1,0 +1,132 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/dUECF/kmeans-clustering-the-elbow-method
+
+English
+Instead to find the optimal number of clusters,
+we want to find the total within sum of
+squares that gives interesting behavior.
+Again, I'm putting this in quotes.
+We must calculate the total within sum of
+squares for many possible number of clusters.
+The KMeans() objects call the total within sum of
+squares or refer to the total
+within sum of squares as the.inertia_ attribute.
+It's a very strange name inertia_.
+This is how we can pull out the metric that
+represents how much total variation
+there is across the clusters.
+We want to minimize the inertia,
+but only to an interesting level.
+Let's see how to do this and
+we'll talk about the results.
+I'm going to initialize an empty list.
+I'm going to specify the number
+of clusters using a range generator from 1
+to the number of rows +1 because this is exclusive.
+This will give me the number of rows.
+For k in the sequence K,
+we need to initialize the KMeans where
+n clusters is not three or a or 15.
+It's now this iterating
+variable value from within this sequence,
+but we also need to set
+the initial SID or the random SID.
+We also need to set the number of initial guesses.
+We need to set the max iterations per guess.
+We then need to fit on the data set,
+and then we can extract
+out the total within sum of squares and
+append it to our list, using the inertia_attribute.
+Notice, we're really using
+everything up to this point in the semester,
+we need to initialize objects,
+we need to define sequences,
+we needed to iterate,
+we needed to call functions with arguments,
+we needed to apply methods with arguments,
+we needed to use attributes
+and append to an existing object.
+Now, as a Windows user, when I run this,
+we now get the warning every single time this is run.
+This isn't how it used to work.
+It used to only show the warning one time,
+but now they show it constantly
+because Python is so
+concerned about how many threads and running in parallel.
+It's honestly a little annoying,
+but that you're going to get off.
+If you're a Windows user,
+you're going to get this absurd amount of warnings.
+That's just the way it is. Again, we can turn it off,
+but I honestly don't think it's worth the hassle,
+and I don't like to suppress warnings.
+The result now totes within is a list.
+Each value is the total within sum of
+squares for a given number of clusters.
+Let's visualize the results using a line chart.
+This is a simple graphic that I
+typically make in Matplotlib rather than Seaborn.
+The style of the line chart is
+the same style that we used at
+the beginning of the semester
+when we plotted the standard error
+on the mean versus the sample size.
+You've actually seen how to create this figure before,
+fig, ax= plt.subplots().
+Now use the object oriented approach,
+ax.plot(k,tot_within, "b" ).
+I want a blue line that shows
+the markers connecting the dots.
+ax.set_xlable(" number of clusters"),
+ax.set_ylable(" total within sum of squares") plt.show().
+The total within sum of squares it always decreases as
+we add more clusters because
+the number of data points per cluster will decrease.
+If you have as many clusters as rows,
+the total within sum of squares is zero because you have
+zero variation using the biased estimator.
+You have zero variation per cluster,
+but we know that's completely meaningless.
+You don't know the actual variation.
+You have one data point per cluster,
+so this is not interesting.
+If we have one and only one cluster,
+this is essentially you
+could think of it as the variance in the whole dataset.
+It's scaled a little differently,
+but it's still basically the variance.
+Again, one cluster, n clusters,
+neither of these are interesting.
+We want something in the middle.
+But what we're looking for
+here is known as the knee bend,
+the elbow bend or the kink in
+the graph because as we add more and more clusters,
+we will keep reducing the total
+within sum of squares and so we
+want to reach a point of diminishing
+returns where after some point,
+continuing to add more clusters
+doesn't really help at all.
+You've essentially found all
+the useful, meaningful information.
+This is very subjective,
+but what you're looking for is some bend and that
+bend happens to be at three clusters in this case.
+Therefore, according to the knee bend plot,
+the optimal number of clusters
+is equal to the number of known groupings.
+We don't want two,
+we don't want 15,
+we get the same basic amount of information using 4,
+5, 6, 7, 8 clusters as
+if we use a more meaningful three.
+If you don't like that because it seems so
+subjective that's what cluster analysis is.
+There's no real ground truth.
+There's no target we're really shooting for.
+We're simply trying to find
+something that appears interesting.
+I know this was a long video,
+but I hope you liked it.
+I hope it complements
+the qualitative overview as well as the presentation.

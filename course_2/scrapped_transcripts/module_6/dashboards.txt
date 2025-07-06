@@ -1,0 +1,142 @@
+Source: https://www.coursera.org/learn/the-art-of-data-visualization/lecture/mdh55/dashboards
+
+English (auto)
+In this lesson, we are going to be looking at dashboards in
+Tableau and learn about what dashboards are,
+and how do we create dashboards,
+and what are the things that we can do in dashboards.
+What is a dashboard?
+It's basically a feature in Tableau that allow you to
+combine different visualization and create
+a cohesive interactive presentation of
+the data visualization that tells a story about the data,
+and allows the user to explore that story
+through the interaction with the data.
+How do we create dashboards?
+I'm going to show you actually through
+the demo of how you can do that in Tableau.
+The first step is that you need to open
+the dashboard workspace and then
+start adding visualization to the dashboard.
+How do we do that?
+Here is how we do that.
+Here we have the visualizations.
+This is one of the visualization that we created,
+which is basically showing the average tip on different days.
+Then the other visualization that we created was
+the visualization that shows the size
+of the different tip by the total bill.
+You can see those visualization here in the bottom.
+Now to create a dashboard,
+you click here on dashboard and say new dashboard.
+That creates now your space for dashboard.
+What you can do is that you can actually add
+this visualization to your dashboard.
+By default, Tableau aligns these and put them side-by-side.
+You can also change that into a floating option and
+start moving the visualization around and
+order them in any way that you want.
+You can change the size of this basically screen that you have here.
+You see the size here and change the size depending on
+what device the user might be using the visualization.
+That's how we create dashboard.
+Now the next step,
+which is the important and interesting part of creating dashboard,
+is that you can actually add interactivity to your dashboard.
+These interactivity can be in two main forms.
+One is that you can add filters.
+This is similar to when we added filters,
+we want to into our visualizations,
+but here you allow the user to actually interact with these filters.
+Then the next ones are adding action.
+To add filters, I'm going to now go back to
+the demo to show you how you can do that.
+Let's see that we want here in
+this visualization to have an option to add
+that filtering of what people
+see in the visualization based on gender.
+What you can do is that you can click on the visualization,
+and then you basically see this little arrow,
+click on that arrow,
+and what you see is then this option of filter,
+and you can decide what variable you want to add here to filter.
+Let's say that we want to add the sex as the variable,
+so now this appears here.
+When you publish this dashboard,
+people can actually select these different values
+and see the change in the visualization.
+I can now unselect male,
+which means that now what is shown here is the tip by female,
+or I can do the reverse,
+now look at male,
+and so basically you see the difference,
+and the trend line here also
+helps to see that difference even more visibly.
+That's what the interactivity through the filters support.
+The next thing that you can do is that you can also add actions.
+Actions allow users to interact with
+the dashboard by hovering, clicking,
+or selecting elements that may be from
+one visualization and see that in other visualizations.
+To create actions, I'm going to go back again
+to the demo to show you how to do that.
+The way that we can do that is that we can actually click here on
+the dashboard and you see the options of action.
+We click on action and we can add a new action,
+and the actions could be adding filtering,
+highlighting, allowing that maybe that action would go to
+a URL or additional sources or different actually datasets.
+I'm going to select this highlight,
+and what you see here now for the highlighting action,
+first that you can see what triggers the action.
+It could be when they click and select on it,
+or it would provide a menu or by hovering.
+Let's say that we allow the action to happen by true select.
+Then we can say, what is our source?
+That means that they can actually select from
+the source visualization and see that action into the target.
+What we want maybe to say that we want to actually see selecting
+different days and see that distribution of the tips for that day.
+We select the tip by day as being our source sheet,
+and then we want the change to happen maybe in
+both of our visualization, so we keep that.
+Then we can say, what is the selected field that we want to work with,
+and we select the date, the day.
+We say, okay, at this.
+Now basically what happens is that when you
+select a day from this source visualization,
+you can see the impact actually in both of them.
+You can see now on different points that are basically on the Sunday.
+I select Saturday, then you see Saturday.
+What's nice is that you can actually see how that changes even our trend line.
+You basically see how that change.
+This is the overall,
+how different days are pretty different.
+Like on Saturday, maybe there seems to be
+a higher relationship between the tips and bill.
+That's the next option for adding the interactivity into your dashboard.
+Once you have then created your dashboard,
+you can actually publish the dashboard and basically share that.
+That's similar to how we published before.
+You just click on the Publish option,
+and it basically shows you that this is published.
+Now if you go to your Tableau Public,
+you can see here,
+so I'm going to go to that webpage.
+If I click on my profile,
+I can actually see the different dashboards or different work that I've published.
+I can actually click on that.
+You can see now this basically dashboard.
+You can see how you have the interactivity that you've added.
+I can select all of the gender.
+I can basically then do these interactions that we have added.
+You can see that you can actually download this visualization now.
+You can download it as a PDF, as a PowerPoint.
+You can actually basically share this link to anyone else,
+and they can actually use that to interact with it.
+When you share that,
+they will have similar options of they can
+download or they can actually edit.
+If you click on Edit,
+then it actually opens it in the same environment that we were working before,
+and you can continue changing things and editing your visualization.

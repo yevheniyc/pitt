@@ -1,0 +1,70 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/pPOAL/introducing-group-aggregation
+
+English
+Hello everyone.
+In this video, we will continue exploring data with Pandas,
+learning about how to group by and aggregate or split apply combine.
+This is a very important and fundamental exploratory data analysis set of skills.
+So this is an important recording.
+As you can see, our already have Jupyter opened into the directory for this week.
+If you don't have that, please pause the video and launch Jupyter and
+then come back.
+And once you're back, let's create a new Jupyter notebook.
+Let's go ahead and set the title, week_05, I'll name this one group by aggregate.
+Then in the header information,
+##CMPINF2100 Week 05,
+### SPLIT-APPLY-COMBINE or
+GROUPBY and AGGREAGATE (summarize).
+We have learned how to summarize data in Pandas.
+But we have summarized INDIVIDUAL columns,
+ignoring all other columns.
+Let's now explore how summary
+stats of one column change or
+vary across the categories of another column.
+Essentially, we are going to be asking,
+does the average or is the average different for a different group?
+That's really what we're asking.
+Let's go ahead and import the modules that we have worked with all week,
+import numpy as.np, import pandas as.pd.
+As with the previous recording,
+we will begin with our simple example data set,
+continue working with our JOINED data set,
+df = pd.read_csv( 'joined_ data.csv').
+Okay.
+As a quick review, we know how to summarize individual columns.
+For example, we know how to find out the number
+of unique values per column, E has 4.
+We know how to check the data type,
+E is a categorical,
+we know how to count the number of rows
+associated with each unique value.
+We also know how to calculate summary stats for
+numeric columns, like B,
+we can calculate its mean, or C.
+But what is the AVERAGE of 'B' for
+each unique value of 'E'?
+How does B on average change across the categories of E?
+We cannot answer this question by simply
+applying the same summary methods.
+We need to do something else to support our exploration, and
+that something else is we need to split, apply, and then combine.
+I'm using those three terms very specifically,
+because split means we DIVIDE or
+BREAK the data into distinct and separate groups.
+We must partition the data set into the unique
+categories of a **GROUPING VARIABLE**.
+That means we need to know the unique
+values of the grouping variable.
+And for this example, I'm going to mostly focus on the E column.
+We can get the unique with the unique method.
+Here are all of the unique values, and the unique will also returns missing.
+Split, as the name states,
+we must split 'df' into smaller data sets.
+Each data set will have 1 and only 1 value of the grouping variable.
+So let's start with aa, the first category in alphabetical order.
+I'm going to name my new data set df_E_ aa,
+use the location attribute where df_E is identically equal to aa,
+I need all columns, but I will force the deep copy.
+Our new data set only has three rows because
+aa occurred three times, and if we check,
+right, E now has 1 and only 1 value.

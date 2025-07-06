@@ -1,0 +1,54 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/4b8PA/loading-data-from-csv-files
+
+English
+Next, let's read from CSV.
+We downloaded three different CSV files.
+Now, CSC stands for comma delineated, comma-separated vector,
+but we call them comma-separated files.
+CSV files have the extension .csv.
+Unlike Excel workbooks, they contain
+a single spreadsheet rather than multiple
+spreadsheets, so they're easier.
+We go ahead and call the function pd.read_csv().
+It's set up in a very similar way where we have to give the file name.
+Here, just like read Excel,
+by default it assumes the top row is the header row.
+By default it assumes there's no column that corresponds to the index argument.
+And pd.read_csv() has nearly all
+the same arguments as pd.read_excel().
+So if we want to change.
+The index column, we can, oops.
+Oops, I read in the wrong file.
+Example a, there we go.
+So we can do everything that we did before, but
+a few other important arguments that you may need.
+We can specify the MAX NUMBER of rows to read.
+So instead of reading the entire file,
+we can read in a specified number of rows
+such as just the first three rows.
+And please note this is the first three rows after the header row.
+We can also skip rows.
+Pd.read_csv( 'Example_A.csv', skiprows=2).
+Now when you skip rows, something that's very important by default,
+again it will assume the top row is the header row.
+But now by skipping rows we no longer
+actually have the variable names.
+So when you skip rows,
+be very careful with the header.
+To say that the header is none when you skip rows.
+Oftentimes though you are skipping rows because for whatever reason,
+the first few rows in the file metadata is written there,
+like the date it was collected or who collected the data.
+So you have to skip rows in order to get to the actual data and
+the actual header is a few rows down.
+Okay, let's just now read in the 3 csv files and
+assign them to different objects.
+So I'm going to name these objects dfA,
+dfB, and dfC because I have example A.
+Then example B and
+lastly example.
+C.
+These are the exact same data sets as in the Excel file or the Excel workbook.
+I just separated them out into three different CSV files.
+So something you may have to commonly do in an application is you have multiple
+files and you just have to read in those different files.

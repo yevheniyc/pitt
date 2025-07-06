@@ -1,0 +1,102 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/8Cphf/running-kmeans-the-predict-method-and-visualization-challenges
+
+English
+Now, I think this is
+an unfortunate name because PREDICT, in my opinion,
+is associated with supervised learning
+or predictive analytics,
+and KMeans is an unsupervised learning algorithm.
+But that's just what they name it.
+They name this method.
+To predict, we call
+the PREDICT method on
+the fitted object and we give it the data.
+It returns a NumPy array.
+If you look closely,
+there are three unique values.
+The three values are the labels
+or categories for the assigned cluster.
+Again, to review,
+INITIALIZE, FIT and PREDICT.
+If you only care about
+the cluster assignments or cluster labels,
+fitting and predicting can be
+combined into a single action.
+Let's see how to do that.
+Let's re initialize.
+Let's create a new object km3b, KMeans.
+I'm still using three clusters.
+I have to set the random seed.
+I need to specify how many initial guesses,
+and I need to set the max number of iterations.
+If I only care about the returned cluster assignments,
+I don't need to fit.
+I can fit then predict.
+Fit_predict. This now combines
+fitting and predicting into one line of code.
+You can see the returned result is
+the same as above, since it's so small.
+Lastly, you can accomplish all three steps or
+all three actions in one line of code if you want to.
+We can initialize all of the assumptions,
+number of clusters, the random seed,
+the number of random restarts,
+and the max number of iterations per restart,
+and then fit and predict all in one line of code.
+Depending on the circumstance,
+I will use any one of these three approaches, literally,
+initializing, fitting and predicting or INITIALIZE,
+FIT and PREDICT, or do all three in one line.
+Let's use the INITIALIZE then FIT and PREDICT
+approach and study the cluster labels.
+To do that, let's create
+a copy of the original DataFrame.
+I really like to do this.
+That way, I'm not impacting my original dataset at all.
+I will name it df_copy,
+which is a hard copy of DF.
+Right now, there's no difference between them.
+But let's create a new column named k3,
+which stores the results of the KMeans cluster labels.
+Df_copy, name this column k3.
+When I assign the result,
+I like to use a Panda Series
+where I take the initialized object
+fit and predict on the dataset.
+But I'd like to wrap
+this NumPy array in a Pandas Series so I can force
+the index attribute to literally be the same
+as the DataFrame that we are assigning it to.
+Is this complete set of steps truly necessary?
+No. But throughout the years,
+I have found this has been the safest way to
+make sure there isn't some strange behavior of going
+back and forth between
+the returned NumPy result and
+the ultimate Pandas DataFrame that I'm storing things in.
+Now, you can see k3,
+even though I'm calling these cluster labels
+or assignments or groups,
+you see an integer displayed.
+If we check the data type,
+it is in fact an integer.
+Now, even though it's an integer,
+we can check the number of unique values.
+Again, we see three.
+That means we can easily apply value counts.
+If we want to compare to the true groupings,
+there are five observations per true group.
+We don't get that from our KMeans result.
+But now, if I want to color by
+the KMeans labels in my strip plot,
+SNS catplot date equals df_copy x equals x,
+hue equals k3,
+kind equals strip, jitter equals false.
+Unfortunately,
+because scikit-learn returns a NumPy array,
+and all of the NumPy array values are integers,
+Seaborn will treat it as a numeric variable when there
+are more than two categories.
+Notice, we do not get
+the discrete or categorical color palette
+because we have a numeric column.

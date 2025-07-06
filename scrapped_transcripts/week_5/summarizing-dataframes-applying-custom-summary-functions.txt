@@ -1,0 +1,66 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/YsKV3/summarizing-dataframes-applying-custom-summary-functions
+
+English
+All of the previous examples we're using NumPy methods,
+but sometimes we need to apply custom summary functions.
+We can define our own functions
+and apply them to the DataFrame.
+To demonstrate, let's define our own average.
+I'm going to use this to
+highlight Year 1 because I want to
+make sure we can test to make sure what we
+program gives us the answers we expect and want to see,
+and also to highlight how
+we are programming with pandas compared to where we were,
+where we just had the base lists.
+I'm going to define a function,
+my underscore average applied to X.
+Let's put it in a dot string.
+Assume X is a pandas series.
+I want to return now
+the sum method applied to x divided by x.count.
+I'm using x.count that way if there are
+missing values we will
+divide by the number of non missings rather
+than the total number of elements.
+Let's just have the correct answers out so we can see.
+If we apply my average to the F column,
+or if we apply my average to the C column,
+we get the correct answer.
+My average df.B, my average df.G.
+It's programmed correctly, but to
+apply a custom function to the entire DataFrame,
+we need to use the.apply method.
+A method is used to apply the function to the columns.
+Df.apply my average. But when you run this,
+you're going to get an error.
+The reason is because the function I
+defined is simply reading in a pandas series,
+applying the sum divided by the result of count.
+Well, if we have a categorical or string data type,
+we can't simply sum those numbers.
+Really, the dot string should
+be changed to assume X is a pandas series
+and assume X is a numeric data type.
+Apply applies the function to all columns.
+We instead should only apply
+my average to numeric columns.
+A simple way to do that is to select
+all numbers in the DataFrame.
+I'm using that term very specifically because
+pandas has a helper
+method.select_dtypes that allows you
+to easily select all columns of a particular data type.
+Df.select_dtypes, I want to select everything that's
+a number and now apply my average.
+We don't get an error at all.
+We don't get a warning
+because the my average function has
+been applied correctly to just these four columns.
+Which yes, this may not seem all that
+interesting because we can already
+do this with the existing methods.
+But again, this is to highlight and
+demonstrate we are calculating things correctly.
+You can apply any function you want
+even when you define using the apply method.

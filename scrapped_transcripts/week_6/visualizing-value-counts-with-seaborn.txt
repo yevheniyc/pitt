@@ -1,0 +1,80 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/XvjIN/visualizing-value-counts-with-seaborn
+
+English
+We will begin by plotting the counts for sex.
+Fig, ax equals plt subplots,
+let's use the default arguments.
+We are setting things up
+just like the previous recording
+when working with pandas.
+But now, if you remember, here, actually,
+let me put it in a note as a reminder,
+when we worked with pandas.
+We had to start with the dataset,
+identify the column and apply the counting procedure.
+Then we would specify
+the plot and where it's located and then show it.
+Let's now see how to do this in seaborn.
+Seaborn follows a similar process,
+but there is one major difference.
+It begins by specifying
+the defining the figure and axis objects
+so this is the same.
+But now we will call the function count plot.
+Although this seems like the major change, it is not.
+We are just specifying
+the function rather than calling a method.
+However, this is still very similar
+because whether we're in pandas or seaborn,
+everything starts with the data set.
+In pandas, the dataset
+is literally on the far left hand side,
+it begins the process.
+But in seaborn,
+we have a data argument to all plotting functions.
+The plot begins with the dataset,
+and so I will assign penguins to that data argument.
+Next, we need to identify the variable of interest.
+The primary axis, if you will,
+is the x axis or the horizontal axis.
+I want to show a vertical bar chart so
+my variable will be assigned to the x axis.
+But working in seaborn,
+I do not identify the column with dot notation.
+I do not identify the column with bracket notation,
+so I don't do either of these.
+Instead, seaborn lets me
+just type the name of the variable I'm interested in.
+This is way simpler because
+now I can just say I'm in this dataset,
+and I want to isolate and focus on this one column.
+We then need to specify the axis that we are
+locating this plot on and then show it.
+The overall format is pretty similar,
+start with a dataset,
+identify the variable, save
+where you will show it or where you will locate it.
+But do you see the major difference?
+In pandas, we have to tell it you are
+counting and then show the chart.
+But in seaborn,
+all we have to do is tell it which variable we want.
+Count plot knows behind the scenes,
+it must execute the counting.
+The major difference is when plotting with pandas,
+we must specify that we are counting.
+But when using seaborn,
+seaborn does the counting for us.
+The look of the figure is also different and
+I'm not talking about the fact that
+we have two colors for the bars.
+Instead, what I'm referring to is,
+first, the text is displayed horizontally.
+It's much easier to read.
+We get a vertical bar chart where we can
+easily read the categories and the values.
+But we also get a label on the axis itself.
+This tells us the name of
+the variable that we are in fact counting.
+The vertical axis is also labeled.
+It's telling us here is the count for each category.

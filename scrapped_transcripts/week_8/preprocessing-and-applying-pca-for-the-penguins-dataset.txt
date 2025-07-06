@@ -1,0 +1,91 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/LkqS3/preprocessing-and-applying-pca-for-the-penguins-dataset
+
+English
+Now, before executing PCA,
+you must deal with missings such as dropping them.
+Also, it is highly recommended that you
+standardize the variables before applying PCA.
+You need to remove missings and standardize,
+just like you have to do before KMeans.
+Let's go ahead and do that.
+Let's create a data frame pens_clean, penguins.dropna,
+force the deep copy,
+and just do the check isna.sum.
+No missings.
+Standardize using
+the StandardScalar method from scikit-learn.
+From sklearn.preprocessing, import StandardScalar.
+Now you standardize numeric columns.
+PCA can only be applied to numeric variables.
+Let's select d types that are numbers,
+force the deep copy,
+Xpens, StandardScalar,
+fit and transform, pens_clean_features.
+We can use the PCA method
+from scikit-learn to execute the transformation.
+PCA really is transforming
+the data because we are creating new variables.
+The transformation produces new variables that
+account for the relationship
+between all of the original numeric variables.
+The function we will use
+PCA comes from scikit-learn.decomposition.
+From sklearn.decomposition, import PCA.
+PCA follows
+the logic of StandardScalar.
+We must initialize our assumptions,
+we must fit the object using our assumptions,
+and then we must transform
+a dataset using the fitted object.
+The main assumption we need for PCA is the number of
+components or the number of
+newly created variables to produce.
+You will often hear me say, how many components?
+Whenever you hear that phrase,
+the number of components,
+that's how many new variables to make.
+We will not discuss how to
+decide the best number of new variables today.
+Instead, we will just focus on two because we will
+visualize two numeric variables via a scatter plot.
+We are just specifying make two.
+Let's go ahead and apply
+PCA in one line of code by initializing,
+then fitting and transforming.
+Because it's the exact same structure as StandardScalar.
+I will assign the result to pca_pens,
+where the PCA object is
+initialized with non-component is equal to two,
+then fit and transform the cleaned and standardized data.
+pca_pens is a NumPy array.
+pca_pens has only two columns,
+even though Xpens had four,
+even though pens_clean_features had four.
+StandardScalar returns a NumPy
+that has the same number of
+columns as the data frame we gave it.
+But PCA returns a NumPy array
+that has as many columns as the n components argument.
+This is the number of
+new variables to generate or create.
+That's why we don't have the same number
+of columns as pens_clean_features.
+Let's convert the NumPy array,
+next our pca_pens into
+a data frame to support visualization.
+Name the columns pc01 and pc02.
+The first newly created variable,
+the first principle component,
+will be named one for
+historical reasons rather than
+calling it principle component 0.
+It will be called principle component 1. pca_pens_df,
+Pandas DataFrame, pca_pens,
+columns, just as a list type in pc01, pc02.
+Two columns.
+Here are their names. They're both numerics.
+Visualize the relationship between
+these two newly created variables as a scatter clot.
+sns.relplot, data equals pca_pens data frame,
+x equals pc01,
+y equals pc02, plt.show.

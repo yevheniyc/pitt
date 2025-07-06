@@ -1,0 +1,95 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/QYRD0/exploring-logistic-regression-with-scikit-learn
+
+English
+We also know how to fit the models
+with Scikit learn using the array
+interface from sklearn.linear
+model import logistic regression.
+In order for us to use logistic regression,
+the function from scikit-learn,
+we also need from Paxi to import d matrices because
+we need to assemble the feature and output arrays.
+We also know about the hack to force
+scikit-learn to behave like stats models.
+We use the same formula as stats models to create the feature array,
+but we must change the default and typical behavior,
+or the default and typical arguments for sklearn.
+So the first thing we will do, let's go ahead and
+let's begin with the intercept only or
+the simplest possible model, and
+I'll name that one y_0, x_0,
+d matrices formula list,
+the 0th element data equals df.
+The feature array has one and only one column, all values of ones.
+This is the feature that represents the intercept.
+I'll name it fit_sk_0 logistic regression.
+To force scikit-learn to behave like stats models,
+we need to set the penalty to none, okay?
+Again, this week is actually all about what the penalty argument is.
+But for now, let's just set it to none.
+Solver 'lbfgs', max_iter=25001 that's
+just what I like to use, fit_intercept_false.
+So this is part of the hack.
+You must set the fit intercept equal to false.
+That does not mean the intercept is not estimated in our case,
+it means as part of our hack, the intercept is directly
+estimated with all the other features because the bias column or
+intercept column is included here.
+We initialize the model, now we can fit it.
+X_0, y_0, enforce the output to be a 1d array.
+The coefficients are here.
+This is the the intercept itself.
+And then we need to check the score.
+This is just on the training set.
+The intercept-only model has an accuracy,
+because that's the default score for logistic regression.
+It has an accuracy on the training set of 66%,
+which we shouldn't be surprised about,
+because if we check the proportion of the categories,
+the event occurs 34% of the time,
+the non-event occurs 66% of the time.
+The score, the accuracy of the intercept-only
+model this is really your baseline.
+A model isn't quote-unquote okay if it has an accuracy better than 50%,
+it's okay if it's better than the empirical proportion of the classes.
+And the intercept-only model captures that.
+So think of this as our ground floor in performance on the training set.
+But we know the most complex model that we
+fit did very well on the training set
+it was the best, or it appeared to be
+the best according to the training set.
+So let's create those output in feature arrays.
+I'll name these y, sk, and xsk for scikit-learn.
+I need the last element in the list and
+I'm using the -1 to slice the last element from that list.
+Data equals df,
+the feature array has 81 columns.
+It has as many columns as coefficients that are being estimated.
+So this was mentioned last week, the number of coefficients
+being estimated in your model equals the number of columns in your feature array.
+All right, let's now fit the model to behave like stats models.
+Fit sk_none, logistic regression the penalty is none.
+The solvers as a string 'lbfgs',
+max_iter25001, fit_intercept_false
+because we included the bias column in here.
+So fit intercept is false.
+Then fit a_sk_ysk.rebel.
+We check the coefficients, here you can
+see we have values of similar magnitudes.
+You see the 7, you see the 6s, the -4s, -5s.
+We saw last week that this model is behaving like the stats models.
+But the major takeaway from last week was
+even though this model appeared to score or
+perform really, really well in the training set,
+we learned that this model is actually worse,
+this model is worse than the intercept-only model on new data.
+So the most complex model appeared
+to be the best on the training set but
+cross-validation revealed that this model was,
+on average worse than the intercept-only or
+simplest possible model on new data.
+And what we really care about is the performance on new data.
+We don't care if the model memorized the historical data,
+we want the model to do generally well tomorrow.
+Okay, so that's a quick review.
+But this quick review actually leads us into the major topic for this week.

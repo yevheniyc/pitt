@@ -1,0 +1,93 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/I2RWH/visualizing-predictive-trends-with-non-linear-features
+
+English
+Now, in the previous recording that discussed making the predictions on
+the linear relationship, I stepped through all of the necessary methods that we need.
+But here let's jump straight to visualizing the predictive trend,
+the mean output, the confidence interval,
+the uncertainty on the mean, and the prediction interval,
+the uncertainty on a single measurement.
+Okay, so let's just jump straight to visualizing the ribbons.
+To do this, we need the same two step approach.
+Step one, call the dot get prediction
+method on the fifth hit object.
+I'll assign this to the predictions
+object lm fit get predictions df viz.
+Then step two, call the dot summary
+frame method on the prediction object,
+lm pred summary predictions dot summary frame.
+Lm pred summary, now again we have
+a data frame, the mean output,
+the standard error on the mean,
+the 95% confidence interval,
+the 95% prediction interval.
+Visualize the predictive mean, the trend,
+the confidence interval, and
+the prediction interval on a single graphic.
+Initialize the figure and axis objects big comma ax equals plt sutplots,
+include the prediction interval, include the confidence interval,
+include the trend, include the training data for
+context, set the labels and show the plot.
+So the last thing we need is plt show
+we need ax set x label is x ax set y label is y.
+The prediction interval ax fill between where the x
+axis corresponds to df viz x the lower bound lm pred
+summary obs ci lower, lm pred summary obs ci upper.
+And again the stats models calls the prediction
+interval the confidence interval on the observation,
+which I think is rather long and confusing, but
+that's what they call it.
+The face color orange, make it more
+transparent and the edge color orange.
+So I like to have the prediction interval as
+an orange interval, an orange ribbon.
+Then the confidence interval ax fill
+between df viz x, lm cred summary mean
+ci lower lm cred summary mean ci upper,
+base color gray, edge color gray.
+The gray ribbon is the uncertainty
+on the mean trend, the trend itself or
+the quote unquote best fit line
+df viz x lm pred summary mean.
+Again using the bracket notation as discussed
+in the previous video since mean is ambiguous,
+since it's a method, color it black and we can set the line width and
+then include in the training data as context using a scatter plot,
+(df,x) (df,y) color equals black.
+Again, the data points, the training data points,
+it's really just a coincidence if they are contained in the confidence interval.
+The training data points will 95% of them, if you have a really,
+really big data set, I guess you can see here they are all contained in it, but
+the training data points are really being contained in the prediction interval.
+The uncertainty on
+a single measurement.
+I have the HTML report for when we generated this data.
+Again, the prediction interval is really representative
+of where the individual measurements will be.
+It's representative of that outer interval that we plotted when
+we made the data, that there was a 95% chance the measurement
+of where the measurements are located around the mean.
+The confidence interval is how confident
+are we of the average given our limited training data?
+This model says we are very confident that on average the trend
+increases then decreases before increasing again.
+You can also see from the prediction interval,
+we are very confident of a positive measurement in this interval,
+the input very confident of a negative measurement of the output for
+this other interval of the input.
+Again you need the trend, the confidence interval and the prediction
+interval to actually complete your regression model interpretations.
+I hope you liked seeing this video primarily to highlight we
+can use all of the same methods even when we have nonlinear features
+derived from our input when we're using the stats models formula interface.
+If you notice, I didn't have to create the sign of x,
+my visualization data set it only had x.
+The model understood it needed to calculate that nonlinear feature.
+And so the git prediction method, actually does that for you.
+Your newly created visualization data set doesn't need to
+have the features contained in it, it only needs the input.
+The model object itself will decide what
+features have to be created from that input.
+And the trend and the confidence interval and
+prediction interval all are based on those features used within your model.
+Essentially, the formula is fully contained in all of the predictions.

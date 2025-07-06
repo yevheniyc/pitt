@@ -1,0 +1,91 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/ez9UP/understanding-slope-impacts-and-interaction-in-multi-feature-models
+
+English
+All concepts hold.
+Or all concepts apply,
+whether I had different signs for the slopes.
+Or if the slope multiplying
+input two was greater than
+the slope multiplying input one.
+So everything still applies, even if we change the signs and
+the values of the slopes.
+The purpose here is to reinforce how to interpret what these slopes mean.
+Now, these ideas scale to many inputs.
+I'm not going to show you that here, but in the code programming example.
+But if we had 10 inputs, 100 inputs, 1000 inputs,
+or D inputs, you have a separate slope for each feature.
+Or, sorry, for each input, and you're just adding the effect across all inputs.
+And this is usually written as a summation series where we
+have the Greek letter capital sigma,
+where we are summing the effect of slope times input across all D inputs.
+You could also have additive effects for non-linear features.
+You could derive non-linear features from each input and add their effect together.
+For example, you could have sine applied input one, cosine applied input two.
+You could use different polynomials.
+Here I have a linear, quadratic, and cubic polynomials applied to input one,
+and a linear quadratic and cubic applied to input two.
+The important point is whether you're using linear relationships or
+non-linear relationships, you will have a separate feature.
+Or, sorry, a separate slope multiplying each feature in the model.
+The more features you have,
+the greater the number of slopes that must be estimated.
+And that's an important point that we will return back to later, next week.
+Okay, now, I mentioned previously there's another
+kind of way of dealing with multiple inputs, and
+that other category is called the interaction.
+An interaction is the statistics or
+machine learning way of saying multiplication.
+So anytime you hear interaction, think multiplication or products.
+Let's see this with two inputs.
+When you have a linear model with interactions, you have the linear,
+or what are called the main effects, and the product between the two inputs.
+The main effects are the linear relationships that we saw previously.
+They are getting added together, but now we have an additional feature.
+This feature has its own slope, but
+this feature depends on two inputs rather than a single input.
+So an interaction feature is a feature that
+involves multiple input variables.
+Let's now see the impact of having this interaction interactions.
+Let's define another function that
+calculates the trend or average output,
+focusing on the relationship with x1.
+But this time we will have the interaction feature,
+which equals the product of the two inputs.
+Let's define calc_trend_with _respect _to _wrt_x1_with _interaction.
+The arguments are nearly the same, we still have x1, x2.
+Our intercept, the slope, multiplying the main effect of x1,
+the slope multiplying the main effect of x2.
+But now we have a final or
+fourth coefficient multiplying the interaction features.
+So this is using, again, the terminology from the slides.
+So beta three or b three is multiplying the interaction feature.
+Let's define our data frame, PD data frame using the dictionary.
+The key x1, has the value x1,
+input two, x2 is a scalar,
+it's a constant number.
+And now the trend, it starts out the same way,
+intercept plus slope times input one plus slope times input two.
+But now, we have another slope
+multiplying input one and input two.
+So again, look closely here at this expression.
+Slope multiplying input one, slope multiplying input two,
+the slope multiplying the product of x1 and x2.
+Let's then return our data frame.
+We need a slope defined that multiplies
+the interaction feature.
+And I'm just going to set this to be equal to one, so b3 is equal to 1.
+Let's calculate the trend with respect
+to x1 for different values of x2.
+So we need to iterate again.
+Study the interaction with respect to x1.
+List is a list comprehension where we have an action for
+an iterating variable in a sequence.
+And let's now return back to the x2 values array.
+The action is now calc_trend_wrtx1
+with_interaction(x1_values _x2, b0, b1, b2, b3.
+This list has nine elements, so let's combine everything.
+Concatenate study interaction with
+respect to x1_df_pd.oncat_study
+interaction_wrtx_1e_list_ignore_index_t- rue.
+We again, have a data frame.
+There are only nine unique values of x2, again.

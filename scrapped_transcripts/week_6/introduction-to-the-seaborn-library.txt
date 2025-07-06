@@ -1,0 +1,106 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/4OWZH/introduction-to-the-seaborn-library
+
+English
+Hello, everyone. In this video,
+we're going to learn how to make bar charts with seaborn.
+As you can see, I already have Jupyter opened
+up to this week's directory.
+If you don't have it, please pause
+the recording and do so.
+Once you're back, I want you to launch
+a new Jupyter notebook for this example.
+I'm going to name this notebook,
+week_06_seaborn, S-E-A-B-O-R-N bar_charts.
+Now, I'll set up
+my header information CMPINF 2100 week 06.
+Creating bar charts with seaborn.
+We will again use mapplotlib
+to help organize the layout of the figure.
+But this time, the bar charts will be
+created with the seaborn statistical plotting module.
+This module displays
+the graphics differently than Pandas.
+But seaborn really likes to work with Panda's dataframes.
+We therefore need all modules
+that we have worked with this semester.
+When we import the modules,
+import NumPy is np,
+import Pandas as pd,
+import mapplotlib.pyplot as plt.
+Lastly, import seaborn as sns.
+My personal style is,
+I have the big 3 NumPy, Pandas,
+mapplotlib, and then a space followed by seaborn.
+Seaborn is a module.
+It specifically focused on
+statistical data visualization.
+It helps make some really nice looking graphics
+to allow you
+to communicate and ultimately interpret your datasets.
+It is my preferred Python visualization library
+for data science applications.
+It is built on top of mapplotlib,
+but it provides a streamlined interface
+that's easier to work with than
+dealing with mapplotlib directly,
+and I think the resulting figures are much
+nicer than those coming from Pandas.
+It needs Pandas to organize the data,
+and since Pandas is built on top of NumPy,
+that's why we need all of the modules so far.
+Now, as with the previous recording,
+let's read in the data.
+We will use the gap minder data set again.
+To get it, again,
+please go to Canvas,
+to the data for this week.
+Click on the page and here's the link.
+I already have it set up, so I can just copy it.
+But please pause the recording and go to
+Canvas. This already opened.
+Once you have done so,
+come back and define a variable,
+gap_URL, where you paste the link.
+gap_df, pd_read_csv,
+gap_url, separator, change it to tab separator.
+The info method, again,
+confirming the data have been read in.
+Lastly, read in the penguins dataset.
+Penguins comes from sns.load_dataset,
+retype penguins as a string, penguins.info.
+We have everything loaded in.
+The previous recording,
+that showed how to make bar charts with Pandas
+started with the gap minder data.
+But let's begin with penguins in this example.
+We'll flip around the ordering this time.
+Let's put it in here.
+Counts for penguins.
+As a reminder, penguins, D types,
+species in island and sex
+and the four floats
+all have such large number of unique values,
+we will not treat them as categorical.
+Now, seaborn works differently than plotting in Pandas.
+Seaborn divides functions into two main categories.
+Seaborn has figure level functions
+and axes level functions.
+Axes level functions create specific kinds of plots.
+Figure level functions are
+what I like to call goal oriented.
+Let's begin with axes level,
+so we can practice using specific kinds of plots.
+Now, this is where it gets a little confusing.
+Seaborn has many different names
+for different kinds of plots.
+It has a bar plot.
+I like to visualize bar charts
+in seaborn using then sns.countplot function.
+We are therefore counting the values and plotting.
+Count plot.
+Seaborn axes level functions
+are built on top of mapplotlib,
+and so we need to initialize,
+or define the figure and axes objects.
+Axes level functions need you
+to define the figure and axes objects.

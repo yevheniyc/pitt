@@ -1,0 +1,85 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/i6nee/summarizing-dataframes-sem-missing-values-and-axis-considerations
+
+English
+As you've seen, we have the mean,
+we have the standard deviation.
+We can also calculate the standard error on
+the mean for all numeric columns.
+Df.sem numeric only true.
+Again, this is not
+the standard deviation or the variance,
+it's the standard error on the mean,
+the thing we spent the last so many weeks simulating.
+But now the standard error on the mean,
+comes from the simple formula,
+which is the standard deviation divided
+by the square root of the sample size.
+As a quick reminder,
+if we use the F column that has no missings,
+we calculate its standard deviation and for pandas,
+this is the unbiased estimator.
+We use the number of observations
+for the size and apply the square root.
+Here I'm using np.square root.
+The standard error on the mean for the F column is
+df.F.std divide by np.square root df.F.size.
+If we compare that to the SEM method directly,
+you see it's the same answer.
+The SEM method also drops missings.
+The standard error on the mean cannot be
+calculated if missings are considered.
+Look at the C column.
+It has two missings.
+The size attribute, it's an Attribute 14.
+There's Length 14 essentially,
+but not attribute,
+the count method returns 12.
+The size attribute is
+the number of elements in the column series,
+while the count method returns
+the number of non-missing entries.
+Count is a method because it has to do
+an action in order to figure
+out if there are missings present,
+whereas the size is
+an attribute because that's just literally the length,
+or really the number of rows in the data frame.
+Reinforces one more time.
+If we calculate the SEM,
+if we say skipnafalse,
+we instead get missing because it can't figure it out.
+What this means is the standard deviation
+of the variable divided by the square root of the number
+of non missing samples
+is actually how the SEM is calculated.
+When you call the SEM method,
+it's really using the number of
+non missings in order
+to calculate and determine the sample size.
+All of the previous methods
+have been used to summarize columns.
+However, like NumPy,
+the methods do have the axis argument.
+We could apply them to
+individual rows and thus
+summarize across columns rather than down columns.
+For example, df.mean if I want to summarize
+each row by calculating the sample average in each row,
+for example, we can calculate the row sample average.
+But you can see a warning message is displayed.
+Even though we're getting
+some numbers printed to screen,
+this warning is because
+the data frame allows columns to be different data types.
+Essentially, when you apply
+a summary method along the row,
+we have to decide what are we going to do for all of
+the objects or string data types.
+We basically need to remove them because
+mean is appropriate for continuous numbers,
+not strings or objects.
+There are particular cases where you
+want to summarize along a row,
+but you really need to think
+carefully if and when you want to do that,
+you shouldn't just always summarize along rows.

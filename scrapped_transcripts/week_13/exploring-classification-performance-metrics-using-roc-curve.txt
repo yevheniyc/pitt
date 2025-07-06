@@ -1,0 +1,99 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/dqMcY/exploring-classification-performance-metrics-using-roc-curve
+
+English
+Hello everybody.
+In this video you can already see that I have Jupyter opened up to this week for
+the class.
+If you don't have Jupyter launched, please pause the recording and do so.
+And once you're back,
+I want you to launch a new Jupyter notebook with a python three kernel.
+Once that's started up, let's change the notebook's
+name to week twelve classification ROC.
+This is a very strange name, ROC, but the reason that this
+notebook is named that is you are going to learn about how we
+can vary the threshold that dictates the classification and
+the kind of performance metric that doing so ultimately leads to.
+Okay, so you'll learn what ROC means in this recording.
+Let's now put in our header information
+CMPINF 2100 week 12 measuring
+classification performance the ROC curve.
+In this video you will learn what
+happens if the threshold which determines
+the classification is changed.
+All right, let's now import the modules as we have used in the previous recordings.
+I want you to import the big four,
+import numpy as NP, import pandas as PDF,
+import math plot lib pyplot as PLT, and import seabourn as sns.
+Once you've done that, you need to import
+stats models.formula.API as SMF.
+We will continue to use stats models great.
+Now let's repeat the actions from the previous recordings,
+starting by reading in the data.
+We will continue to read the data from last week.
+Again, the data frame will be named DF PD read CSV
+file path navigate backwards, choose the week eleven directory.
+Week eleven intro binary classification.csv file.
+Then I want you to fit the model fit GLM gets
+assigned smf.logit which has a formula and data.
+You fit it.
+Data is df the formula Y tilde x.
+Then we predict the training set.
+Let's again make the copy, DF copy,
+add a new column thread probability
+bitglm.predict df,
+then classify the predictions on
+the training set DF copy cred class and
+here let's put in a note.
+Start with the default or common threshold of 50%.
+So this is just reviewing what we did previously.
+DF copy pred class NP where DF copy pred
+probability greater than 0.5.
+If true, return the event.
+If false, return the non event.
+We know how to calculate the accuracy.
+It is the proportion of observations where the observed
+output is the same thing as the classified output.
+We have also learned about the confusion matrix
+that shows us the combinations between the observed
+output and the model classified output.
+We saw how to visualize this confusion matrix
+with a seaborne heat map sns.heatmap we
+need to make the cross tabulation between
+the observed output and the model predicted class.
+Let's include in the margins, annotate it.
+We can set the font size and let's set
+the format to the annotated text.
+The cells of this confusion matrix we learned
+tell us the number of true negatives,
+the number of true positives, so
+correct classifications on the main diagonal.
+We have also learned about false positives and
+false negatives, or the errors on the off
+diagonal of the confusion matrix.
+We saw that the confusion matrix counts
+can be easily calculated from a sklearn function.
+So from sklearn.metrics
+import confusion_matrix.
+Let's return the confusion matrix counts as variables
+TN FP FN TP is the result of confusion matrix using
+a format a syntax very similar to the cross tabulation
+of the confusion matrix between the observed output,
+let's convert it to numpy, and the predicted class,
+which let's convert it to numpy.
+But the result from confusion matrix is a 2d array and we are revelling it.
+We're converting it to a 1d array and
+pooling out each of those counts.
+We can now calculate the accuracy.
+We can calculate the accuracy
+from the confusion matrix.
+Let's just name it accuracy gets assigned TN
+plus TP divided by TN Plus FP Plus FN Plus TP.
+The accuracy is the number of correct classifications
+divided by the total number of observations,
+the number of rows, which is the sum of these four numbers.
+We also learned about the sensitivity or
+true positive rate TPR.
+The sensitivity is the, here let's define the variable.
+Sensitivity is the number of true positives
+divided by the total number of observed events,
+true positives plus false negatives.

@@ -1,0 +1,114 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/g6j77/kmeans-on-two-variables
+
+English
+Hello, everyone. In this video,
+we will continue working with K-Means.
+This time, we will use the Cluster 2s variables example
+dataset rather than the one variable example dataset.
+As you can see, I have Jupyter opened.
+If you don't have it, please
+pause the recording and launch Jupyter,
+and when you come back, then launch
+a new Jupyter notebook.
+Let's go ahead and change
+the name of this Jupyter notebook to
+Week 08 K-Means 2,
+two for two variables.
+Now, put in our header information,
+CMPINF 2100 Week 08 K-Means with two variables.
+We need to import the modules that we have
+worked with these last so many weeks, the big four.
+Import numpy as np,
+import pandas as pd,
+import matplotlip.pyplot as plt,
+and import seaborn as sns.
+Next, let's read the data.
+We will again assign the result to
+the df object but instead of reading Cluster 1 variable,
+reading the Cluster 2 variables, example, csv dataset.
+The result gives you a dataframe with
+300 rows and three column.
+We therefore can't just print out
+and know everything about the entire dataset.
+Let's do a quick check.
+The D types, which we can see,
+two numeric and one object.
+Let's check the number of missing values.
+There are none. Let's check the number of unique values.
+true_group. This variables just
+like the true_group from the previous example.
+It tells us the categories,
+the groupings used to generate the data.
+But instead of having
+just three known groups, we now have five.
+Next, let's visualize the two variables,
+x1 and x2 as a scatterplot.
+Because remember, the goal of clustering is we want to
+be able to identify observations that are similar,
+or close, or near others as well as to
+separate those observations that are far from that group.
+Now, with this example,
+it's very clear if we draw this diagonal line,
+that there are two easy to see
+clusters and then another set of clusters.
+We should therefore anticipate
+that K-Means should be able to
+very easily find us these three groups.
+But we have the real answer.
+We can color by the true known groupings.
+sns.relplot, data equals df,
+x equals x1,
+y equals x2,
+hue equals true_group, plt.show.
+Here are the five known groupings.
+We will run K-Means to see if the K-Means can correctly
+separate those three groups
+in the lower right from the others.
+K-Means. Let's prepare the data
+as required by scikit-learn.
+scikit-learn doesn't want data frames,
+we need to create the 2D NumPy array,
+which I'll name capital X.
+Let's select all of
+the number data types using the select D types method.
+Let's force the deep copy and then convert it to NumPy.
+We now have a NumPy array with 300 rows and two columns.
+Now, let's import from
+sklearn.cluster the K-Means function.
+We must initialize fit and predict just as discussed in
+the previous video but let's do
+all actions in a single line of code.
+We know there are
+five groupings
+so let's use five clusters.
+I will assign this result for now
+to just an object and Clusters 5,
+K-Means n Clusters 5 random state,
+you must specify the random seed,
+you must specify how many random restarts,
+you must specify the number of iterations per
+restart fit and predict with the data set.
+Again, I get the warning because I'm on windows.
+Now, assign the cluster labels to a copied dataframe.
+As discussed in the previous video,
+I don't like to
+assign the clusters to the original dataset.
+I like to keep the original dataset completely separate.
+Yes, this is adding to our memory.
+We have two objects that are basically the same,
+but it will really
+get you out of problems because after all,
+you're about to continuously modify and add new columns.
+I like to keep a fresh version
+of the data that was unchanged.
+This new column will be named K5,
+where I'm wrapping the Clusters 5 array
+with series where I
+set the index attribute to be the index attribute
+of the copy dataframe
+that as discussed in the previous video,
+let's just convert K5 to a category.
+There are five unique values for K5.
+We can see those unique values with value counts.
+We know that the true_groups are perfectly balanced,
+and so there's a misassignment or a mislabeling.

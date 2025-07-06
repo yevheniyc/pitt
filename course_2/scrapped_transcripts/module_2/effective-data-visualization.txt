@@ -1,0 +1,57 @@
+Source: https://www.coursera.org/learn/the-art-of-data-visualization/lecture/hp8WM/effective-data-visualization
+
+English (auto)
+We're going to continue looking at visualization principles and understanding ways that you can
+support effective data visualization. Here we are going to be looking at principles suggested by
+Alberto Cairo, who is a graphical journalist, and these principles provide an excellent summary of
+what characterizes great data visualization. You can read more about these visualization principles
+in his very influential book, The Truthful Art, which is referenced in this course as well.
+So the first principle that Alberto Cairo discusses in terms of data visualization is about
+that the data visualization needs to be truthful. If you think about the distinction that we talked
+about in terms of the science versus art of data visualization, this truthful data visualization
+really focuses on aspects of scientific visualization, which means the data should be
+based on thorough and objective research and trying to make sure that it avoids distortions
+or manipulation that might misrepresent the data's actual meaning. Next principle is the data
+visualization needs to be functional. That means that it should serve a clear purpose and design
+for intended function to inform, to persuade, or to explore aspects of data. Then moving from more
+of the scientific words into also the artistic parts, Cairo's principles also indicate that data
+visualization needs to be beautiful, meaning that it should be an aesthetically pleasing display of
+information. Well-chosen color schemas, clean layouts, and balanced spacing can enhance the
+viewer's experience without sacrificing the truthfulness or clarity. Beauty should not come
+at the cost of accuracy or functionality, as we discussed this before as well. Data visualizations
+should be insightful and should provide meaningful insights and deeper understanding to help reveal
+patterns, trends, and relationships that are not obvious otherwise in raw data. They need to be
+enlightening, meaning that they should tell a story and capture the viewer's attention.
+They should also be ethically responsible, should ensure that data is not manipulated
+to deceive or mislead or pursue a specific agenda. So as you go through these different
+visualizations throughout this course, try to make sure that you remember these six principles
+of data visualizations need to be truthful, they need to be functional and have a purpose, and not
+just focus on visualizing data, but at the same time they need to be beautiful as long as we
+remember that this beauty is not compromising the truthfulness and functional aspects of
+visualization. They need to be insightful, enlightening, and ethically responsible.
+Let's look at some examples. So here in this visualization, the goal of this visualization,
+the function, is basically to show the main nationalities of arriving migrants to Greece in
+2016. So for example, this part shows that there is 47 percent coming from Syria, 24 percent coming
+from Afghanistan, 15 percent coming from Iraq, and so on and so forth. Now the question to you is that
+is this a good visualization? And every time that we think about whether something is a good
+visualization or not, what you want to remember, as Alberto Cairo discusses, is the function and the
+purpose of what we want to communicate through this visualization. So to judge whether this is
+a good visualization or not, it really depends. What is it that we want to communicate? So let's
+say that what we want to communicate is that showing that half of the migrants to Greece
+came only from one country. If that's our purpose, then providing probably a visualization like this,
+which showed these half coming from Syria in one color and the rest of the countries in another
+color, is a much better visualization than this visualization that has all these different colors
+that could actually distract the main point in terms of making that main point that half of the
+migrants are coming from one country. If what we want to show is these sorts of comparison, we can
+also consider basically these sorts of charts. It basically shows Syria on the top as a bar chart
+and orders the rest of the countries below that as well, which basically shows how this one country
+is so much more of the migrants, but at the same time provides a clear visual representation of
+where other countries are coming from. Now if you want to show more of the relationship between
+the percentage of migration and maybe proximity to Greece, a map-based visualization, as you can
+see in the top of this figure, might be a better visualization when it shows basically where each
+of these countries are located and then a circle over that country that shows the size of the
+migration and how basically that is connected to Greece. So here in this map-based visualization,
+now you can see that for example proximity of Syria maybe is playing a role in terms of Syria
+having the highest percentage of migrants coming to Greece. So really as you think about what is a
+good visualization, thinking about the purpose is really important. There are additional resources
+that are provided in the course as good resources for understanding these different aspects of visualization.

@@ -1,0 +1,114 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/FB5s6/data-frame-joins-with-pd-merge
+
+English
+It.
+So join or merge.
+The pd.merge function joins data frames.
+Joins two data frames.
+We need to specify the two data frames it and
+we need to specify the column or columns.
+But for now we'll focus on one
+column that the two are joined on.
+The joining variable is referred to as the key,
+and this is not the same thing as a key in
+a dictionary this is something different.
+Whenever you hear me say key in terms of join or
+merge, think of it as that's the shared variable that is in both data sets.
+This is the variable that's going to allow us to link up these two.
+And by the way, if you're wondering what's the purpose of this,
+this is really the foundation of the relational database.
+The ability to have separate tables or
+data frames where that can be linked together or
+joined by keys is literally how databases operate.
+Let's go ahead and just demonstrate it,
+pd.merge the first two arguments,
+the two data frames which we're joining together.
+The initial listed data frame is called the left data frame,
+and then the latter one is called the right data frame.
+But we also need to specify the key that we join on.
+And in our current example, e is the shared column.
+So we will join dfA and dfB on e.
+Running this line of code produces
+a new data frame that has nine rows,
+but it now has the g column with
+all of the other columns from dfA.
+Let's do this one more time.
+But this time, rather than displaying the result,
+let's use the info method to make it
+very clear there are nine rows.
+How many rows existed in dfA?
+Well, dfA had twelve rows.
+What happened to the missing three rows in dfA?
+The answer has to do with the unique values
+of the key between the left and right data sets.
+So I'm now going to print dfA to the screen.
+Because this is a small example, we can visually
+see that there are in fact three unique values of e,
+aa, then bb, then cc, then dd.
+Each unique value takes up three rows.
+In dfB however, each row
+is a unique value of b and
+there is no cc present in dfB.
+Let's now look at the joined or merged data set, again.
+We can see aa, we can see bb and
+dd, but cc is gone.
+The e equals cc value is not
+present in the joined data set.
+This is because in addition to
+specifying the key that we joined on,
+we also must specify how the left and
+right data frames are joined.
+By default,
+pandas uses inner joins.
+The inner join keeps
+all values of the key
+that are present in
+both data sets or
+the key values must
+be shared between
+the two, okay?
+So the inner joins keeps
+the values that are consistent,
+or the key values must be
+shared between the two.
+So really what's going on is that when dfA and
+dfB are joined on the e column,
+we are specifying the how argument to be inner.
+This is the default operation.
+The inner join is being executed.
+But there are other types of joins.
+The left join keeps all key
+values present in the left data set.
+To switch from an inner to a left join,
+all we have to do is change the how argument from inner to left.
+The data sets are the same, the key that we join on is the same,
+but now we are executing a different type of join.
+This is not inner, it's left.
+The implication of this the result has 12 rows.
+The e column has now
+all four values of e.
+But look closely here for
+g or in the g column for
+the rows associated with cc.
+Do you see this weird set of characters, NaN?
+The NaN stands for
+not a number.
+The NaN means the value is missing.
+So we don't know.
+We don't know the value.
+And why do we not know the value?
+Well, because in a left join we are bringing
+together all of the key values with the other
+columns from the right data frame.
+But we must retain all of the key values
+present in the left data frame.
+So when e equals cc, dfB does
+not know what the value of g is
+because there literally is no
+row association for cc in dfB.
+Thus, we cannot bring in a value for g, and
+the answer is therefore missing.
+We simply do not know.
+We do not know the value of
+g associated with E = cc.
+That is why those rows are missing in the joined data set.

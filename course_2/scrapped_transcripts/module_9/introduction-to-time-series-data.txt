@@ -1,0 +1,166 @@
+Source: https://www.coursera.org/learn/the-art-of-data-visualization/lecture/wJzIr/introduction-to-time-series-data
+
+English (auto)
+In this module, we are going to be looking at time-series data,
+understand a little bit about what time-series data is,
+and then look into how we can process that and
+how we can visualize it using Python libraries.
+What are the time-series data?
+Time-series data is a sequence of data points
+collected or recorded at a specific time intervals.
+Examples of that would be stock prices,
+weather data, web traffic, or heart rate monitoring.
+Key characteristics of time-series data are that data points are
+time-ordered and that there are temporal dependencies.
+For example, past values could actually
+influence what happens in the future and the future values.
+Some real-world applications of working with
+time-series data related to the examples that we just mentioned,
+stock market prediction in finance,
+tracking patient health in health domain,
+monitoring server performance in technology domain,
+or analyzing website traffic trends in marketing.
+It actually has a lot of different applications in
+different areas and being able to process the data and to be
+visualizing the data to use it in some domain
+makes it important data to look at.
+Some key components of time-series that we are going to
+be using to basically understand time-series data
+and be able to make sense of this data include trend,
+seasonality, cyclicality, noise, and stationarity.
+We're going to look at what each of these mean,
+how do we understand these different components,
+and then when we are looking into visualization,
+we are going to be looking at
+these aspects and these components as well.
+The trend is basically what represents
+the long-term direction in the time-series data,
+whether the values are increasing or decreasing
+or they're remaining constant over time.
+When thinking about then how to
+identify these different components,
+you can basically both try to use
+statistical models as well as visualization.
+When you visualize a plot of time-series,
+you can actually observe the overall direction,
+and that is basically indication of the trend.
+Sometimes it might be harder to see if the data
+especially is not very regular to see this trend.
+What we can statistically do is
+using what is known as a smoothing techniques,
+which basically creates these rolling averages
+over periods of time to be able to smooth out the data
+and eliminate some of
+the short-term fluctuation that might
+make the data look too noisy to
+be able to see whether the trend exists or not.
+We are going to see in
+the next lessons how we can
+actually do some of these different processes.
+Seasonality refers to repeating patterns or cycles that
+occur at the regular intervals due to seasonal factors.
+It's caused by time-based factors such as months or days.
+It's predictable and consistent over
+these time periods and time intervals.
+It's common in data influenced by weather,
+holidays, or other cyclical events.
+Example of seasonality in time-series data
+could be higher usage of water in summer.
+If you're looking at water usage,
+which is a time-series data,
+we might observe that in summer there is
+higher usage and that could actually repeat every summer,
+and that's what makes the seasonality patterns in the data.
+To identify seasonality, you can again use
+visualization and look for
+these repeating patterns in data over time.
+You can also do these statistical methods of decomposition,
+which uses time-series decomposition
+to isolate the seasonal components.
+It basically breaks the data into different components
+and singling out those seasonal effects.
+Cyclicality refers to longer-term irregular fluctuation,
+as opposed to the seasonality,
+which is more of regular fluctuation.
+Cyclicality refers to these irregular fluctuation in
+time-series data that are not strictly seasonal,
+and they could correspond to things like economic or business cycles.
+Cycles are generally longer than seasonal patterns
+and may not have a fixed frequency.
+While, for example, the higher usage of water could happen every summer,
+when we see cyclicality,
+that might actually not be repeating in these regular intervals.
+Example of that could be a economic cycle,
+period of recession and expansion,
+that while could repeat,
+is not something that we expect that will happen regularly.
+To identify cyclicality, again,
+you can use visualization,
+plot the data, and observe any recurring but irregular patterns,
+that's different than the seasonality.
+You can use statistical models,
+techniques like Fourier analysis,
+or the spectral analysis that can help you
+detect cycles and provides information about those.
+Other aspects of time-series are noise or residuals.
+These are random variation in data that do not follow a pattern and cannot be
+attributed to either the trend or seasonality or cyclic patterns.
+Typically assumed to be random and has
+no patterns and no specific meanings that could
+be clearly identified in that longer term pattern of the data.
+Example of that could be a sudden high usage of
+water because maybe there have been a broken pipe.
+That just causes this noise in the data,
+which does not contribute to a specific patterns.
+To identify the noise,
+you basically after removing trend and seasonality and remaining data,
+what is left is the noise and that's why it's called residuals.
+Noise can be identified using time-series decomposition or residual plots.
+Stationarity referring to the time-series whose
+statistical properties do not change over time.
+That means the mean, variance,
+and other correlation of the structure of the time-series data.
+This stationarity could be strict,
+which means that the joint distribution of values remains the same,
+no matter when you observe the series,
+or it could be weak stationarity,
+which means that the mean variance and auto-covariance are time invariant,
+and that's more practical and more commonly used definition of stationarity.
+Why does it matter to look at the stationarity?
+It helps with different modeling and different analysis of time-series data.
+It helps with the predictive modeling.
+Many statistical models rely on the assumption that the data is stationary.
+Non-stationary data then can lead into biased model estimates and poor predictions.
+It's important to know whether your time-series data has these attributes or not,
+to be able to know whether you can actually use some of these prediction models.
+It also simplify the analysis.
+Stationary time-series are easier to analyze because
+their statistical properties do not change over time.
+That means that if you're looking at these patterns,
+you can rely the patterns over time.
+Otherwise, the series should be broken down into
+different time and then analyzed over those different time periods.
+When the stationarity exists,
+then it's easier to extrapolate for forecasting into different time periods,
+using the characteristics of the time-series distribution in the previous time.
+To identify stationarity,
+you can do visual inspections,
+plot the series and look for trends and changing variants that is maybe visible in data,
+and using rolling statistics,
+which is computing and plotting the rolling mean and rolling
+a standard deviation over time and see if that is basically changing or not changing.
+Let's look at some examples of data.
+These are all from different marketing data.
+What you can see in the first graph on the right side is the price of dozens of eggs in the US.
+What you can see is that you can observe a trend of the price of eggs basically getting cheaper.
+In the graph in the middle,
+you can see the monthly Austrian beer production,
+and you can here see the seasonality that basically these regular every season,
+you see the peaks that happens that probably that's maybe right before summer,
+that then they produce more beer.
+Similarly, in the first graph on the left side,
+you can see monthly sales of new one-family houses sold in the US,
+and you can again see the seasonality.
+Here, you can also see other patterns that might not be exactly seasonality like some of the peaks,
+for example, after 1985,
+that those could be cyclic or could be noise also in the data.

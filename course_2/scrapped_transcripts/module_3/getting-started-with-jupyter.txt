@@ -1,0 +1,227 @@
+Source: https://www.coursera.org/learn/the-art-of-data-visualization/lecture/Mcdjj/getting-started-with-jupyter
+
+English
+We're now going to work in Jupyter Notebook, okay?
+Jupyter Notebook.
+But to launch it, I want you to open up your anaconda prompt for
+your Windows user.
+If you're a Mac user, your terminal shell.
+And again, the previous video talked about how if you're a Mac user,
+you need to enable the conda command to work.
+By launching the terminal shell,
+the prompt, I'm in the base environment.
+As the last video explained, to switch to our
+cmpinf2100 environment, we need to activate it.
+And now that I'm inside cmpinf2100,
+I want to launch the Jupyter Notebook by typing jupyter notebook.
+And it's J-U-P-Y-T-E-R space notebook.
+And then hit Enter.
+You will see a web browser, a web page, open up.
+This web browser looks like a website,
+but it is not hosted anywhere online.
+You see where it says localhost?
+This browser is on your machine.
+It looks like a web page, but that's just the browser.
+It's just the software that's showing us something.
+We're not actually on a web page.
+You can't come to my browser and see my files.
+I can't go to your browser and see your files.
+When we launch Jupyter Notebook, we actually get a files manager.
+And so I want you to navigate your
+directories to the project directory
+we made for CMPINF_2100.
+cmpinf_2100_project, week_01.
+You will see the Python script that we created.
+But we're now going to go to New,
+New, and you will launch a Python 3 kernel.
+Launching this opens up another tab,
+another browser.
+Again, it looks like you've gone to a new web page.
+It's just that Jupyter Notebook is a browser-based piece of software.
+The terminology for how to work with
+Jupyter Notebook shares a lot in common with
+that IPython console we saw in Spyder.
+Jupyter Notebook works with a series of cells.
+A cell has an In statement.
+This is where we type something, and then an output may be presented.
+Okay, to see that, I want you to click on or
+within the first cell located here.
+And notice when I'm double clicking, or
+I'm clicking in this gray area out here,
+look very closely at the color of the cell,
+because this color is really important.
+You see how it's blue?
+The blue color denotes command mode, but
+when I click into the cell, the cell's color becomes green.
+This is known as Edit mode, and the differences between them will make
+more sense once we start creating multiple cells.
+But in this very first cell, let's type the first set
+of commands we used in the IPython console in Spyder.
+We did 2 + 2.
+If I hit Enter, it takes me to another line within this cell.
+And you can see as I keep hitting Enter, I can make the cell very big.
+But instead, I want you to backspace or delete,
+get rid of all those extra lines, and I want you to hit the Run button.
+Run cell.
+By running the cell,
+do you see how we now get an In statement?
+This is the first command we ran.
+Here is its associated output.
+We could type in another command.
+We can run it.
+Again, we could keep going through, Typing in another command and running.
+Oops, I forgot.
+Actually, I'll leave that there.
+That's fine.
+Notice I screwed up this expression.
+I meant to say 2 x 2 x 2 x 2.
+Just to reinforce what 2 to the 4th power is doing.
+We will be talking more about errors in warning messages and
+debugging in greater detail in a few weeks.
+But this is already just showing you this statement resulted in an error.
+And Jupyter Notebook displays that error for us.
+We can see that there was something wrong.
+It could not complete the expression.
+Whereas when I correctly finished the statement,
+we now have the In with its associated output.
+Every time we run a cell, we get a new number and
+this number increases sequentially.
+But let's now return to that idea of command versus Edit mode.
+Do you see how that bottom cell is blue?
+In command mode, when I hit an up or down arrow,
+I'm able to select different cells.
+I'm commanding Jupyter Notebook to navigate across the cells.
+If I select a cell which is highlighted in blue and
+hit Enter, I enter into Edit mode.
+Now I'm able to start typing.
+I could come back here, maybe even change this to 4 + 4,
+and I could run the cell again.
+Look very closely at the In and Out numbers.
+Even though this cell is located at the top of the file,
+at the top of our notebook, it tells us this is the number 6.
+That means this is the 6th command that was input.
+And here's its corresponding output.
+And what that means is this cell was actually
+executed before this one, even though it comes after it.
+This is a seemingly minor point, but I know there are going to be some of you,
+more than a few, where the order that the cells were executed
+will be incredibly important and will lead to errors.
+And we'll actually see that here in a second.
+But please pay attention to this numbering, okay?
+Now, inside a cell, we are free to include
+multiple actions, multiple commands.
+But if I run this cell with the multiple commands,
+I don't see results output for all of them.
+Unfortunately, only the very
+last command will be output.
+What we need to do is to use a function.
+And our very first function that we will learn about is the print function.
+The print function, to run the function,
+we need parentheses.
+Parentheses are incredibly important in the programming languages.
+Parentheses tell the computer to
+execute this function call.
+It means this is not a variable or object name,
+but actually an action to perform.
+Inside the parentheses is where we place arguments.
+Functions can have zero arguments, one argument, or dozens,
+if not hundreds of arguments.
+When we run the command or the function print,
+notice we get the output displayed, but
+we don't have the same format of the display.
+We don't get the Out with the numbering,
+we just get the returned result printed.
+We can now include multiple
+print function calls.
+And if you look closely here, I'm putting white space.
+I like to use a lot of white space to separate numbers,
+to separate numbers from parentheses.
+It's not hugely critical.
+We could just type all of this
+without any kind of spacing, but
+having the spacing can make it easier on our eyes to read.
+But now if I hit the Run button,
+notice we don't just get one number displayed,
+we get the print result for all 1, 2,
+3, 4, 5 print function calls, okay?
+The point of this exercise is to show you what gets displayed or
+output from a cell will depend on the functions you call in that cell.
+But now we need to consider the type of cell we're working with.
+By default, the cell is a code cell,
+meaning we type commands and they are executed.
+And hashtags are comments in code cells.
+Whether you want to use one hashtag,
+two, or three, as I like to do,
+you will always have a comment on that line.
+So even though I'm typing the print function,
+it will not execute or evaluate that command, that expression.
+Running the cell just displays the hashtag comments.
+Now, the reason why we're showing this and
+talking about it is because in a script, like we saw within Spyder,
+comments are absolutely critical in scripts.
+We need to use comments in order to
+describe what we're doing.
+For example, print the result of 2 + 2
+to the screen using the print function.
+Okay, but in Jupyter Notebook,
+we don't have to rely just on comments to describe things.
+Because in Jupyter Notebook,
+a cell can be multiple types.
+By default, it is a code cell.
+But we could also change it to a markdown cell.
+And by changing to a markdown cell,
+did you see how the In number was removed?
+There is no longer In, there's no code input.
+This is not a code cell.
+We cannot run functions or run commands,
+evaluate expressions, or call functions.
+We are typing in a markdown cell and
+markdown text,
+although it looks like code will
+be rendered in a nice format.
+So this kind of looks like I'm typing code,
+like 2 + 2, print 2 + 2.
+But watch what happens when I hit the Run button.
+Now all of that text doesn't look like code font.
+It looks like nice, easy to read font, like what you would
+almost see in a Word document or on a web page or in Google Docs.
+If you double click back on the markdown cell,
+it returns back to markdown text,
+which is now edited or editable in Edit mode.
+Again, run it to render.
+Go to the next cell and hit Cell Type > Markdown.
+We've now converted it to a Markdown cell.
+The other really important aspect of the cell type
+is hashtags are not comments in markdown cells.
+This is not a comment.
+Your first clue is it changes color and size.
+This is still not a comment.
+This is still not a comment.
+More hashtags mean smaller font.
+Hashtags in markdown cells
+create section headers.
+More hashtags represent more subsections.
+And now if you run, you can see it looks like a title header,
+a section header, a subsection,
+a sub subsection, then it even italicizes it.
+The point being, markdown text allows us to actually
+write nice and easy to read section headers and
+text that can be included with our code.
+So go to the next cell.
+Cell > Cell Type > Markdown.
+Let's put in a section header.
+Our first notebook.
+This is our first Jupyter notebook.
+We can type markdown text to create
+nice looking discussions,
+which describe what we are programming,
+why we are programming,
+and describe the results.
+A simple code cell.
+Below is a code cell that prints the result of 2 + 2.
+Run that cell.
+So again, double click to go into Edit mode, or
+to select Edit to turn it into Edit mode, Run.
+Now, in this cell, I'm keeping it as a code cell, and
+I know it's a code cell because of the In statement print 2 + 2.
+Run that cell.

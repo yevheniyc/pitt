@@ -1,0 +1,73 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/nwtVR/harmonizing-scikit-learn-and-statsmodels-for-logistic-regression-handling
+
+English
+You should use the design matrix
+that has that column of ones.
+That's step 1.
+Step 2,
+or the next piece is you must set
+fit intercept to false when you initialize the object.
+Let's use all other settings at their default values.
+I'll sign this result to sk_default logistic regression.
+But rather than just leaving it fully blank,
+set fit intercept to false.
+Then in the.fit method,
+use xdesign_mat and yobs_mat.ravel.
+As we've seen, this feature array has the column of ones.
+The intercept attribute is now set to zero.
+I personally think this is very
+confusing because it makes
+it seem like the intercept is zero,
+but that's actually not true.
+The intercept was not estimated.
+All coefficients are now contained in the.coef attribute.
+The intercept is now contained
+with the slow in the.coef attribute.
+Now, if you look closely,
+this printout is actually a little weird
+because the.coef attribute has two dimensions.
+There's a row and a column or a row and columns.
+It can be helpful to convert
+that coef into a one dimensional array with.ravel.
+This allows us to directly compare
+the SKLEARN coefficient estimates
+with the stats models estimates.
+I'll name this object fit_compare pd.DataFrame.
+I'll use a dictionary
+where one key is statsmodels_formula.
+The value will be fit_statsmodels_formula.parems.
+The next key statsmodels_array,
+fit_statsmodels_array.parems.
+But we saw this is a Numpy array so let's wrap it as
+a Panda's series so that way we can force
+the index to be the
+same as the index from our formula interface result.
+If I copy this, all this is literally doing is taking
+our array and converting
+it into a Panda series that has index names.
+Now, one more key SKLEARN_default.
+Let's use the same trick pd.series where
+the index is coming from
+the formula interface coefficient results.
+Here, we're pulling out the coef attribute
+and forcing it to be a 1D array.
+The stats model's estimates
+are the same regardless of our interface,
+but we do not get the same estimates from Scikit-Learn.
+The Scikit-Learn estimates are
+different from stats models.
+Scikit-Learn is not more correct than stats models.
+Stats models is not more correct than Scikit-Learn.
+They are solving different problems by default.
+We will discuss the differences next week.
+For now, I want you to know how
+to force Scikit-Learn to behave like stats models.
+That's what I care about right now.
+You will see why they are different next week.
+As a quick primer,
+the reason they are different is because
+Scikit-Learn is trying to
+prevent extreme coefficient estimates.
+It does so by using something called the penalty.
+Again, next week,
+we wrap up the semester by talking about this penalty.

@@ -1,0 +1,79 @@
+Source: https://www.coursera.org/learn/the-art-of-data-visualization/lecture/rJyuV/principles-of-visualization
+
+English (auto)
+There are different principles of a visualization that help us design better data visualization.
+These could be different principles of perceptions of how we understand visualization, as well
+as principles that apply into formatting the visualizations.
+So here we are going to be looking at some of these principles of perceptions.
+A very well-known principles of perception is Gustav Principles of Perception, which
+is a set of rules that describe how humans naturally organize visual elements into coherent
+wholes based on patterns and relationship.
+These are essential when we think about data visualization as they help us explain how
+people perceive and interpret complex visual data and help us organize data based on understanding
+of these elements of perceptions.
+In the next slides, we are going to look at different aspects of these principles.
+The first one is proximity.
+Objects that are close together are perceived as a group.
+As when you look at this graph, this figure here, you very naturally are going to be grouping
+these ones together, these ones together, and these ones together as understanding that
+these are three different sets of circles represented.
+And this is just by the fact that these dots have closer proximity to each other.
+So how do we apply this principle of proximity in visualization?
+We can also arrange elements that are closer to each other if they are related.
+So here we can see that placing the titles near the charts, they're related to.
+So here this is the title for the entire chart.
+This is the title for this chart, and this is the title for this part of the chart.
+And just proximity provides this cue to people as they're trying to read this visualization.
+Similarly, you can see that legends are actually provided in ways that are closer to what they're
+supposed to be explaining.
+And these filters that allow to change actually this visualization is also positioned as close
+to this visualization, communicating that this filter is for this part of the visualization.
+The second principle is principle of similarity.
+Objects that share similar attributes are also perceived as a group.
+So here in the same visualization that we saw before, by having these different colors,
+now within even these three groups, we are perceiving the purple ones as one group together.
+How do we apply this principle of visualization in our own visualization?
+We can use similarly like colors here to actually represent a particular pattern.
+So color is one measure of similarity, which can be very effective as we think about data visualization.
+The next principle is principle of enclosure.
+In addition to what we already saw in terms of proximity and similarity, we can also use
+an enclosed area as a way of defining an area belonging to a group.
+So here again, if you look at here very quickly, you would assume that there is something about
+this part of graph different, that these are basically grouped together.
+Again, we can apply this in our own data visualization.
+So here you can see by using this background light gray color, this seems to be grouped together.
+Similarly, these are grouped together.
+We are using basically now these lines to also create other sorts of enclosures that basically
+divide these different areas of visualization and guide people to go through this visualization
+as they look at it by first maybe exploring this area, then exploring these areas separately
+from this other area because we have the line that creates these enclosures.
+Closures is another principle, a group of objects that are drawn into something as a whole
+and uses very simplicity and a simple and clear way of creating these sorts of connections.
+So here these are separate lines, but very quickly we actually see this as a circle,
+not as a group of lines because of the way that these are actually created as a whole
+as opposed to just different elements.
+So we can create, apply these principles of closure in the visualization.
+So for example, instead of actually using a lot of extra lines that could actually be
+confusing, by having the principle of closure, the fact that these lines basically are just
+kind of these different dots part of one line, we actually can see just these patterns without
+having to have all these extra elements.
+Continuity is another principle of visualization.
+When we look at a group of objects, we naturally attempt to organize them.
+So here we see these basically as one line and we see this one as another line of how
+it continues.
+We can apply principle of continuity in charts that we create.
+This principle primarily involves sorting and ordering as we create different visualizations.
+So for example, bar charts are more comprehensible when arranged from larger to smaller, or time
+charts are more comprehensible when they're organized from past to future, as opposed
+to showing a random order of the time.
+Additionally, we can organize captions, legends, and other visual elements in an organized
+in conjunction with the charts that create basically this continuity in reading the information
+along the chart.
+The next principle is principle of connection, that if objects are connected, we perceive
+them as a unified entity.
+This principle holds more influence than common colors and shapes that we saw in the previous
+principles.
+When looking at an image, even if the dots share the same color and possess other similar
+characteristics, our initial perceptions connects them through the principle of connection.
+As you can see here, the fact that there is basically this line connecting these, we actually
+see these as kind of connected to each other.

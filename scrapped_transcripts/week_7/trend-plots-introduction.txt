@@ -1,0 +1,95 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/KUudU/trend-plots-introduction
+
+English
+Hello, everyone. As you can see,
+I already have a Jupyter session
+opened in this week's directory.
+If you don't have Jupyter opened,
+please pause the recording and do so.
+Once you've done that, let's launch
+a new Jupyter Notebook and let's change
+the title to week_07_trend_plots.
+This recording is building off of the previous one.
+We will continue to examine
+continuous to continuous relationships,
+but we will do so with a separate kind of
+plot that will ultimately add even more detail.
+We will visualize continuous to
+continuous relationships via trend plots.
+The trend plot is an extension that adds
+further 'quantitative' information about
+the relationship between two continuous variables,
+or the trend plot is an extension of
+the scatter plot that
+adds further 'quantitative' information.
+Let's go ahead and import the modules that we need,
+and you need the big four: NumPy as np,
+Pandas is pd,
+matplotlib.pyplot as plt,
+and lastly, you need Seaborn as sns.
+Let's go ahead and read in our data.
+We will continue to work with the Penguins dataset.
+Let's create an object, penguins,
+which is the result of calling sns.load_dataset,
+with penguins as a string.
+Again, penguins as a string is
+the argument to the sns.load_dataset function.
+We now have the same set of
+seven columns that we worked with in the previous video.
+As a quick review,
+the scatter plot is the fundamental graphic to
+show the relationship between two continuous variables.
+Let's focus on the two
+we mainly looked at in the previous recording,
+of flipper_length and bill_depth.
+We will use the figure level functions,
+sns.relpot(data=penguins).
+All figures graphics start with the data,
+x='flipper_length_mm', y='bill_depth_mm',
+plt.show().
+We looked at this graphic previously,
+and in that video,
+I said to you that
+the relationship between
+bill depth and flipper length was
+that bill depth decreased as flipper length increased.
+You might have said to yourself,
+"Hey, I don't see that.
+It seems like there's two clusters or two groupings of
+data where bill depth
+increases as flipper length increases."
+We saw how to find that.
+We saw that by
+grouping or conditioning on a categorical variable,
+our interpretation of the scatter plot changed,
+our view of the relationship changed.
+So if I used sns.relpot(data=penguins
+, x='flipper_length_mm',
+y='bill_depth_mm', hue='species'),
+we saw that yes,
+we could find two main groups,
+the gen 2 versus the other two.
+But were you a little skeptical when I said
+the relationship decreased between them?
+Let's use trend plots to make that more distinct.
+We can add trend lines to visualize
+the linear relationship between
+the two continuous variables.
+Trend lines correspond to
+the best fit line between the two variables.
+Now, later on,
+we will learn how this line is created.
+But for now, let's visualize it and let the line
+or trend help us interpret the relationship.
+The trend is not created with the sns.relplot() function.
+Instead, the trend is
+created with the figure level function,
+sns.lmplot(), and you
+will learn what lm stands for later.
+But for right now, let's just use the lmplot function.
+So this is something that is a little odd or confusing.
+We are switching figure level functions,
+even though we are still focused on relationships.
+But to add in a trend line,
+our goal is to work with some kind of model,
+and again, you'll learn what lm stands for later.

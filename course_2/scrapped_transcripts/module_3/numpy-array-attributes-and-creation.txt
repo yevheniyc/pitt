@@ -1,0 +1,138 @@
+Source: https://www.coursera.org/learn/the-art-of-data-visualization/lecture/COeNq/numpy-array-attributes-and-creation
+
+English
+Let's now talk about a few absolutely
+critical and essential attributes
+that you will always examine
+anytime you're working with a numPy array.
+Remember, attributes are not
+functions really store properties about an object
+and these absolutely critical attributes are
+those that describe the size or dimension.
+In some ways you can think of the length,
+because remember for a length of a list,
+we would use the LN function.
+But with numPy arrays,
+we can instead use attributes to
+identify the number of dimensions,
+the number of elements per dimension,
+and total size in the array.
+Again, some of these ideas will make
+more sense once we see the two array.
+But the number of dimensions is the n attribute.
+We are working with a one array,
+so there's only one dimension.
+The number of elements per
+dimension is known as the shape attribute.
+Ndim is one.
+Shape only gives us one number.
+If you look closely though,
+shape outputs a tuple.
+Because remember, tuples cannot be modified and
+we don't want to ever
+change how many elements per dimension.
+That's why this is a tuple.
+We can't change it, it's a property of the object.
+Lastly, size, the total number of elements in the array,
+because we're working with one D array,
+the result of shape and size are the same.
+We have the six elements.
+Now we have seen one way to create an array.
+Let's see a few other ways to create arrays,
+and we'll then check
+the attributes for the arrays that we create.
+One way to make an array is with the np array function.
+This lets us convert a list for a tuple to an array.
+Let's make a list manually,
+this time, 1, 2,
+3, 4, 5.
+This list has five elements,
+has a length of five instead of six.
+It's obviously a list after all,
+we made it with the square brackets.
+But if I use
+the np array function
+and I provide my list as the argument,
+we are now converting the list into an array.
+It looks a little strange.
+Because the output of
+the array looks like a list inside the array function.
+But that's just how numPy
+displays the array, displays the object.
+Let's assign this result to a variable,
+and hopefully this will
+make more sense once we've done that.
+A one you can see is an array length has five elements.
+Let's check its attributes ndim is one.
+Shape five, size five.
+If we display it, we can see
+the array around the brackets.
+If we print it, you can see it removes the array.
+Turn the array here.
+Think of it as it's showing you its data type.
+Because when you print it,
+it actually just looks like a list.
+It looks like a sequence of numbers.
+As I said before,
+we can also create the array from a tuple.
+I'm doing the very similar set
+of actions as what we did previously,
+but this time using a tuple
+instead of a list to make the array.
+Notice when I display it again,
+it displays it with square brackets
+because whatever is contained in here
+has just been converted into an array.
+It has the same set of attributes as previously.
+We can also use some specialty functions.
+There are specialty functions
+or creating arrays of one valve.
+For example, if you want to have an array of zeros,
+the np.zeros function makes that just like how there's a
+function np.ones to make an array of one values.
+This way you don't have to do something like
+zero times np, a range five.
+You just literally have a simple call, zeros.
+The number that you assign is the argument to
+np.zeros or np.ones is
+how many elements you wish to create.
+Let's return back to np.arange.
+The np.arange function has really three arguments.
+They are start, stop,
+which is exclusive, and step.
+Now previously when we use np.arange,
+and we were just typing in
+one number because you can give it one number.
+This assumes you're starting at
+zero and you're stopping exclusively
+at the argument and assuming you're going to step by one.
+But we could also say,
+I want to start at zero,
+I want to end six exclusive.
+So not at six and I want to
+step by units of three at a time.
+What does it mean to step?
+Well, it starts at zero here.
+The step means you add three 0 + 3 is 3.
+Then the next one you're at
+three and you're going to add three more.
+That result is six,
+but we are six exclusive.
+And so that's why six is not included in the result.
+If we would instead do np.arange 0,6 step by two.
+Notice it goes zero, adds two,
+that's two adds two, that's four.
+You add to one more time,
+you're at six and we're six exclusive.
+The step is really helpful when you want to go, say,
+from a slow value to a high value in many increments,
+or just a small number of increments,
+zero to 100 by units of 20.
+If you look closely here, yeah,
+we're going from 0,
+20, 40, 60,
+80 but because of the exclusive end point,
+100 is not included.
+If you want to include the end,
+a little trick as you add one to it and now you will
+get the ending point inside the array.

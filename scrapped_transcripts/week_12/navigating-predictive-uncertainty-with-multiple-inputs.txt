@@ -1,0 +1,126 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/0vzc9/navigating-predictive-uncertainty-with-multiple-inputs
+
+English
+There are more unique values of x1 than x2.
+That's why you see all these little.s
+here and only a handful of rows
+for x2 but now,
+why does this matter?
+Let's predict using the input grid
+but only return the predicted trend.
+We will not return the uncertainty.
+Is that because I think you
+shouldn't return the uncertainty?
+The answer is obviously no.
+It's because dealing with uncertainty when you
+have multiple combinations of
+the inputs is really difficult.
+This figure here, we had a single value of x2.
+We weren't allowing our visualization
+to study what happens when x2 changes.
+In Combif of 2120,
+you will learn how to create
+the visualization to show what's going on with
+the uncertainty both the confidence interval
+and prediction interval when you have
+multiple combinations of your multiple inputs
+but for this class 2,100,
+I want you to know how
+to manage confidence and prediction intervals
+when you're focused on
+one input but when
+we consider the influence of multiple inputs,
+we will just focus on the trends
+meaning we will call the predict method.
+Use the predict method to return the predicted trend.
+I'm going to create a copy of input grid,
+call it this grid,
+and now in this grid,
+define a new column pred,
+which is equal to fit_x1x2_add.predict ( input_grid).
+We now have the prediction for the trend for
+all of these different combinations of x1 and x2.
+Let's color the predicted trend by
+each unique value of x2 to show the relationship
+of the trend with respect to x1
+for each unique value of x2.
+We learned how to do this in the previous video.
+sns.relplot (data =viz_grid,
+x = 'x1',
+y = 'pred',
+kind = 'line',
+hue = 'x2',
+and let's use the diverging coolwarm color palette
+so we can easily see above and below
+the midpoint but because I am examining
+a line chart for each unique value of x2,
+I have to set the estimator = None,
+and the units defining
+each line based on x2 and then plt.show().
+Do you see the separate line colors?
+These are literally different lines showing us
+how there the prediction for
+the trend changes across x1 for different values of x2.
+We see that the average output is increasing as Input 1
+increases and we also
+see that x2 appears to have a very minimal impact,
+which we shouldn't be surprised
+about because as we previously saw,
+the slope multiplying x1 is 10
+times larger than the slope multiplying x2.
+Now, this is obviously a lot that
+you have to do in order to interpret
+what's going on through
+predictions but stats models
+has specialized graphics to help you,
+so statsmodels has specialized graphics
+to help you with visualization of
+your linear models but there are
+a few things you must
+remember when you use these functions.
+To get access to these functions,
+we need to import the statsmodels.api,
+not the formula.api,
+and the common alias is sm,
+so statsmodels.api as sm.
+Creating these specialized figures
+requires initializing the FIGURE
+and AXIS objects via matplotlib.
+Let's make the first one fig.ax =
+plt.subplots() and now the function call,
+the first one you can
+use sm.graphics.plot_fit( fit_x1x2_add,
+) The next argument
+is which input do you want to focus on,
+and then which axis is this associated with?
+The syntax is saying plot of fit
+of this model with respect to this input.
+This input must have been used in your formula.
+The result shows you the fitted or the predictions of
+the training set and that's what's really
+critical here when you use the specialized functions.
+Unfortunately, you will only see
+the predictions of the training set and nothing else.
+Notice there's nothing in between here.
+That's because there's no observation
+at that particular input value.
+That's why I wanted to show you how
+to create such a visualization on your own.
+This is truly a continuous line because we
+made in this case
+251 evenly spaced values between the minimum and maximum.
+These statsmodels visualizations will only show
+you the predictions at the actual training points.
+The blue dots are the observed output.
+The vertical line is the prediction interval.
+Remember, the prediction intervals,
+the uncertainty of a single measurement,
+and so the way this figure works is
+the observation is like
+sliding up or down
+along the prediction interval at a point.
+The prediction interval is constant
+for linear models, Sigma is constant,
+and you are visually getting an idea of
+where each random observation
+is located around the average.

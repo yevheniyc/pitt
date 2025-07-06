@@ -1,0 +1,87 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/qRUE3/assessing-model-performance-and-generalizability-by-visualizing-probabilities
+
+English
+Lastly, let's visualize the relationship between the event probability and
+the inputs across the folds and train/test splits.
+This is to illustrate what's going to happen when we use cross validation.
+I'm taking all of the folds starting with x one Y.
+The columns facets will be the fold_id.
+And let's see, we'll do the row facets, our training or test set logistic=True,
+and we'll turn off the confidence interval to make sure this runs quickly.
+The training set, it is different across the fold,
+but 80% of the data are being used for training.
+So the training set is really only slightly different.
+And that's why these logistic trend lines,
+although not perfectly the same, they are pretty similar.
+But every single fold is guaranteed to have a different test set.
+So the relationship in the test set does not have to be the same across the folds.
+Cross-validation creates new data within
+each fold due to the random splitting.
+We will train on the folds training set and
+assess, or evaluate, or
+measure the performance on
+the folds test/set.
+So what this figure is trying to illustrate to you is that,
+we will fit on the training set and
+then examine if a learned trend is consistent
+on new data not used in training.
+That's the role of the test set.
+And here, let me just copy this to save a little time.
+Obviously you can use different models, and
+I'm illustrating that here by using a different input.
+This will allow us to get a sense of
+how reliable a model is on new data.
+Like for example here in fold three, when we focus on x three,
+the model on the training set says the probability increases as
+x three increases, but on the test set, that's different.
+So this model based on x3 is less reliable,
+less consistent across the folds compared to a model using x2.
+You can use even more complex models,
+like we saw last time, that interact
+continuous inputs with categorical inputs.
+So that would be the equivalent, in our case here,
+of using the hue to color or group by the categorical input.
+Look at fold four.
+The trend with respect to x one when x five is b is increasing.
+But that's not the trend that we observe in the test set.
+Again, the training set is similar but not identical across the folds,
+but the test set is guaranteed to always be different.
+So we're examining how reliable the model is on different data sets.
+Now let's summarize this, how do we use cross-validation?
+There are three steps executed within each fold.
+One, you fit the model on the folds training set,
+and thus estimate the model's regression coefficients,
+so all the intercepts and slopes.
+Two, you predict the test set using
+the fitted model and the test set inputs.
+Three, you calculate the model's performance
+on the test set using the model's prediction and
+the observed test set output.
+This allows us to measure if the trends
+learned on the training set carry over or
+are applicable to trends in new
+data not used for training.
+We replicate the process of splitting the data
+multiple times and thus replicating,
+fitting and assessing multiple times.
+In order to estimate the reliability of the model,
+we will be able to get out an average performance.
+And why does this matter?
+We learned last week more features,
+and thus more unknown regression
+coefficients will make a model appear
+to be better on the training set.
+The training set performance does not necessarily
+reflect performance on new data, okay?
+So again, I can't repeat that enough how critically important that is.
+Now, as you've seen in this example, I haven't actually fit any models,
+though, we've kind of visualized it through our lm plot.
+The main point of this example was to illustrate to you,
+k fold cross-validation is literally randomly making training sets.
+We are partitioning the data into dedicated training and hold out test sets.
+We do that multiple times, so that way we will be
+guaranteed to test each data point once and only once.
+We do that multiple times.
+That way we can get a measure of how reliable our models are.
+The remaining videos for this week will actually show you how to use cross
+validation to measure models performances.

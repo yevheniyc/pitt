@@ -1,0 +1,81 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/z6S5n/comprehensive-guide-to-pca-data-preprocessing-and-visualization
+
+English
+But let's look at the correlation structure,
+Between all numeric columns.
+Hopefully, this is starting to seem like old hat because it's literally
+the same steps.
+SNS heatmap data = sonar df core
+numeric only true Vmin -1,
+Vmax 1, center 0,
+Cmath, cool warm ax = ax.
+I'm not annotating this one because it has so many columns,
+it's just not worth it, I'm literally just trying to look for
+bright red and bright blue versus gray in the middle.
+There's a lot of correlation going on,
+each kind of subsequent pair are correlated with each other.
+Even though there are 60 numeric columns,
+Many of the variables are highly correlated.
+Let's exploit the correlation through PCA,
+But we must first check the scales.
+If we apply the box plot to the wide format plotting option as
+discussed in the motivation video, all variables are between 0 and
+1, that's how this data set is literally created.
+But some of them are really tiny ranges,
+while others go across 0 to 1.
+Oops, the scales are not the same across the columns,
+we therefore need to standardize.
+Extract out the features, sorry,
+the numeric columns, select d types number,
+copy, standardize Xsonar,
+StandardScalar initialize fit and
+transform sonar features.
+Let's just confirm that we removed the scale pd.Dataframe,
+Xsonar, columnsxsonar_features
+the column names kind = box make it wide,
+We have roughly the same scale,
+there are some that have some extreme values and we see that here.
+But we no longer have all of those observations in just the very
+tiny window compared to the full range of the others.
+Now apply PCA and return to
+newly created variables
+to support visualization.
+Sonar_PCA, PCA(n_components2)
+fit_transform (Xsonar).
+Again, only two columns are returned because we told it give us two variables.
+Convert this to a data frame to support visualization.
+Sonar_pca where the names are pc01,
+pc02 and visualize the scatterplot.
+PC01, pc02, plt_show.
+We now have one figure that's trying to represent everything that
+was going on in the original set of highly correlated columns.
+And by the way, if you, if you notice it, it kind of looks like
+the packed circles example, but it's more stretched out.
+It's not as pretty and as basic as the packed circles
+example that was discussed in the overview of k means.
+We can, of course color by the categorical variable.
+PCA, sonar_pca_df, I'll name it x60.
+Sonar_df_ x60 and now color sns_
+relplot(data = sonar_pca_df,
+x = pc01, y = pc02, q = x60).
+And then, just to show here, I'll even change this to set one.
+We now have two variables, instead of having
+to look at a 60 by 60 set of scatter plots.
+Now, should you have just two?
+Again, that's something we will discuss at another time later in the semester.
+But I hope what you've taken away from this example, even though it ran long,
+was it's essentially the same set of actions over and over again.
+You need to know how many numeric columns you have, you need to know how many
+missings, you need to know what the correlation structure is.
+You need to know the magnitude and scales, drop the missings,
+remove the magnitude and scale, apply PCA.
+You can begin to visualize the relationships between all
+the variables using just these two newly created variables.
+In general, they're going to capture the basic data
+splitting that occurs from k means.
+And so I'll leave executing k means on the sonar data for
+another time, because we've already run quite long, but
+I hope you like seeing this just again and again and again.
+It's again the same set of actions just repeated for
+cleaning the data, standardizing the data, executing PCA,
+executing k means, and ultimately visualizing the results.

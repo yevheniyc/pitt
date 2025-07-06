@@ -1,0 +1,106 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/nSpwE/understanding-interaction-features-in-linear-models
+
+English
+Hello, everyone. As you can see,
+I already have Jupyter open to
+this week's project directory.
+In this video, we're going to work with interactions.
+We will fit a stats linear model that has interactions.
+However, we're just going to use
+that linear additive dataset from the previous recording.
+The main point of this video is to show you how to create
+the interaction feature using
+the stats models formula interface.
+If you don't have Jupyter opened,
+please pause the recording, launch it.
+When you've come back, then start
+a new Jupyter notebook or Python three Kernel.
+Okay, I want you to now change
+this notebook name to Week_11_features_interaction.
+Let's now put in our header information CMPINF
+2100 Week 11.
+Working with linear models with interaction features.
+Let's read in the data we
+created in the previous additive features demonstration.
+So that's what we will work with here.
+Let's go ahead and import modules.
+I want you to import the big four.
+Import Numpi as NP import Pandas is PD,
+import Matplotlib.pyplot as PLT,
+and import Seaborn as SNS.
+You must also import the stats models formula API as SM.
+So in the previous recording,
+we learned about the stats models do API as SM,
+but the formula API or formula
+interface statsmodels.formula.API as SMF.
+Let's read the data.
+I'll just assign it to the DF object,
+PD.read_CSV, and then as a string,
+the linear additive example.
+There are 35 rows,
+four columns, x_1,
+x_2, the trend,
+which is the real answer and the y column,
+which is the random output.
+We already visualized everything,
+so I'm not going to go through the visualizations at all.
+That was all done in the previous video.
+Instead, I want to immediately jump to
+fit the linear model with interactions.
+The formula interface has
+several strange and weird
+yet quite useful syntax things
+or syntax artifacts when working with interactions.
+I really want to focus on the syntax issues.
+Now, as a quick reminder,
+the interaction, it means multiplication or products.
+We will create as our first model,
+a model that has the main effect terms so
+these linear relationships between
+the inputs and the average output,
+as well as the interaction feature,
+which has the product of x_1 and x_2.
+This feature is literally
+multiplying x_1 and x_2 together.
+There is a new coefficient that must be
+estimated for this feature.
+Let's set this up.
+I'm going to use
+FIT_A for the first time that we program this in,
+and we're going to see multiple ways to type it in,
+and you'll ultimately see
+my recommendation for how you should do this.
+But FIT_A is a signed SMF.OLS.
+Remember, we have a formula argument
+and we have a data argument, and then we fit.
+The data comes from DF.
+Now, when we fit,
+the first temptation is to type
+in the formula just as the math equation is,
+but just remembering the intercept
+is automatically accounted for.
+Let's first type in x_1+ x_2+x_1*x_2.
+Again, the formula, y tilda x_1+x_2+x_1*x_2.
+If you run it, everything works,
+and we can check the coefficient estimates.
+You can see there are
+four coefficients that are estimated,
+the intercept, the slope or the main effect on x_1,
+the slope or the main effect on x_2.
+But look closely at this last coefficient.
+It's not written as x_1*x_2.
+In the formula interface,
+the multiplication or the product is written as a colon.
+This is very strange,
+but this is an artifact of
+the formula interface is over 35 years old.
+The formula interface actually stems from the S language,
+which is the precursor to R. Stats models is really
+just a port of functions in
+the R statistical programming language and 35 years ago,
+statisticians wanted to use
+the colon to represent the multiplication.
+Let's follow this syntax.
+Let's use the formula interfaces
+actual syntax for
+the multiplication or interaction term or feature.

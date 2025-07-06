@@ -1,0 +1,161 @@
+Source: https://www.coursera.org/learn/the-art-of-data-visualization/lecture/EWnSJ/strings-booleans-indexing-and-slicing
+
+English
+Let's now put in another section header, strings.
+A string data type is a FUNDAMENTALLY
+different class than integers and FLOATS.
+Strings are characters, so
+think of letters, words, and phrases.
+Let's create our first string, we'll call it my_string.
+The underscore is a character,
+it just helps break up the name.
+So instead of saying my string, I'm putting in effective space,
+because we can't have a variable name that has a wide space, so my_string =.
+A string must be encapsulated or
+contained between quotes.
+So I'm using a single quote 'abcde',
+run that line of code.
+And let's now use the magic command who's my string is typed str.
+Here is its value,
+type (my_string).
+You can also use double quotes for the string.
+So single or double quotes can be used for the string data type.
+To confirm that these are the two same things,
+let's take this cell and convert it into a markdown cell.
+The = sign operator ASSIGNS
+values to objects, but
+the double '==' or
+equals equals operator is a CONDITIONAL or
+LOGICAL test about if the VALUES
+of the objects are the same.
+So let's type in single quotes 'abcde'.
+And now == double quotes "abcde".
+You run that line or you run that cell and you get the result True.
+My_string == "abcde" does
+not assign abcde to my string.
+It's checking,
+does this object equal this value?
+And now this word True is really important.
+This word True is a data type itself,
+it's known as a Boolean.
+So let's put in another markdown cell.
+A BOOLEAN data type is a TRUE/FALSE value.
+Python displays Booleans as True or False.
+So you will see that text printed to screen here,
+let me put this in back tick so they stand out.
+It looks like characters, but really it's an entire
+data type of its own, true or false, okay?
+Now let's let's put in another markdown.
+Strings are kind of "special"
+in that they can be SUBSET.
+What do I mean by subset?
+Well, let's introduce the Len function,
+or the length function.
+The len function returns the length of an object.
+The string my_string consists of 1,
+2, 3, 4, 5 characters.
+It has length 5.
+If we would apply length to X,
+you can see the data type doesn't support such an operation.
+Different data types can have different methods and attributes.
+An integer does not have length, it's known as a scalar value.
+Strings in Python have length.
+So here, let's insert a cell but
+convert it to a markdown cell.
+Integers do NOT have length in Python but
+strings do have length in Python.
+This means strings can be sliced,
+indexed, or subset.
+Let's make this cell another markdown cell.
+We can SLICE or INDEX or
+SUBSET the characters in a STRING.
+The '[]' allow us to INDEX or
+access elements from within the string.
+The notation here will at first look rather odd.
+My_string[1].
+This says I want to extract the one element.
+If we run this, do you see how 'b' is returned?
+In the next cell just output or
+display my_string.
+B is the second character,
+convert the cell to markdown.
+Very important.
+Python is a ZERO BASED INDEX language.
+Meaning the first element is the zeroth element.
+The zero element rather than the one element.
+We describe things in Python as zero,
+one, two rather than one two three.
+That takes some getting used to, but
+once you start thinking that way, it's not too bad.
+I will make the mistake from time to time because I don't like zero based index.
+I think a one is more natural to me but
+that's just the way python is set up and designed.
+This command is extracting
+out the value in this element
+of the overall string.
+Convert the cell to a markdown, put in three ### for
+a section header called slicing.
+We can extract out more than just a single element.
+We can extract or
+SLICE multiple elements at a time.
+We do that, actually, I forgot to put it in.
+We slice by including the,
+':' operator.
+The ':' operator has a START or
+BEGINNING index to the LEFT and
+an END or FINISH index to the RIGHT.
+But VERY IMPORTANT: the beginning
+index is INCLUSIVE, but
+the ending index is EXCLUSIVE.
+So this is very strange at first
+type my_string, my_string{0},
+I want to begin at zero and
+I want to slice up two, but
+not including the third element.
+The reason why I think this is confusing is because Python starts or
+because Python is zero based index.
+Look, [0:3], start at 0, but
+give me everything up to and excluding the third element.
+The length of this result is 3.
+Now, the actual third element is 'd'
+because remember, it's 0, 1, 2, 3.
+So 3 is the fourth item.
+If we would change the start from 0-1,
+we are now beginning at the one element and
+returning up to and excluding the three element.
+This is giving us just two things.
+Use a cell markdown.
+A shortcut to start from the beginning
+is to NOT include anything to the left of ':'.
+So my_string [:3] means start
+at the beginning and give me up to and
+excluding the third element.
+The one way I like to read this statement then is,
+this really says give me the first two, give me the first three.
+Give me the first four elements in the string.
+So this syntax makes more sense to me because
+I can view it as I want the first three things,
+the first four things.
+Convert the cell to a markdown cell,
+if we exclude the ENDING index or
+we do not include anything to
+the right of ':' we will return
+EVERYTHING from the BEGINNING to the END.
+So my_string[1:], this says start
+at the one element and give me everything else.
+So start at the two element and give me everything else.
+So if you ignore, Something to the left or
+the right, you get the entire thing.
+Convert the cell to a markdown.
+If the index is NEGATIVE,
+that starts from the END.
+So my_string[1] gives us the one element,
+but my_string[-1] says give me the last.
+We can identify the LAST element as [-1].
+My_string[-2] is the next to last element, so go 2 from the end.
+Okay, so this example so far, we have been
+introduced to integers, floats, strings.
+We've seen one of the key differences between strings and floats.
+Strings are sequential, they have length.
+We've been introduced to Booleans.
+But let's now see a very important data type the list.

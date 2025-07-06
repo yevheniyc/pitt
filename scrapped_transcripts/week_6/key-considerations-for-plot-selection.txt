@@ -1,0 +1,130 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/kbPEw/key-considerations-for-plot-selection
+
+English
+We now have two datasets.
+Again, the first question is,
+what is the data that you're working with?
+Now, introduction to visualization.
+When deciding the type of plot you should use,
+you must ask yourself the following questions.
+First, do I have the data? That's step one.
+Next, what data types am I working with?
+Next, what are the number
+of unique values for the variables?
+Lastly, what are my goals?
+Of these four steps,
+it's really what are my goals that actually get into
+what people usually refer
+to as what type of plot should I use?
+Because there are specific plots for different purposes.
+But what you will learn in
+this course is that the type of plot
+is mostly determined by the data type,
+the number of unique values,
+and whether you want to examine
+individual variables or individual variable
+versus a relationship between multiple variables.
+Those are the three primary things that you need
+to consider before you
+decide what type of plot you should use.
+Really, what I'm trying to reinforce with
+in this video is to
+explicitly tell you the reason why we spent so much time
+the last few weeks on how do we find out the data types?
+How do we find out the number of
+unique values for all of
+the columns in our Pandas DataFrames?
+How do we use attributes?
+How do we use methods?
+It's because knowing the data type
+is the Number 1 driver for the plot you'll use.
+Then you will need to consider
+how many unique values there are as a qualifier.
+Lastly, you ask yourself,
+am I working with an individual variable or am I
+considering the relationship between multiple variables?
+Let's now break this down further.
+The influence of the data type.
+There are two main data types
+we need to concern ourselves with.
+First, is the variable categorical or strings,
+letters, words, or just simply non-numeric values?
+Versus, do we have continuous variables,
+continuous integers, floats,
+or in general terms, numeric values?
+Are there certain nuances between?
+For more fine grain to tail.
+Absolutely. But your primary consideration is,
+am I working with something that's
+non-numeric or am I
+working with a variable that is numeric?
+The most basic type of plot for
+non-numeric variables is the bar chart.
+You should always start with creating bar charts.
+Why? Because the bar chart shows
+the count for the number of rows per unique value.
+The count will let you
+examine the most frequent categories,
+the least frequent categories, the shape.
+Are there clustering patterns?
+Are there values that are super infrequent and
+just a handful of the categories dominate counts?
+As simple as it sounds is where you should always start.
+Unfortunately, they are forgotten about far too often,
+but just starting with counts will save
+you in many situations.
+The analog for counts with
+continuous variables or
+numeric variables are distributions.
+The fundamental type of
+distribution plot is the histogram.
+We want to know how a continuous variable is distributed.
+We want to know what values are common,
+what values are frequent,
+what intervals are not common or infrequent.
+We want to know common values.
+We want to know if there's a strange set
+of long tails or extreme values.
+We want to know where the observations
+are clustered around.
+The histogram is how we can answer those questions.
+There is an important qualifier,
+though, and that is
+the influence of the number of unique values.
+Continuous variables or numeric variables with
+few unique values can be
+explored as if they are categorical variables.
+For example, the number of cylinders in a car.
+You will have 4, 6,
+and 8 as common values for the number of cylinders.
+Even though these are integer numbers
+or numbers, your exploration,
+your visualizations can treat them as if they are
+categorical because it really will simplify your figures.
+They're easier to communicate,
+interpret, and discuss and describe.
+Just because you treat
+them categorical for visualization,
+does not mean you would treat them
+categorical for other things,
+but it is a useful thing to consider.
+Then lastly, for this recording,
+individual versus relationships.
+A plot focused on an individual variable
+is commonly called a marginal plot.
+You will often hear me use this term.
+Marginal is a statistics term.
+Marginal means we are ignoring every other variable.
+We are focused on a single variable by itself.
+A marginal histogram is a plot
+of the distribution of
+a single continuous numeric variable.
+A marginal bar charge is at of
+the counts of the categories or a categorical variable.
+Relationship plots, examine how
+two or more variables change or vary together.
+We will discuss relationships in more detail later.
+This week, we will focus mostly on marginal plots.
+Tough we will get into a certain,
+very important type of relationship plot at
+the end of the recordings for this week.

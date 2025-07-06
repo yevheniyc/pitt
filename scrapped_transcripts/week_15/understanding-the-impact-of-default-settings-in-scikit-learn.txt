@@ -1,0 +1,132 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/Fg097/understanding-the-impact-of-default-settings-in-scikit-learn
+
+English
+But let's now return to scikit-learn.
+Here I'm making the feature array for the small dataset,
+and I'm using the default ridge penalty
+with the default value of C=1.
+The coefficient estimates are nice single digit numbers.
+The reason why scikit-learn does not crash here,
+like stats models,
+is because by default it's using the ridge penalty
+to try and force the coefficients to be
+small because it has the C-value set to one.
+To understand why the C-value of one is the default,
+let's apply logistic regression from
+scikit-learn again on the small dataset,
+but without the penalty.
+Now, this version is
+minimizing the loss just like stats models.
+Now, this is one of
+my major pet peeves with scikit-learn.
+Behind the scenes, this model did in fact crash.
+But you don't get any warning.
+You don't get an error message.
+It doesn't tell you there's linear separability.
+It completes as if everything is okay,
+even though we are now fitting
+the problem exactly the same way as stats models did.
+Stats models crashed.
+Scikit-learn appears to not
+crash but it actually did behind the scenes.
+The only hint that there is a problem
+comes from the values of
+the coefficients. Look at the slope.
+The slope here is really,
+really large, double digits.
+In all of the examples in lecture
+throughout the semester when we fit models,
+we have never seen slopes of this size before.
+Really, really big numbers for slopes,
+especially in logistic regression models,
+are a really clear indicator something is wrong,
+even though scikit-learn doesn't
+tell you anything is wrong.
+This is part of my pet peeves of
+how I genuinely distrust a lot of things from
+the scikit-learn community because this actually crashed.
+These values you're getting are
+the values right before the crash.
+Let's now study the impact of
+these extreme coefficients by making
+predictions so I set up the prediction grid,
+I make the feature array for the prediction grid,
+I make the predictions with the ridge penalized model.
+I make the predictions without the penalty,
+so consistent with stats models.
+Then I go through the actions that we've seen in
+lecture for how to make
+the predictions and organize them.
+The predictions by just minimizing the loss,
+so no penalty are shown in red.
+The predictions for the event probability
+coming from the ridge penalized model are shown in blue,
+and for contexts, I've kept in
+those vertical lines that
+are representing the linear separability.
+The extreme coefficients that we're getting from
+scikit-learn are trying to produce a step change.
+It's trying to produce
+a curve that goes from a probability of
+zero to a probability of
+one over a very narrow interval in the input.
+Whereas the ridge penalized result
+that has the nice single-digit coefficients is
+a nice smooth curve from
+low probability to high probability over a wide interval.
+Now you might be saying to yourself,
+why are you so mad at scikit-learn?
+Why do you get so angry with it.
+The data is saying there's a step change,
+that all of the events are to
+one side and all the non-events are to the other side.
+Why do you dislike this red curve?
+Scikit-learn didn't do anything wrong.
+Well, let's consider the entire dataset.
+Now I'm including in all of the data,
+not just that small nine rows.
+Now we have events to
+the left and to the right of that line,
+and we have non-events to
+the left and to the right of the line.
+The extreme coefficients that produced this step change,
+one way to view that is it's like the model
+overfit to this very particular dataset that we gave it.
+But now when we approach new data,
+data that we didn't see before,
+that overfit model is completely and totally wrong.
+The data alone doesn't tell the whole story.
+The data alone is overfitting, is memorizing.
+It's not truly representative of the real situation.
+Now, why is
+the ridge penalty the default option in scikit-learn?
+Well, here's the stats models prediction,
+the orange line, based on the entire dataset.
+It's not perfectly the same as
+the scikit-learn ridge penalized resolve
+from the small data.
+But they are much closer together
+than that step change we saw produced by
+scikit-learn when we had
+no penalty on the small data so
+this is the crashed overfit model.
+The ridge penalty is
+useful because it's trying
+to keep single-digit coefficients.
+It's trying to regress rather than memorize,
+like minimizing the loss alone.
+I hope you like this video.
+I hope it gives some context for you.
+The primary takeaways are linear separability is
+an issue when logistic regression
+is only minimizing the loss,
+when there is no penalty.
+The model doesn't know what to do.
+Stats models literally tells you it doesn't know
+what to do because it crashes and
+says, perfect separation detected.
+When you use penalty = None in scikit-learn,
+it won't tell you it crashed.
+Your only hint is the extreme coefficient values.
+By default, the ridge penalty
+is trying to prevent those extremes.

@@ -1,0 +1,86 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/0atjZ/visualizing-predictions-with-multiple-inputs
+
+English
+When you have multiple inputs,
+I feel it's not completely necessary to add
+in the training set because
+it will just clutter things up,
+so let's just focus on the predictions themselves.
+Ax dot fill between,
+we are filling between the df viz1 dot x1 with
+the pred x1x2 summary dot obs
+ci lower pred x1x2 summary obs ci upper.
+As I mentioned last week,
+I like to use orange ribbons for
+the prediction interval so
+I'm setting the face color and edge color to orange.
+You can plt show,
+here let's set the labels while we're at it.
+Ax set x label x,
+ax set y label y.
+The confidence interval, ax fill between
+df viz1 x1, pred x1x2,
+add summary mean ci lower,
+pred x1x2 add summary, mean ci upper.
+I like to use
+gray ribbons so I'm
+setting the face color and edge color to gray for
+the confidence interval and
+then the trend ax dot plot, df viz x1x1.
+Pred x1x2 add summary,
+and now using the bracket notation mean with
+a black colored line and then setting the line width.
+The x label, I made a mistake is not x, it's x1.
+Hidden behind the scenes is the fact that x2 is at
+one particular value but I'm focused
+on the relationship with respect
+to just the most important input.
+Now, if we want to
+examine the influence of the other inputs,
+then we need to allow the x2 input to also change.
+If you go back up to how I set df viz1,
+I used a single constant value of x2.
+But if I want to know its influence,
+I need to have multiple values of x2.
+The visualization data frame must therefore
+consider multiple combinations of the continuous inputs.
+Now, this is a little tricky,
+we need to create a grid of input combinations.
+There are a few ways to do this,
+but let's use list comprehensions to manage it for us.
+I'm going to name this data frame input grid,
+it will come from the pd data frame function.
+I'm not going to use
+a dictionary instead of I'm using a list comprehension.
+The names of the columns will be x1 and x2,
+same names as my inputs.
+But now, as a list comprehension,
+we're going to have an action,
+that action is going to
+define two values x1 and x2 within a tuple.
+I need to set
+my iterating variable for x1 in some sequence,
+and I need to set
+my iterating variable for x2 in some sequence.
+But now, the sequence for x1,
+let's use the same np linspace where I take
+the minimum value and the maximum value with,
+let's use 101 unique values.
+For x2 let's do something
+similar where we have df x2 dot min,
+df x2 dot max,
+but we'll just use nine unique values.
+Now, this code, it seems a little
+weird because we actually
+have four or two list comprehensions going on.
+The action is just setting the two values
+of the iterating variables given these two sequences.
+I purposely separated them across multiple lines so
+we can see where each of the iterating variables are set,
+how we define the column names.
+The input grid is a data frame 909 rows.
+The reason why it has 909 rows, well,
+there are 101 unique values of
+x1 and nine unique values of x2,
+just like we set here.
+What we have essentially done is we've created a grid.

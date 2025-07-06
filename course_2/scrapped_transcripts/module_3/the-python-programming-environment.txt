@@ -1,0 +1,147 @@
+Source: https://www.coursera.org/learn/the-art-of-data-visualization/lecture/3dpjR/the-python-programming-environment
+
+English
+Hello, everyone.
+In this video, we're actually going to start programming.
+But we have to do one thing before we can begin programming,
+we need to set up our directories.
+In the previous video, we created the virtual environment
+that will have all of the software that we will use, but
+we need to save files, save our information somewhere on our computers.
+I have already opened up a File Explorer on my machine.
+As a Windows user, I use File Explorer here.
+One way to open one up, if you're a Windows user,
+you can come down here, where you see the file on the ribbon.
+You can right-click and click on File Explorer to open up a second one, okay?
+I will typically have three or four of these opened up on my machine.
+If you're a Mac user, you want to open up Finder.
+Finder is the Mac equivalent of the File Explorer.
+Now, on my computer, I like to save stuff within documents.
+Can already see where I have a folder for
+the ADDM program inside a file path in my Documents.
+In here, I've already made two subdirectories, courses and paperwork.
+And within courses are subdirectories or folders for
+the four courses in the ADDM program.
+We're in COMPF_2100, so I'll click on it.
+I always like to have a prep folder,
+this is where I practice everything before everything for the class.
+I also have a publish folder, this is where we will be working.
+So in publish, I click on it, and I now have an empty folder.
+going to make a new folder.
+And inside publish, I'll have compf_2100_project.
+It's just the name of the directory.
+And in this directory is where we will locate
+everything that we're going to do this semester.
+So I opened up or went inside that directory,
+compf_2100_project, make another new folder.
+I could even do that by right-clicking in here,
+New > Folder, week_01.
+We can make another one for week_02 that will be used for
+next week, so on and so forth.
+Now, in week_01, we click in here, and
+we just have empty, there's nothing here right now.
+That's okay, this is where we will save things.
+So I'm going to move this out of the way, Okay?
+Now, we're first going to program in a script within
+an integrated development environment, an IDE.
+This will be the one time this semester where we
+start programming by launching Anaconda Navigator.
+So please launch Anaconda Navigator first.
+Again, we get all that stuff that it throws on the screen.
+Okay, great, we now have Anaconda Navigator.
+And in Anaconda Navigator,
+you will see the application is on.
+Again, this is telling us we're currently in the base root environment.
+But when you click on it, when you click on this drop-down box,
+you should now see compf2100.
+The virtual environment we created in the previous video,
+I want you to click on that.
+And I get this thing, it will update and say, No, remind me later.
+Okay, now, inside compf2100,
+you see there's a whole lot of things that have been installed.
+Pretty much all of the programming we will do will be inside
+Jupyter Notebook, but I want to first introduce you to Spyder.
+Spyder is an IDE, an integrated development environment,
+it's modeled or designed after MATLAB's IDE.
+I want you to launch Spyder.
+Bunch of things pop up.
+I have even some messages here, I'll just discard.
+All right, here we go, Welcome to Spyder.
+Okay, we could start a tour, I'll dismiss this.
+Okay, here's what I want to focus on right now.
+Spyder, as an IDE,
+consists of a text editor on the left,
+it has the console in the lower right.
+And then it has this other panel, and
+we'll see where that comes into play in a little bit.
+The other thing that's important is this area up in the very top.
+This is the path for the current working directory.
+This is where we are located in.
+As you can see, my path is here, but
+I want to change the directory.
+I'm going to click on this folder, and
+I'm now going to navigate on my machine,
+publish > compf_2100_project > week_01.
+I want you to select week_01, Select Folder.
+And now, you can see it has navigated,
+it has changed where we are located here.
+The very path has changed.
+Now, in the lower right,
+this is the IPython console.
+IPython stands for Interactive Python.
+In this console, it shares a lot of similarities with the command prompt.
+We can type commands in here, we can essentially treat it as a calculator.
+2 + 2 equals 4, 3 * 3 equals 9.
+Look at the notation for
+how the console is organized,
+there's an in and an out.
+We must input commands, and output is then displayed.
+Each input-output block is numbered.
+I had my first action as 2 + 2 displaying 4,
+then my second action, 3 * 3, displaying 9.
+We could do even more things here in the console,
+we can assign variables.
+So before I do this, see above the console,
+there's a Help, but
+I want to focus on the Variable Explorer.
+This is all of the variables in the current environment.
+See how everything is empty?
+And so even though I'm typing in commands in the console and
+it's running things, running various actions,
+there's no variables saved in memory.
+To assign a variable, we need to give it a name,
+we need to use the equals sign to
+assign some value to that variable.
+x = 2, when I run that command,
+notice there is no out displayed.
+But in the Variable Explorer, in the environment,
+we can see there is now a variable named x in memory.
+If I type x, I can display it,
+I can do other actions such as 2 * x or 3 + x.
+I could even take x and raise it to a power,
+x to the fourth power, x * x * x * x.
+In Python, We don't
+use the caret operator to raise something to an exponent.
+This is incorrect.
+We want to instead use two asterisks for raising to a power.
+That's really, really important, really critical.
+Okay, if you want to square something,
+x ** 2, or about 5 squared,
+which is 5 * 5.
+We could, of course, assign other variables, how about y = 5?
+Notice now in the environment, x and y are both located here.
+They're in memory, we could do x + y,
+we could do x * y, we could do y / x, x / y.
+We could do pretty much anything we want at this point.
+x and y are really just aliases for
+these values.
+Variables or objects will enable us to do a lot of
+very complicated data analysis procedures.
+So it's important to remember how
+to assign a value to a variable.
+And we could even assign a value based on other variables.
+So z = x + y,
+We can now see x is 2, y is 5.
+2 + 5 is 7.
+z = 7.
+Again, we could do then further actions on z.

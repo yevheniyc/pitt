@@ -1,0 +1,138 @@
+Source: https://www.coursera.org/learn/the-art-of-data-visualization/lecture/pPgKY/using-jupyter-notebooks
+
+English
+The point being here is if we were just in a script, we would have to
+really rely on comments to describe everything that we're doing.
+But you can't give your script to your boss, your manager,
+your supervisor, your research advisor.
+Most of the time,
+they don't want to have to read your comments to figure out what you did.
+But with Jupyter notebook, you're able to organize a nice report.
+That report can have easy-to-read text with section
+headers that allow us to organize our analyses.
+Your notebook will also be able to include all of
+the code that supports what you're doing.
+The Jupyter notebook, therefore, is not just a coding script.
+It's not just a word document where you type your results.
+It literally is going to have everything.
+This will help make sure you can reproduce what you have done.
+One more thing on markdown cells,
+let's convert this cell to a markdown.
+Put a section header.
+Bulleted lists.
+We can create bulleted lists using markdown.
+To make the list, you go to a new line, hit asterisk, space, and
+do you see how now the font has changed color?
+It's black now it's blue.
+First item in the list.
+Second item in the list,
+3rd, 4th, so on and so on.
+Back to regular looking text.
+Run this cell.
+By running the cell, we don't see the asterisk.
+We don't see the blue versus the black colored font.
+Instead, we see a nice bulleted list.
+It's well organized.
+If you double click on the cell, it goes back to the markdown code.
+Run the cell to render the text.
+So again, this is a way to help organize and present your discussions, okay?
+All right, so let's put in another markdown cell.
+Cell type markdown defining variables,
+let's define two variables,
+x and y in the code cell below.
+To run this cell, instead of going up and hitting this arrow,
+I'm going to use a keyboard shortcut Shift + Enter.
+Now, it evaluates the cell and puts in a new one.
+I want you to double click on that cell again.
+Do you see how x and
+y were displayed like regular text?
+Let me put a comma.
+I would instead like these variables to be shown as looking like code.
+So I'm going to put a back tick to the left of x and
+a back tick to the right of x.
+If you've never used a back tick before,
+it's the character on the same button as the tilde.
+The tilde is usually to the left of the one on your keyboard.
+Surrounding x and y with back ticks, you see the font
+changes color goes to orange, you run the cell and
+now the font is displayed in like a code font rather than the nice text font.
+So it's just a simple way to distinguish that I'm referring to
+a variable in the environment rather than just typing some word.
+Let's type in x = 3.
+Enter a few times y = 7.
+We're defining these two variables, x and y.
+Again, keyboard shortcut, Shift + Enter.
+Nothing is displayed, but
+we now have access to the variable x.
+We have access to the variable y and
+we could do any of the operations on x and
+y that we did when we were working in the script in Spider.
+But one of the downsides of Jupyter notebook
+is that there is no panel that shows us all of
+the variables currently in the environment.
+Like in Spider, remember we had that panel
+up here that listed x and y in the next cell?
+Let's convert it to a markdown cell.
+Jupyter notebook includes
+magic commands that allow us to see or
+inspect aspects of the variables,
+objects in the environment.
+Magic commands all begin with percent.
+You have to input it in a code cell and
+the magic command W-H-O-S,
+whos, is asking Jupyter to return who
+are the variables or objects in memory?
+Now we see, we get the name of the variable, the data type which we'll
+talk more about in a minute, and then some information about it.
+The who's therefore giving us that environment or
+variable explorer like we saw in Spider.
+So at any time, if you're ever unsure about
+what is present in memory in Jupyter notebook,
+use the magic command who's to find out.
+Let's go ahead and now define a new
+variable z which is equal to x divided by y.
+If we use the who's magic command,
+we now see there are three variables in the environment.
+And again, if you look closely, the who's is really
+a snapshot of the present state of the environment.
+Now, I want to show you a common mistake that happens
+because in Jupyter notebook we have been adding
+cells sequentially, one after the other.
+But click in the gray area.
+The blue shows we're in command mode.
+I want you to move or hit the Up Arrow on your
+keyboard to move up to go all the way back to the very first cell.
+Now, you see where we're selected with this first cell,
+I want you to press the plus button.
+So see this plus button?
+This stands for insert cell below.
+We have now inserted a new cell that was not there before.
+Click inside that cell to enter edit mode and
+use the whos magic command, run the cell.
+This cell, which is cell 20 that's
+been executed in the environment,
+tells us there are these three variables x, y and z in memory.
+Select that cell again and
+hit the plus button to insert a new cell after it.
+I want you to type z times x
+times y and run that cell.
+We have been able to evaluate z times x times y because after
+all those three variables are in the environment, they are in the memory.
+Everything seems great.
+We have recorded all of our actions.
+So let's go ahead and now save
+this notebook up in the top.
+See where it says Jupiter?
+And this says untitled.
+I want you to click on Untitled.
+Put your cursor here.
+You should see a gray box appear.
+Click on it.
+And we're going to give this a new name, our first notebook.
+And then hit the rename button.
+It's no longer an untitled file, it's our first notebook.
+Save, so hit the Save icon here.
+Go to file.
+Close and halt.
+That closes out all of the code and
+operations associated with this file.

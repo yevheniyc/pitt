@@ -1,0 +1,80 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/JhQFe/preprocessing-for-kmeans-clustering
+
+English
+Hello everyone.
+In this video we are finally going to apply KMeans on a realistic application.
+As you can see, I have Jupyter already opened up.
+If you don't, please pause the recording and then once you do,
+you will create a new Jupyter notebook.
+Let's name this file week_08_kmeans_penguins.
+Put in our header Information Compact 2100 week 08.
+This is a Realistic KMeans Clustering
+example using the Penguins data.
+Let's import the module.
+So we will begin by importing in the big
+four numpy is np, pandas is pd,
+mathplotlib.pyplot as plt, and seaborn as sns.
+Once you've imported in the modules, let's read in the penguins dataset,
+loading it in just as we have done in all the previous examples,
+and apply.info to make sure we have it.
+Now, before we can execute KMeans, we need to pre-process.
+We know we need to standardize
+To remove the magnitude and
+scale dominated by one variable.
+As a little reminder, if we apply the y format
+plotting options to penguins using a box plot,
+body mass g completely dominates the magnitude and the scale.
+Let's extract the numeric columns.
+I'll name it pens_features which are penguins
+apply_select_dtypes to number, enforce the deep copy.
+Standardize using the scikit-learn
+standard scalar method from
+sklearn.preprocessing import standard scalar.
+Let's initialize, fit and
+transform in one line of code.
+Assign the result to x pens where we take standard scalar,
+initialize it, fit and transform pens features.
+The result is a numpy array with as many rows and
+columns as the data frame that we provided to fit transform.
+But as we saw in the previous video,
+the standardized columns
+Have the magnitude and scale removed.
+So after executing the standardization, I will oftentimes make this check
+just to confirm that, yes, this magnitude and scale have been removed.
+We are working with variables of similar magnitude.
+Now we know there are three species in the penguins dataset.
+We know that because we have explored this dataset before.
+However, let's follow good practice and
+start out by applying KMeans with two clusters.
+I've mentioned, I always encourage you to start with just two clusters before
+you try any other number of clusters, even if you know there's a known grouping.
+We have three species.
+Let's just start with two to see what happens.
+We get the KMeans function from scikit-learn
+from sklearn.cluster import KMeans.
+We will initialize fit and predict in one line of code.
+We will use the x pens numpy array.
+Let's assign the result to the clusters_two object KMeans.
+Let's initialize, how many clusters, I want to start with two.
+Then we need to set the random seed.
+Then how many random restarts, 25.
+How many max iterations per random restart, 500.
+Fit and predict x pens.
+Great, this is now everything we've done throughout the last so
+many videos all put together.
+You run it, but when you run it,
+you will get an error.
+Can you make a quick guess as to maybe why you got an error?
+We actually saw the reason for it in the previous video
+when we manually applied the pre-processing.
+But notice in this example, I followed maybe what you
+might typically see online, where you read in a dataset,
+you pre-process it, and then you just apply some functions.
+Pre-processing gave us no errors, and yet KMeans gave us an error.
+Well, let's scroll down and look at the warning message.
+Nowadays, in KMeans, you get an incredibly descriptive message.
+It tells you, KMeans does not accept missing values encoded as nan.
+It then tries to be all smart and clever and give you a whole bunch of
+other things, but don't worry about that, because Python is not smart and clever.
+The important thing is what's shown in this first line,
+KMeans does not accept missing values.

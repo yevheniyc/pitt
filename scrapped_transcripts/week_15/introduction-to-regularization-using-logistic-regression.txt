@@ -1,0 +1,136 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/xDmvp/introduction-to-regularization-using-logistic-regression
+
+English
+Hello, everyone. As you can see,
+I already have Jupyter launched and opened up.
+I'm in this week within the course's main directory.
+I want to go ahead and launch a new Jupyter Notebook.
+If you don't have Jupyter opened,
+please pause the recording and do so,
+and when you come back,
+launch a new Python 3 kernel.
+Now, this week, the programming
+is going to be a little different.
+Instead of starting a brand new notebook
+from scratch every single time,
+a lot of the examples will
+build off of the same notebook.
+However, we will change
+the name we will save as a new notebook,
+that way we continually make
+a separate notebook for each recording,
+but we will be building off of
+the examples within the same notebook,
+because the material this week really does just
+continually build off of each other.
+But let's go ahead and change the name of
+this notebook to week_14_regularize_intro.
+Put in the header information,
+CMPINF 2100 Week 14,
+introduction to regularization using logistic regression.
+This notebook, we'll build from a starting point,
+and eventually show you how to tune
+regularization methods using scikit-learn
+for logistic regression applications.
+Let's go ahead and import modules.
+We need the big four, and then we will
+import other modules and functions as needed.
+Let's import numpy as np,
+import pandas as pd,
+import matplotlib.pyplot as plt,
+and import seaborn as sns.
+Let's read in the data.
+We will continue to use
+the binary classification example from Week 12.
+Let's go ahead and read that in just like last week.
+Assign it to the df object, pd.read_csv.
+I have to navigate backwards
+one directory to go to the Week 12 directory,
+and then choose week_12_binary_classification.csv.
+I can display.info.
+I like this example.
+That's why we have been using it for several weeks,
+but I like it because it has multiple continuous inputs.
+It has a categorical input.
+It is for a binary classification problem.
+The y column only has two unique values.
+We're getting a mixed input example
+for binary classification.
+Now, over the last few weeks,
+we have worked with logistic regression,
+and we have fit many models from simple to complex.
+Over the last couple weeks,
+we have defined a list of different formulas.
+For example, last week,
+in the 13th week,
+we were constantly working or constantly
+iterating over this list of many different models.
+Well, I'm going to copy the same list,
+just as we did last week.
+That way I don't have to keep typing in these formulas.
+Please go to the last week.
+Any one of the examples from last week
+you can use to copy this list.
+Let me move that away,
+paste it in, run the cell.
+Great. Now, as I mentioned,
+we have not only very, very simple formulas,
+which remember these defined models,
+such as an intercept-only model,
+but we also have very complex models.
+The last model in that list, if you remember,
+had over 80 coefficients that needed to be estimated.
+This had many features.
+It interacted the categorical input with
+many features derived from the continuous inputs,
+interactions and non-linear polynomials.
+Now we know how to fit the models with stats models.
+Let's go ahead and import the formula interface.
+Import statsmodels.formula.api as smf.
+Now, I'm going to fit that last model,
+the very complex one.
+I'll name it fit_stats, smf.logit,
+where the formula is the last formula in the list.
+The data is df.fit.
+Optimization completed successfully.
+We know how to access the coefficient estimates.
+We know how to access their standard errors.
+We know how to access their confidence intervals,
+to check for statistical significance.
+Let's just focus on the estimates for now,
+and I'll convert them to NumPy,
+so it's a little
+easier to see everything's printed out on the screen.
+The reason why I wanted to show you this was
+this model that had the 81 coefficients,
+there were some coefficients that
+were less than one in magnitude.
+Here are a few. But then there are
+some that are larger than one in magnitude.
+Values 5, 6, 7.
+Then there are variables that are in-between,
+values of two and one in magnitude.
+Remember, these are slopes,
+where in the slides that I provided this semester,
+I call these the Betas.
+These are the coefficients that multiply the feature.
+They represent how much
+the log odds ratio changes for
+every one unit change in a feature.
+That means if the magnitude of the slope is large,
+the log odds ratio changes by a large amount,
+whether positive or negative,
+for one unit change of the feature.
+This is an important idea that we will
+come back to later.
+But the larger the magnitude of the coefficient,
+the greater the change
+the feature has on the log odds ratio.
+This idea carries over to linear models in regression,
+but instead of the large magnitude slope
+changing the log odds ratio by a large amount,
+the average output directly changes by a large amount.
+The idea is still the same.
+The larger in magnitude the slope is,
+the larger the change
+the output will have due to a change in the input.

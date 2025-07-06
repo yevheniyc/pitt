@@ -1,0 +1,89 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/ZXw3O/including-categorical-variables-using-color
+
+English
+But we have categorical variables,
+object data types in the penguins data set.
+Let's just do the dot info again.
+For example, we have species.
+What if we group by a categorical variable?
+In other words, we can study
+if the relationship between
+the two variables changes across categories.
+When we bring in a categorical variable,
+we are actually able to consider
+if the relationship is changing.
+One way to bring in the categorical is through color.
+Let's assign the species
+variable to the hue argument in sns.relplot,
+so sns.relplot, data equals penguins,
+x equals flipper_length_mm,
+y equals bill_depth_mm But now, hue equals species.
+Do you see the green dots?
+The color of the markers are now telling
+us one category of this variable.
+The context is every green dot is the Gen 2 species.
+Well, look closely at this scatter plot.
+We now basically have a dividing line between
+Gen 2 and the other two species.
+When you have a Gen 2 species,
+now, yes,
+when flipper length increases, bill depth increases.
+Likewise, when you have one of the
+other two that blue and the orange,
+the Y axis increases as the X axis increases.
+Meaning, conditioning or
+grouping by a categorical variable,
+and change our opinion
+on the relationship between two continuous variables.
+This is a very important concept.
+We could have one interpretation about
+a relationship but when
+we are given a new piece of information,
+that relationship can change.
+Instead of coloring by the categorical variable,
+we can also use facets to literally separate the groups,
+so now instead of using hue,
+I'll use the column facet,
+so penguins x equals flipper_length_mm,
+bill_depth_mm, but now, col equals species.
+We only have the same blue color,
+but because we have separate facets or subplots,
+the different species are,
+in fact, completely separated.
+You can combine hue with the column
+facets to get facets and colors,
+so you can get both.
+The coloring in this case would be redundant.
+In truth, it's not completely necessary,
+but it can help make the visuals even easier to
+use the hue and
+the facets to distinguish the categorical variable,
+so you can do this as extra highlighting.
+However, if you do
+not color by the same variable as the facet,
+that means you can use separate or you can use
+different categorical variables for color and facet.
+Meaning, you can group the relationship on
+two separate and distinct categorical variables.
+You are grouping by
+the combination of two categorical variables.
+For example, I would like to know
+the combination of species
+and island on the relationship,
+sns.relplot, data equals penguins,
+x equals flipper_length_mm, y equals bill_depth_mm.
+Hue used for species,
+but now the column facet island,
+Each facet is a separate island.
+Each color is a separate species.
+This chart now tells us
+the Adelie species shown in
+blue appears in all three islands,
+but the Gen 2 species is only on
+the Biscoe Island while
+the chinstrap species is only on the Dream Island.
+We have two groupings
+to help us study the relationship
+between two continuous variables.
+Meaning, we have a total of
+four variables displayed within this one graphic.

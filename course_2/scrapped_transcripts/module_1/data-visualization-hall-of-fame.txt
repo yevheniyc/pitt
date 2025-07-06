@@ -1,0 +1,114 @@
+Source: https://www.coursera.org/learn/the-art-of-data-visualization/lecture/dzcNv/data-visualization-hall-of-fame
+
+English (auto)
+In this module, we are going to be looking at a number of historical data visualizations
+that we are referring to them as Hall of Fame as they have had a significant role in the
+history of the field of data visualization.
+Let's look at the work by William Plaffer, who is one of the pioneers in the field of
+data visualization.
+His significance stems from his innovative approach to representing statistical data
+geographically, as we are going to be seeing in a couple of different examples, which laid
+the groundwork for modern data visualization techniques.
+He is credited with creating several types of visualization charts that are still used
+today and are fundamental to the field of data visualization.
+He developed the line charts, the bar charts, and pie charts, as we are going to see some
+examples of work that he has done.
+What you can see in this example is one of his line charts, which represents export and
+imports.
+The x-axis represents the year, and the y-axis represents the value of the trade.
+The top line, this yellow line here, represents the imports, and the bottom line, the red
+line here, represents the export.
+And the shading between the lines, as you can see here, like this pink shading versus
+the yellow shading here, represents the balance between the export and import.
+So in this case, the pink is basically representing negative balance, and yellow representing
+the positive balance.
+Here you can see the same example done in the more modern representations and using
+some of today's tools, but similar information is represented here.
+Again, the x-axis is showing the time, and the y-axis showing the trade value.
+Here, this black horizontal line represents the 100% balance between the export and import,
+and the green shading shows the positive versus the negative trading is shown in the red color,
+as you can see here.
+So you can also see the relationship between how, when historical events have happened,
+it impacted the trade balance in the UK.
+So for example, after 1990, when the EU is funded, you can see the positive effect.
+And then when the global financial crisis happened, or when the Brexit made effective,
+you can see also the impact of those on this balance between the export and import.
+So when Playford tried to plot trade data for different countries, for example for Scotland,
+he found that there were a lot of records missing.
+Meaning that he couldn't plot a time series as usual as the line charts that we saw in the previous slides.
+This is what gave birth to bar charts.
+Famously, he stated though that the bars were inferior in utility to line charts,
+but useful in cases that maybe we don't have this kind of continuous representation of the data.
+So here in this chart, that is a bar chart that Playford had created,
+you can see on the x-axis, the value of the trade.
+And on the y-axis, you're seeing different countries and as kind of not very visible,
+but there are two different colors also represented here, the darker and the lighter,
+that they are representing the import and export values for each country that you can see kind of on the y-axis.
+Playford also created pie charts in 1801.
+Here he drew a series of proportionally sized circles, some of which were split into segments.
+Today, pie charts remain one of the most common visualization types to show part to whole relationship.
+And when they're done well, pie charts are really good at conveying simple ideas.
+As you can see here, again, some examples of what Playford has done in his work.
+Another very famous set of visualizations that are historically very well known are the work that were done by Charles Minard,
+who is another pioneer in the field of data visualization.
+He is best known for his innovative graphical representation of statistical data, particularly deception of flowcharts.
+He is specifically known for his famous illustration of losses suffered by Napoleon's army during the invasion of Russia.
+So this map that you can see here is something that you might have seen, sometimes even is in the museum.
+And what you can see here is there are actually what's really interesting about this visualization is that it's combining several different valuables into this one single visualization,
+including the size of the army. That is what you're seeing by the thickness of the lines here.
+So it's basically showing actually the top line as kind of they were going through Moscow.
+And then the bottom line is when the army basically retreat from Moscow.
+And the thickness is basically showing the size of the army. So that's how it has basically changed over time.
+You can also see the geographical information, including major rivers and the name of the towns along these routes that are shown in this.
+Like you can see here, these are the rivers or the name of the different towns.
+Temperature is also represented by a timeline along the bottom of the graph.
+So here is where you can see the temperature and the distance is actually proportional to actual distance.
+And the progression of time is represented as kind of this line representation with the key events, as you can see in these vertical lines along the path.
+Another really interesting historical work done in the field of data visualization is the work which was done by Florence Nightingale,
+that you might actually not know her as someone in the field of data visualization and you might know her as a nurse.
+She is actually considered to be one of the first pioneers of data visualization.
+While she is best known for her achievement in nursing,
+she also is credited with being one of the most influential early figures to not just use data,
+but to show it in a way that could impact and move her readers.
+Nightingale was one of the first people to use data visualization to influence public policy,
+combining a statistical rigor with an artistic approach to convey her message to influence policy.
+Her work contributed to the development of modern nursing and health care standards and demonstrated the power of data-driven decision making.
+In fact, her work is really a source of the importance of data visualization, as we will be talking more in this course and in the next modules as well.
+So what you can see, for example, in this figure, you can see her development of what is known as Cox-Comb chart,
+also known as a polar area chart or a rose diagram that she used to illustrate the causes of death among soldiers in the Crimean War due to sanitary conditions.
+So she used this illustration to push for sanitary reform in hospitals.
+What you can see in this Cox-Comb chart, similar to what you saw in this previous slide, is that the pie chart is actually cut into 12 equal angles.
+These slices advances in a clockwise direction. Each shows what happened in one month and one year.
+The outward reach of each slide shows how many deaths occurred in that month.
+Each slice has three sections, one for deaths from the wounds in the battle, one for other causes, and one for the diseases that actually happened in the hospital.
+Except one of the months, as you can see in this graph, so you can see here the orange color is the deaths from the wound,
+and then this brownish color is other causes, and the grays are actually all the deaths that happened actually in the hospitals.
+And she basically used this visualization to show that how battle deaths were actually very small portions of each slices,
+and there was a lot more happening in the hospitals. And then this visualization was basically what was used to advocate for changes in the health system.
+Now, moving into more modern and more contemporary examples of data visualization, Julius Murray was a pioneer in motion photography and data visualization.
+He's best known for his work in what is known as Carnot photography, a technique of capturing multiple phases of motion in a single image,
+and his innovation in visualizing data related to human and animal motion, as you can see in this figure here, the motion being actually represented.
+The image here shows Murray's capturing of the movement of birds in flight using his photographic gun,
+which could take multiple images in rapid succession on a single photographic plate.
+Instead of producing a series of individual images, Murray captured all the phases of motion into this one single picture.
+This allows viewers to see the entire flight cycle of birds' wings.
+The result is a visual representation that breaks down the rapid, complex, and otherwise invisible motion of flapping wings.
+So here what you can see is that a new source of data being actually visualized in this, which is about the motion data and more complex sort of data.
+By emerging science and art, Murray's work demonstrated how data visualization could be both functional and also very beautiful.
+A name that you might have heard, if you haven't heard, you will be hearing it a lot more, and it's very important, is the work by Edward Tofte,
+one of the most influential figures in modern data visualization.
+Edward Tofte is renowned for his contribution to the principles and philosophy of presenting complex information clearly and effectively.
+In the next module, we will be talking about some of his principles as we learn about principles of data visualization.
+Tofte often cites Minard's map of Napoleon, Russian Wars, as one of the finest examples of data history, telling true graphics,
+and it perfectly embodies the principle Tofte advocates for in his work.
+We'll be coming back to how these principles apply to Minard's map visualization in the next modules.
+And moving even more forward in the timeline of data visualization,
+you're going to be looking now here at work done by Katie Baumann, who is an American computer scientist who gained international fame for her key role in creating the first ever image of black hole,
+a significant achievement both in scientific history and data visualization.
+She's primarily known for leading the development of an algorithm that enabled the image to be reconstructed from vast amounts of data collected by EHT or Event Horizon Telescope, a global network of radio telescopes.
+Baumann's work on the black hole image is a powerful example of how data visualization can transform massive, complex datasets into visual insights.
+The data collected by the EHT was essentially radio waves captured by the telescopes from different parts of the world.
+Reconstructing this data into an actual image required advanced techniques to visualize what was previously unseen.
+Baumann's work demonstrates the importance of interdisciplinary approaches to data visualization, combining skills from computer science, electrical engineering, physics, and astronomy.
+Her expertise in image processing, computer vision, and machine learning allowed the team to overcome the significant challenges involved in visualizing something as elusive as a black hole,
+which is basically what you're seeing in this figure, it's basically those radio waves that are now visualized in this image.

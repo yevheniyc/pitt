@@ -1,0 +1,85 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/Lu6ht/exploring-categorical-inputs-in-linear-models
+
+English
+Hello everyone, as you can see,
+I already have Jupyter opened to this week's directory for the class.
+If you've been following along in the videos,
+you can see the Jupyter Notebooks that we have created, the data that we generated,
+and the rendered HTML reports for those Jupyter Notebooks.
+However, if you look closely,
+there's an additional file in my file explorer in Jupyter.
+I downloaded this file from the canvas site.
+I want you to download it as well, and I want you to save it in
+the same directory as this week's folder, this week's directory.
+That file is the week eleven categorical input CSV file.
+We will use that file in order to explain how do we handle categorical or
+discrete or non-numeric inputs in our models.
+If you don't have Jupyter opened, please pause the recording,
+open up Jupyter and once you're back,
+I want you to launch a new Jupyter Notebook, a new Python 3 kernel.
+I want you to change this notebook name to week 11 features categorical.
+Now, put in our header information, CMPINF 2100 week 11,
+Working with Categorical or Non-Numerical Inputs.
+You will learn how features are generated
+to allow non-numeric values to be used in linear models.
+We need these new types of features,
+because ultimately linear
+models require multiplying.
+Slopes with numeric inputs.
+The models cannot handle non-numeric input values by themselves.
+Okay, and that's what you'll be introduced to here.
+And then we will return to this idea next week.
+So we're introducing it to get the concept down and
+then we will see where this is coming from in more detail next week.
+Let's go ahead and import the modules, you need the big four.
+So I want you to import NumPy as NP, import pandas as PD,
+import Matplotlib.pyplot as PLT, and import seaborn as SNS.
+We're going to be fitting our linear models and so
+you need to import statsmodels.formula.API as SMF.
+Now, as mentioned previously, I want you to read in data.
+Please, download the week eleven categorical input CSV file to this
+working directory, read it in and assign it to the DF object.
+Df gets assigned PD.read.CSV as a string
+type in the week 11 categorical input CSV file name.
+The dot info method quickly shows us there are 155 rows with two columns.
+One column is named x and this is my convention for inputs,
+you can see it's an object.
+The other column is named y, that's my convention for the output and
+it's a float.
+We are still working with a regression problem because
+regression is defined by the data type of the output.
+If we check, the number of unique.
+Y has as many unique values as data points.
+Therefore, it's definitely continuous x,
+the object input has 10 unique values.
+And just to confirm it, there are no missings for this example.
+Now, before we fit the model, let's explore the data a little bit.
+We know we could create a distribution plot for the continuous output y.
+Let's make a histogram for it.
+Displot, not dist, but displot.
+Here's the histogram for, y it's roughly symmetric.
+Here's its midpoint, and we can see it's roughly symmetric
+around it with lower frequency in the tails.
+The input, however, is categorical.
+Therefore, we will use the figure level cat plot function.
+Data equals df, x equals x,
+kind equals count, PlT show.
+Now, not all of the categories of x have the same count.
+It's not perfectly balanced.
+We can see one category has roughly 25 data points and
+another one is just under ten.
+So, there's one category that has less than half the observations of another.
+We don't have any major disparities, we don't have two or
+three observations for one category.
+We don't have one category that's 4,5,6,7 times
+the count of one of a lowest category.
+So, even though it's not perfectly balanced,
+it at least seems okay to work with.
+But as you can see, we don't have a huge data set here.
+Next, we want to examine the categorical to continuous relationship.
+We want to know how the continuous output
+relates to the categorical input.
+Because our sample size per category is relatively small.
+Let's just focus on the box plot rather than the violin plot.
+So, SNS cat plot data equals df,
+x equals x, y equals y, kind equals box.

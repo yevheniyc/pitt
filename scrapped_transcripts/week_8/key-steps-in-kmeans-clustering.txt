@@ -1,0 +1,111 @@
+Source: https://www.coursera.org/learn/mds-introduction-to-data-centric-computing/lecture/q7oY8/key-steps-in-kmeans-clustering
+
+English
+In k-means, we have to
+randomly assign the starting groupings,
+meaning we have to randomly
+associate each data point with a cluster.
+In order to do that, we have to literally
+specify how many clusters we think are present.
+For example, I could say,
+gee, I think there are two clusters.
+Now, the red background are all
+data points that are within the red cluster,
+and all points in
+the blue background are all
+data points inside the blue cluster.
+Once you have randomly assigned the points,
+you need to calculate the center point
+or centroid of each cluster.
+You see those big dots?
+That's the center point of each grouping.
+But if you look closely,
+there are some points
+associated with the red group that are
+actually closer to the blue center
+than they are to the red center.
+This can happen because we literally
+just randomly assign the data points.
+We then need to assign or
+reassign each observation to the nearest centroid.
+Once we've done that, we can recalculate
+the centroids and we literally
+just keep iterating between these steps.
+Now, with just two clusters in this example,
+it's not that interesting.
+Let me restart it and go back to packed circles,
+and let's now try out three clusters.
+I will randomly assign the groups.
+How about this way?
+Here's my initial random assignment.
+We calculate the center for each cluster.
+Do you see these red dots?
+These red dots are closer to
+the blue center than they are to their own center.
+Because of that, we will
+reassign those dots to the blue cluster.
+Once we have reassigned the points,
+we now have a new set of data points per cluster.
+We need to recalculate the centroid.
+Recalculating the centroids now gives us
+new points that are
+closer to the blue compared to the red.
+Likewise, here's a green data point,
+so it's associated with the green cluster,
+and yet it's closer to the red cluster.
+We must now reassign
+the data points to their nearest centroid.
+But because we've reassigned the points,
+we need to update the centroids again.
+You can see we must iterate from our initial guess,
+repeating two primary steps.
+We must reassign and
+then we must recalculate centroids.
+We reassign to put
+the observation near the closest centroid.
+That changes what the centroids are,
+and that's why we have to just keep iterating.
+We iterate until the assignments stop.
+Here, you can see we've created now
+three partitions, three boundaries.
+We've turned all of our data points
+into three distinct groupings,
+even if we don't have
+a categorical variable with
+three categories in this example.
+The three groupings correspond really to the right,
+the left, and the lower.
+But k-means does not
+choose the number of clusters for us.
+We have to choose that upfront.
+After all, you just saw me execute the whole algorithm.
+I initialized the assignments,
+I updated the centroids,
+and I just kept repeating those two steps.
+I was able to do that because I said use three clusters,
+but there's nothing keeping me from
+redoing this with four clusters.
+The steps are the same, though.
+You randomly assign the points
+to each cluster and then you iterate,
+calculating centroids and reassigning points.
+You iterate until you converge.
+Now, with four clusters,
+we've broken it up into
+four quadrants. Let's try it again.
+This time, I'll use
+the following initial random assignments
+and then I'll run the algorithm.
+Again, you iterate from your initial guess,
+reassigning and recalculating centroids.
+If I take a screenshot of
+this to save it
+effectively and restart and try four again,
+initial assignment, calculate centroid,
+reassign the points, initial assignment.
+Again, look at the red points.
+They are closer to
+the blue center than they are the red center,
+so we need to reassign from the red to the blue,
+and then we just keep iterating
+again and again until the assignments stop.
