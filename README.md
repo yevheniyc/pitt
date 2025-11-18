@@ -208,19 +208,9 @@ This work is licensed under the MIT License - see [LICENSE](LICENSE) file for de
 
 ---
 
-## 🔗 Related Projects
-
-This repository is part of a larger workspace:
-
-- **blaze_builder**: GeoAI application for fire hazard zones
-- **autoflow**: Prefect workflow automation
-- **a2a**: Translation application
-
-See workspace root (`../`) for shared Quarto publication infrastructure.
-
 ---
 
-**Last Updated**: November 2025
+**Last Updated**: November 2025  
 **Version**: 1.0.0
 
-_Transform coursework into professional portfolio pieces. Publications over notebooks._
+_Academic research portfolio showcasing data science and machine learning expertise through professional publications._
