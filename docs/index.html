@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Research Portfolio | Yevheniy Chuba</title>
+    <meta
+      name="description"
+      content="Academic research publications in Machine Learning, Data Analytics, and Network Science from University of Pittsburgh"
+    />
+    <meta name="author" content="Yevheniy Chuba" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --bg-dark: #1a1a1a;
+        --bg-card: #2a2a2a;
+        --text-light: #f0f0f0;
+        --text-muted: #a0a0a0;
+        --accent-blue: #64b5f6;
+        --accent-green: #66bb6a;
+        --accent-orange: #ffb74d;
+        --accent-purple: #ba68c8;
+        --accent-red: #f44336;
+      }
+
+      body {
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        background: linear-gradient(135deg, var(--bg-dark) 0%, #252525 100%);
+        color: var(--text-light);
+        line-height: 1.6;
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 20px;
+      }
+
+      header {
+        text-align: center;
+        padding: 60px 0 40px;
+        border-bottom: 2px solid var(--accent-blue);
+      }
+
+      h1 {
+        font-size: 3.5em;
+        font-weight: 700;
+        margin-bottom: 10px;
+        background: linear-gradient(
+          135deg,
+          var(--accent-blue),
+          var(--accent-purple)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .subtitle {
+        font-size: 1.4em;
+        color: var(--text-muted);
+        margin-bottom: 30px;
+      }
+
+      .hero-stats {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        margin-top: 30px;
+        flex-wrap: wrap;
+      }
+
+      .stat {
+        text-align: center;
+      }
+
+      .stat-number {
+        font-size: 2.5em;
+        font-weight: 700;
+        color: var(--accent-blue);
+        display: block;
+      }
+
+      .stat-label {
+        color: var(--text-muted);
+        font-size: 0.9em;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .publications {
+        margin-top: 60px;
+      }
+
+      .section-title {
+        font-size: 2em;
+        margin-bottom: 40px;
+        text-align: center;
+        color: var(--accent-blue);
+      }
+
+      .pub-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+        gap: 30px;
+        margin-bottom: 40px;
+      }
+
+      .pub-card {
+        background: var(--bg-card);
+        border-radius: 12px;
+        padding: 30px;
+        border: 1px solid #3a3a3a;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .pub-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--card-color), transparent);
+      }
+
+      .pub-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(100, 181, 246, 0.3);
+        border-color: var(--card-color);
+      }
+
+      .pub-card.spotify {
+        --card-color: var(--accent-green);
+      }
+      .pub-card.manufacturing {
+        --card-color: var(--accent-orange);
+      }
+      .pub-card.fire {
+        --card-color: var(--accent-red);
+      }
+      .pub-card.network {
+        --card-color: var(--accent-purple);
+      }
+
+      .pub-title {
+        font-size: 1.6em;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: var(--text-light);
+      }
+
+      .pub-subtitle {
+        font-size: 1em;
+        color: var(--text-muted);
+        margin-bottom: 20px;
+        font-style: italic;
+      }
+
+      .pub-metrics {
+        display: flex;
+        gap: 20px;
+        margin: 20px 0;
+        flex-wrap: wrap;
+      }
+
+      .metric {
+        background: rgba(100, 181, 246, 0.1);
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 0.85em;
+        border: 1px solid rgba(100, 181, 246, 0.3);
+      }
+
+      .metric-value {
+        font-weight: 700;
+        color: var(--accent-blue);
+      }
+
+      .pub-highlights {
+        margin: 20px 0;
+        padding-left: 20px;
+      }
+
+      .pub-highlights li {
+        margin: 8px 0;
+        color: var(--text-muted);
+      }
+
+      .pub-highlights strong {
+        color: var(--text-light);
+      }
+
+      .pub-actions {
+        margin-top: 25px;
+        display: flex;
+        gap: 15px;
+      }
+
+      .btn {
+        padding: 12px 24px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        display: inline-block;
+        font-size: 0.95em;
+      }
+
+      .btn-primary {
+        background: var(--accent-blue);
+        color: white;
+      }
+
+      .btn-primary:hover {
+        background: #90caf9;
+        transform: scale(1.05);
+      }
+
+      .btn-secondary {
+        background: transparent;
+        color: var(--accent-blue);
+        border: 2px solid var(--accent-blue);
+      }
+
+      .btn-secondary:hover {
+        background: rgba(100, 181, 246, 0.1);
+      }
+
+      footer {
+        text-align: center;
+        padding: 40px 0;
+        margin-top: 60px;
+        border-top: 1px solid #3a3a3a;
+        color: var(--text-muted);
+      }
+
+      .footer-links {
+        margin-top: 20px;
+      }
+
+      .footer-links a {
+        color: var(--accent-blue);
+        text-decoration: none;
+        margin: 0 15px;
+        transition: color 0.3s ease;
+      }
+
+      .footer-links a:hover {
+        color: var(--accent-green);
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2.5em;
+        }
+
+        .pub-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-stats {
+          flex-direction: column;
+          gap: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Research Portfolio</h1>
+        <p class="subtitle">Academic Publications in AI & Data Science</p>
+        <p style="color: var(--text-muted); margin-top: 10px">
+          Yevheniy Chuba | University of Pittsburgh | MSDS (Applied AI Emphasis)
+        </p>
+
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-number">4</span>
+            <span class="stat-label">Publications</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">23</span>
+            <span class="stat-label">Visualizations</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">1.6 MB</span>
+            <span class="stat-label">Research Content</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">930K+</span>
+            <span class="stat-label">Records Analyzed</span>
+          </div>
+        </div>
+      </header>
+
+      <section class="publications">
+        <h2 class="section-title">Research Publications</h2>
+
+        <div class="pub-grid">
+          <!-- Spotify Publication -->
+          <div class="pub-card spotify">
+            <h3 class="pub-title">Predicting Song Popularity on Spotify</h3>
+            <p class="pub-subtitle">
+              Machine Learning Classification with Genre Interaction Modeling
+            </p>
+
+            <div class="pub-metrics">
+              <span class="metric"
+                >ROC AUC: <span class="metric-value">0.675</span></span
+              >
+              <span class="metric"
+                >Models: <span class="metric-value">6 Progressive</span></span
+              >
+              <span class="metric"
+                >Charts: <span class="metric-value">7</span></span
+              >
+            </div>
+
+            <ul class="pub-highlights">
+              <li>
+                <strong>Binary classification</strong> predicting song
+                popularity from audio features
+              </li>
+              <li>
+                <strong>Genre×audio interactions</strong> reveal
+                context-specific effects
+              </li>
+              <li>
+                <strong>Cross-validation</strong> confirms robust generalization
+              </li>
+              <li>
+                Conditional distributions show
+                <strong>why features predict</strong>
+              </li>
+            </ul>
+
+            <div class="pub-actions">
+              <a
+                href="publications/Predicting-Song-Popularity-on-Spotify.pdf"
+                class="btn btn-primary"
+                target="_blank"
+                >📄 View PDF</a
+              >
+              <a
+                href="https://github.com/yevheniyc/pitt/tree/main/publications/spotify_popularity"
+                class="btn btn-secondary"
+                target="_blank"
+                >📁 Source</a
+              >
+            </div>
+          </div>
+
+          <!-- Manufacturing Publication -->
+          <div class="pub-card manufacturing">
+            <h3 class="pub-title">Manufacturing Process Analytics</h3>
+            <p class="pub-subtitle">
+              Multi-Source Data Integration & Quality Analysis
+            </p>
+
+            <div class="pub-metrics">
+              <span class="metric"
+                >Sources: <span class="metric-value">5 CSVs</span></span
+              >
+              <span class="metric"
+                >Observations: <span class="metric-value">45K</span></span
+              >
+              <span class="metric"
+                >Charts: <span class="metric-value">8</span></span
+              >
+            </div>
+
+            <ul class="pub-highlights">
+              <li>
+                <strong>PCA dimensionality reduction</strong> (73% variance in 2
+                components)
+              </li>
+              <li>
+                <strong>K-means clustering</strong> identifies 5 operational
+                regimes
+              </li>
+              <li>
+                <strong>Supplier comparison</strong> reveals quality differences
+              </li>
+              <li>
+                <strong>Failure heatmap</strong> discovers cyclical 8-batch
+                quality issue
+              </li>
+            </ul>
+
+            <div class="pub-actions">
+              <a
+                href="publications/Manufacturing-Process-Analytics.pdf"
+                class="btn btn-primary"
+                target="_blank"
+                >📄 View PDF</a
+              >
+              <a
+                href="https://github.com/yevheniyc/pitt/tree/main/publications/manufacturing_analytics"
+                class="btn btn-secondary"
+                target="_blank"
+                >📁 Source</a
+              >
+            </div>
+          </div>
+
+          <!-- Fire Safety Publication -->
+          <div class="pub-card fire">
+            <h3 class="pub-title">Data-Driven Fire Safety Analytics</h3>
+            <p class="pub-subtitle">
+              Leveraging 930K Emergency Records for Public Policy
+            </p>
+
+            <div class="pub-metrics">
+              <span class="metric"
+                >Records: <span class="metric-value">930,808</span></span
+              >
+              <span class="metric"
+                >Timespan: <span class="metric-value">10 Years</span></span
+              >
+              <span class="metric"
+                >Charts: <span class="metric-value">5</span></span
+              >
+            </div>
+
+            <ul class="pub-highlights">
+              <li>
+                <strong>37.3% of dispatches are fire alarms</strong> costing
+                $225M over 10 years
+              </li>
+              <li>
+                <strong>Geographic disparities</strong>: 3× higher per-capita
+                rates in some areas
+              </li>
+              <li>
+                <strong>Seasonal patterns</strong>: +34% winter structure fires,
+                +78% summer outdoor
+              </li>
+              <li>
+                <strong>3 policy recommendations</strong> with projected impact
+              </li>
+            </ul>
+
+            <div class="pub-actions">
+              <a
+                href="publications/Data-Driven-Fire-Safety-Analytics.pdf"
+                class="btn btn-primary"
+                target="_blank"
+                >📄 View PDF</a
+              >
+              <a
+                href="https://github.com/yevheniyc/pitt/tree/main/publications/fire_safety_dashboard"
+                class="btn btn-secondary"
+                target="_blank"
+                >📁 Source</a
+              >
+            </div>
+          </div>
+
+          <!-- Network Publication -->
+          <div class="pub-card network">
+            <h3 class="pub-title">Network Centrality in College Football</h3>
+            <p class="pub-subtitle">
+              Applying Graph Theory to Sports Competition
+            </p>
+
+            <div class="pub-metrics">
+              <span class="metric"
+                >Teams: <span class="metric-value">115</span></span
+              >
+              <span class="metric"
+                >Games: <span class="metric-value">613</span></span
+              >
+              <span class="metric"
+                >Charts: <span class="metric-value">3</span></span
+              >
+            </div>
+
+            <ul class="pub-highlights">
+              <li>
+                <strong>Degree vs betweenness centrality</strong> reveal
+                different importance types
+              </li>
+              <li>
+                <strong>Penn State</strong>: High degree (breadth of
+                connections)
+              </li>
+              <li>
+                <strong>Ohio State</strong>: High betweenness (bridge position)
+              </li>
+              <li>
+                Methods generalize to
+                <strong>business, social, infrastructure networks</strong>
+              </li>
+            </ul>
+
+            <div class="pub-actions">
+              <a
+                href="publications/Network-Centrality-in-College-Football.pdf"
+                class="btn btn-primary"
+                target="_blank"
+                >📄 View PDF</a
+              >
+              <a
+                href="https://github.com/yevheniyc/pitt/tree/main/publications/network_analysis"
+                class="btn btn-secondary"
+                target="_blank"
+                >📁 Source</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <p>
+          <strong>Yevheniy Chuba</strong> | University of Pittsburgh | Master of
+          Science in Data Science (Applied AI Emphasis)
+        </p>
+        <div class="footer-links">
+          <a href="https://github.com/yevheniyc/pitt">GitHub Repository</a>
+          <a href="https://www.linkedin.com/in/yev-chuba-57518434/">LinkedIn</a>
+          <a href="https://github.com/yevheniyc">GitHub Profile</a>
+        </div>
+        <p style="margin-top: 20px; font-size: 0.85em">
+          Built with Quarto • Visualizations with matplotlib, seaborn, NetworkX
+          • Managed with uv
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
