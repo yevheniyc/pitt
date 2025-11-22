@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predicting Song Popularity on Spotify | Research</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="index.html">← Back to Portfolio</a>
+        </nav>
+        
+        <article class="publication-detail">
+            <header class="pub-header">
+                <h1>Predicting Song Popularity on Spotify</h1>
+                <p class="pub-subtitle">A Machine Learning Approach to Understanding Audio Features and Genre Effects</p>
+                <div class="pub-meta">
+                    <span>Yevheniy Chuba</span> • 
+                    <span>University of Pittsburgh</span> • 
+                    <span>MSDS (Applied AI Emphasis)</span> • 
+                    <span>November 2025</span>
+                </div>
+            </header>
+            
+            <div class="key-metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-number">0.675</div>
+                    <div class="metric-label">ROC AUC</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">6</div>
+                    <div class="metric-label">Progressive Models</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">7</div>
+                    <div class="metric-label">Visualizations</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">5-Fold</div>
+                    <div class="metric-label">Cross-Validation</div>
+                </div>
+            </div>
+            
+            <section class="abstract">
+                <h2>Abstract</h2>
+                <p>This study investigates the predictability of song popularity on Spotify using machine learning techniques applied to audio feature data. We developed and evaluated multiple logistic regression models to predict binary popularity outcomes (high vs. low) for songs across six genres. Our analysis combines exploratory data analysis, unsupervised clustering, and supervised learning to identify the audio characteristics and genre-specific patterns that influence song popularity.</p>
+                
+                <p>The dataset comprises Spotify songs with 14 audio features including danceability, energy, loudness, instrumentalness, and genre classification. We employed a systematic modeling approach, progressively adding complexity through feature interactions to capture nuanced relationships between audio characteristics and popularity across different musical genres.</p>
+                
+                <p><strong>Key Findings:</strong> Genre emerged as the strongest predictor of song popularity, with pop and rock genres showing consistently higher success rates. Among audio features, instrumentalness demonstrated a strong negative relationship with popularity (coefficient -0.22), while loudness showed a positive effect (coefficient 0.29). Importantly, our best-performing model revealed significant genre-audio feature interactions, indicating that the impact of audio characteristics varies substantially across musical genres.</p>
+                
+                <p>The final model achieved a ROC AUC of 0.675 with robust cross-validation performance, suggesting that while audio features and genre provide meaningful signal, external factors like artist fame and marketing likely play substantial roles in determining popularity.</p>
+            </section>
+            
+            <section class="key-findings">
+                <h2>Key Findings</h2>
+                <div class="findings-grid">
+                    <div class="finding">
+                        <h3>🎵 Genre Dominance</h3>
+                        <p>Pop and rock genres show 1.97× and 1.72× higher odds of popularity. Genre classification alone achieves 62.5% ROC AUC.</p>
+                    </div>
+                    <div class="finding">
+                        <h3>🎤 Vocal Preference</h3>
+                        <p>Instrumentalness shows strong negative effect (-0.22). Songs with prominent vocals achieve higher popularity.</p>
+                    </div>
+                    <div class="finding">
+                        <h3>🎚️ Production Quality</h3>
+                        <p>Loudness positively correlates (+0.29) with popularity, reflecting professional production standards.</p>
+                    </div>
+                    <div class="finding">
+                        <h3>💃 Genre Interactions</h3>
+                        <p>Danceability critical for rap (+0.33) and pop (+0.19), but negligible for other genres. Context matters!</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="methodology">
+                <h2>Methodology</h2>
+                <ul class="method-list">
+                    <li><strong>Exploratory Data Analysis</strong> - Visualized feature distributions, correlations, and genre-specific patterns</li>
+                    <li><strong>Unsupervised Clustering</strong> - K-means with k=5 revealed distinct musical archetypes</li>
+                    <li><strong>Progressive Modeling</strong> - 6 logistic regression models from baseline to full interactions</li>
+                    <li><strong>Cross-Validation</strong> - Stratified 5-fold validation confirms robust generalization</li>
+                </ul>
+            </section>
+            
+            <section class="visualizations">
+                <h2>Featured Visualizations</h2>
+                <div class="viz-preview">
+                    <p><em>7 professional visualizations including correlation matrices, conditional distributions, cluster analysis, and model performance progression. View the full PDF for complete visual analysis.</em></p>
+                </div>
+            </section>
+            
+            <div class="action-buttons">
+                <a href="publications/Predicting-Song-Popularity-on-Spotify.pdf" class="btn btn-download" download>
+                    📥 Download Full Paper (659 KB)
+                </a>
+                <a href="https://github.com/yevheniyc/pitt/tree/main/publications/spotify_popularity" class="btn btn-source" target="_blank">
+                    📁 View Source Code
+                </a>
+                <a href="index.html" class="btn btn-back">
+                    ← Back to Portfolio
+                </a>
+            </div>
+        </article>
+    </div>
+</body>
+</html>
+

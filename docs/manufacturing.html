@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manufacturing Process Analytics | Research</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="index.html">← Back to Portfolio</a>
+        </nav>
+        
+        <article class="publication-detail">
+            <header class="pub-header">
+                <h1>Manufacturing Process Analytics</h1>
+                <p class="pub-subtitle">Multi-Source Data Integration for Operational Intelligence</p>
+                <div class="pub-meta">
+                    <span>Yevheniy Chuba</span> • 
+                    <span>University of Pittsburgh</span> • 
+                    <span>MSDS (Applied AI Emphasis)</span> • 
+                    <span>November 2025</span>
+                </div>
+            </header>
+            
+            <div class="key-metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-number">5</div>
+                    <div class="metric-label">Data Sources</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">45K</div>
+                    <div class="metric-label">Observations</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">73%</div>
+                    <div class="metric-label">Variance (2 PCs)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">8</div>
+                    <div class="metric-label">Visualizations</div>
+                </div>
+            </div>
+            
+            <section class="abstract">
+                <h2>Abstract</h2>
+                <p>This study demonstrates data engineering techniques for manufacturing process analytics through multi-source data integration, exploratory analysis, and clustering methods. We analyzed operational data from three manufacturing machines alongside supplier information to identify relationships between machine performance, operating conditions, and supplier characteristics.</p>
+                
+                <p>The dataset comprised sensor readings from Machine 01 (15,000 observations), Machine 02 (12,000 observations), and Machine 03 (18,000 observations), capturing temperature, speed, torque, and tool wear metrics. By merging these machine datasets with supplier data, we created an integrated view enabling analysis of how supplier-provided components influence machine performance and operational patterns.</p>
+                
+                <p><strong>Critical Discovery:</strong> Quality testing revealed a systematic cyclical failure pattern occurring every 8 batches (batches 9, 17, 25, 33, 41, 49) affecting all machines simultaneously regardless of supplier—a finding that redirects investigation from machine calibration to batch preparation processes.</p>
+            </section>
+            
+            <section class="key-findings">
+                <h2>Key Findings</h2>
+                <div class="findings-grid">
+                    <div class="finding">
+                        <h3>🔧 Exceptional Calibration</h3>
+                        <p>Three machines operate with nearly identical parameters (temp ~52°C, pressure ~102), demonstrating sophisticated process standardization.</p>
+                    </div>
+                    <div class="finding">
+                        <h3>📊 Multimodal Recipes</h3>
+                        <p>Operating parameters cluster into 5 distinct "recipes" rather than continuous variation, indicating recipe-based production control.</p>
+                    </div>
+                    <div class="finding">
+                        <h3>🏭 Supplier Differences</h3>
+                        <p>Supplier B shows tighter clustering and better parameter control, while both suppliers use identical operational ranges.</p>
+                    </div>
+                    <div class="finding">
+                        <h3>🔴 Quality Pattern</h3>
+                        <p>100% failure rates every 8 batches across all machines/suppliers points to systematic batch preparation issue, not equipment or materials.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="methodology">
+                <h2>Methodology</h2>
+                <ul class="method-list">
+                    <li><strong>Multi-Source Integration</strong> - Merged 5 CSV files (3 machines + supplier + test data) with 45,000 total observations</li>
+                    <li><strong>PCA Analysis</strong> - Reduced 4 sensor variables to 2 principal components retaining 73% of variance</li>
+                    <li><strong>K-Means Clustering</strong> - Elbow method identified k=5 optimal clusters representing operational regimes</li>
+                    <li><strong>Quality Analysis</strong> - Failure rate heatmaps revealed cyclical pattern warranting process investigation</li>
+                </ul>
+            </section>
+            
+            <section class="visualizations">
+                <h2>Featured Visualizations</h2>
+                <div class="viz-preview">
+                    <p><em>8 comprehensive visualizations including machine comparison boxplots, parameter pairplots (general + by supplier), elbow method, cluster spatial distribution, PCA biplot, cluster profiles, and failure rate heatmap. Download the full PDF for complete analysis.</em></p>
+                </div>
+            </section>
+            
+            <div class="action-buttons">
+                <a href="publications/Manufacturing-Process-Analytics.pdf" class="btn btn-download" download>
+                    📥 Download Full Paper (682 KB)
+                </a>
+                <a href="https://github.com/yevheniyc/pitt/tree/main/publications/manufacturing_analytics" class="btn btn-source" target="_blank">
+                    📁 View Source Code
+                </a>
+                <a href="index.html" class="btn btn-back">
+                    ← Back to Portfolio
+                </a>
+            </div>
+        </article>
+    </div>
+</body>
+</html>
+

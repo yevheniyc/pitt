@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Centrality in College Football | Research</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="index.html">← Back to Portfolio</a>
+        </nav>
+        
+        <article class="publication-detail">
+            <header class="pub-header">
+                <h1>Network Centrality in College Football</h1>
+                <p class="pub-subtitle">Applying Graph Theory to Sports Competition Analysis</p>
+                <div class="pub-meta">
+                    <span>Yevheniy Chuba</span> • 
+                    <span>University of Pittsburgh</span> • 
+                    <span>MSDS (Applied AI Emphasis)</span> • 
+                    <span>November 2025</span>
+                </div>
+            </header>
+            
+            <div class="key-metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-number">115</div>
+                    <div class="metric-label">Teams</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">613</div>
+                    <div class="metric-label">Games Analyzed</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">2</div>
+                    <div class="metric-label">Centrality Metrics</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">3</div>
+                    <div class="metric-label">Visualizations</div>
+                </div>
+            </div>
+            
+            <section class="abstract">
+                <h2>Abstract</h2>
+                <p>This study applies network science methods to analyze competitive relationships in college football, demonstrating how graph theory concepts illuminate team positioning and influence within sports competition networks. We constructed a network of 115 Division I college football teams where edges represent competitive matchups, enabling calculation of centrality metrics that quantify team connectivity and structural importance.</p>
+                
+                <p>Our analysis computed two key centrality measures: degree centrality, capturing the number of teams each program competes against, and betweenness centrality, identifying teams that serve as bridges connecting different regions of the competitive network.</p>
+                
+                <p><strong>Comparative Case Study:</strong> Penn State exhibited higher degree centrality (0.421) due to broader scheduling across conferences, while Ohio State showed elevated betweenness centrality (0.15) reflecting its role bridging multiple competitive clusters. These findings demonstrate that teams can occupy distinct strategic positions within the same competitive ecosystem.</p>
+            </section>
+            
+            <section class="key-findings">
+                <h2>Key Findings</h2>
+                <div class="findings-grid">
+                    <div class="finding">
+                        <h3>🔵 Degree Centrality</h3>
+                        <p>Only 12 teams (10.4%) exceed median degree centrality. Notre Dame leads (0.526) with independent scheduling flexibility.</p>
+                    </div>
+                    <div class="finding">
+                        <h3>🌉 Betweenness Centrality</h3>
+                        <p>57 teams (49.6%) exceed median betweenness. Structural importance more widely distributed than simple connectivity.</p>
+                    </div>
+                    <div class="finding">
+                        <h3>🏈 Penn State Profile</h3>
+                        <p>High degree (0.421, 3rd rank) - emphasizes breadth of competitive exposure through diverse scheduling.</p>
+                    </div>
+                    <div class="finding">
+                        <h3>🏈 Ohio State Profile</h3>
+                        <p>High betweenness (0.152, 1st rank) - serves as critical bridge connecting Big Ten to other Power 5 conferences.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="methodology">
+                <h2>Methodology</h2>
+                <ul class="method-list">
+                    <li><strong>Network Construction</strong> - Built graph with 115 teams (nodes) and 613 games (edges) using NetworkX</li>
+                    <li><strong>Centrality Computation</strong> - Calculated degree and betweenness centrality for all nodes</li>
+                    <li><strong>Subgraph Analysis</strong> - Created above-median centrality subgraphs (12 vs 57 teams) to visualize distribution differences</li>
+                    <li><strong>Comparative Case Study</strong> - Penn State vs Ohio State as illustrative examples of complementary network positions</li>
+                </ul>
+            </section>
+            
+            <section class="visualizations">
+                <h2>Featured Visualizations</h2>
+                <div class="viz-preview">
+                    <p><em>3 network science visualizations including full network graph with school colors and size/color encoding, side-by-side centrality subgraph comparison (12 high-degree vs 57 high-betweenness teams), and Penn State vs Ohio State direct comparison. Methods generalize to business, social, and infrastructure networks.</em></p>
+                </div>
+            </section>
+            
+            <div class="action-buttons">
+                <a href="publications/Network-Centrality-in-College-Football.pdf" class="btn btn-download" download>
+                    📥 Download Full Paper (124 KB)
+                </a>
+                <a href="https://github.com/yevheniyc/pitt/tree/main/publications/network_analysis" class="btn btn-source" target="_blank">
+                    📁 View Source Code
+                </a>
+                <a href="index.html" class="btn btn-back">
+                    ← Back to Portfolio
+                </a>
+            </div>
+        </article>
+    </div>
+</body>
+</html>
+
