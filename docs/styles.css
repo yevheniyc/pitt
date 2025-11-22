@@ -232,15 +232,15 @@ section h2 {
     .publication-detail {
         padding: 30px 20px;
     }
-    
+
     .pub-header h1 {
         font-size: 2em;
     }
-    
+
     .key-metrics-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .findings-grid {
         grid-template-columns: 1fr;
     }

@@ -1,0 +1,14 @@
+[project]
+name = "fire-safety-dashboard"
+version = "1.0.0"
+description = "Interactive analytics dashboard for Allegheny County fire safety data"
+requires-python = ">=3.9"
+dependencies = [
+    "gradio>=5.0.0",
+    "plotly>=5.14.0",
+    "pandas>=2.0.0",
+    "numpy>=1.24.0",
+    "folium>=0.15.0",
+    "geopandas>=0.14.0",
+]
+
